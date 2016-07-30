@@ -1,0 +1,267 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>An introduction to the TEI</title>
+         </titleStmt>
+         <publicationStmt>
+            <p/>
+         </publicationStmt>
+         <sourceDesc>
+            <p>TEIified from slides <title>Introduction to the TEI</title> (David J. Birnbaum and
+               Andrej Bojadžiev)for <title> El’Manuscript, Varna, 2014-09-15</title> by Lou
+               Burnard</p>
+         </sourceDesc>
+      </fileDesc>
+      <revisionDesc>
+         <change when="2016-08-26">LB Hacked into TEI on a train from La Souterraine to
+            Paris</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <list>
+               <item>Session 2: Introduction to the TEI David J. Birnbaum djbpitt@gmail.com
+                  http://www.obdurodon.org Andrej Bojadžiev aboy@uni-sofia.bg
+                  http://www.slav.uni-sofia.bg/index.php/departments/
+                  cyrillomethodian-studies/441-andrej-bojadzhiev.html El’Manuscript, Varna,
+                  2014-09-15</item>
+            </list>
+         </div>
+         <div>
+            <head> The role of the TEI in digital editing and publishing </head>
+            <list>
+               <item> Parts of a TEI document </item>
+               <item> Creating a TEI document in &lt;oXygen/&gt;</item>
+               <item> TEI flavors (P5; All, manuscript description) </item>
+               <item> Root element and namespace </item>
+               <item>
+                  <gi>teiHeader</gi>
+                  <gi>text</gi>
+               </item>
+            </list>
+         </div>
+         <div>
+            <head>The role of the TEI </head>
+            <list>
+               <item>Reuse, multipurposing</item>
+               <item> Convert to different document types <list>
+                     <item>XHTML, PDF, plain text </item>
+                  </list></item>
+               <item> Convert to different views, e.g., a manuscript edition as <list>
+                     <item>Continuous reading (single manuscript) </item>
+                     <item>Critical apparatus ~ interlinear collation </item>
+                     <item>Graphic (non-textual) representation </item>
+                  </list>
+               </item>
+               <item> Interchange and interoperability (shared tools) </item>
+               <item> Guidelines or standard? </item>
+               <item> Your problems aren’t (entirely) new or unusual </item>
+               <item> Customizations, broad and narrow </item>
+               <item> Funding imperatives </item>
+            </list>
+         </div>
+         <div>
+            <head>What can you do with a TEI document? </head>
+            <list>
+               <item>Transform (XSLT) to final form (XHTML, PDF, etc.) </item>
+               <item> Explore and query (XQuery) </item>
+            </list>
+         </div>
+         <div>
+            <head>How to manage a TEI project </head>
+            <list>
+               <item>Choose (configure) a TEI schema </item>
+               <item> Prepare project encoding guidelines <list>
+                     <item>What do you need to do? </item>
+                  </list></item>
+               <item> Do you need (or just want) to do it in a particular way? <list>
+                     <item>There may be different ways to do almost the same thing </item>
+                     <item>There may be different ways to do exactly the same thing </item>
+                     <item>Nobody uses every element in the TEI in any project </item>
+                  </list></item>
+            </list>
+         </div>
+         <div>
+            <head>Schemas </head>
+            <list>
+               <item>XML must be well-formed </item>
+               <item> XML may be valid <list>
+                     <item>Valid = valid against a particular schema </item>
+                  </list></item>
+               <item> Schema <list>
+                     <item>Grammar or blueprint for a document </item>
+                  </list></item>
+               <item> What elements and attributes are allowed, where, and with what content or type
+                  of content? <list>
+                     <item>Schema languages : RELAXNG, W3Schema, DTD </item>
+
+                     <item>Constraint language: Schematron</item>
+                  </list></item>
+               <item> TEI is a way of generating customised schemas </item>
+            </list>
+         </div>
+         <div>
+            <head>TEI varieties</head>
+            <list>
+               <item>TEI All </item>
+               <item> TEI Simple </item>
+               <item> Manuscript description </item>
+               <item> Customization, broad and narrow <list>
+                     <item>Can you do what you need? </item>
+                  </list></item>
+               <item> Can you do it the way you want? <list>
+                     <item>Can you do things you shouldn’t be allowed to do? </item>
+                     <item>Enabling vs enforcing schemas </item>
+                  </list></item>
+            </list>
+         </div>
+         <div>
+            <head>Now let’s do something … </head>
+            <list>
+               <item>Start &lt;oXygen/> </item>
+               <item>Create a new TEI P5 All document </item>
+               <item>What does &lt;oXygen/> do for you </item>
+            </list>
+         </div>
+         <div>
+            <head>Root element </head>
+            <list>
+               <item><tag>TEI xmlns="http://www.tei-c.org/ns/1.0"</tag> Namespaces <list>
+                     <item>Namespace declaration (pseudo-attribute)</item>
+                     <item>Inherited </item>
+                     <item>Namespace prefixing (not covered in this workshop) </item>
+                  </list></item>
+               <item> title <list>
+                     <item>Book title </item>
+                     <item>Royal title</item>
+                  </list></item>
+               <item> body <list>
+                     <item>TEI body </item>
+                     <item>HTML body </item>
+                  </list></item>
+               <item> Schema associations (&lt;?xml-model … ?&gt;)</item>
+            </list>
+         </div>
+         <div>
+            <head>
+               <gi>teiHeader</gi> •</head>
+            <list>
+               <item><gi>fileDesc</gi>
+                  <list>
+                     <item><gi>titleStmt</gi>
+                     </item>
+                     <item><gi>publicationStmt</gi>
+                     </item>
+                     <item><gi>sourceDesc</gi></item>
+                  </list></item>
+               <item> Minimal content <!-- <item><gi>titleStmt</gi><gi>title</gi> … <tag>/title</tag><tag>/titleStmt</tag></item>
+               <item><gi>p</gi> (= “paragraph”) for the other two</item>-->
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="teeny">
+                     <titleStmt>
+                        <title>...</title>
+                     </titleStmt>
+                     <publicationStmt>
+                        <p> .... </p>
+                     </publicationStmt>
+                     <sourceDesc>
+                        <p> ... </p>
+                     </sourceDesc>
+                  </egXML></item>
+               <item> Structured content </item>
+            </list>
+         </div>
+         <div>
+
+            <head> Structured <gi>titleStmt</gi>
+            </head>
+            <list>
+               <item>Required: <gi>title</gi>
+               </item>
+               <item> Optional <list>
+                     <item><gi>author</gi>, <gi>editor</gi> (of source document) </item>
+                     <item><gi>principal</gi> (creator of electronic document)</item>
+                     <item><gi>meeting</gi>
+                     </item>
+                     <item><gi>respStmt</gi>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="teeny"
+                                 ><respStmt><resp>TEI Markup</resp><name>Your
+                           Name</name></respStmt></egXML>
+                     </item>
+                  </list></item>
+               <!--  <item> <gi>resp</gi>TEI markup<tag>/resp</tag> </item>
+               <item> <gi>name</gi>[your name]<tag>/name</tag> </item>
+               <item> <tag>/respStmt</tag></item>-->
+            </list>
+         </div>
+         <div>
+            <head><gi>publicationStmt</gi></head>
+            <list>
+               <item> Minimal: <gi>p</gi>
+               </item>
+               <item> Optional <list>
+                     <item><gi>publisher</gi>, <gi>distributor</gi>, <gi>authority</gi></item>
+                     <item><gi>pubPlace</gi><gi>address</gi> … </item>
+                  </list></item>
+               <item> –– <gi>orgName</gi>, <gi>street</gi>, <gi>settlement</gi>, <gi>country</gi>,
+                     <gi>postCode</gi>
+               </item>
+               <item> –– <tag>date when="2013-09-05"</tag> Date ranges and less precise dates are
+                  also supported</item>
+               <item> –– <tag>idno type="ISBN"</tag>
+               </item>
+               <item> –– <gi>availability</gi><gi>p</gi>[License info]</item>
+            </list>
+         </div>
+         <div>
+            <head><gi>text</gi>
+            </head>
+            <list>
+               <item><gi>front</gi>, <gi>body</gi>, <gi>back</gi>
+               </item>
+               <item>
+                  <tag>div type="chapter"</tag>
+               </item>
+               <item> Headings </item>
+               <item> –– <gi>head</gi>
+               </item>
+               <item> Verse and verse-like things </item>
+               <item> –– <tag>lg type="stanza"</tag>, <gi>l</gi>
+               </item>
+               <item> Prose </item>
+               <item> –– <gi>p</gi>
+               </item>
+               <item> Drama </item>
+               <item> –– <gi>speaker</gi>, <tag>sp speaker="hamlet"</tag></item>
+            </list>
+         </div>
+         <div>
+            <head>Common in-line elements </head>
+            <list>
+               <item><tag>hi rend="italic"</tag>
+                  <tag>name type="person" ref="#ab"</tag>
+               </item>
+               <item><tag>persName ref="#ab”</tag>
+               </item>
+               <item><tag>placeName ref="#varna"</tag></item>
+            </list>
+         </div>
+         <div>
+            <head>Hands-on practice </head>
+            <list>
+               <item>Create a new document in &lt;oXygen/&lt; (TEI P5 All) </item>
+               <item> Edit the <gi>teiHeader</gi> element to add metadata for your project <list>
+                     <item><gi>titleStmt</gi>: add other elements </item>
+                     <item><gi>publicationStmt</gi> and <gi>sourceDesc</gi>: delete <gi>p</gi>
+                        elements and add structured content </item>
+                  </list></item>
+            </list>
+         </div>
+         <div>
+            <head>That URL</head>
+            <p> http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html</p>
+         </div>
+      </body>
+   </text>
+</TEI>
