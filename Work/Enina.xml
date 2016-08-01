@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_ms.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_ms.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Description of Enina Apostle</title>
+            <editor>Andrej Bojadžiev</editor>
+         </titleStmt>
+         <publicationStmt>
+            <p>Kamčia, 2014</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p><ref target="http://eslavsanct.net/home.php?text=Sources">Encyclopaedia Slavica Sanctorum</ref></p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <listBibl>
+	           <msDesc>
+	              <msIdentifier>
+	                 <country>Bulgaria</country>
+                  <settlement>Sofia</settlement>
+	                 <repository>National Library</repository>
+	                 <idno type="shelfmark">1144</idno>
+               </msIdentifier>
+	              <msContents>
+	                 <summary>Short Apostle Lectionary. Without beginning and end. </summary>
+	              </msContents>
+	              <physDesc>
+	                 <p>39 ff. parchment, written in Cyrillic writing , written from 1 scribe</p>
+	              </physDesc>
+	              <additional>
+	                 <listBibl>
+	                    <bibl>Мирчев К., Хр. Кодов. Енински апостол. Старобългарски паметник от ХI в. София, 196</bibl>
+	                 </listBibl>
+	              </additional>
+	           </msDesc>
+         </listBibl>
+      </body>
+  </text>
+</TEI>
