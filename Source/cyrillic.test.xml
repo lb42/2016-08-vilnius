@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title/>
+                <title>Test</title>
             </titleStmt>
             <publicationStmt>
                 <p>Unpublished test document</p>
@@ -16,12 +16,15 @@
     </teiHeader>
     <text>
         <body>
-            <div>
+            <div type="slide">
                 <head>Test slide</head>
                 <p>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |</p>
                 <list>
                     <item>Се повѣсти времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
                 </list>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <item>Се повѣсти времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
+                </egXML>
             </div>
         </body>
     </text>
