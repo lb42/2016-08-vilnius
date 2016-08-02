@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../TEIslides/teislides.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title/>
+            </titleStmt>
+            <publicationStmt>
+                <p>Unpublished test document</p>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Born digital</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head>Test slide</head>
+                <p>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |</p>
+                <list>
+                    <item>Се повѣсти времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>
