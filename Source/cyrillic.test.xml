@@ -18,11 +18,11 @@
         <body>
             <div type="slide">
                 <head>Test slide</head>
-                <p>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |</p>
+                <p><code>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |</code></p>
                 <list>
-                    <item>Се повѣсти времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
+                    <item>Се <ident>повѣсти</ident> времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
                 </list>
-                <p>And here's the same text presented as an example.</p>
+                <p>And here's the same <gi>text</gi> presented as an example.</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
    <p>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |
    Се повѣсти времѧньны<hi rend="sup">х</hi> 
