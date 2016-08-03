@@ -22,9 +22,11 @@
                 <list>
                     <item>Се повѣсти времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
                 </list>
+                <p>And here's the same text presented as an example.</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <p>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |</p>
-                    <item>Се повѣсти времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
+   <p>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |
+   Се повѣсти времѧньны<hi rend="sup">х</hi> 
+   лѣ<hi rend="sup">т</hi>. [1v]</p>
                 </egXML>
             </div>
         </body>
