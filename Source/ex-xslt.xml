@@ -29,42 +29,39 @@
         <graphic url="../images/duBellay.png"/>
       </figure>
       <p>In this exercise and the next we will work on a short text, already marked up in XML.
-       You will find it in the file <ident>Work/duBellay.xml</ident> — ouvrez-le d’abord avec Oxygen.</p>
+       You will find it in the file <ident>Work/???.xml</ident> — open it with Oxygen.</p>
 
       <div>
         <head>XPath</head>
 
         <div>
-          <head>Navigation avec XPath</head>
-          <p>oXygen est très pratique pour voir un peu ce que l’utilisation de XPath seul peut
-            apporter à un processus d’exploration, d’appropriation ou de vérification de document
-            TEI. La ligne de saisie "XPath" que l’on voit a gauche en haut de la fenêtre, au-dessous
-            des barres d’outils oXygen, permet de saisir des expressions XPath. Après avoir tapé sur
-            la touche <ident>Entrée</ident> au clavier, oXygen évalue l’expression et retourne, dans
-            la fenêtre qui fait toute la largeur de l’écran en bas, une liste de(s) résultat(s) – un
-            ou plusieurs ensembles de nœuds, en donnant pour chaque nœud résultat l’expression XPath
-            qui permet de l’atteindre. Si on clique avec la souris sur une des lignes de résultat,
-            oXygen montre le nœud résultat sélectionné dans son contexte TEI au sein de la fenêtre
-            de l’éditeur.</p>
+          <head>Navigation with XPath</head>
+          <p>oXygen provides a simple way of exploring what XPath can do: at the top left of the screen
+            just underneath the oXygen toolbar, you should see a little window labelled <ident>XPath 2.0</ident>. If you type an
+            XPath expression into this and press the <ident>RETURN</ident> key, oXygen evaluates the expression you have typed
+            returning any results in a new panel at the bottom of the screen. If you then click on one of these result lines, it will highlight the corresponding
+            part of the document in the main window.
+            Try it!
+           </p>
+          <list>
+            <item>Type <code>//title</code> into the box</item><item>oXygen shows two lines, because there are two <gi>title</gi> elements
+            in the document</item><item>Click on the first one</item><item>The title of the document is selected in the main editing window</item></list>
           <!--p><graphic url="XPath-tool.jpg" height="200px"/></p-->
-          <p>Voici une petite liste de requêtes que vous devriez essayer d’exprimer au moyen du
-            langage XPath : <list type="ordered">
-              <item>quel est l’élément racine du document XML ?</item>
-              <item>quel est le titre donné à ce document ?</item>
-              <item>qui est le responsable de la création du document ?</item>
-              <item>quelle est l’origine de la version encodée ?</item>
-              <item>quelle est la date de la révision la plus récente du document ?</item>
-              <item>combien y a-t-il de strophes (<gi>lg</gi>) dans le sonnet ?</item>
-              <item>combien y a-t-il de segments de texte dont la graphie est considérée incorrecte
-                  (<gi>orig</gi>) aujourd’hui ?</item>
-              <item>combien y a-t-il de vers (<gi>l</gi>) qui contiennent au moins un tel
-                segment ?</item>
-              <item>quel est le contenu textuel du premier vers de chaque strophe ? et du dernier? </item>
-              <item>Quels nœuds texte contiennent la chaîne de caractères "jamais"</item>
+          <p>Here's a little list of queries we will use XPath to solve : <list type="ordered">
+              <item>what is the root element of this XML document?</item>
+              <item>what is the main document title?</item>
+              <item>who created this XML document ?</item>
+              <item>what original source was this document created from ?</item>
+              <item>when was the document last revised?</item>
+              <item>how many lines (<gi>l</gi>) are there in this document ?</item>
+            <item>how many archaic spellings (<gi>orig</gi>)  does it contain
+                  ?</item>
+              <item>how many lines contain at least one archaic spelling?
+                </item>
+        <!--      <item>quel est le contenu textuel du premier vers de chaque strophe ? et du dernier? </item>
+       -->       <item>in which lines does the word "jamais" appear ?</item>
             </list></p>
-          <p>On va faire ces exercices ensemble. Des réponses sont proposées dans la section qui
-            suit : ne les regardez pas si vous préférez tester vos compétences !</p>
-          <p>Nota : on utilise ici XPath 2.0 (à cause de l’espace de noms par défaut).</p>
+          <p>Feel free to try to solve these without looking at the answers below!</p>
         </div>
 
         <div>
@@ -72,92 +69,82 @@
           <head> Exercice XPath corrigé</head>
 
           <list type="gloss">
-            <label>Quel est l’élément racine du document XML ?</label>
+            <label>What is the root element ?</label>
             <item>
-              <p>Expression XPath à écrire : </p>
-              <p><code>/*</code> [le nœud document est désigné par le slash ; la 2<hi
-                  rend="superscript">e</hi> étape désigne les enfants de type élément de ce
-                nœud]</p>
-              <p>Réponse : TEI </p>
+              <p>XPath expression: </p>
+              <p><code>/*</code> [the slash alone selects the root node itself, the star shows the elements it contains]</p>
+              <p>Answer : TEI </p>
             </item>
-            <label>Quel est le titre donné au document ?</label>
+            <label>What is the main document title?</label>
             <item>
-              <p>Expression XPath à écrire : </p>
-              <p><code>/TEI/teiHeader/fileDesc/titleStmt/title</code> ou encore (entre autres
-                possibilités) : <code>//titleStmt/title</code></p>
-              <p>Réponse : On voit les deux nœuds <gi>title</gi> qui répondent à la question. Si on
+              <p>Xpath expression: </p>
+              <p><code>/TEI/teiHeader/fileDesc/titleStmt/title[@type=’main’)]</code> or (amonst other possibilities) : <code>//titleStmt/title[1]</code></p>
+              <p>Answer: On voit les deux nœuds <gi>title</gi> qui répondent à la question. Si on
                 voulait obtenir le titre proprement dit (sans le complément de titre), il faudrait
                 connaître précisément le modèle auquel obéit ce document, et demander le nœud
                   <gi>title</gi> en première position (//titleStmt/title[1]), ou de choisir le nœud
                   <gi>title</gi> dont l’attribut <att>type</att> porte une valeur appropriée
                   (<code>//titleStmt/title[@type=’main’)]</code>). </p>
             </item>
-            <label>Qui est le responsable de la création du fichier ?</label>
+            <label>Who created this XML document ?</label>
             <item>
-              <p>Expression XPath à écrire : </p>
+              <p>Xpath expression: </p>
               <p><code> //titleStmt/respStmt/name</code></p>
-              <p>Réponse : 1 seul nœud ici.</p>
+             <p>Answer : in this case only one name is given; there might however be many.</p>
             </item>
-            <label>Quelle est l’origine de la version encodée ?</label>
+            <label>What is the source of this document ?</label>
             <item>
-              <p>Expression XPath à écrire : </p>
-              <p><code>//sourceDesc/*</code> ou, plus finement,
-                  <code>/TEI/fileDesc/sourceDesc/*</code>. Sans le <code>*</code> vous ne recevrez
-                que l’élément de groupement <gi>sourceDesc</gi>, sans ses composants.</p>
+              <p>Xpath expression: </p>
+              <p><code>//sourceDesc/*</code> or, to be more precise,
+                  <code>/TEI/fileDesc/sourceDesc/*</code>. The <code>*</code> is needed if you want to see the elements
+                which make up the <gi>sourceDesc</gi>.</p>
             </item>
-            <label>Quelle est la date de la révision la plus récente du document ?</label>
+            <label>When was the document last revised?</label>
             <item>
-              <p>Expression XPath à écrire :</p>
+              <p>Xpath expression:</p>
               <p>
-                <code>revisionDesc/change[1]/@when</code>. Par défaut, le premier <gi>change</gi>
-                devrait être le plus récent, et son attribut <att>when</att> donnera sa date dans un
-                format normalisé.</p>
-              <p>Réponse : 2011-05-23 </p>
+                <code>revisionDesc/change[1]/@when</code>. By convention, the first <gi>change</gi>
+                should be the most recent. Its  <att>when</att> attribute gives a normalised version of the date.
+               </p>
+              <p>Answer: 2011-05-23 </p>
             </item>
-            <label>Combien y a-t-il de strophes (<gi>lg</gi>) dans le sonnet ? </label>
+            <label>How many lines (<gi>l</gi>) are there? </label>
             <item>
-              <p>Expression XPath à écrire : </p>
-              <p><code>count(//lg)</code>. On se sert de la fonction <code>count()</code>.</p>
-              <p>Réponse : 4 </p>
+              <p>Xpath expression: </p>
+              <p><code>count(//l)</code>. We use the XPath <code>count()</code> function to count things.</p>
+              <p>Answer: 10 </p>
             </item>
-            <label>Combien y a-t-il de <gi>orig</gi>, i.e. des segments de texte dont la graphie est
-              consideré incorrecte aujourd’hui ?</label>
+            <label>How many archaic spellings (<gi>orig</gi>) ? </label>
             <item>
-              <p>Expression XPath à écrire : </p>
+              <p>Xpath expression: </p>
               <p>
-                <code>count(/TEI/text//orig)</code>. Enlevez le <code>count()</code> si vous
-                préfériez les voir…</p>
-              <p>Réponse : 16</p>
+                <code>count(//orig)</code>. Remove the <code>count()</code> to see them …</p>
+              <p>Answer: 16</p>
             </item>
-            <label>Combien y a-t-il de vers (<gi>l</gi>) qui contient au moins un tel
-              segment?</label>
+            <label>How many lines (<gi>l</gi>) have at least one archaic spelling (<gi>orig</gi>)?</label>
             <item>
-              <p>Expression XPath à écrire : </p>
+              <p>Xpath expression: </p>
               <p><code>count(//l[orig])</code></p>
-              <p>Réponse : 7</p>
+              <p>Answer: 2. Note that this counts only the lines which contain an <gi>orig</gi> directly. If you meant to include
+                the lines where an <gi>orig</gi> appears within a <gi>choice</gi> as well, you should have said <code>count(//l[orig|choice/orig])!</code>
+              </p>
             </item>
-            <label>Et combien y a-t-il de <gi>orig</gi> qui sont contenu directement par un
-                <gi>l</gi> ?</label>
-            <item>
-              <p>Expression XPath à écrire : </p>
-              <p><code>count(//l/orig)</code></p>
-              <p>Réponse : 6</p>
-            </item>
-            <label>Quel est le contenu textuel du premier vers de chaque strophe ? et du
+           
+          <!--  <label>Quel est le contenu textuel du premier vers de chaque strophe ? et du
               dernier ?</label>
             <item>
-              <p>Expression XPath à écrire :</p>
+              <p>Xpath expression:</p>
               <p>
                 <code>//lg/l[1]//text()</code></p>
               <p>Pour le dernier, c’est un peu moins evident…
                   <code>//lg/l[position()=last()]//text()</code>
               </p>
-            </item>
-            <label>Quels nœuds texte contiennent la chaîne de caractères "jamais" ?</label>
+            </item>-->
+            <label>in which lines does the word "jamais" appear ?</label>
             <item>
-              <p>Expression XPath à écrire : </p>
-              <p><code>//text()[contains(., ’jamais’)]</code></p>
-              <p>Réponse : la liste de réponses contient 2 nœuds</p>
+              <p>Xpath expression: </p>
+              <p><code>//l[contains(., ’jamais’)]</code></p>
+              <p>Answer: there are 2 such lines</p>
             </item>
           </list>
         </div>
@@ -167,115 +154,106 @@
       <div>
         <head>XSLT</head>
 
-        <p>Dans ce deuxième petit exercice, nous allons faire des expériences avec XSLT sous
-          contrôle d’oXygen. On va travailler avec cette version du même sonnet de DuBellay qui a
-          été (partiellement) enrichie avec des balises <gi>choice</gi>. </p>
+        <p>In this second exercise, we'll explore XSLT using 
+          oXygen. </p>
         <div>
-          <head>Transformation en HTML</head>
+          <head>Transformation into HTML</head>
 
-          <p>L’application classique de XSLT est de transformer un document TEI XML en HTML pour le
-            visualiser dans un navigateur web. On commence donc par là. </p>
-          <p>D’abord il faut mettre en place une liaison entre le fichier XML d’entrée, le fichier
-            HTML de sortie, et le fichier XSLT qui va contrôler la transformation. Cette liaison
-            s’appelle un <term>scénario de transformation</term> et on la configure dans oXygen de
-            la manière suivante:</p>
+          <p>A traditional use for XSLT is to transform a  TEI XML document into HTML for display in a web browser.
+          </p>
+          <p>The simplest way of using XSLT in oXygen is to set up what is called a <term>transformation scenario</term>,
+            which is an association between an XML document, an XSLT stylesheet, and various parameters. Proceed as follows:
+            i</p>
 
           <list type="ordered">
-            <item> Ouvrez Oxygen. Sélectionnez <ident>Ouvrir</ident> sur le menu
-                <ident>Fichier</ident> et ouvrez le fichier <ident>duBellay.xml</ident>.</item>
+            <item> Open the file <ident>duBellay.xml</ident> in oXygen.</item>
 
-            <item>Sur le menu <ident>Document</ident> sélectionnez <ident>Transformation</ident>, et
-              ensuite <ident>Configurer un scénario de transformation</ident> ou tapez
-                <code>ctrl-maj-C</code>, ou bien cliquez sur le bouton à droite du triangle rouge
-              sur la barre d’outils.</item>
+            <item>On the <ident>Document</ident> menu, select <ident>Transformation</ident>, and
+              then <ident>Configure transformation scenario(s)</ident>. Or type
+                <code>ctrl-shift-C</code>. Or click the spanner button to the right of the red triangle on the toolbar.</item>
           </list>
-          <p>Cliquez d’abord sur <ident>nouveau</ident> pour ouvrir la boîte de dialogue
-              <ident>Nouveau Scénario</ident>.</p>
+          <p>Click the <ident>New</ident> button, and select <ident>XML transformation with XSLT</ident> to open the
+              <ident>New Scenario</ident> dialog.</p>
           <p><graphic height="5cm" url="../images/scenario-2.png"/></p>
           <list>
-            <item>Tapez <code>duBellay.xsl</code> dans le champ <ident>XSL URL</ident>.</item>
-            <item>Selectionnez <ident>Saxon HE 9.0</ident> dans le menu déroulant labellisé
-                <ident>Transformateur</ident></item>
-            <item>Cliquez sur l’onglet <code>Sortie</code>
+            <item>Type <code>duBellay.xsl</code> in the <ident>XSL URL</ident> box.</item>
+            <item>Select one of the xslt-2 processors e.g. <ident>Saxon-HE 9.6.07 </ident> from the scrolling menu labelled
+                <ident>Transformer</ident></item>
+            <item>Click the <code>Output</code> tab
             </item>
-            <item>Tapez <code>output.html</code> dans le champ <code>Enregistrer sous</code>
+            <item>Type <code>output.html</code> in the <code>Save As</code> box
             </item>
-            <item>Cochez la case <code>Ouvrir dans un navigateur</code></item>
-            <item>Cliquez sur <code>Accepter</code></item>
+            <item>Tick the <code>Open in Browser</code> checkbox</item>
+            <item>Click the <code>Accept</code> button</item>
           </list>
-          <p>Vous avez maintenant créé un nouveau scénario de transformation, qui s’appelle
+          <p>You've now created a Transformation Scenario called
               <ident>duBellay</ident>.</p>
           <p>
             <graphic height="5cm" url="../images/scenario-4.png"/></p>
           <list>
-            <item>Cliquez sur <code>Transformer maintenant</code></item>
-            <item>En bas de l’écran, le message <code>Transformation réussie</code> apparaît… </item>
-            <item>.. et après un bref délai, votre navigateur devrait s’ouvrir pour afficher le
-              fichier <ident>output.html</ident> que vous venez de créer.</item>
-            <item>C’est joli, hein ? Peut-être y a-t-il encore un peu de travail à faire…</item>
+            <item>Click the <code>Transform now</code> button</item>
+            <item>At the bottom of the screen, the message <code>Transformation successful</code> should appear … </item>
+            <item>.. and after a brief delay, your web browser will open the file <ident>output.html</ident> which you just created
+             </item>
+            <item>Smart, isn't it ? Well, maybe there's still a but of work to be done…</item>
           </list>
 
         </div>
 
         <div>
-          <head>Une feuille de style XSLT</head>
-          <p>Une feuille de style XSLT est un document XML. Il peut donc être édité avec Oxygen. <list>
-              <item>Allez de nouveau sur <ident>Fichier - Ouvrir</ident>. Ouvrez le fichier
-                  <ident>duBellay.xsl</ident> dans votre dossier de travail.</item>
-              <item>Ce fichier XSLT contient un seul template, qui correspond à l’élément
-                  <gi>TEI</gi>, l’élément racine de notre document. Son effet sera de produire les
-                balises <gi>html</gi> et <tag>/html</tag>, avec entre les deux le résultat du
+          <head>An  XSLT stylesheet</head>
+          <p>An  XSLT stylesheet is an XML document like any other. So it can be edited in Oxygen. <list>
+              <item>Open the file
+                  <ident>duBellay.xsl</ident> in oXygen and look at the templates it defines.</item>
+              <item>So far, only one template is defined. It will match the element
+                  <gi>TEI</gi>, and output the tags <gi>html</gi> and <tag>/html</tag>, with in between the result of an
                   <gi>xsl:apply-templates</gi></item>
-              <item>Ce dernier va essayer d’appliquer tous les templates disponibles… il n’y en a
-                pas, donc il ne va produire que le texte du document. </item>
-              <item>… et en effet, si vous revenez sur votre navigateur et regardez la source du
-                fichier, c’est ce qu’il a fait.</item>
+              <item>This will check all templates available in the stylesheet…  since there aren't any, it will
+                default to outputting just the text fragments in the document. </item>
+              <item>… and if you return to your browser and ask it to display the source of the HTML file, you'll see that is exactly what
+                has been done.</item>
             </list></p>
 
-          <p>Au travail ! D’abord, nous allons extraire de l’en-tête un titre pour le document HTML,
-            et supprimer le reste du TEI Header.</p>
-
+          <p>To work ! We need more templates. First, let's extract the title of the document from the TEI Header and use it to title the HTML file as well. </p>
+<p>In HTML, the title of a document is tagged <gi>title</gi> and appears within a <gi>head</gi> element, so we must add these. Edit the XSLT file as follows: </p>
           <list>
-            <item>Après le <gi>html</gi>, tapez <code>&lt;head></code></item>
-            <item>oXygen ajoute la balise fermante. C’est bien. Continuez donc. Ajoutez
-                <code>&lt;title></code> à l’intérieur de l’élément <gi>head</gi>. Pour trouver le
-              titre du document il faut naviguer de la racine du document (l’élément TEI) jusqu’à
-              l’élément <gi>title</gi>, qui se trouve dans le <gi>titleStmt</gi>, dans le
-                <gi>fileDesc</gi>, dans le <gi>teiHeader</gi>. Cela s’effectue avec le
-                <term>XPath</term> suivant.</item>
-            <item>Tapez <code>&lt;xsl:value-of
-                select="teiHeader/fileDesc/titleStmt/title"/&gt;</code>.</item>
-            <item>Modifiez la balise <gi>xsl:apply-templates</gi>, en ajoutant <code>
-                select="text"</code> et entourez-la d’un élément HTML <gi>body</gi></item>
-            <item>Cliquez sur le bouton Indentation. Votre feuille de style maintenant devrait
-              ressembler à ceci :</item>
+            <item>After <gi>html</gi>, type <code>&lt;head></code></item>
+            <item>oXygen helpfully adds a closing tag. Good. Add
+                <code>&lt;title></code> within the <gi>head</gi> element.</item><item>
+             To find the title of the document, as you know, we will navigate from
+              the document root ( TEI) to a <gi>title</gi> element in a <gi>titleStmt</gi> in the <gi>fileDesc</gi> in the <gi>teiHeader</gi>. We've already seen
+                  an 
+                <term>XPath</term> to do that.</item>
+            <item>Type <code>&lt;xsl:value-of
+                select="teiHeader/fileDesc/titleStmt/title"/&gt;</code> inside the <gi>title</gi> element in your stylesheet.</item>
+            <item>Now we will change the  <gi>xsl:apply-templates</gi> element so that it only looks at the <gi>text</gi> by adding  <code>
+                select="text"</code>. Enclose it with an HTML <gi>body</gi> element (use CTRL-E!)</item>
+            <item>Click the <ident>Format and Indent</ident> button to tidy up. Your stylesheet should now look like this
+              :</item>
           </list>
           <p><graphic height="8cm" url="../images/script-1.png"/></p>
           <list>
-            <item>Cliquez sur l’icône de la disquette (ou tapez ctrl-s) pour enregistrer les
-              modifications que vous venez de faire.</item>
-            <item>Cliquez sur l’onglet <ident>duBellayEd.xml</ident> pour revenir sur votre document
-              XML.</item>
-            <item>Cliquez sur l’icône triangle-rouge pour relancer la transformation (ou tapez
-              CTRL-maj-T)</item>
-            <item>Voyons ce que cela donne : cette fois, on ne voit que le <gi>text</gi> de notre
-              document. On fait des progrès !</item>
+            <item>Click the diskette icon, or type CTRL-S, to save the changes you just made
+              </item>
+            <item>Click the tab <ident>duBellay.xml</ident> to return to your XML document
+              .</item>
+            <item>Click the red triangle icon to run your transformation scenario again (or type CTRL-SHIFT-T)</item>
+            <item>Progress ! There is a title, at the top of your browser window, and it displays only the text of the document, with no header information.</item>
           </list>
 
-          <p>Maintenant, on va ajouter des templates.</p>
+          <p>We just need a few more templates.</p>
 
           <list>
-            <item>Revenez sur la feuille de style. </item>
-            <item>Ajoutez <list>
-                <item>un template pour <gi>l</gi>, qui va ajouter une balise <tag>br/</tag> après
-                  chaque vers</item>
-                <item>un template pour <gi>head</gi>, qui va l’entourer de <gi>h2</gi>
+            <item>Return to your stylesheet window (click the <ident>duBellay.xsl</ident> tab). </item>
+            <item>Add <list>
+                <item>one template for <gi>l</gi>, which will add an HTML <tag>br/</tag> tag after each line
+          
                 </item>
-                <item>un template pour <gi>lg</gi>, qui va l’entourer de <gi>p</gi>, et en plus le
-                  préfixer du nombre de chaque strophe.</item>
+                <item>one template for <gi>head</gi>, which will transform the XML <gi>head</gi> into an HTML  <gi>h2</gi>
+                </item>
+                <item>one template for <gi>lg</gi>, which will surround them with  <gi>p</gi>, and also output the number of the stanza</item>
               </list></item>
-            <item>Voici les templates requis… essayez de comprendre par vous-même le fonctionnement
-              de chacun d’entre eux. </item>
+            <item>Here are the templates you need … do you understand how each one works? </item>
           </list>
           <p><graphic height="8cm" url="../images/script-2.png"/>
           </p>
