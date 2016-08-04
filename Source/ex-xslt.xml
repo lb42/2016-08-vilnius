@@ -26,16 +26,14 @@
   <text>
     <body>
       <figure>
-        <graphic url="../images/duBellay.png"/>
+        <graphic url="../images/duBellay.png" />
       </figure>
-      <p>In this exercise and the next we will work on a short text, already marked up in XML.
-       You will find it in the file <ident>Work/???.xml</ident> — open it with Oxygen.</p>
+      <p>In these two exercises we will work on this short text, already marked up in XML.
+       You will find it in the file <ident>Work/duBellay.xml</ident> — open it with Oxygen.</p>
 
       <div>
         <head>XPath</head>
 
-        <div>
-          <head>Navigation with XPath</head>
           <p>oXygen provides a simple way of exploring what XPath can do: at the top left of the screen
             just underneath the oXygen toolbar, you should see a little window labelled <ident>XPath 2.0</ident>. If you type an
             XPath expression into this and press the <ident>RETURN</ident> key, oXygen evaluates the expression you have typed
@@ -62,69 +60,55 @@
        -->       <item>in which lines does the word "jamais" appear ?</item>
             </list></p>
           <p>Feel free to try to solve these without looking at the answers below!</p>
-        </div>
 
-        <div>
-
-          <head> Exercice XPath corrigé</head>
-
+       
           <list type="gloss">
             <label>What is the root element ?</label>
             <item>
-              <p>XPath expression: </p>
-              <p><code>/*</code> [the slash alone selects the root node itself, the star shows the elements it contains]</p>
+              <p>XPath expression: <code>/*</code> [the slash alone selects the root node itself, the star shows the elements it contains]</p>
               <p>Answer : TEI </p>
             </item>
             <label>What is the main document title?</label>
             <item>
-              <p>Xpath expression: </p>
-              <p><code>/TEI/teiHeader/fileDesc/titleStmt/title[@type=’main’)]</code> or (amonst other possibilities) : <code>//titleStmt/title[1]</code></p>
-              <p>Answer: On voit les deux nœuds <gi>title</gi> qui répondent à la question. Si on
+              <p>Xpath expression: <code>/TEI/teiHeader/fileDesc/titleStmt/title[@type=’main’)]</code> or (amongst other possibilities) : <code>//titleStmt/title[1]</code></p>
+              <!--<p>Answer: On voit les deux nœuds <gi>title</gi> qui répondent à la question. Si on
                 voulait obtenir le titre proprement dit (sans le complément de titre), il faudrait
                 connaître précisément le modèle auquel obéit ce document, et demander le nœud
                   <gi>title</gi> en première position (//titleStmt/title[1]), ou de choisir le nœud
                   <gi>title</gi> dont l’attribut <att>type</att> porte une valeur appropriée
-                  (<code>//titleStmt/title[@type=’main’)]</code>). </p>
+                  (<code>//titleStmt/title[@type=’main’)]</code>). </p>-->
             </item>
             <label>Who created this XML document ?</label>
             <item>
-              <p>Xpath expression: </p>
-              <p><code> //titleStmt/respStmt/name</code></p>
+              <p>Xpath expression: <code> //titleStmt/respStmt/name</code></p>
              <p>Answer : in this case only one name is given; there might however be many.</p>
             </item>
             <label>What is the source of this document ?</label>
             <item>
-              <p>Xpath expression: </p>
-              <p><code>//sourceDesc/*</code> or, to be more precise,
-                  <code>/TEI/fileDesc/sourceDesc/*</code>. The <code>*</code> is needed if you want to see the elements
-                which make up the <gi>sourceDesc</gi>.</p>
+              <p>Xpath expression:  <code>//sourceDesc/*</code> or, to be more precise,
+                  <code>/TEI/fileDesc/sourceDesc/*</code>. </p><p>The <code>*</code> is needed if you want to see the elements
+                which make up the <gi>sourceDesc</gi> (again, there might be many).</p>
             </item>
             <label>When was the document last revised?</label>
             <item>
-              <p>Xpath expression:</p>
-              <p>
-                <code>revisionDesc/change[1]/@when</code>. By convention, the first <gi>change</gi>
+              <p>Xpath expression: <code>revisionDesc/change[1]/@when</code>. By convention, the first <gi>change</gi>
                 should be the most recent. Its  <att>when</att> attribute gives a normalised version of the date.
                </p>
               <p>Answer: 2011-05-23 </p>
             </item>
             <label>How many lines (<gi>l</gi>) are there? </label>
             <item>
-              <p>Xpath expression: </p>
-              <p><code>count(//l)</code>. We use the XPath <code>count()</code> function to count things.</p>
+              <p>Xpath expression: <code>count(//l)</code>. We use the XPath <code>count()</code> function to count things.</p>
               <p>Answer: 10 </p>
             </item>
             <label>How many archaic spellings (<gi>orig</gi>) ? </label>
             <item>
-              <p>Xpath expression: </p>
-              <p>
-                <code>count(//orig)</code>. Remove the <code>count()</code> to see them …</p>
+              <p>Xpath expression: <code>count(//orig)</code>. Remove the <code>count()</code> to see them …</p>
               <p>Answer: 16</p>
             </item>
             <label>How many lines (<gi>l</gi>) have at least one archaic spelling (<gi>orig</gi>)?</label>
             <item>
-              <p>Xpath expression: </p>
-              <p><code>count(//l[orig])</code></p>
+              <p>Xpath expression: <code>count(//l[orig])</code></p>
               <p>Answer: 2. Note that this counts only the lines which contain an <gi>orig</gi> directly. If you meant to include
                 the lines where an <gi>orig</gi> appears within a <gi>choice</gi> as well, you should have said <code>count(//l[orig|choice/orig])!</code>
               </p>
@@ -142,12 +126,10 @@
             </item>-->
             <label>in which lines does the word "jamais" appear ?</label>
             <item>
-              <p>Xpath expression: </p>
-              <p><code>//l[contains(., ’jamais’)]</code></p>
+              <p>Xpath expression: <code>//l[contains(., ’jamais’)]</code></p>
               <p>Answer: there are 2 such lines</p>
             </item>
           </list>
-        </div>
 
       </div>
 
@@ -208,8 +190,8 @@
               <item>So far, only one template is defined. It will match the element
                   <gi>TEI</gi>, and output the tags <gi>html</gi> and <tag>/html</tag>, with in between the result of an
                   <gi>xsl:apply-templates</gi></item>
-              <item>This will check all templates available in the stylesheet…  since there aren't any, it will
-                default to outputting just the text fragments in the document. </item>
+              <item>… which will check all templates available in the stylesheet, Since there aren't
+                any, it will default to outputting just the text fragments in the document. </item>
               <item>… and if you return to your browser and ask it to display the source of the HTML file, you'll see that is exactly what
                 has been done.</item>
             </list></p>
@@ -218,27 +200,25 @@
 <p>In HTML, the title of a document is tagged <gi>title</gi> and appears within a <gi>head</gi> element, so we must add these. Edit the XSLT file as follows: </p>
           <list>
             <item>After <gi>html</gi>, type <code>&lt;head></code></item>
-            <item>oXygen helpfully adds a closing tag. Good. Add
-                <code>&lt;title></code> within the <gi>head</gi> element.</item><item>
-             To find the title of the document, as you know, we will navigate from
-              the document root ( TEI) to a <gi>title</gi> element in a <gi>titleStmt</gi> in the <gi>fileDesc</gi> in the <gi>teiHeader</gi>. We've already seen
-                  an 
-                <term>XPath</term> to do that.</item>
+            <item>oXygen helpfully adds a closing tag. Good. Add a <code>&lt;title></code> within
+              the <gi>head</gi> element.</item><item> To find the title of the document, as you know, we will navigate from the document root (TEI)
+              to a <gi>title</gi> element in a <gi>titleStmt</gi> in the <gi>fileDesc</gi> in the
+                <gi>teiHeader</gi>. We've already seen an <term>XPath</term> to do that.</item>
             <item>Type <code>&lt;xsl:value-of
-                select="teiHeader/fileDesc/titleStmt/title"/&gt;</code> inside the <gi>title</gi> element in your stylesheet.</item>
+                select="teiHeader/fileDesc/titleStmt/title[@type='main']"/&gt;</code> inside the <gi>title</gi> element in your stylesheet.</item>
             <item>Now we will change the  <gi>xsl:apply-templates</gi> element so that it only looks at the <gi>text</gi> by adding  <code>
                 select="text"</code>. Enclose it with an HTML <gi>body</gi> element (use CTRL-E!)</item>
-            <item>Click the <ident>Format and Indent</ident> button to tidy up. Your stylesheet should now look like this
+            <item>Click the <ident>Format and Indent</ident> button to tidy up. Your stylesheet should now look (more or less) like this
               :</item>
           </list>
           <p><graphic height="8cm" url="../images/script-1.png"/></p>
           <list>
             <item>Click the diskette icon, or type CTRL-S, to save the changes you just made
               </item>
-            <item>Click the tab <ident>duBellay.xml</ident> to return to your XML document
-              .</item>
+            <item>Click the  <ident>duBellay.xml</ident> tab to return to your XML document .</item>
             <item>Click the red triangle icon to run your transformation scenario again (or type CTRL-SHIFT-T)</item>
-            <item>Progress ! There is a title, at the top of your browser window, and it displays only the text of the document, with no header information.</item>
+            <item>Progress ! There is a title, at the top of your browser window, and the display
+              shows only the text of the document, with no TEI header information.</item>
           </list>
 
           <p>We just need a few more templates.</p>
@@ -275,16 +255,16 @@
 </div>
 -->
         <div>
-          <head>Traitement des <gi>choice</gi></head>
-          <p>Est-ce que le XSLT peut nous aider à mieux traiter ces éléments <gi>choice</gi>? Bien
-            sur, oui. D’abord, on pourrait simplement ajouter un template qui va supprimer les
-              <gi>orig</gi> (ou les <gi>reg</gi> si vous le préfériez).</p>
-          <p>Tout ce qu’il faut, c’est ajouter un template comme ceci : <tag>xsl:template
-              match="orig"/</tag>. Essayez-le. Est-ce que vous comprenez comment cela fonctionne ?
-            Si oui, vous avez bien compris les principes de XSLT !</p>
+          <head>Handling <gi>choice</gi> elements</head>
+          <p> XSLT will also help us process the <gi>choice</gi> elements in our document more
+            intelligently. We could for example simply suppress any <gi>orig</gi> which appears
+            inside a <gi>choice</gi> (or any <gi>reg</gi> if you prefer).</p>
+          <p>All we need is to add a template like this : <tag>xsl:template
+              match="choice/orig"/</tag>. Try it. Do you understand how it works? If so, you are well on
+            your way to becoming an XSLT Xpert!</p>
 
         </div>
-        <div>
+     <!--   <div>
           <head>Pour aller plus loin…</head>
           <list>
             <item>Créez un paramètre <ident>modernisation</ident> avec <gi>xsl:variable</gi>, avec
@@ -306,7 +286,7 @@
             cet exercice… ne le regardez pas tout de suite !</p>
 
         </div>
-
+-->
       </div>
 
     </body>
