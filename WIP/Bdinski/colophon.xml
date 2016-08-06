@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../bdinski.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../bdinski.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<root>
+    <metadata>
+        <name>David J. Birnbaum</name>
+        <email>djbpitt@gmail.com</email>
+    </metadata>
+    <folio n="242r"/>
+    <start/>
+    <line>Иꙁволѥниѥмь ѡ҃ца. и сьврь-</line>
+    <line>шениѥмь с҃на. и сьпоспѣше-</line>
+    <line>ниѥмь с҃тго д҃ха.</line>
+    <line>Вь д҃ни бл҃говѣрнаг<lig>оо</lig>. и прѣвы-</line>
+    <line>сокааго. и самодрьжавнаго.</line>
+    <line>ц҃ра нашего їѡанна срацими-</line>
+    <line>ра бльгар<lig>оо</lig>мь и грьк<lig>оо</lig>мь.</line>
+    <line>Потьща се бл҃говѣрнаа и с҃т<lig>оо</lig>-</line>
+    <line>роднаа ц҃рца анна. и сь пове-</line>
+    <line>лѣниѥмь цр<sup>с҇</sup>тва си. написа</line>
+    <line>сию книгю. рекомое сьборни<sup>к҇</sup></line>
+    <line>с҃тымь прѣпо<sup>д</sup>б҃нѣмь и стра-</line>
+    <line>стотрьпнимь женамь:—</line>
+    <line>Да соуть г<sup>с҇</sup>ноу ц҃рю и цр҃ци и че-</line>
+    <line>д<lig>оо</lig>мь и<sup>х</sup>. вь оутврьж<sup>д</sup>енїє ц҃рь-</line>
+    <line>ствоу и<sup>х</sup>. тѣлоу вь ꙁ<sup>д</sup>равиѥ. а</line>
+    <line>д҃ши вь сп҃сенїє. и написа се вь</line>
+    <line>бдинѣ градѣ. вь лѣто ҂ꙅ҃,ѡ҃.ѯи҃.</line>
+    <line>б҃оу же н҃шемꙋ сла<sup>в҇</sup> в вѣкы ам҃нь:—</line>
+    <end/>
+</root>

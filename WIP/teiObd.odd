@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+     <revisionDesc><change when="2016-08-05">First draft</change></revisionDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <p>An ODD to validate TEI texts converted from Obdurudon edited texts, conformant to the bdinski RNC schema</p>
+         <schemaSpec ident="teiBdinski" start="TEI">
+            <moduleRef key="tei"/>
+            <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc revisionDesc change"/>
+            <classRef key="att.milestoneUnit"/>
+            <!-- modified elements -->
+            <moduleRef key="transcr" include="subst"></moduleRef>
+            <elementSpec ident="subst" mode="change" module="transcr">
+            <content >
+               <elementRef key="del"/>
+               <elementRef key="add"/>
+            </content>
+            </elementSpec>
+            
+            <elementRef key="TEI"/> 
+            <elementRef key="ab"/>
+            <elementRef key="add"/>
+            <elementRef key="back"/>
+            <elementRef key="body"/>
+            <elementRef key="damage"/>
+            <elementRef key="del"/>
+            <elementRef key="expan"/>
+            <elementRef key="gap"/>
+            <elementRef key="hi"/>
+            <elementRef key="lb"/>
+            <elementRef key="milestone"/>
+            <elementRef key="name"/>
+            <elementRef key="pb"/>
+            <elementRef key="resp"/>
+            <elementRef key="respStmt"/>
+             <elementRef key="supplied"/>          
+            <elementRef key="text"/>
+            <elementRef key="title"/>
+            <elementRef key="unclear"/>
+            <!-- not yet done : 
+               <add> may record, in an optional @place attribute, the location of an insertion, where the only
+# legal value (at the moment) is 'sl' (supralinear). <add> may also record, with a @hand attribute 
+# that has the value "other", that the insertion is not in the original hand (the only legal value 
+# of @hand is "other"). Text that has been deleted conceptually, but is still legible, may be tagged 
+# as <del status="partial">.
+# 
+# If deleted text cannot be discerned at all, the <del> element must contain an empty <gap/>
+# element. @reason, which is a required attribute of <gap/>, typically has values like 'illegible'
+# or 'damage'. @extent, which is optional, takes an integer value that records the approximate 
+# number of characters missing.
+-->
+      </schemaSpec>
+      </body>
+  </text>
+</TEI>
