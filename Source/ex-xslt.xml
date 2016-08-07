@@ -41,7 +41,7 @@
             part of the document in the main window.
             Try it!
            </p>
-          <list>
+          <list type="bulleted">
             <item>Type <code>//title</code> into the box</item><item>oXygen shows two lines, because there are two <gi>title</gi> elements
             in the document</item><item>Click on the first one</item><item>The title of the document is selected in the main editing window</item></list>
           <!--p><graphic url="XPath-tool.jpg" height="200px"/></p-->
@@ -157,7 +157,7 @@
           <p>Click the <ident>New</ident> button, and select <ident>XML transformation with XSLT</ident> to open the
               <ident>New Scenario</ident> dialog.</p>
           <p><graphic height="5cm" url="../images/scenario-2.png"/></p>
-          <list>
+          <list type="bulleted">
             <item>Type <code>duBellay.xsl</code> in the <ident>XSL URL</ident> box.</item>
             <item>Select one of the xslt-2 processors e.g. <ident>Saxon-HE 9.6.07 </ident> from the scrolling menu labelled
                 <ident>Transformer</ident></item>
@@ -172,7 +172,7 @@
               <ident>duBellay</ident>.</p>
           <p>
             <graphic height="5cm" url="../images/scenario-4.png"/></p>
-          <list>
+          <list type="bulleted">
             <item>Click the <code>Transform now</code> button</item>
             <item>At the bottom of the screen, the message <code>Transformation successful</code> should appear … </item>
             <item>.. and after a brief delay, your web browser will open the file <ident>output.html</ident> which you just created
@@ -184,7 +184,7 @@
 
         <div>
           <head>An  XSLT stylesheet</head>
-          <p>An  XSLT stylesheet is an XML document like any other. So it can be edited in Oxygen. <list>
+          <p>An  XSLT stylesheet is an XML document like any other. So it can be edited in Oxygen. <list type="bulleted">
               <item>Open the file
                   <ident>duBellay.xsl</ident> in oXygen and look at the templates it defines.</item>
               <item>So far, only one template is defined. It will match the element
@@ -198,7 +198,7 @@
 
           <p>To work ! We need more templates. First, let's extract the title of the document from the TEI Header and use it to title the HTML file as well. </p>
 <p>In HTML, the title of a document is tagged <gi>title</gi> and appears within a <gi>head</gi> element, so we must add these. Edit the XSLT file as follows: </p>
-          <list>
+          <list type="bulleted">
             <item>After <gi>html</gi>, type <code>&lt;head></code></item>
             <item>oXygen helpfully adds a closing tag. Good. Add a <code>&lt;title></code> within
               the <gi>head</gi> element.</item><item> To find the title of the document, as you know, we will navigate from the document root (TEI)
@@ -212,7 +212,7 @@
               :</item>
           </list>
           <p><graphic height="8cm" url="../images/script-1.png"/></p>
-          <list>
+          <list type="bulleted">
             <item>Click the diskette icon, or type CTRL-S, to save the changes you just made
               </item>
             <item>Click the  <ident>duBellay.xml</ident> tab to return to your XML document .</item>
@@ -223,9 +223,9 @@
 
           <p>We just need a few more templates.</p>
 
-          <list>
+          <list type="bulleted">
             <item>Return to your stylesheet window (click the <ident>duBellay.xsl</ident> tab). </item>
-            <item>Add <list>
+            <item>Add <list type="bulleted">
                 <item>one template for <gi>l</gi>, which will add an HTML <tag>br/</tag> tag after each line
           
                 </item>
@@ -266,7 +266,7 @@
         </div>
      <!--   <div>
           <head>Pour aller plus loin…</head>
-          <list>
+          <list type="bulleted">
             <item>Créez un paramètre <ident>modernisation</ident> avec <gi>xsl:variable</gi>, avec
               comme valeur "oui" ou "non", selon votre préférence. (Attention de ne pas introduire
               des blancs autour du mot !). Ceci va contrôler la suppression ou bien des
