@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -40,7 +37,7 @@
             <div>
                 <head>Transcription</head>
                 <p>What does a transcription add to a simple facsimile?
-                  </p><p>Tranbscribers  typically try to make explicit : <list>
+                  </p><p>Transcribers  typically try to make explicit : <list>
                         <item>(some) original layout information</item>
                         <item>abbreviations and other strange symbols</item>
                         <item><q>evident</q> errors which invite correction or conjecture</item>
@@ -52,7 +49,7 @@
                 </p>
             </div>
                 <div>
-                    <head>TEI Transcription</head>
+                    <head>What kind of transcription do you want?</head>
                     <list>
                         <item><gi>teiHeader</gi>: provides metadata for the whole thing, at various
                             levels, typically including a <gi>msDesc</gi></item>
@@ -64,9 +61,18 @@
                             document, e.g. for a <foreign xml:lang="fr"> dossier
                             génétique</foreign></item>
                     </list>
-                    <p rend="box">Does a transcription encode a <q>text</q> or a <q>document</q>
+                    <p rend="box">Does your transcription represent a <q>text</q> or a <q>document</q>
                         ?</p>
                 </div>
+            
+            <div><head>How is your transcription organised?</head>
+            <list>
+                <item>Just pages or folios, composed of blocks or  lines </item>
+                <item>Sections, paragraphs, verse lines, lists, sentences ...   </item>
+                <item>Or both?</item>
+            </list>
+            </div>
+             <!--
                 <div>
                     <head>What's this ?</head>
                     <figure>
@@ -80,13 +86,72 @@
                             stage this word was deleted; the word <q>pleasing</q> was added in the
                             same context.</item>
                     </list>
-                </div>
+                </div>-->
                 <div rend="slide">
                     <head>A typical minimal encoding</head>
-                    <p><graphic url="../Graphics/Genetic/exemple-p5.png" width="80%"/>
+                    <p><graphic url="../images/exemple-p5.png" width="80%"/>
                     </p>
                 </div>
-
+    <div>
+        <head>Layers of transcription</head>
+        <p><graphic url="../Graphics/Ms629_p05.png" height="90%"/></p>
+        <cb/>
+        <list>
+          <item> Paleographic level : identification of characters and graphemes </item>
+          <item>Documentary (or diplomatic) level: decide what has been written  </item>
+          <item>Editorial or semantic level : decide how it should be read </item>
+        </list>
+      </div>
+  
+            <div rend="slide">
+                <head>Representation of the physical structure</head>
+                <list>
+                    <item>The physical organisation of a manuscript (its binding, folios, leaves, pages, columns) rarely, if ever, corresponds
+                        with its logical organisation (sections, chapters, paragraphs, lines) </item>
+                    <item>Whichever we choose to represent in our XML sytructure, we will havce to represent the other using empty <soCalled>milestone</soCalled> elements</item>
+                    <item>For example, in the logical view, we  can use
+                        <gi>gb</gi>, <gi>pb</gi>, <gi>cb</gi>, pr  <gi>lb</gi> rto indicate the staret of gatherings, pages, column or loine </item>
+                    <item>Or in the physical view, we could iuse a <gi>milestone</gi> to indicate the starts of divisions,  paragraphs, etc. </item>
+                  <!--  <item> l'élément <gi>fw</gi> sert à baliser le paratexte; l'element <gi>handShift</gi> les
+                        changements d'écriture.</item>-->
+                </list>
+            </div>
+            
+            <div rend="slide">
+                <head>Characters and glyphs</head>
+                <list>
+                    <item>the same character may be represented in many different forms <list>
+                            <item>e.g. <graphic width="70%" url="../Graphics/a-graphs.png"/></item>
+                            <item>e.g. <graphic width="70%" url="../Graphics/s-graphs.png"/></item>
+                        </list></item>
+                    <item>the character we see may not yet exist in Unicode</item>
+                </list>
+                <p rend="box">The <gi>g</gi> element allows us to indicate the presence of a specific glyph, or a 
+                    non-Unicode character</p>
+            </div>
+            <div>
+                <head>Usinbg <gi>g</gi></head>
+                <figure>
+                    <graphic url="../Graphics/s-long-ex.png"/>
+                    <head>Extrait d'un journal intime de 1822</head>
+                </figure>
+                <p>On pourrait encoder simplement: <code>J'ai donc à vous prévenir
+                    Me&#x017f;sieurs et Mesdames ... </code> ou bien <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples"> ... Me<g ref="#long-s-glyph">s</g>ieurs et
+                        Mesdames...</egXML>
+                    <!-- <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <g ref="#per-glyph">per</g>
+          </egXML>-->
+                </p>
+                <p rend="box">Les objets ciblés par <att>ref</att> sont définis dans un élément du TEI
+                    Header </p>
+                <!--
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <glyph xml:id="long-s-glyph">
+            <!-\- ... -\->
+          </glyph>
+        </egXML>-->
+            </div>
                 <div rend="slide">
                     <head>Character annotation</head>
                     <list>
