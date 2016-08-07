@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Нелюбовь</title>
+            <author>З. Н. Гиппиус</author>
+            <respStmt>
+               <resp>Transcribed <date when="2016-08-07">2016-08-07</date> from the original and
+                  tagged by</resp>
+               <persName>David J. Birnbaum</persName>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p><ref target="https://github.com/lb42/2016-08-vilnius"
+                  >https://github.com/lb42/2016-08-vilnius</ref>. For use in <ref
+                  target="http://textualheritage.org/en/conf.html"><title>Textual Heritage and
+                     Information Technologies: El’Manuscript-2016</title></ref>,
+                     <placeName><settlement>Vilnius</settlement>,
+                  <country>Lithuania</country></placeName>, <date from="2016-08-22" to="2016-08-28"
+                  >22-28 August 2016</date> License: <ref
+                  target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</ref>.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <biblStruct>
+               <monogr>
+                  <author>
+                     <persName>
+                        <forename>Zinaida</forename>
+                        <addName type="patronym">Nikolaevna</addName>
+                        <surname>Gippius</surname>
+                     </persName>
+                     <idno type="viaf">http://viaf.org/viaf/59220596</idno>
+                  </author>
+                  <title level="m">Sobranie stixov</title>
+                  <imprint>
+                     <pubPlace>Moscow</pubPlace>
+                     <publisher>Musaget</publisher>
+                     <date when="1910"/>
+                  </imprint>
+                  <biblScope unit="volume">2</biblScope>
+                  <biblScope unit="page" from="38" to="39">38–39</biblScope>
+               </monogr>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <p>The original (pre-revolutionary) orthography, used in the source publication, is tagged
+            as <tag>orig</tag> and the normalization to modern (post-revoluationary) orthography is
+            tagged as <tag>reg</tag>. Word-final <c>ъ</c> in the old orthography is omitted in the
+            new. In this transcription the omission is recorded an an empty <tag>reg</tag> element
+            because, according to §3.4.2, the use of <tag>orig</tag> without <tag>reg</tag> might
+            convey that we’ve opted not to regularize, which is not the case here; the omission of
+            the final <c>ъ</c> is the regularization.</p>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <head>Нелюбовь</head>
+         <lg>
+            <l>Как<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> в<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>тер<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> мокрый, ты бьешься в<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> ставни,</l>
+            <l>Как<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> в<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>тер<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> черный, поешь: ты мой!</l>
+            <l>Я древн<choice>
+                  <orig>і</orig>
+                  <reg>и</reg>
+               </choice>й хаос<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice>, я друг<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> твой давн<choice>
+                  <orig>і</orig>
+                  <reg>и</reg>
+               </choice>й,</l>
+            <l>Твой друг<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> единый,—открой, открой!</l>
+         </lg>
+         <lg>
+            <l>Держу я ставни, открыть не см<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>ю,</l>
+            <l>Держусь за ставни и страх<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> таю.</l>
+            <l>Храню, лел<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>ю, храню, жал<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>ю</l>
+            <l>Мой луч<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> посл<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>дн<choice>
+                  <orig>і</orig>
+                  <reg>и</reg>
+               </choice>й—любовь мою.</l>
+         </lg>
+         <lg>
+            <l>См<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>ется хаос<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice>, зовет<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> безок<choice>
+                  <orig>і</orig>
+                  <reg>и</reg>
+               </choice>й:</l>
+            <l>Умрешь в<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> оковах<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice>,—порви, порви!</l>
+            <l>Ты знаешь счастье, ты одинок<choice>
+                  <orig>і</orig>
+                  <reg>и</reg>
+               </choice>й,</l>
+            <l>В<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> свобод<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice> счастье,—и в<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> Нелюбви.</l>
+         </lg>
+         <lg>
+            <l>Охлад<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>вая, творю молитву,</l>
+            <l>Любви молитву едва творю…</l>
+            <l>Слаб<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>ют<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> руки, кончаю битву,</l>
+            <l>Слаб<choice>
+                  <orig>ѣ</orig>
+                  <reg>е</reg>
+               </choice>ют<choice>
+                  <orig>ъ</orig>
+                  <reg/>
+               </choice> руки… Я отворю!</l>
+         </lg>
+      </body>
+   </text>
+</TEI>
