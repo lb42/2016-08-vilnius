@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns:tei="http://www.tei-c.org/ns/1.0" 
-      exclude-result-prefixes="xs tei" version="2.0">
-    
-    <xsl:output xpath-default-namespace="http://www.tei-c.org/ns/1.0"/>
-    <!-- why doesnt this work? -->
-    
- <xsl:template match="/">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs tei" version="2.0">
+
+    <xsl:output indent="yes"/>
+    <!-- Specify the TEI default output namespace as an @xmlns attribute on <xsl:stylesheet>, not as @xpath-default-namespace on <xsl:output> -->
+
+    <xsl:template match="/">
         <xsl:apply-templates select="//root"/>
     </xsl:template>
-    
+
     <xsl:template match="root">
-        <TEI xmlns="http://www.tei-c.org/ns/1.0">
+        <TEI>
             <xsl:apply-templates select="metadata"/>
             <xsl:apply-templates select="start"/>
-            
+
         </TEI>
     </xsl:template>
-    
+
     <xsl:template match="metadata">
         <teiHeader>
             <fileDesc>
@@ -35,7 +34,7 @@
                     <ab>Publication information</ab>
                 </publicationStmt>
                 <sourceDesc>
-                    <ab></ab>
+                    <ab/>
                 </sourceDesc>
             </fileDesc>
             <revisionDesc>
@@ -43,12 +42,13 @@
             </revisionDesc>
         </teiHeader>
     </xsl:template>
-  
-    <xsl:template match="start" >
+
+    <xsl:template match="start">
         <text>
-            <body><ab>
-                <xsl:apply-templates select="following-sibling::*[not(name() = 'end')]"
-                   /></ab>
+            <body>
+                <ab>
+                    <xsl:apply-templates select="following-sibling::*[not(name() = 'end')]"/>
+                </ab>
             </body>
             <back>
                 <xsl:apply-templates select="//end"/>
@@ -56,8 +56,10 @@
         </text>
     </xsl:template>
 
-    <xsl:template match="end"  >
-      <ab>  <xsl:apply-templates select="following-sibling::*"/></ab>
+    <xsl:template match="end">
+        <ab>
+            <xsl:apply-templates select="following-sibling::*"/>
+        </ab>
     </xsl:template>
     <xsl:template match="folio">
         <pb n="{@n}"/>
@@ -87,22 +89,21 @@
         </hi>
         <!-- lig should probly be a g -->
     </xsl:template>
-    
+
     <xsl:template match="abbrev">
         <expan>
             <xsl:apply-templates/>
         </expan>
     </xsl:template>
-    
+
     <!-- assume TEI if anything else -->
     <!-- copy everything else -->
 
- <xsl:template match="*">
-        <xsl:copy>
+    <xsl:template match="*">
+        <xsl:element name="{local-name()}">
             <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="* | comment() | processing-instruction() | text()"
-               />
-        </xsl:copy>
+            <xsl:apply-templates select="* | comment() | processing-instruction() | text()"/>
+        </xsl:element>
     </xsl:template>
 
     <xsl:template match="@* | text()">
