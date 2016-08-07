@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Transcribing a manuscript with TEI</title>
+            </titleStmt>
+          
+            <publicationStmt>
+                <publisher>Lou Burnard Consulting</publisher>
+                <availability>
+                    <p>Freely available for use and derivative works under a Creative Commons
+                        Attribution license.</p>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Many porevious talkss.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head>Transcription: a special kind of reading</head>
+                <p>What is the goal of a transcription? <list>
+                        <item>to make a primary source accessible ...</item>
+                        <item>... but also comprehensible</item>
+                        <item> which may imply adding (or suppressing) a lot of  information </item>
+                    </list>
+                </p>
+                <p>Because...  <list>
+                        <item>all transcription is selective </item>
+                        <item>all transcription is imaginative </item>
+                    </list></p>
+            </div>
+            
+            <div>
+                <head>Transcription</head>
+                <p>What does a transcription add to a simple facsimile?
+                  </p><p>Tranbscribers  typically try to make explicit : <list>
+                        <item>(some) original layout information</item>
+                        <item>abbreviations and other strange symbols</item>
+                        <item><q>evident</q> errors which invite correction or conjecture</item>
+                        <item>scribal additions, deletions, substitutions, restorations</item>
+                        <item>non-standard orthography (etc.) which invites normalisation</item>
+                        <item>irrelevant or non-transcribable material</item>
+                        <item>passages which are damaged or illegible</item>
+                    </list>
+                </p>
+            </div>
+                <div>
+                    <head>TEI Transcription</head>
+                    <list>
+                        <item><gi>teiHeader</gi>: provides metadata for the whole thing, at various
+                            levels, typically including a <gi>msDesc</gi></item>
+                        <item><gi>text</gi>: contains a structured reading of a document's
+                            intellectual content ... its <q>text</q></item>
+                        <item><gi>facsimile</gi>: organizes a set of page images representing a
+                            document</item>
+                        <item><gi>sourceDoc</gi>: a non-interpretative transcription of a physical
+                            document, e.g. for a <foreign xml:lang="fr"> dossier
+                            génétique</foreign></item>
+                    </list>
+                    <p rend="box">Does a transcription encode a <q>text</q> or a <q>document</q>
+                        ?</p>
+                </div>
+                <div>
+                    <head>What's this ?</head>
+                    <figure>
+                        <graphic url="../Graphics/Genetic/pleasing.png" width="75%"/>
+                    </figure>
+                    <list type="ordered" rend="pause">
+                        <item><q>agreable</q> is struck-through, <q>pleasing</q> is written above
+                            it, in the interlinear space.</item>
+                        <item><q>agreable</q> is deleted and replaced by <q>pleasing</q></item>
+                        <item>Originally, the text read <q>agreable</q>, but at some subsequent
+                            stage this word was deleted; the word <q>pleasing</q> was added in the
+                            same context.</item>
+                    </list>
+                </div>
+                <div rend="slide">
+                    <head>A typical minimal encoding</head>
+                    <p><graphic url="../Graphics/Genetic/exemple-p5.png" width="80%"/>
+                    </p>
+                </div>
+
+                <div rend="slide">
+                    <head>Character annotation</head>
+                    <list>
+                        <item>distinguish allographical forms of a letter</item>
+                        <item>represent non-standard characters</item>
+                    </list> 
+                        <p>    <gi>g</gi> element (character or glyph) represents a glyph, or a non-standard
+                        character 
+                        </p>
+
+                    <p>
+                            <graphic url="../Graphics/Milton_paradise.jpg" width="40%"/>
+                    </p>
+
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        Paradi<g ref="#long-s-glyph">s</g>e Lo<g ref="#long-s-glyph">s</g>t
+                    </egXML>
+                    
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <g ref="#per-glyph">per</g>
+                    </egXML>
+
+
+                    <p>and the referenced glyph should be defined in the <gi>charDecl</gi>
+                        element in the header </p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <glyph xml:id="long-s-glyph">
+                            <!-- ... -->
+                        </glyph>
+                    </egXML>
+                </div>
+
+                <div>
+                    <head>Abbreviations &amp;c.</head>
+                    <p>In Western MSS, we commonly distinguish : <list type="gloss" rend="small">
+                            <label>Suspensions</label>
+                            <item>the first letter or letters of the word are written, generally
+                                followed by a point : for example <val>e.g.</val> for <val>exempla
+                                    gratia</val></item>
+                            <label>Contractions</label>
+                            <item>both first and last letters are written, generally with some mark
+                                of abbreviation such as superscript strokes, or points : e.g.
+                                    <val>Mr.</val> for <val>Mister</val></item>
+                            <label>Brevigraphs</label>
+                            <item>Special signs such as the Tironian <term>nota</term> used for
+                                    <q>et</q>, the letter p with a barred tail used for
+                                    <val>per</val>, the letter c with a circumflex used for
+                                    <val>cum</val> etc. </item>
+                            <label>Superscripts</label>
+                            <item>Superscript letters (vowels or consonants) used to indicate
+                                various kinds of contraction: e.g. <val>w</val> followed by
+                                superscript <val>ch</val> for <val>which</val>. </item>
+                        </list>
+                    </p>
+                    <p rend="box">Most of the symbols needed are available in Unicode, though not
+                        necessarily in all fonts.</p>
+                </div>
+                <div>
+                    <head>Abbreviation and Expansion</head>
+                    <p>An abbreviation may be viewed in two different ways: <list type="unordered">
+                            <item>as a particular sequence of letters or marks upon the page: thus,
+                                a ‘p with a bar through the descender’, a ‘superscript hook’, a
+                                ‘macron’</item>
+                            <item>as another way of representing the letter or letters it is
+                                believed to be standing for: thus, ‘per’, ‘re’, ‘n'</item>
+                            <!-- etc. -->
+                        </list>
+                    </p>
+                </div>
+                <div>
+                    <head>Two Levels of Encoding Abbreviations</head>
+                    <p>TEI proposes elements for two levels of encoding: <list>
+                            <item>the whole of an abbreviated word and the whole of its expansion
+                                may be marked using <gi>abbr</gi> and <gi>expan</gi>
+                                respectively</item>
+                            <item>abbreviatory signs or characters and the
+                                    <soCalled>invisible</soCalled> characters they imply may be
+                                marked using <gi>am</gi> and <gi>ex</gi> respectively</item>
+                        </list>
+                    </p>
+                </div>
+                <div>
+                    <head>Compare ev(er)y (per)sone</head>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+                                        ev<choice><am><g ref="#b-er"/></am><ex>er</ex></choice>y
+                                        <choice><am><g ref="#b-per"/></am><ex>per</ex></choice>sone
+                            ... </egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+                            <choice>
+                                <abbr>ev<am><g ref="#b-er"/></am> y</abbr>
+                                <expan>ev<ex>er</ex>y</expan>
+                            </choice>
+                            <choice>
+                                <abbr><am><g ref="#b-per"/></am>sone</abbr>
+                                <expan><ex>per</ex>sone</expan>
+                            </choice>
+                        </egXML>
+                    </p>
+                </div>
+                <div>
+                    <head><gi>ex</gi> and <gi>am</gi></head>
+                    <p> Using these elements, from the 'transcr' module, a transcriber may indicate
+                        the status of the individual letters or signs within both the abbreviation
+                        and the expansion. <list type="unordered">
+                            <item>
+                                <gi>ex</gi> (editorial expansion) contains a sequence of letters
+                                added by an editor or transcriber when expanding an
+                                abbreviation.</item>
+                            <item>
+                                <gi>am</gi> (abbreviation marker) contains a sequence of letters or
+                                signs present in an abbreviation which are omitted or replaced in
+                                the expanded form of the abbreviation.</item>
+                        </list> Previously, people have re-purposed existing elements such as
+                            <gi>hi</gi> and <gi>supplied</gi> to mark individual letters/signs in
+                        abbreviations and expansions. The new P5 elements <gi>am</gi> and
+                            <gi>ex</gi> are the TEI's attempt to support this desire.</p>
+                </div>
+                <div rend="slide">
+                    <head>A simple example (1)</head>
+                    <p><graphic url="../Graphics/Genetic/Ms629_p05-dtl-1.png" width="360px"/>. </p>
+
+                    <p>Editorial strategy may be simply to note that we have expanded the
+                        abbreviations: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <p>
+                                <lb/>Cours chacune piece <expan>pour</expan>
+                                <lb/><expan>cinquante</expan> soubz
+                                    <expan>tournois</expan><pc>.</pc>
+                            </p>
+                        </egXML></p>
+                </div>
+                <div rend="slide">
+                    <head>A simple example (2)</head>
+                    <p>As you noticed, <q>pour</q> was actually written <q>po</q> followed by an
+                            <q>r</q> subscript; <q>cinquante</q> as <q>cinqu&#x0101;te</q> with
+                        a macron on the <q>a</q> to indicate nasalisation. </p>
+                    <p>We could therefore encode as follows: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples">
+                            <p>
+                                <abbr>po&amp;#xFFFD;</abbr> .... <abbr>cinqu&amp;#x0101;te</abbr>
+                            </p>
+                        </egXML>
+                    </p>
+                    <p>... or we could choose one of the following styles: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples">
+                            <p> po<am>&amp;#xFFFD;</am> ... or po<ex>u</ex>r </p>
+                        </egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <abbr>po<am>&amp;#xFFFD;</am></abbr>
+                        </egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <expan>po<ex>u</ex>r</expan>
+                        </egXML>
+                    </p>
+                </div>
+                <div rend="slide">
+                    <head>Simple example (3)</head>
+                    <p>And of course TEI permits both cake and the eating of it: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples">
+                            <p> po<choice>
+                                    <am>&amp;#xFFFD;</am>
+                                    <ex>ur</ex>
+                                </choice>
+                            </p>
+                        </egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <choice>
+                                <abbr>po<am>&amp;#xFFFD;</am></abbr>
+                                <expan>po<ex>u</ex>r</expan>
+                            </choice>
+                        </egXML>
+                    </p>
+                </div>
+
+                <div rend="slide">
+                    <head>Choice</head>
+
+                    <p> Children of a choice element all represent alternative ways of
+                            <hi>encoding</hi> the same sequence and in most cases they are mutually
+                        exclusive. </p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <choice>
+                            <abbr>Dat</abbr>
+                            <expan>Dat<ex>ae</ex></expan>
+                        </choice>
+                    </egXML>
+
+
+                    <p> Where the purpose of an encoding is to record textual variants, rather than
+                        to identify multiple possible encoding decisions, the app element &amp;
+                        company should be preferred. </p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                            <rdg><expan>Dat<ex>ae</ex></expan></rdg>
+                            <rdg><expan>Dat<ex>um</ex></expan></rdg>
+                        </app>
+                    </egXML>
+
+                </div>
+                <div>
+                    <head>A <gi>choice</gi> reminder</head>
+                    <p>
+                        <list type="unordered">
+                            <item><gi>choice</gi> (groups alternative editorial encodings)</item>
+                            <item>Abbreviation: <list>
+                                    <item><gi>abbr</gi> (abbreviated form)</item>
+                                    <item><gi>expan</gi> (expanded form)</item>
+                                </list></item>
+                            <item>Errors: <list>
+                                    <item><gi>sic</gi> (apparent error)</item>
+                                    <item><gi>corr</gi> (corrected error)</item>
+                                </list></item>
+                            <item>Regularization: <list>
+                                    <item><gi>orig</gi> (original form)</item>
+                                    <item><gi>reg</gi> (regularized form)</item>
+                                </list></item>
+                        </list>
+                    </p>
+                </div>
+
+                <div>
+                    <head>Classifying abbreviations</head>
+
+                    <p>The <att>type</att> attribute on <gi>abbr</gi> is a useful way of
+                        categorising abbreviations, whether for statistical purposes, or to allow
+                        for different types to be rendered differently: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples">
+                            <choice>
+                                <abbr type="brevigraphe">po<am>&amp;#xFFFD;</am></abbr>
+                                <expan>po<ex>u</ex>r</expan> en <choice><abbr type="suspension"
+                                            >fin<am>.</am></abbr><expan>fin<ex>ir</ex></expan></choice>
+                            </choice>
+                        </egXML> This encoding might be displayed as  : <quote>po(u)r en fin<hi
+                                rend="it">ir</hi></quote>
+                    </p>
+                    <p>As elsewhere, the <att>resp</att> and <att>cert</att> attributes can also be
+                        used to indicate who is responsible for an expansion, and the degree of
+                        certainty attached to it.</p>
+                </div>
+                <div>
+                    <head>Corrections and emendations</head>
+                    <p>The <gi>sic</gi> element can be used to indicate that the reading of the
+                        manuscript is erroneous or nonsensical, while <gi>corr</gi> (correction) can
+                        be used to provide what in the editor's opinion is the correct reading:
+                            <egXML xmlns="http://www.tei-c.org/ns/Examples"><sic>relea</sic></egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"><corr>relicta</corr></egXML>
+                    </p>
+
+                    <p>The two may, of course, be combined within a <gi>choice</gi> element: <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples">
+                            <choice>
+                                <sic>relea</sic>
+                                <corr cert="high">relicta</corr>
+                                <corr cert="low">relatio</corr>
+                            </choice>
+                        </egXML>
+                    </p>
+                </div>
+                <div>
+                    <head>Normalization</head>
+                    <p>Source texts rarely use modern orthography. For retrieval and other
+                        processing reasons, however, the modernized form may be very. The
+                            <gi>reg</gi> (regularized) element is available used to mark a
+                        normalized form; the <gi>orig</gi> (original) element to indicate a
+                        non-standard spelling. These elements can optionally be grouped as
+                        alternatives using the <gi>choice</gi> element: </p>
+                </div>
+                <div>
+                    <head>Normalisation example</head>
+                    <p>
+                        <graphic width="3in" url="../Graphics/Genetic/Ms629_p05-dtl-2.png"/>
+                    </p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+                        <lb/>dix <choice><orig>huict</orig><reg>huit</reg></choice> grains
+                                <choice><orig>troys
+                        quartz</orig><reg>trois-quart</reg></choice></egXML>
+                    <p>In this case, a further semantic regularisation is possible : <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+                            <lb/><measure quantity="18.75" unit="gr">dix
+                                        <choice><orig>huict</orig><reg>huit</reg></choice> grains
+                                        <choice><orig>troys
+                                    quartz</orig><reg>trois-quart</reg></choice></measure></egXML></p>
+
+                </div>
+                <div>
+                    <head>Additions, deletions, substitutions, and modifications</head>
+                    <p>Alterations made to the text, whether by the scribe or in some later hand,
+                        can be encoded using <gi>add</gi> (addition) or <gi>del</gi> (deletion).</p>
+                    <p>Where the addition and deletion are regarded as a single
+                            <term>substitution</term>, they can be grouped together using the
+                            <gi>subst</gi> (substitution) element : <list>
+                            <item><gi>add</gi> (addition) or <gi>del</gi> (deletion) are used for
+                                evident alterations in the source</item>
+                            <item>a combined addition and deletion may be marked using
+                                    <gi>subst</gi> (substitution)</item>
+                            <item><gi>mod</gi> (modification) represents any kind of general
+                                modification without interpretation</item>
+                        </list>
+                    </p>
+                </div>
+                <div rend="slide">
+                    <head>A substitution?</head>
+                    <p>
+                        <graphic url="../Graphics/Genetic/subst.png" width="5cm"/>
+                    </p>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"
+                                    ><subst><del>half-</del><add>all</add></subst> blind </egXML>
+                    </p>
+                </div>
+                <div>
+                    <head>More context for Wilfred Owen</head>
+                    <p>
+                        <graphic url="../Graphics/PHowen.png"/>
+                    </p>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+                            <l>And towards our distant rest began to trudge,</l>
+                            <l><subst><del>Helping the worst amongst us</del><add>Dragging the worst
+                                        amongt us</add></subst>, who'd no boots </l>
+                            <l>But limped on, blood-shod. All went lame; <subst><del
+                                        status="shortEnd">half-</del><add>all</add></subst>
+                                blind;</l>
+                            <l>Drunk with fatigue ; deaf even to the hoots</l>
+                            <l>Of tired, outstripped <del>fif</del> five-nines that dropped
+                                behind.</l>
+                        </egXML>
+                    </p>
+                </div>
+                <div>
+                    <head>Semi-legible text</head>
+                    <p> Use <gi>unclear</gi> if the text is partly illegible i.e. it can be read but
+                        without perfect confidence. The <att>reason</att> attribute here states the
+                        cause of the uncertainty in transcription. </p>
+                    <p>
+                        <graphic url="../Graphics/mightshould.png" width="80%"/>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">I <subst><add
+                                    place="above">might</add><del><unclear reason="overinking"
+                                        cert="medium" resp="#LDB">
+                            should</unclear></del></subst>have </egXML>
+                    </p>
+                </div>
+                <div>
+                    <head>Supplied and damaged text</head>
+                    <p>Use the <gi>supplied</gi> element if the transcriber has provided a reading
+                        not actually visible in the text, whether because of damage or scribal error
+                        : <att>reason</att> here indicates why the text has been supplied.</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">…Dragging the worst
+                            among<supplied reason="authorialError">s</supplied>t us…</egXML>
+                    <p>Use the <gi>damage</gi> element to record the existence of physical damage to
+                        the document, whether or not the damaged text is readable : <egXML
+                            xmlns="http://www.tei-c.org/ns/Examples"><l>The Moving Finger wri<damage
+                                    agent="water" group="1">es; and</damage> having
+                                writ,</l><l>Moves <damage agent="water" group="1"><supplied>on: nor
+                                        all your</supplied></damage> Piety nor Wit</l></egXML>
+                    </p>
+                </div>
+                <div>
+                    <head>Lacunae</head>
+                    <p>When missing text cannot be confidently supplied or is intentionally omitted
+                        the <gi>gap</gi> element should be used with a <att>reason</att> to explain
+                        why. It can use its <att>extent</att> and <att>unit</att> attributes
+                        indicate its size. <egXML xmlns="http://www.tei-c.org/ns/Examples"><gap
+                                reason="wormhole" extent="7" unit="mm"/></egXML></p>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">I am dr Sr yr <gap
+                                reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
+                    </p>
+                </div>
+              
+                <div>
+                    <head>Text Omitted from or Supplied in the Transcription</head>
+                    <p>
+                        <list type="unordered">
+                            <item>
+                                <gi>gap</gi> indicates a point where material has been omitted in a
+                                transcription, whether for editorial reasons described in the TEI
+                                header, as part of sampling practice, or because the material is
+                                illegible or inaudible.</item>
+                            <item>
+                                <gi>supplied</gi> signifies text supplied by the transcriber or
+                                editor for any reason, typically because the original cannot be read
+                                because of physical damage or loss to the original.</item>
+
+                        </list>
+                    </p>
+                </div>
+                <div>
+                    <head><gi>gap</gi> and <gi>supplied</gi> examples</head>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> expansion <gap
+                                reason="illegible" agent="water"/> river denominated </egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">expansion <supplied
+                                reason="illegible" source="#SH1862">of the</supplied>river
+                            denominated</egXML>
+                    </p>
+                </div>
+                <div rend="slide">
+                    <head>
+                        <gi>gap</gi> Example </head>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <div>
+                                <head>Lectio x.</head>
+                                <p> Hic itaque paterfamilias ad excolendam <gap extent="20"
+                                        unit="words" reason="not transcribed" resp="#DC"/>
+                                    congregare non desistit. </p>
+                            </div>
+                        </egXML>
+                    </p>
+                </div>
+                <div>
+                    <head>More <gi>supplied</gi></head>
+                    <p>Where the transcriber considers that one or more words have been erroneously
+                        omitted in the original source and corrects this omission, the
+                            <gi>supplied</gi> element should be used in preference to
+                        <gi>corr</gi>.</p>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> by the ancient Dutch
+                            navigators <supplied>of</supplied> the Tappan Zee </egXML>
+                    </p>
+                </div>
+                <div rend="slide">
+                    <head>
+                        <gi>supplied</gi> Example </head>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <p>Oblatus est <supplied reason="omitted" resp="#DC"> quia ipse
+                                    voluit</supplied>. </p>
+                        </egXML>
+                    </p>
+                </div>
+                <div rend="slide">
+                    <head>
+                        <gi>damage</gi>, <gi>space</gi>, and <gi>unclear</gi> Example </head>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> Revelabunt caeli
+                            iniquitatem Judae et <damage agent="rubbing"/> consurget et <space/>
+                            manifestum erit peccatum ipsius in die furoris do<unclear
+                                agent="rubbing" resp="#JC">mini</unclear> cum eis qui dixerunt
+                            domino deo recede a nobis scientiam viarum tuarum nolumus </egXML>
+                    </p>
+                </div>
+                <div>
+                    <head>Damage and Illegibility</head>
+                    <p>Use <gi>damage</gi> if the text can be read with perfect confidence</p>
+                    <p> </p>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                            <p>
+                                <pb n="5r"/>
+                                <damageSpan agent="rubbing" extent="whole leaf" spanTo="#damageEnd"
+                                />
+                            </p>
+                            <p> .... </p>
+                            <p> .... <pb n="5v" xml:id="damageEnd"/>
+                            </p>
+                        </egXML>
+                    </p>
+                </div>
+
+                <div>
+                    <head>Disjoint Damage</head>
+                    <p>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> IN the bosom <damage
+                                group="1">o</damage>f one of those spa<lb n="2"/>cious coves
+                                wh<damage group="1">ich inde</damage>nt the eastern <lb n="3"/>shore
+                            of the <damage group="1">Hudson, at </damage>that broad <lb n="4"
+                            />expansion <damage group="1">of the r</damage>iver denominated <lb
+                                n="5"/>by the ancie<damage>nt</damage> Dutch navigators </egXML>
+                    </p>
+                </div>
+
+                <div>
+                    <head>Original layout information</head>
+                    <p>The TEI privileges the logical view, but does permit the physical view to
+                            <soCalled>show through</soCalled> as empty milestone elements : <list>
+                            <item><gi>gb</gi> the start of a new gathering or quire </item>
+                            <item><gi>pb</gi> the start of a new page </item>
+                            <item><gi>cb</gi> the start of a new column </item>
+                            <item><gi>lb</gi> the start of a new written line </item>
+                        </list></p>
+                    <p>These are primarily useful to establish a reference system. </p>
+                    <p>The <gi>fw</gi> element can be used to mark <soCalled>paratextual</soCalled>
+                        features such as running heads, foliotation etc.</p>
+                    <p>The <gi>handShift</gi> element can be used to mark changes of hand or writing
+                        in a document.</p>
+                </div>
+                <div>
+                    <head>Editorial phrase-level elements</head>
+                    <p>A summary list of some of the more important phrase-level transcription
+                        elements might include: <list>
+                            <item>Core module: <gi>abbr</gi>, <gi>add</gi>, <gi>choice</gi>,
+                                    <gi>corr</gi>, <gi>del</gi>, <gi>expan</gi>, <gi>gap</gi>,
+                                    <gi>orig</gi>, <gi>reg</gi>, <gi>sic</gi>,
+                                <gi>unclear</gi></item>
+                            <item>'transcr' module: <gi>am</gi>, <gi>damage</gi>, <gi>ex</gi>,
+                                    <gi>metamark</gi>, <gi>mod</gi>, <gi>redo</gi>,
+                                <gi>restore</gi>, <gi>retrace</gi>, <gi>space</gi>, <gi>subst</gi>,
+                                    <gi>supplied</gi>, <gi>surplus</gi>, <gi>transpose</gi>,
+                                    <gi>undo</gi></item>
+                        </list>
+                    </p>
+                </div>
+              
+            <div>
+                <head>Some difficulties</head>
+                <p>These methods are perfectly adequate where variation is comparatively simple.
+                    They rapidly encounter problems when: <list>
+                        <item>overlap happens (as it always does)</item>
+                        <item>the sequence of interventions is important or indeterminate</item>
+                        <item>the layout and the meaning of the writing are not easily
+                            separable</item>
+                    </list>
+                </p>
+            </div>
+            <div>
+                    <head>How far will the TEI take us ?</head>
+                    <p>In particular, is the TEI scheme adequate for the needs of those transcribing
+                            <q>modern</q> manuscripts ?</p>
+                    <list>
+                        <item>surviving medieval or early modern manuscripts generally have a public
+                            function, and a more or less conventionalised (if complex) format</item>
+                        <item>modern manuscripts or authorial drafts however often contain entirely
+                            private or idiosyncratic signs, with no clear communicative
+                            function</item>
+                    </list>
+                </div>
+           <!--     <div>
+                    <head>Text/Image</head>
+                    <p>At all periods we find <q>playful</q> texts whose meaning is conveyed by
+                        their documentary appearance as much as by their linguistic properties, or
+                        by the interplay between the two.</p>
+                    <p><!-\- Consider for example Lewis Carroll's <title>Mouse's Tale</title>, 
+<ref>http://bootless.net/mouse.html</ref>, or George Herbert's <title>Easter
+Wings</title>-\->
+                        <graphic url="../Graphics/EasterWings.jpg" width="6cm"/>
+                    </p>
+                    <p>The TEI initially ruled such texts out of scope.</p>
+                </div>
+
+
+                <div>
+                    <head>Difficult documents</head>
+                    <figure>
+                        <graphic url="../Graphics/Genetic/anc-mod.png" width="90%"/>
+                    </figure>
+                </div>
+                <div>
+                    <head>More examples ...</head>
+                    <figure>
+                        <graphic url="../Graphics/Genetic/anc-mod-2.png" width="90%"/>
+                    </figure>
+                </div>
+                <div>
+                    <head>Diary example</head>
+                    <figure>
+                        <graphic url="../Graphics/Genetic/feed.png" width="60%"/>
+                    </figure>
+                </div>
+
+      
+        <div>
+            <head>Critical Apparatus</head>
+            <p>
+                <graphic url="../Graphics/appcrit.jpg" height="50%"/>
+            </p>
+            <p rend="box">A complex print format containing information whose
+                structure it might be useful to encode... c.f. dictionaries.</p>
+            
+      <div>
+        <head>Critical Apparatus</head>
+        <p>Scholarly editions of texts, especially texts of great antiquity
+          or importance, often record some or all of the known variations
+          among different witnesses to the text. Witnesses to a text may
+          include authorial or other manuscripts, printed editions of the
+          work, early translations, or quotations of a work in other texts. </p>
+        <p>The TEI provides methods for encoding not only an existing
+          critical apparatus, but also ways to mark up a text so that such
+          an apparatus can be generated (without the limitations of
+          necessarily choosing a base text).</p>
+        <p>Textual editing inevitably reflects a theoretical stance about what
+          a text is, or should be. But there are many conflicting theories/traditions about
+          the editing of texts:
+          <list>
+            <item>Greg, Bowers, McKerrow, Tanselle et al.</item>
+            <item>Greetham, McCann, Shillingsburg ...</item>
+            <item><foreign>historisch-kritische Ausgabe</foreign> (aka <q>The Germans</q>)</item>
+            <item><foreign>l'édition génétique</foreign> (aka <q>The French</q>)   </item>
+          </list>
+        </p>
+        <p>As facilitator of multiple theories, the TEI tries to avoid a
+          theoretical stance, but rarely succeeds ... </p>
+        
+      </div>
+
+        <div><head>Format of an apparatus</head><p>
+          The format of an apparatus usually has several parts: <list>
+            <item>The location of the variant in the text (act, scene,
+              line number)</item>
+            <item>The lemma, which is the portion of the text to which
+              the note applies</item>
+            <item>A right bracket (]) or some other separator</item>
+            <item>The source from which the edition took its
+              reading</item>
+            <item>A list of variants, in each case followed by the source
+              in which the variant is found, and usually separated with a
+              semicolon.</item>
+          </list>
+        </p>
+        </div>
+        
+
+        <div>
+          <head>Apparatus Criticus</head>
+          <!-\- Example stolen from wikipedia -\->
+          <p> The standard <foreign xml:lang="lat">Apparatus
+              Criticus</foreign> provides a concise method of recording the
+            variants for any size of text. To take an example, a line in
+              <title>Hamlet</title> might be printed as:
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+              LAERTES.    Alas, then she is drowned.
+              </egXML>
+            with a critical apparatus provided (usually at the foot of the
+            page) which contained:
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">4.7.156 Alas, then is she drowned.] HIBBARD; Alas then, is she drown'd? F; Alas then is she drownd. Q3; Alas, then, she is drownd. Q2; So, she is drownde: Q1. </egXML>
+          </p>
+        </div>
+        
+        <div rend="slide">
+          <head> Critical Apparatus: <gi>app</gi>, <gi>rdg</gi>, and
+              <gi>lem</gi>
+          </head>
+          <list type="gloss">
+            <label>
+              <gi>app</gi>
+            </label>
+            <item>(apparatus entry) contains one entry in a critical
+              apparatus, with an optional lemma and at least one
+              reading.</item>
+            <label>
+              <gi>rdg</gi>
+            </label>
+            <item>(reading) contains a single reading within a textual
+              variation. </item>
+            <label>
+              <gi>lem</gi>
+            </label>
+            <item>(lemma) contains the lemma, or base text, of a textual
+              variation.</item>
+          </list>
+        </div>
+
+        <div rend="slide">
+          <head>Parallel Segmentation Example</head>
+          <p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><l><app>
+            <lem wit="#El">Experience though noon Auctoritee</lem>
+              <rdg wit="#Hg">Experience thogh noon Auctorite</rdg>
+              <rdg wit="#La">Experiment thouh noon Auctoritee</rdg>
+              <rdg wit="#Ra2">Eryment though none auctorite</rdg>
+          </app></l></egXML>
+          </p>
+        </div>
+        
+        <div><head>Or apparatus at smaller granularity</head>
+        <p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+              <l><app>
+            <lem wit="#El #Hg">Experience</lem>
+            <rdg type="substantive" wit="#La">Experiment</rdg>
+            <rdg type="substantive" wit="#Ra2">Eryment</rdg>
+          </app>
+            <app>
+              <lem wit="#El #Ra2">though</lem>
+              <rdg type="orthographic" wit="#Hg">thogh</rdg>
+              <rdg type="orthographic" wit="#La">thouh</rdg>
+            </app>
+                <app>
+                  <lem wit="#El #La #Hg">noon</lem>
+                  <rdg type="orthographic" wit="#Ra2">none</rdg>
+                </app>
+                <app>
+                  <lem wit="#El #La">Auctoritee</lem>
+                  <rdg type="orthographic" wit="#Hg">Auctorite</rdg>
+                  <rdg type="orthographic" wit="#Ra2">auctorite</rdg>
+                </app>
+              </l>
+            </egXML>
+          </p>
+        </div>
+
+        <div rend="slide">
+          <head>
+            <gi>listWit</gi> and <gi>witness</gi>
+          </head>
+          <list type="gloss">
+            <label>
+              <gi>listWit</gi>
+            </label>
+            <item>(witness list) lists definitions for all the witnesses
+              referred to by a critical apparatus, optionally grouped
+              hierarchically.</item>
+            <label>
+              <gi>witness</gi>
+            </label>
+            <item>contains either a description of a single witness
+              referred to within the critical apparatus, or a list of
+              witnesses which is to be referred to by a single
+              sigil.</item>
+          </list>
+          <p rend="box">One should also use a <gi>msDesc</gi> instead of a
+              <gi>witness</gi> if more information is available.</p>
+          </div>
+        
+        <div rend="slide"><head><gi>listWit</gi> example</head><p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><listWit>
+        <witness xml:id="El">Ellesmere, Huntingdon Library 26.C.9</witness>
+        <witness xml:id="Hg">Hengwrt, National Library of Wales,
+        Aberystwyth, Peniarth 392D</witness>
+        <witness xml:id="ms">Sole manuscript</witness>
+        <witness xml:id="Ra2">Bodleian Library Rawlinson Poetic 149
+        (see further <ptr target="#MSRP149"/>)</witness>
+        </listWit></egXML>
+          </p>
+        </div>
+        
+        <div><head>Nested <gi>listWit</gi></head>
+          <p>Witnesses that are similar can be grouped together so that they can be referred by a single siglum:            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><listWit>
+  <witness xml:id="Ellesmere">Ellesmere, Huntingdon Library 26.C.9</witness>
+  <!-\- ... -\->
+  <listWit xml:id="Con">
+    <head>Constant Group C</head>
+    <witness xml:id="Cp">Corpus Christi Oxford MS 198 </witness>
+    <witness xml:id="La">British Library Lansdowne 851 </witness>
+    <witness xml:id="Sl2">British Library Sloane MS 1686 </witness>
+  </listWit>
+</listWit>
+        <!-\- elsewhere -\->
+            <rdg wit="#Con">Experiment</rdg></egXML> refers to all these manuscripts.
+          </p>
+         </div>
+
+
+        <div rend="slide">
+          <head>Alternative 1: Location Referenced Example </head>
+          <p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+        <div n="WBP" type="prologue">
+        <head>The Prologe of the Wyves Tale of Bathe</head>
+        <l n="1">Experience though noon Auctoritee</l>
+        <l>Were in this world ...</l>
+        </div>
+        <!-\- Elsewhere in Document:  -\->
+        <app loc="WBP 1">
+        <rdg wit="#La">Experiment</rdg>
+        <rdg wit="#Ra2">Eryment</rdg>
+        </app>      
+        </egXML>
+          </p>
+          <p>or</p>
+          <p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><l n="1">Experience though noon Auctoritee
+        <app>
+        <rdg wit="#La"> Experiment</rdg>
+        <rdg wit="#Ra2"> Eryment</rdg>
+        </app></l>
+        <l>Were in this world ...</l></egXML>
+          </p>
+        </div>
+        <div rend="slide">
+          <head>Alternative 2: Double End-Point Attachment Example </head>
+          <p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+        <div n="WBP" type="prologue"><head>The Prologe ... </head>
+        <l n="1" xml:id="WBP.1">Experience<anchor xml:id="WBP-A2"/> 
+        though noon Auctoritee</l>
+        <l>Were in this world ...</l> 
+        </div> 
+        
+        <!-\- Elsewhere in the same document -\->
+        
+        <app from="#WBP.1" to="#WBP-A2">
+        <rdg wit="#La">Experiment</rdg>
+        <rdg wit="#Ra2">Eryment</rdg>
+        </app></egXML>
+          </p>
+        </div>
+
+        <div rend="slide">
+          <head>Parallel Segmentation Example</head>
+          <p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><l n="1">
+        <app>
+        <rdg wit="#Chi3">Auctoritee, though none experience</rdg>
+        <rdg>    
+        <app>
+        <rdg wit="#El #Hg">Experience</rdg>
+        <rdg wit="#La">Experiment</rdg>
+        <rdg wit="#Ra2">Eryment</rdg>
+        </app>
+        <app>
+        <rdg wit="#El #Ra2">though</rdg>
+        <rdg wit="#Hg">thogh</rdg>
+        <rdg wit="#La">thouh</rdg>
+        </app>
+        <app>
+        <rdg wit="#El #Hg">noon Auctorite</rdg>
+        <rdg wit="#La #Ra2">none auctorite</rdg>
+        </app>
+        </rdg>
+        </app>
+        </l></egXML>
+          </p>
+        </div>
+
+        <div rend="slide">
+          <head>A Simple <gi>app</gi> With No <gi>lem</gi></head>
+          <p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"> <ab> Populus domini et oves pascuae eius <app> <rdg wit="#CAO-B #CAO-V #CAO-R #CAO-D #CAO-F #CAO-S #Ely #Wor #Wcb"> venite adoremus eum</rdg> <rdg wit="#CAO-H #Pet"> venite adoremus deum</rdg> <rdg wit="#CAO-E #Alb2"> venite adoremus dominum</rdg> <rdg wit="#CAO-C #CAO-G #CAO-L #Hyd #Evm"> venite adoremus</rdg> </app> </ab> </egXML>          </p>
+
+        </div>
+
+        <div rend="slide">
+          <head>Attaching Notes Example</head>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">Virginite is grete <app> <rdg resp="#ES">perfecti<abbr>oi</abbr></rdg> <rdg resp="#FJF" xml:id="f105"> perfectio<expan>u</expan>n</rdg> <rdg resp="#PGR" xml:id="r105"> perfectiou<expan>n</expan></rdg> </app>        <!-\- ... <note> appearing elsewhere in the document ... -\->
+<note target="#r105 #f105">Furnivall's expansion implies that the bar is an abbreviation for 'u'. There are no certain instances of this mark as an abbreviation for 'u' in these MSS and it is widely used as an abbreviation for 'n'. Ruggiers' expansion is to be accepted.</note></egXML>        </div>
+
+<div>
+  <head><title>Hamlet</title> example</head>
+  <p> Think back to the example given from <title>Hamlet</title>:
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+      LAERTES.    Alas, then she is drowned.
+    </egXML>
+    Where the traditional critical apparatus contained:
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
+ 4.7.156 Alas, then is she drowned.] HIBBARD; Alas then, is she drown'd? F; 
+Alas then is she drownd. Q3; Alas, then, she is drownd. Q2; So, she is drownde: Q1. </egXML>
+    How would <hi>you</hi> choose to mark it up in TEI?</p>
+  </div>
+
+<div>
+  <head>How I'd do it (given time)</head>
+  <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"><l n="156">
+        <app>
+          <rdg wit="#Hib">Alas, then</rdg>
+          <rdg wit="#F">Alas then,</rdg>
+          <rdg wit="#Q3">Alas then</rdg>
+          <rdg wit="#Q2">Alas, then,</rdg>
+          <rdg wit="#Q1">So,</rdg>
+        </app>
+        <app>
+          <rdg wit="#Hib #F #Q3">is she</rdg>
+          <rdg wit="#Q2 #Q1">she is</rdg>
+        </app>
+        <app>
+          <rdg wit="#Hib">drowned.</rdg>
+          <rdg wit="#F">drown'd?</rdg>
+          <rdg wit="#Q3 #Q2">drownd.</rdg>
+          <rdg wit="#Q1">drownde:</rdg>
+        </app>
+      </l></egXML>
+</div>
+      
+      
+
+
+                <div>
+                    <head>Next</head>
+                    <p>Any Questions? Next we're going to do an exercise!</p>
+                </div>
+            </div>-->
+        </body>
+    </text>
+</TEI>
