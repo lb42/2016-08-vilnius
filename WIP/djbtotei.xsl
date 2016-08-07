@@ -2,19 +2,12 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs tei" version="2.0">
-
-    <xsl:output indent="yes"/>
-    <!-- Specify the TEI default output namespace as an @xmlns attribute on <xsl:stylesheet>, not as @xpath-default-namespace on <xsl:output> -->
-
-    <xsl:template match="/">
-        <xsl:apply-templates select="//root"/>
-    </xsl:template>
+    <xsl:output indent="no"/>
+    <xsl:strip-space elements="*"/>
 
     <xsl:template match="root">
         <TEI>
-            <xsl:apply-templates select="metadata"/>
-            <xsl:apply-templates select="start"/>
-
+            <xsl:apply-templates select="metadata, start"/>
         </TEI>
     </xsl:template>
 
@@ -37,6 +30,13 @@
                     <ab/>
                 </sourceDesc>
             </fileDesc>
+            <encodingDesc>
+                <charDecl>
+                    <glyph xml:id="ooLig">
+                        <glyphName>CYRILLIC DOUBLE OMICRON LIGATURE</glyphName>
+                    </glyph>
+                </charDecl>
+            </encodingDesc>
             <revisionDesc>
                 <change>Header created by djbtotei</change>
             </revisionDesc>
@@ -47,20 +47,17 @@
         <text>
             <body>
                 <ab>
-                    <xsl:apply-templates select="following-sibling::*[not(name() = 'end')]"/>
+                    <xsl:apply-templates select="following-sibling::*[following-sibling::end]"/>
                 </ab>
             </body>
             <back>
-                <xsl:apply-templates select="//end"/>
+                <ab>
+                    <xsl:apply-templates select="following-sibling::*[preceding-sibling::end]"/>
+                </ab>
             </back>
         </text>
     </xsl:template>
 
-    <xsl:template match="end">
-        <ab>
-            <xsl:apply-templates select="following-sibling::*"/>
-        </ab>
-    </xsl:template>
     <xsl:template match="folio">
         <pb n="{@n}"/>
     </xsl:template>
@@ -74,7 +71,17 @@
     </xsl:template>
 
     <xsl:template match="line">
-        <lb/>
+        <xsl:variable name="hyphenated" as="xs:boolean"
+            select="ends-with(preceding-sibling::line[1], '-')"/>
+        <xsl:if test="not($hyphenated)">
+            <!-- since we can't turn on indentation, detect line breaks where we can wrap to make the output more legible -->
+            <xsl:text>&#x0a;</xsl:text>
+        </xsl:if>
+        <lb>
+            <xsl:if test="$hyphenated">
+                <xsl:attribute name="break">no</xsl:attribute>
+            </xsl:if>
+        </lb>
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="editionParagraphNo">
@@ -87,7 +94,7 @@
         <hi rend="{name()}">
             <xsl:apply-templates/>
         </hi>
-        <!-- lig should probly be a g -->
+        <!-- TODO: add ligatures other than [oo] to <charDecl>; lig should probly be a <g> -->
     </xsl:template>
 
     <xsl:template match="abbrev">
@@ -101,19 +108,27 @@
 
     <xsl:template match="*">
         <xsl:element name="{local-name()}">
-            <xsl:apply-templates select="@*"/>
-            <xsl:apply-templates select="* | comment() | processing-instruction() | text()"/>
+            <xsl:apply-templates select="@* | node()"/>
         </xsl:element>
     </xsl:template>
 
-    <xsl:template match="@* | text()">
+    <xsl:template match="@* | comment()">
         <xsl:copy/>
     </xsl:template>
 
-    <xsl:template match="comment()">
-        <xsl:copy/>
+    <xsl:template match="text()">
+        <xsl:analyze-string select="." regex="\[оо\]">
+            <!-- Tag input [oo] <hi rend="lig"> containing a <g> -->
+            <xsl:matching-substring>
+                <hi rend="lig">
+                    <g ref="#ooLig">oo</g>
+                </hi>
+            </xsl:matching-substring>
+            <xsl:non-matching-substring>
+                <!-- Strip final hyphens and white space -->
+                <xsl:value-of select="replace(., '[-\s]+$', '')"/>
+            </xsl:non-matching-substring>
+        </xsl:analyze-string>
     </xsl:template>
-
-
 
 </xsl:stylesheet>

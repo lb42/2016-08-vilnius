@@ -1,33 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Title</title>
-            <respStmt>
-               <resp>original transcription</resp>
-               <name>David J. Birnbaum</name>
-            </respStmt>
-         </titleStmt>
-         <publicationStmt>
-            <ab>Publication information</ab>
-         </publicationStmt>
-         <sourceDesc>
-            <ab/>
-         </sourceDesc>
-      </fileDesc>
-      <revisionDesc>
-         <change>Header created by djbtotei</change>
-      </revisionDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <ab>
-            <lb/>Иꙁволѥниѥмь ѡ҃ца. и сьврь-<lb/>шениѥмь с҃на. и сьпоспѣше-<lb/>ниѥмь с҃тго д҃ха.<lb/>Вь д҃ни бл҃говѣрнаг<hi rend="lig">оо</hi>. и прѣвы-<lb/>сокааго. и самодрьжавнаго.<lb/>ц҃ра нашего їѡанна срацими-<lb/>ра бльгар<hi rend="lig">оо</hi>мь и грьк<hi rend="lig">оо</hi>мь.<lb/>Потьща се бл҃говѣрнаа и с҃т<hi rend="lig">оо</hi>-<lb/>роднаа ц҃рца анна. и сь пове-<lb/>лѣниѥмь цр<hi rend="sup">с҇</hi>тва си. написа<lb/>сию книгю. рекомое сьборни<hi rend="sup">к҇</hi>
-            <lb/>с҃тымь прѣпо<hi rend="sup">д</hi>б҃нѣмь и стра-<lb/>стотрьпнимь женамь:—<lb/>Да соуть г<hi rend="sup">с҇</hi>ноу ц҃рю и цр҃ци и че-<lb/>д<hi rend="lig">оо</hi>мь и<hi rend="sup">х</hi>. вь оутврьж<hi rend="sup">д</hi>енїє ц҃рь-<lb/>ствоу и<hi rend="sup">х</hi>. тѣлоу вь ꙁ<hi rend="sup">д</hi>равиѥ. а<lb/>д҃ши вь сп҃сенїє. и написа се вь<lb/>бдинѣ градѣ. вь лѣто ҂ꙅ҃,ѡ҃.ѯи҃.<lb/>б҃оу же н҃шемꙋ сла<hi rend="sup">в҇</hi> в вѣкы ам҃нь:—</ab>
-      </body>
-      <back>
-         <ab/>
-      </back>
-   </text>
-</TEI>
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0"><teiHeader><fileDesc><titleStmt><title>Title</title><respStmt><resp>original transcription</resp><name>David J. Birnbaum</name></respStmt></titleStmt><publicationStmt><ab>Publication information</ab></publicationStmt><sourceDesc><ab/></sourceDesc></fileDesc><encodingDesc><charDecl><glyph xml:id="ooLig"><glyphName>CYRILLIC DOUBLE OMICRON LIGATURE</glyphName></glyph></charDecl></encodingDesc><revisionDesc><change>Header created by djbtotei</change></revisionDesc></teiHeader><text><body><ab>
+<lb/>Иꙁволѥниѥмь ѡ҃ца. и сьврь<lb break="no"/>шениѥмь с҃на. и сьпоспѣше<lb break="no"/>ниѥмь с҃тго д҃ха.
+<lb/>Вь д҃ни бл҃говѣрнаг<hi rend="lig">оо</hi>. и прѣвы<lb break="no"/>сокааго. и самодрьжавнаго.
+<lb/>ц҃ра нашего їѡанна срацими<lb break="no"/>ра бльгар<hi rend="lig">оо</hi>мь и грьк<hi rend="lig">оо</hi>мь.
+<lb/>Потьща се бл҃говѣрнаа и с҃т<hi rend="lig">оо</hi><lb break="no"/>роднаа ц҃рца анна. и сь пове<lb break="no"/>лѣниѥмь цр<hi rend="sup">с҇</hi>тва си. написа
+<lb/>сию книгю. рекомое сьборни<hi rend="sup">к҇</hi>
+<lb/>с҃тымь прѣпо<hi rend="sup">д</hi>б҃нѣмь и стра<lb break="no"/>стотрьпнимь женамь:—
+<lb/>Да соуть г<hi rend="sup">с҇</hi>ноу ц҃рю и цр҃ци и че<lb break="no"/>д<hi rend="lig">оо</hi>мь и<hi rend="sup">х</hi>. вь оутврьж<hi rend="sup">д</hi>енїє ц҃рь<lb break="no"/>ствоу и<hi rend="sup">х</hi>. тѣлоу вь ꙁ<hi rend="sup">д</hi>равиѥ. а
+<lb/>д҃ши вь сп҃сенїє. и написа се вь
+<lb/>бдинѣ градѣ. вь лѣто ҂ꙅ҃,ѡ҃.ѯи҃.
+<lb/>б҃оу же н҃шемꙋ сла<hi rend="sup">в҇</hi> в вѣкы ам҃нь:—</ab></body><back><ab/></back></text></TEI>
