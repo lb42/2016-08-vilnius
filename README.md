@@ -7,6 +7,8 @@ Teaching materials for El Manuscript 2016 in Vilnius
 
 *Work* : Working directory for students, with sample files etc.
 
+*WIP* : Working directory for us, to prepare sample files etc. 
+
 To convert TEI XML source to swanky PDF (if you have an up to date installation of TexLive and the TEI Stylesheet packages):
 
  `teitoslides --profile=tei whatever.xml. `
