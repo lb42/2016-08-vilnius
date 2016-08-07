@@ -14,7 +14,7 @@
                 </availability>
             </publicationStmt>
             <sourceDesc>
-                <p>Many porevious talkss.</p>
+                <p>Derived from many others... </p>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
@@ -22,7 +22,7 @@
         <body>
             <div>
                 <head>Transcription: a special kind of reading</head>
-                <p>What is the goal of a transcription? <list>
+                <p>What is the goal of your transcription? <list>
                         <item>to make a primary source accessible ...</item>
                         <item>... but also comprehensible</item>
                         <item> which may imply adding (or suppressing) a lot of  information </item>
@@ -72,21 +72,7 @@
                 <item>Or both?</item>
             </list>
             </div>
-             <!--
-                <div>
-                    <head>What's this ?</head>
-                    <figure>
-                        <graphic url="../Graphics/Genetic/pleasing.png" width="75%"/>
-                    </figure>
-                    <list type="ordered" rend="pause">
-                        <item><q>agreable</q> is struck-through, <q>pleasing</q> is written above
-                            it, in the interlinear space.</item>
-                        <item><q>agreable</q> is deleted and replaced by <q>pleasing</q></item>
-                        <item>Originally, the text read <q>agreable</q>, but at some subsequent
-                            stage this word was deleted; the word <q>pleasing</q> was added in the
-                            same context.</item>
-                    </list>
-                </div>-->
+         
                 <div rend="slide">
                     <head>A typical minimal encoding</head>
                     <p><graphic url="../images/exemple-p5.png" width="80%"/>
@@ -94,10 +80,10 @@
                 </div>
     <div>
         <head>Layers of transcription</head>
-        <p><graphic url="../Graphics/Ms629_p05.png" height="90%"/></p>
+        <p><graphic url="../images/supr022r.jpg" height="90%"/></p>
         <cb/>
         <list>
-          <item> Paleographic level : identification of characters and graphemes </item>
+          <item>Paleographic level : identification of characters and graphemes </item>
           <item>Documentary (or diplomatic) level: decide what has been written  </item>
           <item>Editorial or semantic level : decide how it should be read </item>
         </list>
@@ -108,10 +94,10 @@
                 <list>
                     <item>The physical organisation of a manuscript (its binding, folios, leaves, pages, columns) rarely, if ever, corresponds
                         with its logical organisation (sections, chapters, paragraphs, lines) </item>
-                    <item>Whichever we choose to represent in our XML sytructure, we will havce to represent the other using empty <soCalled>milestone</soCalled> elements</item>
+                    <item>Whichever we choose to represent in our XML structure, we will have to represent the other using empty <soCalled>milestone</soCalled> elements</item>
                     <item>For example, in the logical view, we  can use
-                        <gi>gb</gi>, <gi>pb</gi>, <gi>cb</gi>, pr  <gi>lb</gi> rto indicate the staret of gatherings, pages, column or loine </item>
-                    <item>Or in the physical view, we could iuse a <gi>milestone</gi> to indicate the starts of divisions,  paragraphs, etc. </item>
+                        <gi>gb</gi>, <gi>pb</gi>, <gi>cb</gi>, or  <gi>lb</gi> to indicate the start of gatherings, pages, column or lines </item>
+                    <item>Or in the physical view, we could use a <gi>milestone</gi> to indicate the starts of divisions,  paragraphs, etc. </item>
                   <!--  <item> l'élément <gi>fw</gi> sert à baliser le paratexte; l'element <gi>handShift</gi> les
                         changements d'écriture.</item>-->
                 </list>
@@ -121,69 +107,37 @@
                 <head>Characters and glyphs</head>
                 <list>
                     <item>the same character may be represented in many different forms <list>
-                            <item>e.g. <graphic width="70%" url="../Graphics/a-graphs.png"/></item>
-                            <item>e.g. <graphic width="70%" url="../Graphics/s-graphs.png"/></item>
+                            <item>e.g. <graphic width="70%" url="../images/a-graphs.png"/></item>
+                            <item>e.g. <graphic width="70%" url="../images/s-graphs.png"/></item>
                         </list></item>
-                    <item>the character we see may not yet exist in Unicode</item>
+                    <item>the character or glyph we see may not yet exist in Unicode</item>
                 </list>
                 <p rend="box">The <gi>g</gi> element allows us to indicate the presence of a specific glyph, or a 
                     non-Unicode character</p>
             </div>
-            <div>
-                <head>Usinbg <gi>g</gi></head>
+            
+            <div><head>Using <gi>g</gi></head>
                 <figure>
-                    <graphic url="../Graphics/s-long-ex.png"/>
-                    <head>Extrait d'un journal intime de 1822</head>
+                    <graphic url="../images/bdinski07r-dtl.png"/>
+                    <head>Bdinski, fol 7r, detail</head>
                 </figure>
-                <p>On pourrait encoder simplement: <code>J'ai donc à vous prévenir
-                    Me&#x017f;sieurs et Mesdames ... </code> ou bien <egXML
-                        xmlns="http://www.tei-c.org/ns/Examples"> ... Me<g ref="#long-s-glyph">s</g>ieurs et
-                        Mesdames...</egXML>
-                    <!-- <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <g ref="#per-glyph">per</g>
-          </egXML>-->
-                </p>
-                <p rend="box">Les objets ciblés par <att>ref</att> sont définis dans un élément du TEI
-                    Header </p>
-                <!--
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <glyph xml:id="long-s-glyph">
-            <!-\- ... -\->
-          </glyph>
-        </egXML>-->
+                <p>There is no Unicode character for the non-ligatured oo here: we tag it as a
+                        <gi>g</gi></p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">  <lb/>звратити дьщере брата
+                  <lb/>своѥг<g ref="#ooGlyph">оо</g>.  пришед же абиѥ
+                  <lb/>на мѣст<g ref="#ooGlyph">оо</g>. и вьшедь вь</egXML>
+                <p><code>ooGlyph</code> points to a description of the glyph, provided in the TEI header.</p>
             </div>
-                <div rend="slide">
-                    <head>Character annotation</head>
-                    <list>
-                        <item>distinguish allographical forms of a letter</item>
-                        <item>represent non-standard characters</item>
-                    </list> 
-                        <p>    <gi>g</gi> element (character or glyph) represents a glyph, or a non-standard
-                        character 
-                        </p>
-
-                    <p>
-                            <graphic url="../Graphics/Milton_paradise.jpg" width="40%"/>
-                    </p>
-
-
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        Paradi<g ref="#long-s-glyph">s</g>e Lo<g ref="#long-s-glyph">s</g>t
-                    </egXML>
-                    
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <g ref="#per-glyph">per</g>
-                    </egXML>
-
+       <!--
 
                     <p>and the referenced glyph should be defined in the <gi>charDecl</gi>
                         element in the header </p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <glyph xml:id="long-s-glyph">
-                            <!-- ... -->
+                            <!-\- ... -\->
                         </glyph>
                     </egXML>
-                </div>
+                </div>-->
 
                 <div>
                     <head>Abbreviations &amp;c.</head>
@@ -273,7 +227,7 @@
                 </div>
                 <div rend="slide">
                     <head>A simple example (1)</head>
-                    <p><graphic url="../Graphics/Genetic/Ms629_p05-dtl-1.png" width="360px"/>. </p>
+                    <p><graphic url="../images/Ms629_p05-dtl-1.png" width="360px"/>. </p>
 
                     <p>Editorial strategy may be simply to note that we have expanded the
                         abbreviations: <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -423,7 +377,7 @@
                 <div>
                     <head>Normalisation example</head>
                     <p>
-                        <graphic width="3in" url="../Graphics/Genetic/Ms629_p05-dtl-2.png"/>
+                        <graphic width="3in" url="../images/Ms629_p05-dtl-2.png"/>
                     </p>
 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
@@ -457,7 +411,7 @@
                 <div rend="slide">
                     <head>A substitution?</head>
                     <p>
-                        <graphic url="../Graphics/Genetic/subst.png" width="5cm"/>
+                        <graphic url="../images/subst.png" width="5cm"/>
                     </p>
                     <p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples"
@@ -467,7 +421,7 @@
                 <div>
                     <head>More context for Wilfred Owen</head>
                     <p>
-                        <graphic url="../Graphics/PHowen.png"/>
+                        <graphic url="../images/PHowen.png"/>
                     </p>
                     <p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
@@ -489,7 +443,7 @@
                         without perfect confidence. The <att>reason</att> attribute here states the
                         cause of the uncertainty in transcription. </p>
                     <p>
-                        <graphic url="../Graphics/mightshould.png" width="80%"/>
+                        <graphic url="../images/mightshould.png" width="80%"/>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">I <subst><add
                                     place="above">might</add><del><unclear reason="overinking"
                                         cert="medium" resp="#LDB">
@@ -627,21 +581,7 @@
                     </p>
                 </div>
 
-                <div>
-                    <head>Original layout information</head>
-                    <p>The TEI privileges the logical view, but does permit the physical view to
-                            <soCalled>show through</soCalled> as empty milestone elements : <list>
-                            <item><gi>gb</gi> the start of a new gathering or quire </item>
-                            <item><gi>pb</gi> the start of a new page </item>
-                            <item><gi>cb</gi> the start of a new column </item>
-                            <item><gi>lb</gi> the start of a new written line </item>
-                        </list></p>
-                    <p>These are primarily useful to establish a reference system. </p>
-                    <p>The <gi>fw</gi> element can be used to mark <soCalled>paratextual</soCalled>
-                        features such as running heads, foliotation etc.</p>
-                    <p>The <gi>handShift</gi> element can be used to mark changes of hand or writing
-                        in a document.</p>
-                </div>
+           <!--
                 <div>
                     <head>Editorial phrase-level elements</head>
                     <p>A summary list of some of the more important phrase-level transcription
@@ -658,7 +598,7 @@
                         </list>
                     </p>
                 </div>
-              
+              -->
             <div>
                 <head>Some difficulties</head>
                 <p>These methods are perfectly adequate where variation is comparatively simple.
