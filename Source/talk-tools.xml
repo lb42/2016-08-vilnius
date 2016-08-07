@@ -35,7 +35,7 @@
       <div type="slide">
         <head>Objectives</head>
         <p rend="box">This is not a complete XSLT Training Course! Its purpose is just to ... </p>
-        <list>
+        <list type="bulleted">
           <item>give you a taste of what XSLT and XPath can do</item>
           <item>particularly when processing TEI-XML documents</item>
           <item>particularly TEI documents from the Humanities</item>
@@ -57,7 +57,7 @@
 
       <!--
 <div type="slide"><head>A quoi sert le XSL ?</head>
-<list>
+<list type="bulleted">
 <item>Un document XML n'est qu'une chaîne de caractères Unicode avec
 des balises: pourquoi pas le traîter en tant que tel?</item>
 <item>Parce que les balises representent quelque chose de plus
@@ -79,12 +79,12 @@ signification</item>
       <div type="slide">
         <head>What is an <term>XML tree</term>?</head>
         <p><graphic height="50%" url="../images/arborescence.png"/></p>
-        <list>
+        <list type="bulleted">
           <item>a set of <term>nodes</term>, organised hierarchically</item>
           <item>each node either has a <term>generic identifier</term> (its "type") or is a
               <term>text node</term></item>
           <item>a single <term>root node</term> contains (or dominates) all the others</item>
-          <item>each node can contain (or dominate) <list>
+          <item>each node can contain (or dominate) <list type="bulleted">
               <item>a subtree</item>
               <item>or a text node</item>
               <!--item>facultativement un ensemble d'<term>attributs</term></item-->
@@ -95,7 +95,7 @@ signification</item>
 
       <div type="slide">
         <head>In an XML Tree... </head>
-        <list>
+        <list type="bulleted">
           <item>each node corresponds with a named element</item>
           <item>the <term>attributes </term>of an element make up a sub-tree associated with a
             particular node</item>
@@ -176,7 +176,7 @@ signification</item>
 
       <div type="slide">
         <head>Stages on the path</head>
-        <list>
+        <list type="bulleted">
           <item>As we go along the path, we can look at other things besides XML modes ...</item>
           <item>we can check attributes </item>
           <item>and text nodes</item>
@@ -199,7 +199,7 @@ signification</item>
 
       <div type="slide">
         <head>Selection</head>
-        <list>
+        <list type="bulleted">
           <item>We can select from the nodes we visit, by expressing a <term>restriction</term>
             using brackets [ and ] </item>
           <item>A restriction might test the value (or just the presence) of an attribute</item>
@@ -229,7 +229,7 @@ signification</item>
 
       <div type="slide">
         <head>The starting point</head>
-        <p>An XPath can start from any point in the tree: <list>
+        <p>An XPath can start from any point in the tree: <list type="bulleted">
             <item><code>//</code> means <q>anywhere in the tree</q></item>
             <item><code>..</code> means <q>my parent</q></item>
           </list>
@@ -302,7 +302,7 @@ signification</item>
 
       <div type="slide">
         <head>XPath Functions</head>
-        <p>XPath also provides an extensive library of useful functions. We mention a few here : <list>
+        <p>XPath also provides an extensive library of useful functions. We mention a few here : <list type="bulleted">
             <item><code>count(x)</code> returns a count of the number of nodes in the tree x</item>
             <item><code>position()</code> returns the sequential number of the current node within
               its context</item>
@@ -333,7 +333,7 @@ signification</item>
         <p>Starting from this : <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <ref target="http://www.tei-c.org">The TEI website</ref>
           </egXML> we want to generate this : <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <a href="http://www.tei-c.org">The TEI website</a></egXML> So we must .... <list>
+            <a href="http://www.tei-c.org">The TEI website</a></egXML> So we must .... <list type="bulleted">
             <item>transform the TEI element <gi>ref</gi> into an (x)HTML element <gi>a</gi>
             </item>
             <item>transform its <att>target</att> son attribut into an <att>href</att>
@@ -359,19 +359,19 @@ signification</item>
       <div type="slide">
         <head>A slightly less trivial example</head>
         <p>From this : <egXML xmlns="http://www.tei-c.org/ns/Examples">
-<div type="recette" n="34">
-              <head>Pasta pour les debutants</head>
+<div type="recipe" n="34">
+              <head>Pasta for Beginners</head>
               <list>
-                <item>pates</item>
-                <item>fromage râpé</item>
+                <item>pasta</item>
+                <item>grated cheese</item>
               </list>
-              <p>Faire bouiller les pates, et melanger avec le fromage.</p>
+              <p>Boil the pasta and mix it with the cheese.</p>
             </div>
           </egXML> we want to produce : <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <html xmlns="http://www.w3.org/1999/xhtml">
-              <h1>34: Pasta pour les novices</h1>
-              <p>Ingrédients: pates fromage râpé</p>
-              <p>Faire bouiller les pates, et melanger avec le fromage.</p>
+              <h1>34: Pasta for Beginners</h1>
+              <p>Ingredients: pasta grated cheese</p>
+              <p>Boil the pasta and mix it with the cheese.</p>
             </html>
           </egXML>
         </p>
@@ -384,12 +384,12 @@ signification</item>
             <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
               xpath-default-namespace="http://www.tei-c.org/ns/1.0" 
               version="2.0">
-              <xsl:template match="div">
+              <xsl:template match="div[@type='recipe']">
                 <html>
                   <h1>
                     <xsl:value-of select="@n"/>: <xsl:value-of select="head"/>
                   </h1>
-                  <p>Ingrédients: <xsl:apply-templates select="list/item"/>
+                  <p>Ingredients: <xsl:apply-templates select="list/item"/>
                   </p>
                   <p><xsl:value-of select="p"/></p>
                 </html>
@@ -403,7 +403,7 @@ signification</item>
 
       <div type="slide">
         <head>An XSLT stylesheet</head>
-        <list>
+        <list type="bulleted">
           <item>is an XML document, containing special elements from the XSLT namespace
               <code>http://www.w3.org/1999/XSL/Transform</code>
           </item>
@@ -429,7 +429,7 @@ signification</item>
 
       <div type="slide">
         <head>Ten essential XSLT elements</head>
-        <list>
+        <list type="bulleted">
           <item><gi>xsl:template</gi> defines a <term>template</term></item>
           <item><gi>xsl:apply-templates</gi> applies templates</item>
           <item><gi>xsl:value-of</gi> returns the value of a node </item>
@@ -610,7 +610,7 @@ sont disponibles. </p>
 
       <!--
 <div type="slide"><head>Attention: à ne pas confondre...</head>
-<list>
+<list type="bulleted">
 <item><gi>xsl:value-of select="XX"</gi> fait sortir le contenu des
 noeuds indiques par le XPath "XX".</item>
  <item><gi>xsl:apply-templates select="XX"</gi> fait traiter les
@@ -864,7 +864,7 @@ oui
 -->
       <div type="slide">
         <head>Pour en savoir plus</head>
-        <list>
+        <list type="bulleted">
 
           <item>A <ref target="http://www.gchagnon.fr/cours/xml/">http://www.gchagnon.fr/cours/xml/
             </ref> vous trouverez deux cours complets et très clairs</item>
