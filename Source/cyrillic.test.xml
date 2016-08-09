@@ -18,9 +18,9 @@
         <body>
             <div type="slide">
                 <head>Test slide</head>
-                <p><code>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |</code></p>
+                <p>Here's something tagged <gi>code</gi> : <code>Хамови же ꙗсѧ| полуденьꙗ часть. егупетъ. |</code></p>
                 <list>
-                    <item>Се <ident>повѣсти</ident> времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
+                    <item>Here's something else : Се <ident>повѣсти</ident> времѧньны<hi rend="sup">х</hi> лѣ<hi rend="sup">т</hi>. [1v]</item>
                 </list>
                 <p>And here's the same <gi>text</gi> presented as an example.</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
