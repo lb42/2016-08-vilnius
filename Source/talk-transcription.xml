@@ -122,7 +122,7 @@
 
             <div rend="slide">
                 <head>A typical minimal encoding</head>
-          <!--      <p><graphic url="../images/exemple-p5.png" width="80%"/>
+                <!--      <p><graphic url="../images/exemple-p5.png" width="80%"/>
                 </p>-->
                 <p><graphic url="../images/Ms629_p05.png"/></p>
                 <cb/>
@@ -165,15 +165,16 @@
             <div>
                 <head>Using <gi>g</gi></head>
                 <figure>
-                    <graphic url="../images/bdinski07r-dtl.png" height="50%"/>
+                    <graphic url="../images/o.png" height="45%"/>
                     <head>Bdinski, fol 7r, detail</head>
                 </figure>
                 <p>There is no Unicode character for the non-ligatured oo here: we tag it as a
                         <gi>g</gi></p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <lb/>звратити дьщере брата
-                    <lb/>своѥг<g ref="#ooGlyph">оо</g>. пришед же абиѥ
-                    <lb/>на мѣст<g ref="#ooGlyph">оо</g>. и вьшедь вь</egXML>
+                    <lb/>на мѣст<g ref="#ooLig">oo</g>. и вьшедь вь
+                    <lb/>гостинницю. гледаше
+                    <lb/>само и ѡнам<g ref="#ooLig">oo</g> хоте видѣ
+                    <lb break="no"/>ти. вьсклабив же се рече </egXML>
                 <p><code>#ooGlyph</code> points to a description of the glyph, provided in the TEI
                     header.</p>
             </div>
@@ -352,7 +353,7 @@
 
 
             <div>
-                <head>Type abbreviations</head>
+                <head>Types of abbreviation</head>
 
                 <p>The <att>type</att> attribute on <gi>abbr</gi> is a useful way of categorising
                     abbreviations, whether for statistical purposes, or to allow for different types
@@ -439,7 +440,7 @@
                 <head>Additions, deletions, substitutions</head>
                 <p>Alterations made to the text, whether by the scribe or in some later hand, can be
                     encoded using <gi>add</gi> (addition) or <gi>del</gi> (deletion).</p>
-                <p>Where the addition and deletion are regarded as a single
+                <p>Where the addition and deletion are regarded as a single act of
                         <term>substitution</term>, they can be grouped together using the
                         <gi>subst</gi> (substitution) element </p>
                 <p>
@@ -452,7 +453,7 @@
             </div>
 
             <div>
-                <head>>An English example</head>
+                <head>An English example</head>
                 <p>
                     <graphic url="../images/PHowen.png"/>
                 </p>
@@ -471,8 +472,7 @@
             <div>
                 <head>Semi-legible text</head>
                 <p> Use <gi>unclear</gi> if the text is partly illegible i.e. it can be read but
-                    without perfect confidence. The <att>reason</att> attribute here states the
-                    cause of the uncertainty in transcription. </p>
+                    without perfect confidence. </p>
                 <p>
                     <graphic url="../images/mightshould.png" width="80%"/>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">I <subst><add
@@ -481,10 +481,59 @@
                     </egXML>
                 </p>
             </div>
+
+
             <div>
-                <head>Supplied and damaged text</head>
+                <head>Damage to the carrier</head>
+                <p>Use the <gi>damage</gi> element to record the existence of physical damage to the
+                    document, whether or not the damaged text is readable : 
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"> <damage
+                        reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
+                    <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples"><l>The Moving Finger wri<damage
+                                agent="water" group="1">es; and</damage> having writ,</l><l>Moves
+                                <damage agent="water" group="1"><supplied>on: nor all
+                                    your</supplied></damage> Piety nor Wit</l></egXML>
+                </p>
+                <p>The <att>group</att> attribute is used to associate together parts of the
+                    transcription affected by the same area of damage.</p>
+
+            </div>
+           
+            <div>
+                <head>Lacunae</head>
+                <p>Use the <gi>gap</gi> element when something is missing, for example because it is
+                    impossible to transcribe, because the carrier is damaged, or because of
+                    editorial policy. </p>
+                <p>In addition to the attributes already mentioned, <att>quantity</att> and
+                        <att>unit</att> are available to indicate the size of the gap </p>
+                <p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">I am dr Sr yr <gap
+                            reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
+                    
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">Their arrangement with respect to Jupiter and to each other was as follows:
+                        <gap reason="sampling" extent="restOfPage" >
+                            <desc>astrological figure</desc>
+                        </gap>
+                        That is, there were two stars on the easterly side and one to the
+                        west; …</egXML>
+                </p>
+            </div>
+
+<div><head>Text made semi-legible through damage</head>
+    <p>These elements may be used in combination as necessary. In this example, two phrases can be read despite smoke damage, but three lines 
+        in between are completely illegible:
+    </p>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">  <damage agent="smoke">
+                <unclear>and the proof of this is</unclear>
+                <gap quantity="3" unit="line" cause="smokeDamage"/>
+                <unclear>margin</unclear>
+            </damage></egXML>
+</div>
+            <div>
+                <head>Supplied  text</head>
                 <p>Use the <gi>supplied</gi> element if the transcriber has provided a reading not
-                    actually visible in the text, perhaps because of damage or scribal error : </p>
+                    actually visible in the text, perhaps because of scribal error : </p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">…Dragging the worst among<supplied
                         reason="authorialError" cert="high">s</supplied>t us…</egXML>
                 <p>Attributes can be used to qualify the information further: <list>
@@ -499,47 +548,41 @@
                     </list></p>
             </div>
 
-
             <div>
-                <head>Lacunae</head>
-                <p>When missing text cannot be confidently supplied or is intentionally omitted the
-                        <gi>gap</gi> element should be used with a <att>reason</att> to explain why.
-                    It can use its <att>extent</att> and <att>unit</att> attributes indicate its
-                    size. <egXML xmlns="http://www.tei-c.org/ns/Examples"><gap reason="wormhole"
-                            extent="7" unit="mm"/></egXML></p>
-                <p>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">I am dr Sr yr <gap
-                            reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
+                <head>Text supplied to fill a lacuna</head>
+                <p>If the transcriber wishes to supply material to fill a lacuna, it should be marked
+                    up using <gi>supplied</gi> rather than <gi>gap</gi>. In this example, 42 lines
+                    missing from the bottom of page 5v have been supplied from another source
+                    (identified here simply as <ident>ed</ident>) on the authority of
+                        <ident>#djb</ident>: <egXML xmlns="http://www.tei-c.org/ns/Examples">расѣдша
+                        се. и ѡ
+                        <lb break="no"/>брѣтени* быти голоубици <supplied resp="#djb" source="ed"
+                            reason="missing">
+                            <pb n="301c"/>
+                            <lb/>(голоубици) онои въ чре
+                            <lb break="no"/>вѣ ѥго. и простьръ роу
+                            <lb break="no"/>коу блаженыи възѧ
+                            <lb break="no"/>тъ ю живоу. не имоущу <!-- ... -->
+                            <lb/>д҃нь и нощь молѧ б҃а о нѥ
+                            <lb break="no"/>и. и по дъвою лѣтоу вѣ
+                            <lb break="no"/>сть бысть (ѥмоу. къ-)</supplied>
+                        <pb n="6r"/>
+                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
+                        <lb break="no"/>ть. и оумоливь нѣкого оу
+                        <lb break="no"/>жикоу своѥго посла тамо.</egXML>
                 </p>
-            </div>
-
-            <div>
-                <head>Text Omitted from or Supplied in the Transcription</head>
-                <p>
-                    <list type="unordered">
-                        <item>
-                            <gi>gap</gi> indicates a point where material has been omitted in a
-                            transcription, whether for editorial reasons described in the TEI
-                            header, as part of sampling practice, or because the material is
-                            illegible or inaudible.</item>
-                        <item>
-                            <gi>supplied</gi> signifies text supplied by the transcriber or editor
-                            for any reason, typically because the original cannot be read because of
-                            physical damage or loss to the original.</item>
-
-                    </list>
-                </p>
+                <p>Alternatively, the transcription might simply indicate that the text is missing
+                    and not supply it <egXML xmlns="http://www.tei-c.org/ns/Examples">расѣдша се. и
+                        ѡ
+                        <lb break="no"/>брѣтени* быти голоубици <gap quantity="42" unit="line"/>
+                        <pb n="6r"/>
+                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
+                        <lb break="no"/>ть. и оумоливь нѣкого оу
+                        <lb break="no"/>жикоу своѥго посла тамо.</egXML>.</p>
             </div>
             <!--  
               
-               <p>Use the <gi>damage</gi> element to record the existence of physical damage to the
-                    document, whether or not the damaged text is readable : <egXML
-                        xmlns="http://www.tei-c.org/ns/Examples"><l>The Moving Finger wri<damage
-                                agent="water" group="1">es; and</damage> having writ,</l><l>Moves
-                                <damage agent="water" group="1"><supplied>on: nor all
-                                    your</supplied></damage> Piety nor Wit</l></egXML>
-                </p>
-                <div>
+               <
                 <head><gi>gap</gi> and <gi>supplied</gi> examples</head>
                 <p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples"> expansion <gap
@@ -611,7 +654,7 @@
                     </egXML>
                 </p>
             </div>
--->
+
             <div>
                 <head>Disjoint Damage</head>
                 <p>
@@ -624,7 +667,6 @@
                 </p>
             </div>
 
-            <!--
                 <div>
                     <head>Editorial phrase-level elements</head>
                     <p>A summary list of some of the more important phrase-level transcription
