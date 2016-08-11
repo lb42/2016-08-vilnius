@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Russian Gospel</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Unpublished</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>???</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <ab><pb n="1"/>
+               <lb/>Ѡ<hi rend="sup">т</hi> ІѠ<hi rend="lig">АН</hi>НА <choice>
+                  <abbr><hi rend="lig">СТ҃</hi>ОЄ</abbr>
+                  <expan>СВѦТОЄ</expan>
+               </choice>
+               <choice>
+                  <abbr>ВЛ҃ГОВѢС<hi rend="lig">ТВ</hi>О<lb break="no"/>ванїе</abbr>
+                  <expan>БЛАГОВѢСТВОванїе</expan>
+               </choice>. въ <choice>
+                  <abbr>с҃тꙋю</abbr>
+                  <expan>свѧтꙋю</expan>
+               </choice> и великꙋю<lb/>
+               <choice>
+                  <abbr>не<hi rend="sup">д</hi></abbr>
+                  <expan>неделю</expan>
+               </choice> пасхи, на <choice>
+                  <abbr>ли<hi rend="sup">т</hi></abbr>
+                  <expan>литургии</expan>
+               </choice>
+               <choice>
+                  <abbr>єѵг҇</abbr>
+                  <expan>еѵангелїе</expan>
+               </choice>
+               <note place="margin" type="liturgical_instruction">Ѡ<hi rend="sup">т</hi>
+                  <choice>
+                     <abbr>іѡан<hi rend="sup">н҇</hi></abbr>
+                     <expan>іѡана</expan>
+                  </choice><lb/><choice>
+                     <abbr>за<hi rend="sup">ч҇</hi></abbr>
+                     <expan>зачало</expan>
+                  </choice> .а҃.</note>
+               <lb/>Въ началѣ бѣ слово, и <lb/>слово бѣ къ <choice>
+                  <abbr>бо<hi rend="sup">г</hi>у</abbr>
+                  <expan>богоу</expan>
+               </choice>, и <choice>
+                  <abbr>б<hi rend="sup">г҇</hi>ъ</abbr>
+                  <expan>богъ</expan>
+               </choice>
+               <lb/>бѣ слово. се бѣ иско<lb break="no"/>ни къ <choice>
+                  <abbr>бо<hi rend="sup">г</hi>у</abbr>
+                  <expan>богоу</expan>
+               </choice>. въсѧ <choice>
+                  <abbr>тѣ<hi rend="sup">м</hi></abbr>
+                  <expan>тѣмь</expan>
+               </choice>
+               <lb/>быша: и безⸯ негѡ <choice>
+                  <abbr>нич<lb break="no"/>т<hi rend="sup">т</hi>же</abbr>
+                  <expan>ничьтоже</expan>
+               </choice>
+               <choice>
+                  <abbr>бы<hi rend="sup">т</hi></abbr>
+                  <expan>бысть</expan>
+               </choice>, єже <choice>
+                  <abbr>бы<hi rend="sup">т</hi></abbr>
+                  <expan>бысть</expan>
+               </choice>. вⸯ <choice>
+                  <abbr>то<hi rend="sup">м</hi></abbr>
+                  <expan>томь</expan>
+               </choice>
+               <choice>
+                  <abbr>жиѡ<hi rend="sup">т</hi></abbr>
+                  <expan>животъ</expan>
+               </choice> бҍ,</ab>
+            <fw>а҃</fw>
+         </div>
+      </body>
+   </text>
+</TEI>
