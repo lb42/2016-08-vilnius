@@ -22,31 +22,41 @@
          <p>An ODD to validate TEI texts converted from Obdurudon edited texts, conformant to the bdinski RNC schema</p>
          <schemaSpec ident="teiBdinski" start="TEI">
             <moduleRef key="tei"/>
-            <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc revisionDesc change"/>
+            <moduleRef key="header" include="teiHeader fileDesc titleStmt publicationStmt sourceDesc revisionDesc change encodingDesc  charDecl"/>
             <classRef key="att.milestoneUnit"/>
             <!-- modified elements -->
-            <moduleRef key="transcr" include="subst"></moduleRef>
+            <moduleRef key="transcr" include="subst"/>
             <elementSpec ident="subst" mode="change" module="transcr">
             <content >
                <elementRef key="del"/>
                <elementRef key="add"/>
             </content>
             </elementSpec>
+            <moduleRef key="gaiji" />
             
             <elementRef key="TEI"/> 
             <elementRef key="ab"/>
             <elementRef key="add"/>
             <elementRef key="back"/>
+            <elementRef key="bibl"/>
+            
             <elementRef key="body"/>
+               
             <elementRef key="damage"/>
+            <elementRef key="date"/>
+            
             <elementRef key="del"/>
             <elementRef key="expan"/>
+            <elementRef key="g"/>
+             
             <elementRef key="gap"/>
             <elementRef key="hi"/>
             <elementRef key="lb"/>
             <elementRef key="milestone"/>
             <elementRef key="name"/>
             <elementRef key="pb"/>
+            <elementRef key="ref"/>
+            
             <elementRef key="resp"/>
             <elementRef key="respStmt"/>
              <elementRef key="supplied"/>          
