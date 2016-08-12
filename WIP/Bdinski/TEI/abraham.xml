@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0"><teiHeader><fileDesc><titleStmt><title>Title</title><respStmt><resp>original transcription</resp><name>Lara Sels</name></respStmt></titleStmt><publicationStmt><ab>Publication information</ab></publicationStmt><sourceDesc><ab/></sourceDesc></fileDesc><encodingDesc><charDecl><glyph xml:id="ooLig"><glyphName>CYRILLIC DOUBLE OMICRON LIGATURE</glyphName></glyph></charDecl></encodingDesc><revisionDesc><change>Header created by djbtotei</change></revisionDesc></teiHeader><text><body><ab>
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0"><teiHeader><fileDesc><titleStmt><title>abraham text from Bdinski anthology</title><respStmt><resp>Original transcription </resp><name>Lara Sels</name></respStmt></titleStmt><publicationStmt><ab> Source at <ref target="https://github.com/lb42/2016-08-vilnius">https://github.com/lb42/2016-08-vilnius/Source</ref>. For use in <ref target="http://textualheritage.org/en/conf.html"><title>Textual Heritage and
+                                    Information Technologies: El’Manuscript-2016</title></ref>,
+                           Vilnius, Lithuania,  <date from="2016-08-22" to="2016-08-28">22-28 August 2016</date> License: <ref target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</ref>.</ab></publicationStmt><sourceDesc><ab><bibl/></ab></sourceDesc></fileDesc><encodingDesc><charDecl><glyph xml:id="ooLig"><glyphName>CYRILLIC DOUBLE OMICRON LIGATURE</glyphName></glyph></charDecl></encodingDesc><revisionDesc><change>Header created by djbtotei</change></revisionDesc></teiHeader><text><body><ab>
 <lb/><pb n="43" ed="ed"/>СЛОВО БЛА<lb break="no"/>женаго аврамиа. како п<lb break="no"/>риѡбрѣте дьщере брата
 <lb/>своѥго ѡ<hi rend="sup">т</hi> поути лоукаваго
 <lb/><milestone unit="p" n="25" ed="ed"/>Хощю же любимици мо<lb break="no"/>и. повѣдати дивноую
@@ -34,13 +36,13 @@
 <lb/>неистовьство сьтвори
 <lb/>диꙗволь на ню и сѣть по<pb n="3r"/><lb break="no"/>лече да оуловить ю. да по<lb break="no"/>нѣ тако вьзможеть бла<lb break="no"/>женаго о<hi rend="sup">у</hi>ловити. и оумь
 <lb/>єго ѡ<hi rend="sup">т</hi>ставити ѡ<hi rend="sup">т</hi> б҃а.<milestone unit="p" n="27" ed="ed"/> бѣ же
-<lb/>нѣкто име имѣѥ чрьньчско<lb break="no"/>ѥ. иже хождаше кь бла<lb break="no"/>жен<hi rend="lig"><g ref="#ooLig">oo</g></hi>моу ꙗко виною по<lb break="no"/>лезною сь тьщаниѥмь
-<lb/>мног<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь. видоваше же
+<lb/>нѣкто име имѣѥ чрьньчско<lb break="no"/>ѥ. иже хождаше кь бла<lb break="no"/>жен<g ref="#ooLig">oo</g>моу ꙗко виною по<lb break="no"/>лезною сь тьщаниѥмь
+<lb/>мног<g ref="#ooLig">oo</g>мь. видоваше же
 <lb/>и блаженоую сию дверца<lb break="no"/>ми. иже бывь неистовь,
 <lb/>хотѣше ѥи бесѣдовати.
 <lb/>ꙗкоже бо пламень ра<lb break="no"/>ждеже се ср<hi rend="sup">д</hi>це ѥго неисто<lb break="no"/>вныѥ любве. желаа же
 <lb/>єѥ доволно врѣме ꙗко
-<lb/>лѣто єдин<hi rend="lig"><g ref="#ooLig">oo</g></hi>, доидеже
+<lb/>лѣто єдин<g ref="#ooLig">oo</g>, доидеже
 <lb/>раслабыть свои помы<pb n="3v"/><lb break="no"/>сль. и ѡ<hi rend="sup">т</hi>врьзши дверце
 <lb/>хызныѥ и изиде к нѥмꙋ.
 <lb/>и ѡскврьни ю скврьнним<hi rend="sup">ъ</hi>
@@ -51,7 +53,7 @@
 <lb/>прпо<hi rend="sup">д</hi>бнаго стрїа моѥго вь
 <lb/>горкоую печаль вьврьгохь.<pb n="4r"/>
 <lb/>поношениѥмь д҃шю мою
-<lb/>ѡблѣк<hi rend="lig"><g ref="#ooLig">oo</g></hi>хь. и вь пороуга<lb break="no"/>ниѥ бы<hi rend="sup">х</hi> дїаволоу. то юже
+<lb/>ѡблѣк<g ref="#ooLig">oo</g>хь. и вь пороуга<lb break="no"/>ниѥ бы<hi rend="sup">х</hi> дїаволоу. то юже
 <lb/>по что живоу азь ѡкаꙗнь<lb break="no"/>на. ѡ лютѣ мнѣ что
 <lb/>сьтворихь. ѡ лютѣ мнѣ
 <lb/>вь что вьпадохь. како ѡ<lb break="no"/>мрачи се помысль мои.
@@ -63,7 +65,7 @@
 <lb/>стрїа. гдѣ наказаниѥ
 <lb/>дроугаго* єфрема. ꙗкоже<pb n="4v"/>
 <lb/>гл҃аста ми вьнемли се<lb break="no"/>бѣ и сп҃сеши д҃шю сво<lb break="no"/>ю, бесмртномоу жени<lb break="no"/>хоу нескврьнноую. же<lb break="no"/>них бо твои с҃ть ѥсть.
-<lb/>и ревнитель кь т<hi rend="lig"><g ref="#ooLig">oo</g></hi>моу не дрь<lb break="no"/>зноу вьзрѣти на н҃бо. оум<lb break="no"/>рьла бо ѥсмь б҃оу и чл҃вк<hi rend="lig"><g ref="#ooLig">oo</g></hi>м<hi rend="sup">ъ</hi>.
+<lb/>и ревнитель кь т<g ref="#ooLig">oo</g>моу не дрь<lb break="no"/>зноу вьзрѣти на н҃бо. оум<lb break="no"/>рьла бо ѥсмь б҃оу и чл҃вк<g ref="#ooLig">oo</g>м<hi rend="sup">ъ</hi>.
 <lb/>приближити се кь дверца<lb break="no"/>мь тѣмь не могоу. како
 <lb/>бо азь грѣшница испль<lb break="no"/>нь нечистоти соущи, па<lb break="no"/>кы начноу гл҃ати сь с҃ты<lb break="no"/>мь тѣмь. аще же и дрь<lb break="no"/>зноу ѡгнь изьшедь изь
 <lb/>дверць тѣ<hi rend="sup">х</hi> не сьжежет ли
@@ -73,9 +75,9 @@
 <lb/>ми надеж<hi rend="sup">д</hi>е сп҃сениꙗ. вь<lb break="no"/>ставши же абиѥ, ѡтиде
 <lb/>вь инь граадь. и измѣни<lb break="no"/>вшии ѡбразь свои. бысть
 <lb/>вь гостинници,<milestone unit="p" n="29" ed="ed"/> прилоучи<lb break="no"/>вшоу же се семоу єи. видѣ ви<lb break="no"/>дѣниѥ блажены, страшнаа
-<lb/>змиꙗ велика зѣло. мрьзь<lb break="no"/>ка ꙫбраз<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь. шоумеща
+<lb/>змиꙗ велика зѣло. мрьзь<lb break="no"/>ка ꙫбраз<g ref="#ooLig">oo</g>мь. шоумеща
 <lb/>крѣпостию, изьшедшаа
-<lb/>ѡ<hi rend="sup">т</hi> мѣста своѥг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. и прише<lb break="no"/>дша до кѥлиѥ єго. и ѡбрѣ<lb break="no"/>ть голоубицю<pb n="46" ed="ed"/> погльти ю,
+<lb/>ѡ<hi rend="sup">т</hi> мѣста своѥг<g ref="#ooLig">oo</g>. и прише<lb break="no"/>дша до кѥлиѥ єго. и ѡбрѣ<lb break="no"/>ть голоубицю<pb n="46" ed="ed"/> погльти ю,
 <lb/>и пакы вьзврати се вь мѣ<lb break="no"/>сто своѥ. вьспреноув же се<pb n="5v"/>
 <lb/>ѡ<hi rend="sup">т</hi> сна блаженыи и ѡскрь<lb break="no"/>бѣ зѣло. и плака се горцѣ,
 <lb/>єда оубо гонѥниѥ вьз<hi rend="sup">д</hi>ви<lb break="no"/>гнеть сотона на с҃тюю црь<lb break="no"/>ковь. и многыѥ ѡста<lb break="no"/>вить ѡ<hi rend="sup">т</hi> вѣры. или разоре<lb break="no"/>ниѥ боудеть цр҃квы. по<lb break="no"/>молив же се г҃оу ре<hi rend="sup">ч҇</hi>. вьса вѣ<lb break="no"/>ди чл҃колюбче г҃и. ты єди<lb break="no"/>нь свѣси видѣниѥ сиѥ.
@@ -111,53 +113,53 @@
 <lb/>єи єсть быти. ре<hi rend="sup">ч҇</hi> же прї<lb break="no"/>нести ѥмоу воиньскоую
 <lb/>подобоу. кон же и ѡроу<lb break="no"/>жиѥ. и ѡ<hi rend="sup">т</hi>врьзь дверце хи<lb break="no"/>зини, и излѣзе. ѡбльк се
 <lb/>вь воиньскыи ѡбразь.<pb n="6v"/>
-<lb/>и клобоукь великь зѣл<hi rend="lig"><g ref="#ooLig">oo</g></hi>,
+<lb/>и клобоукь великь зѣл<g ref="#ooLig">oo</g>,
 <lb/>вьзложи на главоу свою.
 <lb/>да би покриль лице своѥ.
 <lb/>вьзет же и цетоу єдиноу
 <lb/>сь собою. и вьсѣдь на конь
-<lb/>идѣше. аще бо кт<hi rend="lig"><g ref="#ooLig">oo</g></hi> сь<lb break="no"/>ходныкь. єг<hi rend="sup">д</hi>а вьсхощеть
+<lb/>идѣше. аще бо кт<g ref="#ooLig">oo</g> сь<lb break="no"/>ходныкь. єг<hi rend="sup">д</hi>а вьсхощеть
 <lb/>сьходити ѡ<hi rend="sup">т</hi>ч҃ьство тоуж<hi rend="sup">д</hi>е
-<lb/>или градни коурил<hi rend="lig"><g ref="#ooLig">oo</g></hi>* вьзе<hi rend="lig">ти</hi>.
+<lb/>или градни коурил<g ref="#ooLig">oo</g>* вьзе<g ref="тиLig">ти</g>.
 <lb/>да не познань боудеть.
 <lb/>тако и блажены сь, вьзеть
 <lb/>ѡбразь вражии, да и прѣ<lb break="no"/>лоукоуѥть и побѣдить.
-<lb/>прїидѣте почюдим се лю<lb break="no"/>бимици семоу втор<hi rend="lig"><g ref="#ooLig">oo</g></hi>м<hi rend="sup">о<hi rend="sup">у</hi></hi>
+<lb/>прїидѣте почюдим се лю<lb break="no"/>бимици семоу втор<g ref="#ooLig">oo</g>м<hi rend="sup">о<hi rend="sup">у</hi></hi>
 <lb/>авраамоу. Ꙩнь<pb n="48" ed="ed"/> бо прьвы
 <lb/>ишедь на брани кь ц҃ремъ.
 <lb/>и побѣди и<hi rend="sup">х</hi>. и вьзврати<pb n="7r"/>
 <lb/>лота с҃новы своѥго. сьи
-<lb/>же вт<hi rend="lig"><g ref="#ooLig">oo</g></hi>рїи авраамь, изи<lb break="no"/>де на брань самого дїаво<lb break="no"/>ла, побѣдити ѥго. и вь<lb break="no"/>звратити дьщере брата
-<lb/>своѥг<hi rend="lig"><g ref="#ooLig">oo</g></hi>.<milestone unit="p" n="32" ed="ed"/> пришед же абиѥ
-<lb/>на мѣст<hi rend="lig"><g ref="#ooLig">oo</g></hi>. и вьшедь вь
+<lb/>же вт<g ref="#ooLig">oo</g>рїи авраамь, изи<lb break="no"/>де на брань самого дїаво<lb break="no"/>ла, побѣдити ѥго. и вь<lb break="no"/>звратити дьщере брата
+<lb/>своѥг<g ref="#ooLig">oo</g>.<milestone unit="p" n="32" ed="ed"/> пришед же абиѥ
+<lb/>на мѣст<g ref="#ooLig">oo</g>. и вьшедь вь
 <lb/>гостинницю. гледаше
-<lb/>само и ѡнам<hi rend="lig"><g ref="#ooLig">oo</g></hi> хоте видѣ<lb break="no"/>ти. вьсклабив же се рече
+<lb/>само и ѡнам<g ref="#ooLig">oo</g> хоте видѣ<lb break="no"/>ти. вьсклабив же се рече
 <lb/>кь гостинникоу. дроуже
 <lb/>слышаль ѥсмь. ꙗко има<lb break="no"/>ши здѣ д҃вцю доброу. вь
 <lb/>сласть да се назрю єє. ѡ<lb break="no"/>н же видѣвь старостныѥ
-<lb/>сѣдины ѥг<hi rend="lig"><g ref="#ooLig">oo</g></hi>, поразоумѣ
+<lb/>сѣдины ѥг<g ref="#ooLig">oo</g>, поразоумѣ
 <lb/>ꙗко блоуда ради вьпраша<lb break="no"/>ѥть ѥѥ. потомь ѡ<hi rend="sup">т</hi>веща<pb n="7v"/><lb break="no"/>вь ре<hi rend="sup">ч҇</hi>, ѥ<hi rend="sup">с҇</hi> же и зѣло красна.
 <lb/>бѣ бо блаженаа тиꙗ,
 <lb/>паче ѥстьства чл҃вчскаа
 <lb/>добрѣиши. ре<hi rend="sup">ч҇</hi> же к нѥмо<hi rend="sup">у</hi>
-<lb/>стрїи ѥє, и чт<hi rend="lig"><g ref="#ooLig">oo</g></hi> наричет се.
+<lb/>стрїи ѥє, и чт<g ref="#ooLig">oo</g> наричет се.
 <lb/>ѡн же ре<hi rend="sup">ч҇</hi> марїа наричет се.
-<lb/>тогда свѣтл<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь лицемь
+<lb/>тогда свѣтл<g ref="#ooLig">oo</g>мь лицемь
 <lb/>гл҃а ѥмоу. призови ми
 <lb/>ю да се повеселю днь<hi rend="sup">с҇</hi> с нѥю.
-<lb/>зѣл<hi rend="lig"><g ref="#ooLig">oo</g></hi> бо ꙗко слышаль ѥсм
-<lb/>ѡ нѥи годѣ ми ѥсть. при<lb break="no"/>званѣ же бывши єи. при<lb break="no"/>де к нѥмоу. и ꙗко же ю ви<lb break="no"/>дѣ вь крас<hi rend="lig"><g ref="#ooLig">oo</g></hi>тѣ тои блоуд<lb break="no"/>нычьскымь ѡбраз<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь.
+<lb/>зѣл<g ref="#ooLig">oo</g> бо ꙗко слышаль ѥсм
+<lb/>ѡ нѥи годѣ ми ѥсть. при<lb break="no"/>званѣ же бывши єи. при<lb break="no"/>де к нѥмоу. и ꙗко же ю ви<lb break="no"/>дѣ вь крас<g ref="#ooLig">oo</g>тѣ тои блоуд<lb break="no"/>нычьскымь ѡбраз<g ref="#ooLig">oo</g>мь.
 <lb/>мала все тѣло єго сльзно
 <lb/>не бы<hi rend="sup">с҇</hi>. о<hi rend="sup">у</hi>дрьжа се оубо да
 <lb/>не полоучениꙗ погрѣшить.<pb n="8r"/>
 <lb/>и разоумѣвшїи ѡ<hi rend="sup">т</hi>бѣжит
 <lb/>єго.<milestone unit="p" n="33" ed="ed"/> сѣдещима има
 <lb/>и поющїима.* начеть и<lb break="no"/>грати с нѥю самь ть ди<lb break="no"/>вныи моужь. ѡна же вь<lb break="no"/>ставши и ѡбьѥть и и на<lb break="no"/>четь лобизати по вїи ѥго.
-<lb/>лобызающи же ѥє.* вьзь<lb break="no"/>вонꙗ оубо вонѥю чрьнори<lb break="no"/>зьчьск<hi rend="lig"><g ref="#ooLig">oo</g></hi>ю тѣло ѥго. и по<lb break="no"/>меноу же абиѥ д҃ни вьз<hi rend="sup">д</hi>рь<lb break="no"/>жаниꙗ своѥг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. и вьздьх<lb break="no"/>ноувши просльзи се и рече.
+<lb/>лобызающи же ѥє.* вьзь<lb break="no"/>вонꙗ оубо вонѥю чрьнори<lb break="no"/>зьчьск<g ref="#ooLig">oo</g>ю тѣло ѥго. и по<lb break="no"/>меноу же абиѥ д҃ни вьз<hi rend="sup">д</hi>рь<lb break="no"/>жаниꙗ своѥг<g ref="#ooLig">oo</g>. и вьздьх<lb break="no"/>ноувши просльзи се и рече.
 <lb/>ѡ лютѣ мнѣ єдинои.<pb n="49" ed="ed"/><milestone unit="p" n="34" ed="ed"/> го<lb break="no"/>стиньц же ре<hi rend="sup">ч҇</hi> к нѥи г<hi rend="sup">с</hi>ж<hi rend="sup">д</hi>е
 <lb/>марїє днесь. имаши вто<lb break="no"/>роѥ лѣто се сь нами. и ни<lb break="no"/>когда же слышаль ѥсмь,<pb n="8v"/>
 <lb/>ѡ<hi rend="sup">т</hi> тебе сицева слова и вь<lb break="no"/>здьхновениꙗ. н҃нꙗ оубо
-<lb/>чт<hi rend="lig"><g ref="#ooLig">oo</g></hi> ти бы<hi rend="sup">с҇</hi>. ѡна же рече
+<lb/>чт<g ref="#ooLig">oo</g> ти бы<hi rend="sup">с҇</hi>. ѡна же рече
 <lb/>аще бы<hi rend="sup">х</hi> оумрьла прѣж<hi rend="sup">д</hi>е си<hi rend="sup">х</hi>
 <lb/>лѣть, блажена бы<hi rend="sup">х</hi> была.
 <lb/>и абиѥ блажены да не
@@ -174,7 +176,7 @@
 <lb/>се ѡ<hi rend="sup">т</hi>бѣжить. изьм же<pb n="9r"/>
 <lb/>цѣтоу самь дасть гости<lb break="no"/>нныкоу. и гл҃а ѥмоу дроу<lb break="no"/>же сьтвори ны ве<hi rend="sup">ч҇</hi>роу добрꙋ.
 <lb/>да вьзвеселим се днь<hi rend="sup">с҇</hi> сь д҃ви<lb break="no"/>цею сею. из далече бо прїи<lb break="no"/>дохь єѥ ради.<milestone unit="p" n="35" ed="ed"/> ѡ колика
-<lb/>прѣмоудр<hi rend="lig"><g ref="#ooLig">oo</g></hi>сть б҃а ради.
+<lb/>прѣмоудр<g ref="#ooLig">oo</g>сть б҃а ради.
 <lb/>ѡ коликь разоумь д҃ховнь.
 <lb/>ѡ колико несоумнѣниѥ
 <lb/>сп҃сениꙗ ради. иже вь, н҃.
@@ -183,13 +185,13 @@
 <lb/>меса ꙗсть. да сп҃сеть д҃шꙋ
 <lb/>погыбшоую. лици же
 <lb/>с҃тыи<hi rend="sup">х</hi> агг҃льь на н҃бсѣхь
-<lb/>дивише се. како прилеж<lb break="no"/>но не сюмне се пїаше и ꙗдѣ<lb break="no"/>ше, да ѡ<hi rend="sup">т</hi> скврьннаго р<hi rend="lig"><g ref="#ooLig">oo</g></hi>ва<pb n="9v"/>
-<lb/>исхытить потопноувшꙋ<lb break="no"/>ю д҃шю. ѡ прѣмоудрос<hi rend="lig">ти</hi>
+<lb/>дивише се. како прилеж<lb break="no"/>но не сюмне се пїаше и ꙗдѣ<lb break="no"/>ше, да ѡ<hi rend="sup">т</hi> скврьннаго р<g ref="#ooLig">oo</g>ва<pb n="9v"/>
+<lb/>исхытить потопноувшꙋ<lb break="no"/>ю д҃шю. ѡ прѣмоудрос<g ref="тиLig">ти</g>
 <lb/>прѣмоудрїихь. ѡ разоуме
 <lb/>разо<hi rend="sup">у</hi>мнихь. прїидѣте почюди<lb break="no"/>м се законоположению
-<lb/>єг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. ѡ великоѥ чюдо за<lb break="no"/>коноположениꙗ, разсоу<lb break="no"/>ж<hi rend="sup">д</hi>енїа дѣлма. прїидѣте
+<lb/>єг<g ref="#ooLig">oo</g>. ѡ великоѥ чюдо за<lb break="no"/>коноположениꙗ, разсоу<lb break="no"/>ж<hi rend="sup">д</hi>енїа дѣлма. прїидѣте
 <lb/>дивите се ѡ несоумнѣни
-<lb/>єг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. како оубо сицеви
+<lb/>єг<g ref="#ooLig">oo</g>. како оубо сицеви
 <lb/>моудрьць. и<pb n="50" ed="ed"/> расоудителинь.
 <lb/>и разꙋмень, смрадь ꙗкы по<lb break="no"/>трѣщенина* бысть. да
 <lb/>ѡ<hi rend="sup">т</hi> оусть змїєвь истрьгне<lb break="no"/>ть д҃шю погыбшоую. и ть<lb break="no"/>мниць тьмныи<hi rend="sup">х</hi> раз<hi rend="sup">д</hi>рѣши<lb break="no"/>вь. избави д҃шю затворе<lb break="no"/>нноую вь тьмници.<milestone unit="p" n="36" ed="ed"/> по вь<pb n="10r"/><lb break="no"/>звеселѥныи же и<hi rend="sup">х҇</hi> ре<hi rend="sup">ч҇</hi> д҃вца
@@ -211,11 +213,11 @@
 <lb/>мы же на расоуж<hi rend="sup">д</hi>ениѥ
 <lb/>тьще вьсходимь. любо аще
 <lb/>и понѣ слово хощемь гл҃ти,
-<lb/>кь блажен<hi rend="lig"><g ref="#ooLig">oo</g></hi>моу* си.
+<lb/>кь блажен<g ref="#ooLig">oo</g>моу* си.
 <lb/><milestone unit="p" n="37" ed="ed"/>Потомь сѣдещоу ѥмоу на
 <lb/>ѡдрѣ, ре<hi rend="sup">ч҇</hi> кь нѥмоу блаже<lb break="no"/>наа прїиди господине,
 <lb/>даж<hi rend="sup">д</hi>ь да сьвлѣкоу, сапогы
-<lb/>ти. ѡн же ре<hi rend="sup">ч҇</hi> кь нѥи, затво<lb break="no"/>ри дверы и приди сам<hi rend="lig"><g ref="#ooLig">oo</g></hi>,<pb n="11r"/>
+<lb/>ти. ѡн же ре<hi rend="sup">ч҇</hi> кь нѥи, затво<lb break="no"/>ри дверы и приди сам<g ref="#ooLig">oo</g>,<pb n="11r"/>
 <lb/>и изоуи ме. прѣрѣкова же
 <lb/>ємоу, ѡ прьвѣмь вьзбра<lb break="no"/>нѥнїи изоувенїа. нь не по<lb break="no"/>слоуша єє.<pb n="51" ed="ed"/> вьставши же
 <lb/>затворїи. и прїиде к нем<hi rend="sup">ꙋ</hi>.
@@ -229,151 +231,151 @@
 <lb/>азь ѡ<hi rend="sup">т</hi>ц҃ь твои аврамии.
 <lb/>чедо моѥ мариѥ, нѣсмь
 <lb/>ли азь тебе вьспитавыи.
-<lb/>чт<hi rend="lig"><g ref="#ooLig">oo</g></hi> ти бы<hi rend="sup">с҇</hi> ѡ чедо моѥ,<pb n="11v"/>
-<lb/>кт<hi rend="lig"><g ref="#ooLig">oo</g></hi> те погоубы. гдѣ ѥ<hi rend="sup">с҇</hi>
+<lb/>чт<g ref="#ooLig">oo</g> ти бы<hi rend="sup">с҇</hi> ѡ чедо моѥ,<pb n="11v"/>
+<lb/>кт<g ref="#ooLig">oo</g> те погоубы. гдѣ ѥ<hi rend="sup">с҇</hi>
 <lb/>ѡбразь агг҃лскыи иже
 <lb/>имѣ. ѡ чедо моѥ гдѣ ѥ<hi rend="sup">с҇</hi>
 <lb/>вьздрьжаниѥ оно. и пла<lb break="no"/>чь сльзь твои<hi rend="sup">х</hi>. гдѣ бдѣнїє
-<lb/>твоѥ. и на земли лѣга<lb break="no"/>ниѥ. како ѡ<hi rend="sup">т</hi> высоти не<lb break="no"/>бесныѥ вь р<hi rend="lig"><g ref="#ooLig">oo</g></hi>вь сьниде.
-<lb/>ѡ чедо моѥ по чт<hi rend="lig"><g ref="#ooLig">oo</g></hi> єгда
+<lb/>твоѥ. и на земли лѣга<lb break="no"/>ниѥ. како ѡ<hi rend="sup">т</hi> высоти не<lb break="no"/>бесныѥ вь р<g ref="#ooLig">oo</g>вь сьниде.
+<lb/>ѡ чедо моѥ по чт<g ref="#ooLig">oo</g> єгда
 <lb/>сьгрѣши не повѣда ми.
 <lb/>да быхь покаꙗль се за те,
 <lb/>сь любимцемь єфремо<hi rend="sup">м҇</hi>.
 <lb/>по что сицева сьтворила
-<lb/>єси. и по чт<hi rend="lig"><g ref="#ooLig">oo</g></hi> сице ѡскрь<lb break="no"/>била ме ѥси. и вь печаль
+<lb/>єси. и по чт<g ref="#ooLig">oo</g> сице ѡскрь<lb break="no"/>била ме ѥси. и вь печаль
 <lb/>видимоую сице ме єси вь<lb break="no"/>врьгла. кто безгрѣшнь ѥ<hi rend="sup">с҇</hi>
 <lb/>тьчию б҃ь єдинь⸪—<pb n="12r"/>
 <lb/><milestone unit="p" n="38" ed="ed"/>Слышавши же ѡна ꙗко
-<lb/>камень безьд҃шень п<hi rend="lig">рѣ</hi><lb break="no"/>бы<hi rend="sup">с҇</hi> вь роукоу ѥго. боѥщи
+<lb/>камень безьд҃шень п<g ref="рѣLig">рѣ</g><lb break="no"/>бы<hi rend="sup">с҇</hi> вь роукоу ѥго. боѥщи
 <lb/>се коупно же и стидещи
 <lb/>се. пакы ре<hi rend="sup">ч҇</hi> блаженыи.
 <lb/>не гл҃ѥши ли ми чедо марїє.
 <lb/>не ѡ<hi rend="sup">т</hi>вещаваѥши ли ми оу<lb break="no"/>тробо моꙗ. нѣсьм ли тебе
 <lb/>ради пришель само ѡ чедо
 <lb/>моѥ. азь ѡ<hi rend="sup">т</hi>вещаю г҃оу за
-<lb/>те вь д҃нь соудны. азь пока<lb break="no"/>ю се грѣхма* ради сег<hi rend="lig"><g ref="#ooLig">oo</g></hi>. до
+<lb/>те вь д҃нь соудны. азь пока<lb break="no"/>ю се грѣхма* ради сег<g ref="#ooLig">oo</g>. до
 <lb/>полоунощи же плаче сице
 <lb/>молꙗше ю и казаше. и при<lb break="no"/>ємши мало дрьзновениѥ
 <lb/>ре<hi rend="sup">ч҇</hi> кь немоу, плачющи се,
 <lb/>кь тебѣ вьнимати не мо<lb break="no"/>гоу стоуда ради лица моѥго,<pb n="12v"/>
 <lb/>и како сьмилити се б҃оу мо<lb break="no"/>гоу. ꙗко ѡскврьнѥна быи<hi rend="sup">х</hi>
 <lb/>нечистими скврьнами си<lb break="no"/>ми. г҃ла ѥи на мнѣ грѣхъ
-<lb/><pb n="52" ed="ed"/>твои чед<hi rend="lig"><g ref="#ooLig">oo</g></hi> моѥ. ѡ<hi rend="sup">т</hi> роукоу
-<lb/>моѥю да вьзищеть б҃ь грѣ<lb break="no"/>ха сег<hi rend="lig"><g ref="#ooLig">oo</g></hi>. тьчию ты послоу<lb break="no"/>шаи мене. и греди да иде<lb break="no"/>вѣ на мѣсто своѥ. єфремь
+<lb/><pb n="52" ed="ed"/>твои чед<g ref="#ooLig">oo</g> моѥ. ѡ<hi rend="sup">т</hi> роукоу
+<lb/>моѥю да вьзищеть б҃ь грѣ<lb break="no"/>ха сег<g ref="#ooLig">oo</g>. тьчию ты послоу<lb break="no"/>шаи мене. и греди да иде<lb break="no"/>вѣ на мѣсто своѥ. єфремь
 <lb/>за те б҃а молить. тебе ради
-<lb/>ѡ чедо моѥ. пом҃лоуи ста<lb break="no"/>рость мою. молю те оутро<lb break="no"/>бо моꙗ. молю те ѡ чед<hi rend="lig"><g ref="#ooLig">oo</g></hi> м<hi rend="sup">о҇</hi>є.
+<lb/>ѡ чедо моѥ. пом҃лоуи ста<lb break="no"/>рость мою. молю те оутро<lb break="no"/>бо моꙗ. молю те ѡ чед<g ref="#ooLig">oo</g> м<hi rend="sup">о҇</hi>є.
 <lb/>вьставши иди сь нами.
 <lb/><milestone unit="p" n="39" ed="ed"/>ѡна же ре<hi rend="sup">ч҇</hi> кь нѥмоу. аще
 <lb/>вѣси ꙗко могоу се покаꙗти.
 <lb/>и прїиметь б҃ь м҃лтвоу м<hi rend="sup">о҇</hi>ю,
 <lb/>се идоу. и припадоу кь твоєм<hi rend="sup">ꙋ</hi><pb n="13r"/>
 <lb/>прпо<hi rend="sup">д</hi>бствоу. и молю и ѡбло<lb break="no"/>заю плеснѣ ногоу твоѥю
-<lb/>с҃т<hi rend="lig"><g ref="#ooLig">oo</g></hi>ю. ꙗко сице милосрьдо<lb break="no"/>валь ѥси ѡ мнѣ. и прише<lb break="no"/>ль ѥси сам<hi rend="lig"><g ref="#ooLig">oo</g></hi> да ме изведе<lb break="no"/>ши ѡ<hi rend="sup">т</hi> скврьны сеѥ нечисти<lb break="no"/>ѥ. и положивши главоу
-<lb/>свою на ногоу ѥг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. вьсоу но<lb break="no"/>щь гл҃аше чт<hi rend="lig"><g ref="#ooLig">oo</g></hi> ти вьздамь
-<lb/>ѡ всѣхь вл<hi rend="sup">д</hi>к<hi rend="lig"><g ref="#ooLig">oo</g></hi> мои. оутроу
+<lb/>с҃т<g ref="#ooLig">oo</g>ю. ꙗко сице милосрьдо<lb break="no"/>валь ѥси ѡ мнѣ. и прише<lb break="no"/>ль ѥси сам<g ref="#ooLig">oo</g> да ме изведе<lb break="no"/>ши ѡ<hi rend="sup">т</hi> скврьны сеѥ нечисти<lb break="no"/>ѥ. и положивши главоу
+<lb/>свою на ногоу ѥг<g ref="#ooLig">oo</g>. вьсоу но<lb break="no"/>щь гл҃аше чт<g ref="#ooLig">oo</g> ти вьздамь
+<lb/>ѡ всѣхь вл<hi rend="sup">д</hi>к<g ref="#ooLig">oo</g> мои. оутроу
 <lb/>же бывшоу ре<hi rend="sup">ч҇</hi> кь неи чедо вь<lb break="no"/>стани да идевѣ. ѡна же
 <lb/>ѡ<hi rend="sup">т</hi>вѣщавши ре<hi rend="sup">ч҇</hi> кь нѥмоу,
 <lb/>имамь здѣ мало злата и
-<lb/>ризы. и чт<hi rend="lig"><g ref="#ooLig">oo</g></hi> велиши ѡ семь,
+<lb/>ризы. и чт<g ref="#ooLig">oo</g> велиши ѡ семь,
 <lb/>ре<hi rend="sup">ч҇</hi> же єи вса ѡстави здѣ.
 <lb/>се бо честь ѥ<hi rend="sup">с҇</hi> неприꙗзниннаа.
 <lb/>и вьставшаа идоста абиѥ,<pb n="13v"/>
-<lb/>вьсадив же ю на к<hi rend="lig"><g ref="#ooLig">oo</g></hi><hi rend="sup">н҇</hi> ведѣаше.
-<lb/>самь прѣд нѥю идїи, и р<hi rend="lig">ау</hi><hi rend="sup">д</hi>е
+<lb/>вьсадив же ю на к<g ref="#ooLig">oo</g><hi rend="sup">н҇</hi> ведѣаше.
+<lb/>самь прѣд нѥю идїи, и р<g ref="ауLig">ау</g><hi rend="sup">д</hi>е
 <lb/>се идѣше. ꙗкоже бо пасти<lb break="no"/>рь єгда ѡбрѣщеть ѡвче по<lb break="no"/>гибшеѥ. сь радостию вьзь<lb break="no"/>меть ѥ на рамо своѥ. тако
-<lb/>и блажени р<hi rend="lig">ау</hi><hi rend="sup">д</hi>ѥ се идѣше.
-<lb/><milestone unit="p" n="40" ed="ed"/>и ꙗко прїиде на мѣст<hi rend="lig"><g ref="#ooLig">oo</g></hi>, тоу
+<lb/>и блажени р<g ref="ауLig">ау</g><hi rend="sup">д</hi>ѥ се идѣше.
+<lb/><milestone unit="p" n="40" ed="ed"/>и ꙗко прїиде на мѣст<g ref="#ooLig">oo</g>, тоу
 <lb/>абиѥ затвори ю вь вьноу<lb break="no"/>трьнѥи кѥлїи. идѣже бѣ
 <lb/>самь прѣж<hi rend="sup">д</hi>е. сам же прѣбы<hi rend="sup">с҇</hi>
 <lb/>вь вьнѣшнѣи кѥли. ѡна
-<lb/>же сь врѣтищемь власѣн<hi rend="lig"><g ref="#ooLig">oo</g></hi><hi rend="sup">м҇</hi>.
+<lb/>же сь врѣтищемь власѣн<g ref="#ooLig">oo</g><hi rend="sup">м҇</hi>.
 <lb/>и смѣреномь плачемь и
-<lb/>бдѣниѥмь. вьз<hi rend="sup">д</hi>рьжаниѥ<lb break="no"/>м же и крѣпостию чрьнори<lb break="no"/>зьчьствоваше, прилежн<hi rend="lig"><g ref="#ooLig">oo</g></hi>.
+<lb/>бдѣниѥмь. вьз<hi rend="sup">д</hi>рьжаниѥ<lb break="no"/>м же и крѣпостию чрьнори<lb break="no"/>зьчьствоваше, прилежн<g ref="#ooLig">oo</g>.
 <lb/>и покаꙗ се вь мнозѣ тьщани.<pb n="14r"/>
 <lb/>призивающы б҃а на помощь.
 <lb/>сице же ѥе ѥсть покаꙗниѥ.
 <lb/>сице же и м҃лтва, и мл<hi rend="sup">с҇</hi>рдиѥ.
-<lb/>кт<hi rend="lig"><g ref="#ooLig">oo</g></hi> бо слышаа гл҃сь ѥѥ<pb n="53" ed="ed"/> и пла<lb break="no"/>чь не прославлаше б҃а. на<lb break="no"/>ше б<hi rend="lig"><g ref="#ooLig">oo</g></hi> покаꙗниѥ противꙋ
+<lb/>кт<g ref="#ooLig">oo</g> бо слышаа гл҃сь ѥѥ<pb n="53" ed="ed"/> и пла<lb break="no"/>чь не прославлаше б҃а. на<lb break="no"/>ше б<g ref="#ooLig">oo</g> покаꙗниѥ противꙋ
 <lb/>ѡноѥ покаꙗнию стѣнь
 <lb/>єсть. и наша м҃лтва про<lb break="no"/>тивоу ѡноѥ м҃лтвы ни вь
-<lb/>чт<hi rend="lig"><g ref="#ooLig">oo</g></hi>же ѥсть. тако бо мо<lb break="no"/>лꙗше пр<hi rend="sup">с҇</hi>н<hi rend="lig"><g ref="#ooLig">oo</g></hi> б҃а. дати ѥи
+<lb/>чт<g ref="#ooLig">oo</g>же ѥсть. тако бо мо<lb break="no"/>лꙗше пр<hi rend="sup">с҇</hi>н<g ref="#ooLig">oo</g> б҃а. дати ѥи
 <lb/>ѡ<hi rend="sup">т</hi>поущениѥ грѣхь єже сь<lb break="no"/>дѣꙗ. и показати знаменїє.
 <lb/>аще боудеть м҃лтвоу ѥє прї<lb break="no"/>єль б҃ь. и се н҃нꙗ чл҃вколю<lb break="no"/>бець б҃ь м҃лтвами ѥе исцѣ<lb break="no"/>лѥнїа сьврьшаѥть.<milestone unit="p" n="41" ed="ed"/> жит же
-<lb/>блаженыи авраамии зѣл<hi rend="lig"><g ref="#ooLig">oo</g></hi><pb n="14v"/>
-<lb/>р<hi rend="lig">ау</hi><hi rend="sup">д</hi>и* се. зре добронравнаг<hi rend="lig"><g ref="#ooLig">oo</g></hi>
+<lb/>блаженыи авраамии зѣл<g ref="#ooLig">oo</g><pb n="14v"/>
+<lb/>р<g ref="ауLig">ау</g><hi rend="sup">д</hi>и* се. зре добронравнаг<g ref="#ooLig">oo</g>
 <lb/>житиꙗ. и непрѣложнаго дль<lb break="no"/>готрьпиꙗ. и славе б҃а и вели<lb break="no"/>чаѥ, тако сконча се. оуспе же
-<lb/>лѣ<hi rend="sup">т҇</hi>, имѣѥ, о҃. чрьньчьство<lb break="no"/>ва же, лѣ<hi rend="sup">т҇</hi>, н҃. сь прилежа<lb break="no"/>ниѥмь велик<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь. и сь смѣ<lb break="no"/>реною моудростию. и любо<lb break="no"/>вию нелицемѣрною. не на
+<lb/>лѣ<hi rend="sup">т҇</hi>, имѣѥ, о҃. чрьньчьство<lb break="no"/>ва же, лѣ<hi rend="sup">т҇</hi>, н҃. сь прилежа<lb break="no"/>ниѥмь велик<g ref="#ooLig">oo</g>мь. и сь смѣ<lb break="no"/>реною моудростию. и любо<lb break="no"/>вию нелицемѣрною. не на
 <lb/>лица вьсприѥмлѥ чл҃кьь.
 <lb/>ꙗже творимаа соуть прочи<lb break="no"/>ми чл҃вкы, ѡвого почита<lb break="no"/>ють. дроугаго же оумале<lb break="no"/>ть чьстию. не измѣни
-<lb/>же чрьньчьства своѥг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. ни
+<lb/>же чрьньчьства своѥг<g ref="#ooLig">oo</g>. ни
 <lb/>оунивь ѡблѣни се. нь тако
 <lb/>ꙗко вьсе д҃ни оумирає.
-<lb/><milestone unit="p" n="42" ed="ed"/>Сицев<hi rend="lig"><g ref="#ooLig">oo</g></hi> житиѥ ѥ<hi rend="sup">с҇</hi> блаже<pb n="15r"/><lb break="no"/>наго авраамиꙗ. и сице хо<lb break="no"/>ж<hi rend="sup">д</hi>ениѥ. и бл҃гаа трьпѣнїа
-<lb/>єг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. ꙗко сице изьшь<hi rend="sup">д</hi> ѡ<hi rend="sup">т</hi> чрь<lb break="no"/>тога вьнезааппоу. и не вьзь<lb break="no"/>врати се вьспеть. ни вьскрь<lb break="no"/>би вь сицѣи. ни вь бранехь
+<lb/><milestone unit="p" n="42" ed="ed"/>Сицев<g ref="#ooLig">oo</g> житиѥ ѥ<hi rend="sup">с҇</hi> блаже<pb n="15r"/><lb break="no"/>наго авраамиꙗ. и сице хо<lb break="no"/>ж<hi rend="sup">д</hi>ениѥ. и бл҃гаа трьпѣнїа
+<lb/>єг<g ref="#ooLig">oo</g>. ꙗко сице изьшь<hi rend="sup">д</hi> ѡ<hi rend="sup">т</hi> чрь<lb break="no"/>тога вьнезааппоу. и не вьзь<lb break="no"/>врати се вьспеть. ни вьскрь<lb break="no"/>би вь сицѣи. ни вь бранехь
 <lb/>привидѣнїи не оустраши се
 <lb/>ни ѡслабѣ кьгда помысль
-<lb/>єг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. се же великаа и чюдна
-<lb/>страдальчьства єг<hi rend="lig"><g ref="#ooLig">oo</g></hi>, єже
+<lb/>єг<g ref="#ooLig">oo</g>. се же великаа и чюдна
+<lb/>страдальчьства єг<g ref="#ooLig">oo</g>, єже
 <lb/>ѡ агници марїи. ꙗко д҃ховь<lb break="no"/>ниѥ ради ѥго прѣмоудро<lb break="no"/>сти. разоума же и славы.
-<lb/>и своиства дѣлма. несоу<lb break="no"/>мнѣниѥм же и вьз<hi rend="sup">д</hi>рьжа<lb break="no"/>ниѥмь. ѡбрѣте ю ис<hi rend="lig">тр</hi>ь<lb break="no"/>гноути ѡ<hi rend="sup">т</hi> змїа. и поправы
-<lb/>єг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. брашно посрѣдѣ зо<hi rend="sup">у</hi>бь<pb n="15v"/>
-<lb/>єг<hi rend="lig"><g ref="#ooLig">oo</g></hi> изьдра. сицевы подви<lb break="no"/>жны потове блаженаг<hi rend="lig"><g ref="#ooLig">oo</g></hi>
-<lb/>авраамїа. здѣ же сице на<lb break="no"/>писах<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь на ꙋтѣшенїє
+<lb/>и своиства дѣлма. несоу<lb break="no"/>мнѣниѥм же и вьз<hi rend="sup">д</hi>рьжа<lb break="no"/>ниѥмь. ѡбрѣте ю ис<g ref="трLig">тр</g>ь<lb break="no"/>гноути ѡ<hi rend="sup">т</hi> змїа. и поправы
+<lb/>єг<g ref="#ooLig">oo</g>. брашно посрѣдѣ зо<hi rend="sup">у</hi>бь<pb n="15v"/>
+<lb/>єг<g ref="#ooLig">oo</g> изьдра. сицевы подви<lb break="no"/>жны потове блаженаг<g ref="#ooLig">oo</g>
+<lb/>авраамїа. здѣ же сице на<lb break="no"/>писах<g ref="#ooLig">oo</g>мь на ꙋтѣшенїє
 <lb/>и на ползоу. всѣ<hi rend="sup">м</hi> хотещїим
-<lb/>чрьньчьств<hi rend="lig"><g ref="#ooLig">oo</g></hi>вати. на хва<lb break="no"/>лоу и славоу б҃гоу. подающ<hi rend="lig"><g ref="#ooLig">oo</g></hi><lb break="no"/>моу блг<hi rend="sup">д</hi>тию своѥю всѣм
+<lb/>чрьньчьств<g ref="#ooLig">oo</g>вати. на хва<lb break="no"/>лоу и славоу б҃гоу. подающ<g ref="#ooLig">oo</g><lb break="no"/>моу блг<hi rend="sup">д</hi>тию своѥю всѣм
 <lb/>намь полез<pb n="54" ed="ed"/>наа. прочеє же
-<lb/>дѣтели єг<hi rend="lig"><g ref="#ooLig">oo</g></hi> индѣ оуписах<hi rend="lig"><g ref="#ooLig">oo</g></hi><hi rend="sup">м҇</hi>,
-<lb/>вь годиноу же покоꙗ єг<hi rend="lig"><g ref="#ooLig">oo</g></hi>.
+<lb/>дѣтели єг<g ref="#ooLig">oo</g> индѣ оуписах<g ref="#ooLig">oo</g><hi rend="sup">м҇</hi>,
+<lb/>вь годиноу же покоꙗ єг<g ref="#ooLig">oo</g>.
 <lb/>сьбра се мала не вьсь градь.
 <lb/>и кьж<hi rend="sup">д</hi>о ихь сь тьщаниѥм,
-<lb/>приближахоу се чист<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь
-<lb/>тѣлѣ єг<hi rend="lig"><g ref="#ooLig">oo</g></hi>. вьсхищающе
-<lb/>ѡ<hi rend="sup">т</hi> ѻбитѣли єг<hi rend="lig"><g ref="#ooLig">oo</g></hi> на бл<hi rend="sup">с҇</hi>венїє
+<lb/>приближахоу се чист<g ref="#ooLig">oo</g>мь
+<lb/>тѣлѣ єг<g ref="#ooLig">oo</g>. вьсхищающе
+<lb/>ѡ<hi rend="sup">т</hi> ѻбитѣли єг<g ref="#ooLig">oo</g> на бл<hi rend="sup">с҇</hi>венїє
 <lb/>себѣ. иже вьсхищенїємь
 <lb/>ѡ<hi rend="sup">т</hi> болещихь приближаше се,<pb n="16r"/>
 <lb/>абиѥ исцѣлѥниѥ полоуча<lb break="no"/>ше
 <lb/><milestone unit="p" n="43" ed="ed"/> Жит же блаженаа агница
 <lb/>х<hi rend="sup">с҇</hi>ва марїа дроугаа, н҃. лѣ<hi rend="sup">т҇</hi>
-<lb/>по семь. зѣл<hi rend="lig"><g ref="#ooLig">oo</g></hi> крѣпцѣ вь<lb break="no"/>з<hi rend="sup">д</hi>рьжещи се. и сь сльзами мо<lb break="no"/>лещии б҃а д҃нь и нощь. ꙗко<hi rend="sup">ж</hi>
-<lb/>мн<hi rend="lig"><g ref="#ooLig">oo</g></hi>гащии мимоходещи
+<lb/>по семь. зѣл<g ref="#ooLig">oo</g> крѣпцѣ вь<lb break="no"/>з<hi rend="sup">д</hi>рьжещи се. и сь сльзами мо<lb break="no"/>лещии б҃а д҃нь и нощь. ꙗко<hi rend="sup">ж</hi>
+<lb/>мн<g ref="#ooLig">oo</g>гащии мимоходещи
 <lb/>нощию. и слышеще гл҃сь
 <lb/>плачюще се, ее, стоꙗхоу пла<lb break="no"/>чюще се и дивеще се, и сь нею
 <lb/>прославлꙗхоу б҃га. вь годи<lb break="no"/>ноу же покоꙗ єє. вьси ви<lb break="no"/>дѣвше лице ее, славоу да<lb break="no"/>ше б҃гоу. понѥже не да<hi rend="sup">с҇</hi>
-<lb/>помысла своѥг<hi rend="lig"><g ref="#ooLig">oo</g></hi> вь печа<lb break="no"/>ли земльныи<hi rend="sup">х</hi> вещии. нь ть<lb break="no"/>чию вь любовь б҃жию. аз же<pb n="16v"/>
+<lb/>помысла своѥг<g ref="#ooLig">oo</g> вь печа<lb break="no"/>ли земльныи<hi rend="sup">х</hi> вещии. нь ть<lb break="no"/>чию вь любовь б҃жию. аз же<pb n="16v"/>
 <lb/>не приоуготовань ѥсмь. и
-<lb/>не приложнь моимь подь<lb break="no"/>виг<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь. и се сьниде на ме
+<lb/>не приложнь моимь подь<lb break="no"/>виг<g ref="#ooLig">oo</g>мь. и се сьниде на ме
 <lb/>бесконьчнаа зима. и азь
 <lb/>нагь єсьмь и не готовь
 <lb/>житиѥмь. дивлю се люби<lb break="no"/>мици вь себѣ. како по все
 <lb/>д҃нїи сьгрѣшаю. и по все
-<lb/>д҃нїи каю се. з<hi rend="lig">ау</hi><hi rend="sup">т҇</hi>ра же глоу<lb break="no"/>ме се проваж<hi rend="sup">д</hi>аю д҃нь. пакы
+<lb/>д҃нїи каю се. з<g ref="ауLig">ау</g><hi rend="sup">т҇</hi>ра же глоу<lb break="no"/>ме се проваж<hi rend="sup">д</hi>аю д҃нь. пакы
 <lb/>же полоудне г҃лю. нощь
 <lb/>разоумѣвь и молю б҃а да
 <lb/>мл<hi rend="sup">с҇</hi>тивь боудет ми грѣхѡ<hi rend="sup">м҇</hi>
 <lb/>моимь. приспѣвши же
-<lb/>нощи сьн<hi rend="lig"><g ref="#ooLig">oo</g></hi>мь ѡдрьжи<hi rend="sup">м҇</hi> єсмь.
+<lb/>нощи сьн<g ref="#ooLig">oo</g>мь ѡдрьжи<hi rend="sup">м҇</hi> єсмь.
 <lb/>Вьзьмше же сь мною сребрь<lb break="no"/>никыи. се н҃нꙗ подвиза<lb break="no"/>ите се. д҃҃нь и нощь коуплѥ<pb n="17r"/>
 <lb/>твореще. да полоучите и се,
-<lb/>и начел<hi rend="lig"><g ref="#ooLig">oo</g></hi> десет<hi rend="lig"><g ref="#ooLig">oo</g></hi>градноѥ.
+<lb/>и начел<g ref="#ooLig">oo</g> десет<g ref="#ooLig">oo</g>градноѥ.
 <lb/>аз же своѥю лѣностию сь<lb break="no"/>крихь себе на земли. и г҃ь мои
 <lb/>приближил ме ѥсть вь ѡшь<lb break="no"/>ствиѥ. и се трепещеть
 <lb/>ср<hi rend="sup">д</hi>це моѥ. и плачю се дни
 <lb/>лѣности моѥє. не имѣѥ
-<lb/>чт<hi rend="lig"><g ref="#ooLig">oo</g></hi> ѡ<hi rend="sup">т</hi>вещати ѥмоу.<milestone unit="p" n="44" ed="ed"/> о<hi rend="sup">у</hi>ще<lb break="no"/>дри ме єдине блаже и чл҃ко<lb break="no"/>любче.<pb n="55" ed="ed"/> ꙗко развѣ тебе бл<hi rend="sup">с҇</hi>ве<lb break="no"/>нааго д҃ха. ѡживлꙗюща<lb break="no"/>го вьса иного не свѣдѣ. ни
-<lb/>вь ин<hi rend="lig"><g ref="#ooLig">oo</g></hi>го вѣрова<hi rend="sup">х</hi>. тѣмже
-<lb/>оуб<hi rend="lig"><g ref="#ooLig">oo</g></hi> помени ме чл҃вколюб<hi rend="sup">ч҇</hi>е.
-<lb/>и изведи ме ѡ<hi rend="sup">т</hi> тьмнице тѣ<lb break="no"/>ла сег<hi rend="lig"><g ref="#ooLig">oo</g></hi>, и безаконїи моихь.
-<lb/>твое бо єсть<hi rend="lig"><g ref="#ooLig">oo</g></hi>боѥ вл<hi rend="sup">д</hi>к<hi rend="lig"><g ref="#ooLig">oo</g></hi><pb n="17v"/>
+<lb/>чт<g ref="#ooLig">oo</g> ѡ<hi rend="sup">т</hi>вещати ѥмоу.<milestone unit="p" n="44" ed="ed"/> о<hi rend="sup">у</hi>ще<lb break="no"/>дри ме єдине блаже и чл҃ко<lb break="no"/>любче.<pb n="55" ed="ed"/> ꙗко развѣ тебе бл<hi rend="sup">с҇</hi>ве<lb break="no"/>нааго д҃ха. ѡживлꙗюща<lb break="no"/>го вьса иного не свѣдѣ. ни
+<lb/>вь ин<g ref="#ooLig">oo</g>го вѣрова<hi rend="sup">х</hi>. тѣмже
+<lb/>оуб<g ref="#ooLig">oo</g> помени ме чл҃вколюб<hi rend="sup">ч҇</hi>е.
+<lb/>и изведи ме ѡ<hi rend="sup">т</hi> тьмнице тѣ<lb break="no"/>ла сег<g ref="#ooLig">oo</g>, и безаконїи моихь.
+<lb/>твое бо єсть<g ref="#ooLig">oo</g>боѥ вл<hi rend="sup">д</hi>к<g ref="#ooLig">oo</g><pb n="17v"/>
 <lb/>кьгда вьнити вь чл҃вкь сь,
-<lb/>и ѥгда ѡ<hi rend="sup">т</hi>ити ми ѡ<hi rend="sup">т</hi> нѥг<hi rend="lig"><g ref="#ooLig">oo</g></hi>.
+<lb/>и ѥгда ѡ<hi rend="sup">т</hi>ити ми ѡ<hi rend="sup">т</hi> нѥг<g ref="#ooLig">oo</g>.
 <lb/>помени ме вл<hi rend="sup">д</hi>ко грѣшнаго
 <lb/>и сп҃си ме, блг<hi rend="sup">д</hi>ть твоꙗ бы<lb break="no"/>вшиꙗ на мнѣ. да прѣбꙋ<lb break="no"/>деть сь мною вь вѣкы.
 <lb/>боуди г҃и мл<hi rend="sup">с҇</hi>ть твоꙗ на на<hi rend="sup">с҇</hi>.
 <lb/>ꙗкоже оуповахѡ<hi rend="sup">м҇</hi> на те.
 <lb/>ꙗко тебѣ по<hi rend="sup">д</hi>баєть слава
 <lb/>сь с҃тымь д҃хѡмь. и н҃нꙗ
-<lb/>и пр<hi rend="sup">с҇</hi>но и вь вѣкы вѣк<hi rend="lig"><g ref="#ooLig">oo</g></hi><hi rend="sup">м</hi> ам҃нь:—</ab></body><back><ab>
-<lb/><pb n="56" ed="ed"/><hi rend="lig">МЦ</hi><hi rend="sup">С҇</hi>А СЕПТЕМБРѢ
+<lb/>и пр<hi rend="sup">с҇</hi>но и вь вѣкы вѣк<g ref="#ooLig">oo</g><hi rend="sup">м</hi> ам҃нь:—</ab></body><back><ab>
+<lb/><pb n="56" ed="ed"/><g ref="МЦLig">МЦ</g><hi rend="sup">С҇</hi>А СЕПТЕМБРѢ
 <lb/>и҃ї д҃нь мч҃тениѥ с҃тыѥ
 <lb/>ѳеѡ<hi rend="sup">д</hi>ры
 <lb/><milestone unit="p" n="1" ed="ed"/>Вь д҃нии зинона ц҃рѣ. агрипа

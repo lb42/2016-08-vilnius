@@ -5,9 +5,9 @@ default namespace tei = "http://www.tei-c.org/ns/1.0"
 namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2016-08-06T19:37:25Z. .
+# Schema generated from ODD source 2016-08-12T12:30:18Z. .
 # TEI Edition: Version 3.0.0. Last updated on
-#	29th March 2016, revision 89ba24e
+#	26th April 2016, revision 5f412b2
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
 #
 
@@ -28,6 +28,7 @@ macro.specialPara =
    | model.inter
    | model.divPart
    | model.global)*
+macro.xtext = (text | model.gLike)*
 att.ascribed.attributes = att.ascribed.attribute.who
 att.ascribed.attribute.who =
   
@@ -201,6 +202,11 @@ att.breaking.attribute.break =
   attribute break {
     xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
   }?
+att.cReferencing.attributes = att.cReferencing.attribute.cRef
+att.cReferencing.attribute.cRef =
+  
+  ## (canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a refsDecl element in the TEI header
+  attribute cRef { xsd:string }?
 att.datable.w3c.attributes =
   att.datable.w3c.attribute.when,
   att.datable.w3c.attribute.notBefore,
@@ -541,6 +547,15 @@ att.global.attribute.xmlspace =
       ## indicates the intent that applications preserve all white space
       "preserve"
   }?
+att.internetMedia.attributes = att.internetMedia.attribute.mimeType
+att.internetMedia.attribute.mimeType =
+  
+  ## (MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type
+  attribute mimeType {
+    list {
+      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
+    }
+  }?
 att.naming.attributes =
   att.canonical.attributes,
   att.naming.attribute.role,
@@ -633,6 +648,66 @@ sch:pattern [
   "\x{a}" ~
   "   "
 ]
+att.pointing.attributes =
+  att.pointing.attribute.targetLang,
+  att.pointing.attribute.target,
+  att.pointing.attribute.evaluate
+att.pointing.attribute.targetLang =
+  
+  ## specifies the language of the content to be found at the destination referenced by target, using a language tag generated according to BCP 47.
+  attribute targetLang {
+    xsd:language
+    | (
+       ##
+       "")
+  }?
+sch:pattern [
+  id = "teiBdinski-att.pointing-targetLang-targetLang-constraint-6"
+  "\x{a}" ~
+  "      "
+  sch:rule [
+    context = "tei:*[not(self::tei:schemaSpec)][@targetLang]"
+    "\x{a}" ~
+    "            "
+    sch:assert [
+      test = "@target"
+      "@targetLang should only be used on "
+      sch:name [ ]
+      " if @target is specified."
+    ]
+    "\x{a}" ~
+    "          "
+  ]
+  "\x{a}" ~
+  "   "
+]
+att.pointing.attribute.target =
+  
+  ## specifies the destination of the reference by supplying one or more URI References
+  attribute target {
+    list { xsd:anyURI+ }
+  }?
+att.pointing.attribute.evaluate =
+  
+  ## specifies the intended meaning when the target of a pointer is itself a pointer.
+  attribute evaluate {
+    
+    ## if the element pointed to is itself a pointer, then the target of that pointer will be taken, and so on, until an element is found which is not a pointer.
+    "all"
+    | 
+      ## if the element pointed to is itself a pointer, then its target (whether a pointer or not) is taken as the target of this pointer.
+      "one"
+    | 
+      ## no further evaluation of targets is carried out beyond that needed to find the element specified in the pointer's target.
+      "none"
+  }?
+att.sortable.attributes = att.sortable.attribute.sortKey
+att.sortable.attribute.sortKey =
+  
+  ## supplies the sort key for this element in an index, list or group which contains it.
+  attribute sortKey {
+    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
+  }?
 att.edition.attributes =
   att.edition.attribute.ed, att.edition.attribute.edRef
 att.edition.attribute.ed =
@@ -655,7 +730,7 @@ att.spanning.attribute.spanTo =
   ## indicates the end of a span initiated by the element bearing this attribute.
   attribute spanTo { xsd:anyURI }?
 sch:pattern [
-  id = "teiBdinski-att.spanning-spanTo-spanTo-2-constraint-6"
+  id = "teiBdinski-att.spanning-spanTo-spanTo-2-constraint-7"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -740,12 +815,12 @@ model.emphLike_sequenceOptional = title?
 model.emphLike_sequenceOptionalRepeatable = title*
 model.emphLike_sequenceRepeatable = title+
 model.highlighted = model.hiLike | model.emphLike
-model.dateLike = notAllowed
-model.dateLike_alternation = notAllowed
-model.dateLike_sequence = empty
-model.dateLike_sequenceOptional = empty
-model.dateLike_sequenceOptionalRepeatable = empty
-model.dateLike_sequenceRepeatable = notAllowed
+model.dateLike = date
+model.dateLike_alternation = date
+model.dateLike_sequence = date
+model.dateLike_sequenceOptional = date?
+model.dateLike_sequenceOptionalRepeatable = date*
+model.dateLike_sequenceRepeatable = date+
 model.measureLike = notAllowed
 model.measureLike_alternation = notAllowed
 model.measureLike_sequence = empty
@@ -784,11 +859,11 @@ model.pPart.transcriptional_sequenceOptionalRepeatable =
 model.pPart.transcriptional_sequenceRepeatable =
   add+, damage+, del+, supplied+, unclear+
 model.pPart.edit = model.pPart.editorial | model.pPart.transcriptional
-model.ptrLike = notAllowed
+model.ptrLike = ref
 model.lPart = notAllowed
 model.global.meta = notAllowed
 model.milestoneLike = lb | milestone | pb
-model.gLike = notAllowed
+model.gLike = g
 model.oddDecl = notAllowed
 model.oddDecl_alternation = notAllowed
 model.oddDecl_sequence = empty
@@ -797,12 +872,12 @@ model.oddDecl_sequenceOptionalRepeatable = empty
 model.oddDecl_sequenceRepeatable = notAllowed
 model.phrase.xml = notAllowed
 model.specDescLike = notAllowed
-model.biblLike = notAllowed
-model.biblLike_alternation = notAllowed
-model.biblLike_sequence = empty
-model.biblLike_sequenceOptional = empty
-model.biblLike_sequenceOptionalRepeatable = empty
-model.biblLike_sequenceRepeatable = notAllowed
+model.biblLike = bibl
+model.biblLike_alternation = bibl
+model.biblLike_sequence = bibl
+model.biblLike_sequenceOptional = bibl?
+model.biblLike_sequenceOptionalRepeatable = bibl*
+model.biblLike_sequenceRepeatable = bibl+
 model.headLike = notAllowed
 model.headLike_alternation = notAllowed
 model.headLike_sequence = empty
@@ -858,7 +933,7 @@ model.placeStateLike_sequenceOptionalRepeatable =
 model.placeStateLike_sequenceRepeatable =
   model.placeNamePart_sequenceRepeatable+
 model.publicationStmtPart.agency = notAllowed
-model.publicationStmtPart.detail = notAllowed
+model.publicationStmtPart.detail = date
 model.certLike = notAllowed
 model.descLike = notAllowed
 model.quoteLike = notAllowed
@@ -882,6 +957,7 @@ model.frontPart.drama = notAllowed
 model.pLike.front = notAllowed
 model.divBottomPart = notAllowed
 model.divBottom = model.divWrapper | model.divBottomPart
+model.imprintPart = notAllowed
 model.addressLike = notAllowed
 model.addressLike_alternation = notAllowed
 model.addressLike_sequence = empty
@@ -915,6 +991,7 @@ model.global =
   | model.milestoneLike
   | model.noteLike
   | model.global.edit
+model.biblPart = model.respLike | model.imprintPart | bibl
 model.frontPart = model.frontPart.drama
 model.pPart.data =
   model.dateLike
@@ -952,8 +1029,9 @@ model.limitedPhrase =
 model.divLike = notAllowed
 model.divGenLike = notAllowed
 model.div1Like = notAllowed
-model.teiHeaderPart = notAllowed
+model.teiHeaderPart = encodingDesc
 model.sourceDescPart = notAllowed
+model.encodingDescPart = charDecl
 att.source.attributes = att.source.attribute.source
 att.source.attribute.source =
   
@@ -1034,6 +1112,14 @@ sourceDesc =
     att.declarable.attributes,
     empty
   }
+encodingDesc =
+  
+  ## (encoding description) documents the relationship between an electronic text and the source or sources from which it was derived. [2.3. The Encoding Description 2.1.1. The TEI Header and Its Components]
+  element encodingDesc {
+    (model.encodingDescPart | model.pLike)+,
+    att.global.attributes,
+    empty
+  }
 revisionDesc =
   
   ## (revision description) summarizes the revision history for a file. [2.6. The Revision Description 2.1.1. The TEI Header and Its Components]
@@ -1078,7 +1164,7 @@ subst =
     del,
     add
     >> sch:pattern [
-         id = "teiBdinski-subst-substContents1-constraint-4"
+         id = "teiBdinski-subst-substContents1-constraint-5"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1102,6 +1188,80 @@ subst =
     att.transcriptional.attributes,
     empty
   }
+char =
+  
+  ## (character) provides descriptive information about a character. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element char {
+    (charName?,
+     model.descLike*,
+     charProp*,
+     mapping*,
+     model.graphicLike*,
+     model.noteLike*),
+    att.global.attributes,
+    empty
+  }
+charName =
+  
+  ## (character name) contains the name of a character, expressed following Unicode conventions. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element charName { text, att.global.attributes, empty }
+charProp =
+  
+  ## (character property) provides a name and value for some property of the parent character or glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element charProp {
+    ((unicodeName | localName), value),
+    att.global.attributes,
+    att.typed.attributes,
+    empty
+  }
+charDecl =
+  
+  ## (character declarations) provides information about nonstandard characters and glyphs. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element charDecl { (char | glyph)+, att.global.attributes, empty }
+glyph =
+  
+  ## (character glyph) provides descriptive information about a character glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element glyph {
+    (glyphName?,
+     model.descLike*,
+     charProp*,
+     mapping*,
+     model.graphicLike*,
+     model.noteLike*),
+    att.global.attributes,
+    empty
+  }
+glyphName =
+  
+  ## (character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element glyphName { text, att.global.attributes, empty }
+localName =
+  
+  ## (locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties]
+  element localName { text, att.global.attributes, empty }
+mapping =
+  
+  ## (character mapping) contains one or more characters which are related to the parent character or glyph in some respect, as specified by the type attribute. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element mapping {
+    macro.xtext, att.global.attributes, att.typed.attributes, empty
+  }
+unicodeName =
+  
+  ## (unicode property name) contains the name of a registered Unicode normative or informative property. [5.2.1. Character Properties]
+  element unicodeName {
+    text,
+    att.global.attributes,
+    
+    ## specifies the version number of the Unicode Standard in which this property name is defined.
+    attribute version {
+      xsd:token { pattern = "[\d]+(\.[\d]+){0,2}" }
+    }?,
+    empty
+  }
+value =
+  
+  ## contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties]
+  element value { macro.xtext, att.global.attributes, empty }
 att.milestoneUnit.attributes = att.milestoneUnit.attribute.unit
 att.milestoneUnit.attribute.unit =
   
@@ -1251,6 +1411,26 @@ back =
     att.declaring.attributes,
     empty
   }
+bibl =
+  
+  ## (bibliographic citation) contains a loosely-structured bibliographic citation of which the sub-components may or may not be explicitly tagged. [3.11.1. Methods of Encoding Bibliographic References and Lists of References 2.2.7. The Source Description 15.3.2. Declarable Elements]
+  element bibl {
+    (text
+     | model.gLike
+     | model.highlighted
+     | model.pPart.data
+     | model.pPart.edit
+     | model.segLike
+     | model.ptrLike
+     | model.biblPart
+     | model.global)*,
+    att.global.attributes,
+    att.declarable.attributes,
+    att.typed.attributes,
+    att.sortable.attributes,
+    att.docStatus.attributes,
+    empty
+  }
 body =
   
   ## (text body) contains the whole body of a single unitary text, excluding any front or back matter. [4. Default Text Structure]
@@ -1278,6 +1458,17 @@ damage =
     att.damaged.attributes,
     empty
   }
+date =
+  
+  ## contains a date in any format. [3.5.4. Dates and Times 2.2.4. Publication, Distribution, Licensing, etc. 2.6. The Revision Description 3.11.2.4. Imprint, Size of a Document, and Reprint Information 15.2.3. The Setting Description 13.3.6. Dates and Times]
+  element date {
+    (text | model.gLike | model.phrase | model.global)*,
+    att.global.attributes,
+    att.datable.attributes,
+    att.editLike.attributes,
+    att.typed.attributes,
+    empty
+  }
 del =
   
   ## (deletion) contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated as superfluous or spurious in the copy text by an author, scribe, or a previous annotator or corrector. [3.4.3. Additions, Deletions, and Omissions]
@@ -1295,6 +1486,18 @@ expan =
     macro.phraseSeq,
     att.global.attributes,
     att.editLike.attributes,
+    empty
+  }
+g =
+  
+  ## (character or glyph) represents a glyph, or a non-standard character. [5. Characters, Glyphs, and Writing Modes]
+  element g {
+    text,
+    att.global.attributes,
+    att.typed.attributes,
+    
+    ## points to a description of the character or glyph intended.
+    attribute ref { xsd:anyURI }?,
     empty
   }
 gap =
@@ -1382,6 +1585,41 @@ pb =
     att.edition.attributes,
     att.spanning.attributes,
     att.breaking.attributes,
+    empty
+  }
+ref =
+  
+  ## (reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple Links and Cross-References 16.1. Links]
+  element ref {
+    macro.paraContent
+    >> sch:pattern [
+         id = "teiBdinski-ref-refAtts-constraint-6"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:ref"
+           "\x{a}" ~
+           "               "
+           sch:report [
+             test = "@target and @cRef"
+             "Only one of the\x{a}" ~
+             "	attributes @target' and @cRef' may be supplied on "
+             sch:name [ ]
+             "\x{a}" ~
+             "               "
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    att.global.attributes,
+    att.pointing.attributes,
+    att.internetMedia.attributes,
+    att.typed.attributes,
+    att.declaring.attributes,
+    att.cReferencing.attributes,
     empty
   }
 resp =

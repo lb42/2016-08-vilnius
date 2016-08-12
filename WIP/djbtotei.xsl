@@ -2,7 +2,9 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs tei" version="2.0">
+    
     <xsl:output indent="no"/>
+    
     <xsl:strip-space elements="*"/>
 
     <xsl:template match="root">
@@ -15,19 +17,25 @@
         <teiHeader>
             <fileDesc>
                 <titleStmt>
-                    <title>Title</title>
+                    <title><xsl:value-of select="substring-after(substring-before(document-uri(/),'.xml'),'Bdinski/')"/> text from Bdinski anthology</title>
                     <respStmt>
-                        <resp>original transcription</resp>
+                        <resp>Original transcription </resp>
                         <name>
                             <xsl:value-of select="name"/>
                         </name>
                     </respStmt>
                 </titleStmt>
                 <publicationStmt>
-                    <ab>Publication information</ab>
+                    <ab> Source at <ref target="https://github.com/lb42/2016-08-vilnius"
+                            >https://github.com/lb42/2016-08-vilnius/Source</ref>. For use in <ref
+                                target="http://textualheritage.org/en/conf.html"><title>Textual Heritage and
+                                    Information Technologies: El’Manuscript-2016</title></ref>,
+                           Vilnius, Lithuania,  <date from="2016-08-22" to="2016-08-28"
+                                    >22-28 August 2016</date> License: <ref
+                                        target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</ref>.</ab>
                 </publicationStmt>
                 <sourceDesc>
-                    <ab/>
+                  <ab>  <bibl></bibl></ab>
                 </sourceDesc>
             </fileDesc>
             <encodingDesc>
@@ -90,10 +98,16 @@
     <xsl:template match="editionPageNo">
         <pb n="{@n}" ed="ed"/>
     </xsl:template>
-    <xsl:template match="sup | lig | red">
+    <xsl:template match="sup |  red">
         <hi rend="{name()}">
             <xsl:apply-templates/>
-        </hi>
+        </hi></xsl:template>
+    
+    <xsl:template match="lig">
+        <xsl:variable name="ligName">
+            <xsl:value-of select='concat(.,"Lig")'/>
+        </xsl:variable>
+        <g ref="{$ligName}"><xsl:apply-templates/></g>
         <!-- TODO: add ligatures other than [oo] to <charDecl>; lig should probly be a <g> -->
     </xsl:template>
 
@@ -120,9 +134,7 @@
         <xsl:analyze-string select="." regex="\[оо\]">
             <!-- Tag input [oo] <hi rend="lig"> containing a <g> -->
             <xsl:matching-substring>
-                <hi rend="lig">
-                    <g ref="#ooLig">oo</g>
-                </hi>
+                     <g ref="#ooLig">oo</g>
             </xsl:matching-substring>
             <xsl:non-matching-substring>
                 <!-- Strip final hyphens and white space -->
