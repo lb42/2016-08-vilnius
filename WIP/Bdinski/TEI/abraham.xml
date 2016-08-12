@@ -1,6 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0"><teiHeader><fileDesc><titleStmt><title>abraham text from Bdinski anthology</title><respStmt><resp>Original transcription </resp><name>Lara Sels</name></respStmt></titleStmt><publicationStmt><ab> Source at <ref target="https://github.com/lb42/2016-08-vilnius">https://github.com/lb42/2016-08-vilnius/Source</ref>. For use in <ref target="http://textualheritage.org/en/conf.html"><title>Textual Heritage and
-                                    Information Technologies: El’Manuscript-2016</title></ref>,
-                           Vilnius, Lithuania,  <date from="2016-08-22" to="2016-08-28">22-28 August 2016</date> License: <ref target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</ref>.</ab></publicationStmt><sourceDesc><ab><bibl/></ab></sourceDesc></fileDesc><encodingDesc><charDecl><glyph xml:id="ooLig"><glyphName>CYRILLIC DOUBLE OMICRON LIGATURE</glyphName></glyph></charDecl></encodingDesc><revisionDesc><change>Header created by djbtotei</change></revisionDesc></teiHeader><text><body><ab>
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+     <teiHeader>
+         <fileDesc>
+              <titleStmt>
+                  <title>abraham text from Bdinski anthology</title>
+                  <respStmt>
+                       <resp>Original transcription </resp>
+                       <name>Lara Sels</name>
+                  </respStmt>
+              </titleStmt>
+              <publicationStmt>
+                  <ab>Source at <ref target="https://github.com/lb42/2016-08-vilnius">https://github.com/lb42/2016-08-vilnius/Source</ref>. 
+                       For use in <ref target="http://textualheritage.org/en/conf.html"><title>Textual Heritage and
+                  Information Technologies: El’Manuscript-2016</title></ref>,
+              Vilnius, Lithuania, <date from="2016-08-22" to="2016-08-28">22-28 August 2016</date> 
+                       License: <ref target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</ref>.</ab>
+              </publicationStmt>
+              <sourceDesc>
+                  <ab>Transcribed from images at <ref target="http://bdinski.obdurodon.org">http://bdinski.obdurodon.org</ref></ab>
+              </sourceDesc>
+         </fileDesc>
+         <encodingDesc>
+              <charDecl>
+                  <glyph xml:id="ooLig">
+                       <glyphName>CYRILLIC DOUBLE OMICRON LIGATURE</glyphName>
+                  </glyph>
+              </charDecl>
+         </encodingDesc>
+         <revisionDesc>
+              <change>Header created by djbtotei</change>
+         </revisionDesc>
+     </teiHeader>
+     <text>
+         <body>
+              <ab>
 <lb/><pb n="43" ed="ed"/>СЛОВО БЛА<lb break="no"/>женаго аврамиа. како п<lb break="no"/>риѡбрѣте дьщере брата
 <lb/>своѥго ѡ<hi rend="sup">т</hi> поути лоукаваго
 <lb/><milestone unit="p" n="25" ed="ed"/>Хощю же любимици мо<lb break="no"/>и. повѣдати дивноую
