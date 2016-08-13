@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Creating a Manuscript Description</title>
+        <author>TEI @ Oxford</author>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date>August 2016</date>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher>Lou Burnard Consulting</publisher>
+        <availability>
+          <p>Freely available for use and derivative works under a Creative Commons Attribution
+            license.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Various previous talks, TEI Guidelines, etc.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2016-08-09"> First draft </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+
+      <!-- Learning Outcomes -->
+      <div>
+        <head>Learning Outcomes</head>
+        <p>During this exercise you will learn : <list type="bulleted">
+            <item>how to create a basic manuscript description </item>
+            <item>how the various components of a TEI manuscript description are organized</item>
+            <item>how to create a detailed manuscript description</item>
+          </list>
+        </p>
+      </div>
+
+
+
+      <div>
+        <head>A minimal <gi>msDesc</gi></head>
+        <p>A manuscript description, as the name suggests, describes a manuscript. The description
+          can be rich and complex, or very simple. The same applies to its markup. Let's begin with
+          the absolute minimum.</p>
+        <p>A manuscript description should always tell you <list>
+            <item>where the manuscript is to be found : <gi>msIdentifier</gi>
+            </item>
+            <item>what the manuscript contains : <gi>msContents</gi> or <gi>p</gi></item>
+            <item>and probably something about its physical composition, size etc.
+                (<gi>physDesc</gi> or <gi>p</gi>)</item>
+          </list></p>
+        <p>Of course it may contain much, much more, as we will see...</p>
+      </div>
+
+      <div>
+        <head>Getting started</head>
+
+        <p>In this exercise we will create a TEI document which contains a manuscript description,
+          marked up with the TEI <gi>msDesc</gi> element. </p>
+        <list>
+          <item>Open oXygen, and create a new XML document using the template provided for a P5
+            Manuscript Description <list>
+              <item>Select New from the File menu (CTRL-N)</item>
+              <item>Scroll down to Framework Templates in the New dialog</item>
+              <item>Open TEI P5, and select Manuscript description </item>
+            </list></item>
+          <item>oXygen creates a template for you to fill which looks more or less like this
+            <lb/>
+            <graphic url="../images/msDescSkel.png"/></item>
+          <item>First, fill in the TEI header as follows <list>
+              <item>The <gi>title</gi> is something like <q>TEI Conformant description of a
+                  manuscript</q></item>
+              <item>The <gi>publicationStmt</gi> says something like <q>Unpublished
+                exercise</q></item>
+              <item>The <gi>sourceDesc</gi> for the moment says simply <q>No pre-existing
+                source</q></item>
+              <item>If you like, you could add a <gi>respStmt</gi> containing a <gi>resp</gi> such
+                as <code>TEI Encoding</code> and a <gi>name</gi> containing your own name. Do you
+                know where this element can go? How would you find out? </item>
+            </list></item>
+          <item>Next, fill in the <gi>msIdentifier</gi> as follows <list>
+              <item>In the <gi>settlement</gi> element, give the name of the city (town, village,
+                etc.) where your manuscript is currently stored (<q>Sofia</q>)</item>
+              <item>In the <gi>repository</gi> element, give the name of the repository
+                (institution, library, etc.) which holds it (<q>Национална Библиотека "Св. Св. Кирил
+                  и Методий"</q>)</item>
+              <item>In the <gi>idno</gi> element give the shelf mark, call number or similar for
+                your manuscript (<q>1144</q>) </item>
+            </list></item>
+          <item>This is all that is needed for a valid manuscript description. But to make it
+            useful, you may wish to add a little more information. You could supply this as a
+              <gi>head</gi> element, for example containing the text <q>Short Apostle Lectionary in
+              Russian, written in Cyrillic script by a single hand</q>. Or you could add a series of <gi>p</gi> or
+              <gi>ab</gi> elements providing whatever information you choose. Or you could use some
+            of the more specialised elements provided by the TEI, as follows.</item>
+          <item>After the <gi>msIdentifier</gi>, add a <gi>msContents</gi> element to provide
+            information about the <soCalled>intellectual content</soCalled> of the manuscript. In
+            the simplest case, you might just want to summarise this, using a <gi>summary</gi>
+            element. </item>
+          <item>After the <gi>msContent</gi> element, add a <gi>physDesc</gi> element to describe
+            the physical aspects of the manuscript. In the simplest case, you could provide this as
+            one or more paragraphs (<gi>p</gi>) elements. </item>
+
+        </list>
+        
+        <p>Your minimal <gi>msDesc</gi> should look something like this: <egXML
+          xmlns="http://www.tei-c.org/ns/Examples">
+          <msDesc>
+            <msIdentifier>
+              <settlement>Sofia</settlement>
+              <repository>National Library</repository>
+              <idno>1144</idno>
+            </msIdentifier>
+            <head>Apostle Lectionary, in Russian, written in Cyrillic script by a single
+              hand</head>
+            <msContents>
+              <summary>Apostle Lectionary in Russian</summary>
+            </msContents>
+            <physDesc>
+              <p>Parchment, 39 folios, written in Cyrillic script by a single  hand. Some damage to outer
+                leaves. </p>
+            </physDesc>
+          </msDesc>
+        </egXML></p>
+        <p>Since the <gi>head</gi> element now adds nothing to the rest of the description, you might like to remove it. </p>
+      </div>
+
+
+      <!-- Self-Assessment -->
+      <div>
+        <head>Self-Assessment</head>
+        <p>Check if you understand some of the core principles of this exercise by answering the
+          following questions: <list>
+            <item>What is the only required aspect of a TEI manuscript description?</item>
+            <item>How does one record the separate works of intellectual content present in the
+              manuscript? </item>
+            <item>Where does one describe the support which forms the object, or its layout?</item>
+            <item>How does one record the origin, provenance, and acquisition of the object?</item>
+   
+          </list>
+        </p>
+      </div>
+
+      <!-- Next  -->
+      <div>
+        <head>Next and More Reading</head>
+        <p> Next we'll be looking at more encoding one can add to manuscripts, particularly for
+          transcriptions. However, before that if you have time you may wish to:<list>
+            <item>Look up the reference pages for each of the new elements you've used.</item>
+            <item>Read some of the chapter on Manuscript Description: <ref
+                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
+                >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html</ref>.</item>
+          </list>
+        </p>
+      </div>
+    </body>
+  </text>
+</TEI>
