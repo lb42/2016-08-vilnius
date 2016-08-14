@@ -102,7 +102,7 @@
             information about the <soCalled>intellectual content</soCalled> of the manuscript. In
             the simplest case, you might just want to summarise this, using a <gi>summary</gi>
             element. </item>
-          <item>After the <gi>msContent</gi> element, add a <gi>physDesc</gi> element to describe
+          <item>After the <gi>msContents</gi> element, add a <gi>physDesc</gi> element to describe
             the physical aspects of the manuscript. In the simplest case, you could provide this as
             one or more paragraphs (<gi>p</gi>) elements. </item>
 
@@ -167,10 +167,165 @@
               <item>After a brief pause, a new window opens in which a basic TEI P5 version of the
                 document appears. Click the Format and Indent button (CTRL-SHIFT-I) to see its
                 structure, which should look familiar to you!</item>
-            </list></item>
-        </list>
 
+            </list></item>
+          <!--<item>You can if you wish revise the TEI Header to contain a title and other
+              information, as you did before. The main part of this exercise is however to turn
+              the body of this document into a properly structured TEI MS Description.</item>-->
+        </list>
+        <p>You could transform this document into a properly structured TEI MS Description in (at
+          least) two ways. You could make a new document, using the template provided for a P5
+          Manuscript Description in exactly the same way as before, and then gradually cut and paste
+          material from one document into the other. Or you could change the tagging in the document
+          you just created, deleting unnecessary additional material as you go. We don't mind which
+          you choose. </p>
+        <list>
+          <item>If you adopt the second strategy, you will need to change the outermost <gi>div</gi>
+            in the body of the document into an <gi>msDesc</gi> element. <list>
+              <item>Highlight all the text inside the opening tag (<code>div type="div1"</code>)
+                taking care <emph>not</emph> to include the pointy brackets. </item>
+              <item>Type the new name you want (<code>msDesc</code>).</item>
+              <item>Move the cursor outside the tag.</item>
+              <item>If you scroll down to the end of the file, you will see that oXygen has
+                helpfully inserted the closing tag. </item>
+              <item>You will also see that the document is now invalid. Don't panic! You will fix
+                this during the rest of the exercise. </item>
+            </list></item>
+          <item>Begin by creating a valid <gi>msIdentifier</gi> which shows that the manuscript with
+            identifier <code>Medeltidshandskrift 40</code> is in the holdings of a repository called
+              <code>Lund University Library</code>. If you like, you can additionally provide the
+            country (Sweden), the town (Lund) and the institution (Lunds Universitet), each tagged
+            with the appropriate TEI element. Don't forget that just typing a &lt; character
+            anywhere in the document you are editing will pop up a list of the TEI tags available at
+            this point: this will help you add the right tags within your <gi>msIdentifier</gi>
+            element.</item>
+          <item>This description includes two former identifiers (following the Latin word
+              <q>olim</q>), which you should mark up using the <gi>altIdentifier</gi> element. We
+            suggest that you regard <q>Bibliotheca recentior</q> as the name of a collection. And
+            remember that you need to repeat the name of the host repository (<code>Lund University
+              Library</code>) for each of these additional identifiers.</item>
+          <item>This description also includes two summaries or abstracts, one very short, and one
+            slightly longer. You can decide whether or not to keep them: if you do keep them, they
+            can both by tagged using the <gi>head</gi> element. You could use the <att>type</att>
+            attribute to distinguish them, if you like. </item>
+
+        </list>
+        <p>The start of your document should now look something like this: <graphic
+            url="../images/ms40_start.png"/>
+        </p>
+        <p>The remainder of the description consists of a series of <gi>div</gi> elements, each
+          containing a <gi>head</gi> to specify its function. Some (but not all) of these
+            <gi>div</gi> elements can be translated immediately into a more specialised element, as
+          follows: <list>
+            <item>replace the <gi>div</gi> tag with its corresponding MsDesc element (see table
+              below)</item>
+            <item>delete the <gi>head</gi> element </item>
+          </list>
+          <table>
+            <row role="label">
+              <cell>heading</cell>
+              <cell>element</cell>
+
+            </row>
+            <row>
+              <cell>Contents</cell>
+              <cell><gi>msContents</gi></cell>
+            </row>
+            <row>
+              <cell>Physical description</cell>
+              <cell><gi>physDesc</gi></cell>
+
+            </row>
+            <row>
+              <cell>Decoration</cell>
+              <cell><gi>decoDesc</gi></cell>
+            </row>
+            <row>
+              <cell>Binding</cell>
+              <cell><gi>bindingDesc</gi></cell>
+            </row>
+            <row>
+              <cell>Foliation</cell>
+              <cell><gi>foliation</gi></cell>
+            </row>
+            <row>
+              <cell>Additions</cell>
+              <cell><gi>additions</gi></cell>
+            </row>
+            <row>
+              <cell>Condition</cell>
+              <cell><gi>condition</gi></cell>
+            </row>
+            <row>
+              <cell>History</cell>
+              <cell><gi>history</gi></cell>
+            </row>
+            <row>
+              <cell>Origin</cell>
+              <cell><gi>origin</gi></cell>
+            </row>
+            <row>
+              <cell>Provenance</cell>
+              <cell><gi>provenance</gi></cell>
+            </row>
+            <row>
+              <cell>Acquisition</cell>
+              <cell><gi>acquisition</gi></cell>
+            </row>
+          </table></p>
+        <p>Your document should now be valid at the start and the end, but not in the middle,
+          because the sub-parts of the <gi>physDesc</gi> are not yet properly organised. </p>
       </div>
+      <div>
+        <head>Structuring the <gi>physDesc</gi></head>
+        <p>The TEI schema distinguishes (and therefore tags) many distinct components within a
+          physical description that is not just a sequence of paragraphs. Specifically, it
+          distinguishes between information about the text bearing object itself, which is marked up
+          using the <gi>objectDesc</gi> element, and information aspects of the writing and
+          decoration it carries. In some cases, the TEI schema also requires elements to be given in
+          a specific order. To make our document valid, proceed as follows: <list>
+            <item>Select the first two paragraphs (from "Support:" to "less details") and use CTRL-E
+              to enclose these paragraphs with a <gi>support</gi> element. Delete the element
+                <gi>hi</gi> with which it begins. </item>
+            <item>Change the third <gi>p</gi> element (starting "Extent:") into an <gi>extent</gi>
+              element. Delete the element <gi>hi</gi> with which it begins. </item>
+            <item>Change the fourth <gi>p</gi> element (starting "Collation:") into a
+                <gi>collation</gi> element. Delete the element <gi>hi</gi> with which it begins. </item>
+            <item>Select the <gi>foliation</gi> element you created earlier and move it to follow
+              the <gi>extent</gi> element</item>
+            <item>Select the <gi>condition</gi> element you created earlier and move it to follow
+              the <gi>foliation</gi> element</item>
+            <item>Select all five elements, <gi>support</gi>, <gi>extent</gi>,
+                <gi>collation</gi><gi>foliation</gi> and <gi>condition</gi>; use CTRL-E to wrap them
+              in a <gi>supportDesc</gi> element</item>
+            <item>Select the paragraph labelled <soCalled>Layout</soCalled>; use CTRL-E to enclose
+              it first by a <gi>layoutDesc</gi> element, and then by a <gi>layout</gi> element.
+              Delete the element <gi>hi</gi> with which it begins. </item>
+            <item>Select the paragraph labelled <soCalled>Script</soCalled>; use CTRL-E to enclose
+              it by a <gi>scriptDesc</gi> element. Delete the element <gi>hi</gi> with which it
+              begins. </item>
+            <item>Select the <gi>additions</gi> element you created earlier and move it to follow
+              the <gi>decoDesc</gi> element</item>
+          </list>
+        </p>
+        <p>Phew. If you have done all that correctly, your document is now valid and you have a
+          jolly green square. Check the structure of the <gi>physDesc</gi> element in the
+            <ident>Outline</ident> view: it should look like this: <graphic
+            url="../images/physDesc.png"/></p>
+        <p>If you're still feeling strong, you might like to improve the markup of the
+            <gi>support</gi> element as follows:<list>
+            <item>Change the <gi>p</gi> element containing the word <q>Paper</q> into a
+                <gi>material</gi></item>
+            <item>Change the second <gi>p</gi> element into a <gi>watermark</gi> element</item>
+            <item>Delete the text <code>Three different watermarks: 1)</code></item>
+            <item>Split the <gi>watermark</gi> element into three by typing ALT-SHIFT-D before
+                <code>2)</code> and <code>3)</code></item>
+            <item/>
+            <item> Delete the numbers 2) and 3)</item>
+          </list>
+        </p>
+      </div>
+
       <!-- Self-Assessment -->
       <div>
         <head>Self-Assessment</head>
