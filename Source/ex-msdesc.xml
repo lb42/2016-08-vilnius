@@ -95,9 +95,9 @@
           <item>This is all that is needed for a valid manuscript description. But to make it
             useful, you may wish to add a little more information. You could supply this as a
               <gi>head</gi> element, for example containing the text <q>Short Apostle Lectionary in
-              Russian, written in Cyrillic script by a single hand</q>. Or you could add a series of <gi>p</gi> or
-              <gi>ab</gi> elements providing whatever information you choose. Or you could use some
-            of the more specialised elements provided by the TEI, as follows.</item>
+              Russian, written in Cyrillic script by a single hand</q>. Or you could add a series of
+              <gi>p</gi> or <gi>ab</gi> elements providing whatever information you choose. Or you
+            could use some of the more specialised elements provided by the TEI, as follows.</item>
           <item>After the <gi>msIdentifier</gi>, add a <gi>msContents</gi> element to provide
             information about the <soCalled>intellectual content</soCalled> of the manuscript. In
             the simplest case, you might just want to summarise this, using a <gi>summary</gi>
@@ -107,30 +107,70 @@
             one or more paragraphs (<gi>p</gi>) elements. </item>
 
         </list>
-        
+
         <p>Your minimal <gi>msDesc</gi> should look something like this: <egXML
-          xmlns="http://www.tei-c.org/ns/Examples">
-          <msDesc>
-            <msIdentifier>
-              <settlement>Sofia</settlement>
-              <repository>National Library</repository>
-              <idno>1144</idno>
-            </msIdentifier>
-            <head>Apostle Lectionary, in Russian, written in Cyrillic script by a single
-              hand</head>
-            <msContents>
-              <summary>Apostle Lectionary in Russian</summary>
-            </msContents>
-            <physDesc>
-              <p>Parchment, 39 folios, written in Cyrillic script by a single  hand. Some damage to outer
-                leaves. </p>
-            </physDesc>
-          </msDesc>
-        </egXML></p>
-        <p>Since the <gi>head</gi> element now adds nothing to the rest of the description, you might like to remove it. </p>
+            xmlns="http://www.tei-c.org/ns/Examples">
+            <msDesc>
+              <msIdentifier>
+                <settlement>Sofia</settlement>
+                <repository>National Library</repository>
+                <idno>1144</idno>
+              </msIdentifier>
+              <head>Apostle Lectionary, in Russian, written in Cyrillic script by a single
+                hand</head>
+              <msContents>
+                <summary>Apostle Lectionary in Russian</summary>
+              </msContents>
+              <physDesc>
+                <p>Parchment, 39 folios, written in Cyrillic script by a single hand. Some damage to
+                  outer leaves. </p>
+              </physDesc>
+            </msDesc>
+          </egXML></p>
+        <p>Since the <gi>head</gi> element now adds nothing to the rest of the description, you
+          might like to remove it. </p>
       </div>
 
+      <div>
+        <head>A more ambitious description</head>
+        <p>In this part of the exercise, we will first convert a pre-existing manuscript description
+          from word processor format (Word or Libre Office) into TEI XML. We will then consider how
+          each part of the description could be marked up in a TEI msDesc. </p>
+        <list>
+          <item>Browse to your <ident>Work</ident> folder and click on either the file
+              <ident>LUL_Ms40.odt</ident> (if you have Libre Office) or <ident>LUL_Ms40.docx</ident>
+            (if you have Microsoft Word) to open it. Take a quick look at its contents and close the
+            word processor application again. </item>
+          <item>Now, in oXygen, choose File - Open, navigate to this file, and open it again</item>
+          <item>A new window labelled <ident>Archive Browser</ident> opens, showing the structure of
+            the word processor file, which is actually a collection of several files. Find the file
+            called <ident>content.xml</ident> (for an .odt file), or
+              <ident>Word/document.xml</ident> (for a .docx file) and open it by double clicking on
+            it</item>
+          <item>As you can see, this is actually an XML file, although it uses a different non-TEI
+            set of tags. We will use oXygen to convert it automatically into a basic TEI document. <list>
+              <!--<item>In oXygen, use the usual Open dialog to select the docx file</item>
+              <item>A window labelled <code>Archive Browser</code> opens to the left of the main
+                screen. It shows the file structure of the docx archive.</item>
+              <item><graphic url="media/en/archive-browser.png" height="4cm"/></item>
+              <item>Click the blue key next to the folder called <ident>word </ident> to see the
+                contents of this folder</item>
+              <item><graphic url="media/en/archive-browser-2.png" height="4cm"/></item>
+              <item>Select the file called <ident> document.xml</ident> and double click to open it
+                (may take a few moments if the file is large)</item>-->
+              <item><!--With the <ident>document.xml</ident> file open in your main editing window,-->
+                Select <ident>Transformation -> Configure Transformation Scenario(s)</ident> from
+                the <ident>Document</ident> menu. Or type <code>CTRL-SHIFT-C</code>. Or click the
+                little spanner icon</item>
+              <item>Check the little box next to DOCX TEI P5 (or ODT TEI P5) and press the
+                  <ident>Apply Associated</ident> button.</item>
+              <item>After a brief pause, a new window opens in which a basic TEI P5 version of the
+                document appears. Click the Format and Indent button (CTRL-SHIFT-I) to see its
+                structure, which should look familiar to you!</item>
+            </list></item>
+        </list>
 
+      </div>
       <!-- Self-Assessment -->
       <div>
         <head>Self-Assessment</head>
@@ -141,7 +181,7 @@
               manuscript? </item>
             <item>Where does one describe the support which forms the object, or its layout?</item>
             <item>How does one record the origin, provenance, and acquisition of the object?</item>
-   
+
           </list>
         </p>
       </div>
