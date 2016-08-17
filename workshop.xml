@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
@@ -9,7 +6,7 @@
             <title>Title</title>
          </titleStmt>
          <publicationStmt>
-            <p>Publication information</p>
+            <p  >Publication information</p>
          </publicationStmt>
          <sourceDesc>
             <p>Information about the source</p>
@@ -18,8 +15,8 @@
    </teiHeader>
    <text>
       <body>
-         <head>Description and goals</head>
-         <p>This four-day hands-on workshop provides eight and a half hours of instruction in using
+         <head >Description and goals</head>
+         <p >This four-day hands-on workshop provides eight and a half hours of instruction in using
                <ref target="http://dh.obdurodon.org/what-is-xml.xhtml">eXtensible Markup Language
                (XML)</ref> and the <ref
                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">Text Encoding
@@ -51,7 +48,7 @@
                <item>If you have time, also read <ref target="http://books.openedition.org/oep/426"
                      >What is the Text Encoding Initiative?</ref> (also available <ref
                      target="http://books.openedition.org/oep/1237">in French</ref>) </item>
-               <item>In the hands-on portion of the workshop we will work with Church Slavonic
+               <item>In the hands-on portion of the workshop we will mostly work with Church Slavonic
                   manuscript materials. If you would prefer, you are welcome instead to bring your
                   own materials (plain-text manuscript description or transcription).</item>
             </list>
@@ -61,19 +58,19 @@
             <p><label>Tues 23 August</label></p>
             <list>
                <item>Session 1, 17h15 - 18h15 : Introduction to XML [DB] (<ref
-                     target="xml_intro.pptx.pdf">slides <graphic url="images/pdf.gif"
+                     target="Slides/xml_intro.pptx.pdf">slides <graphic url="images/pdf.gif"
                   /></ref>)</item>
             </list>
             <p><label> Weds 24 August </label></p>
             <list>
                <item>Session 2, 14h30 - 15h30 : Introduction to TEI [LB] (<ref
-                     target="tei_intro.pptx.pdf">slides<graphic url="images/pdf.gif"/></ref>)</item>
+                     target="Slides/talk-tei.pdf">slides<graphic url="images/pdf.gif"/></ref>)</item>
 
                <item>Session 3, 16h - 17h : Manuscript description [DB] (<ref
                      target="manuscript-description.pptx.pdf">slides</ref>
                   <graphic url="images/pdf.gif"/>)<list>
-                     <item><hi>Don’t click; download:</hi>
-                        <ref target="Enina.xml">Description of the <title>Enina
+                    <item><hi>Don’t click; download:</hi>
+                        <ref target="Work/Enina.xml">Description of the <title>Enina
                            Apostol</title></ref> (XML file)</item>
                      <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
                            >Section 10 of TEI P5: Manuscript description</ref></item>
@@ -94,28 +91,30 @@
             </list>
             <p><label>Thursday 25 August</label></p>
             <list>
-               <item>Session 4, 09h - 10h : Manuscript description [LB] practical 1</item>
+               <item>Session 4, 09h - 10h : Manuscript description [LB] <ref target="Work/ex-msdesc.pdf">practical</ref></item>
                <item>Coffee break</item>
-               <item>Session 5, 10h30 - 11h30 : Manuscript description [LB] practical 2</item>
-               <item>Session 6, 11h45 - 12h45 : An Ingtroduction to Manuscript transcription (<ref
-                     target="http://nl.ijs.si/et/teach/graz06/standards/Critical/driscoll.pdf"
-                     >slides</ref>, by Matthew Driscoll <graphic url="images/pdf.gif"/>) 
-                  [LB] </item>
+               <item>Session 5, 10h30 - 11h30 : Manuscript description [LB] practical continues</item>
+               <item>Session 6, 11h45 - 12h45 : An Introduction to Manuscript transcription [LB] (<ref
+                  target="Slides/talk-transcription.pdf">
+              slides</ref> <graphic url="images/pdf.gif"/>) 
+               </item>
                <!-- lunch -->
                <item>Session 7, 13h45 - 14h45 : Manuscript transcription [DB] practical 1 </item>
                <item>Session 8, 15h - 16h : Manuscript transcription [DB] practical 2</item>
             </list>
             <p><label>Friday 26 August</label></p>
             <list>
-               <item>Session 9, 09h - 10h : TEI Tools [LB] overview </item>
-               <item>Session 10, 10h30 - 11h30 : TEI Tools [LB] exercise </item>
+               <item>Session 9, 09h - 10h : TEI Tools [LB] (<ref target="Slides/talk-tools.pdf">Slides</ref>) </item>
+               <item>Session 10, 10h30 - 11h30 : TEI Tools [LB] <ref target="Work/ex-xslt.pdf">exercise</ref> 
+            </item>
                <item>Session 11, 1145 - 12h45 : Taking stock [DB] <list>
                      <item>Sample XML projects at <ref target="http://www.obdurodon.org"
                            >http://www.obdurodon.org</ref> and <ref
                            target="http://www.obdurodon.org">http://dh.obdurodon.org</ref> (student
                         course projects)</item>
-                     <item>What next (<ref target="what-next.pptx.pdf">slides <graphic
+                     <item>What next (<ref target="Slides/what-next.pptx.pdf">slides <graphic
                               url="images/pdf.gif"/></ref>)</item>
+                  <!-- add TEI community slides? -->
                   </list>
                </item>
 
@@ -135,7 +134,7 @@
 
          </div>
          <div>
-            <head>Documents</head>
+            <head>Further reading</head>
             <div>
                <head>Projects</head>
                <div>
