@@ -3,15 +3,20 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Title</title>
+            <title>Using the Text Encoding Initiative for Description and Transcription of Manuscript Sources
+            </title>
+            <author>David Birnbaum and Lou Burnard</author>
          </titleStmt>
          <publicationStmt>
-            <p  >Publication information</p>
+            <p  >Unpublished workshop notes for ElManuscript 2016</p>
          </publicationStmt>
          <sourceDesc>
-            <p>Information about the source</p>
+            <p>TEI-ified and modified from DJB's <ref target="http://varna.obdurodon.org/">HTML source for Varna Workshop</ref></p>
          </sourceDesc>
       </fileDesc>
+      <revisionDesc>
+         <change when="2016-08-15">Add header; check links</change>
+      </revisionDesc>
    </teiHeader>
    <text>
       <body>
@@ -33,7 +38,7 @@
                   target="http://about.me/louburnard">http://users.ox.ac.uk/~lou</ref>)</item>
          </list>
          <p>The workshop is part of the <ref
-               target="http://textualheritage.org/content/view/486/209/lang,english/">Textual
+            target="http://textualheritage.org/content/view/634/270/lang,english/">Textual
                heritage and information technologies (El’Manuscript-2016) conference</ref>, Vilnius,
             Lithuania, 2016-08-22–2016-08-26</p>
          <div>
@@ -49,7 +54,7 @@
                      >What is the Text Encoding Initiative?</ref> (also available <ref
                      target="http://books.openedition.org/oep/1237">in French</ref>) </item>
                <item>In the hands-on portion of the workshop we will mostly work with Church Slavonic
-                  manuscript materials. If you would prefer, you are welcome instead to bring your
+                  manuscript materials. If you prefer, you are welcome instead to bring your
                   own materials (plain-text manuscript description or transcription).</item>
             </list>
          </div>
@@ -67,7 +72,7 @@
                      target="Slides/talk-tei.pdf">slides<graphic url="images/pdf.gif"/></ref>)</item>
 
                <item>Session 3, 16h - 17h : Manuscript description [DB] (<ref
-                     target="manuscript-description.pptx.pdf">slides</ref>
+                     target="Slides/manuscript-description.pptx.pdf">slides</ref>
                   <graphic url="images/pdf.gif"/>)<list>
                     <item><hi>Don’t click; download:</hi>
                         <ref target="Work/Enina.xml">Description of the <title>Enina
