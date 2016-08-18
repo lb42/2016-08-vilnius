@@ -71,7 +71,7 @@
             </list></item>
           <item>oXygen creates a template for you to fill which looks more or less like this
             <lb/>
-            <graphic url="../images/msDescSkel.png"/></item>
+            <graphic url="../images/msDescSkel.png" width="60%"/></item>
           <item>First, fill in the TEI header as follows <list>
               <item>The <gi>title</gi> is something like <q>TEI Conformant description of a
                   manuscript</q></item>
@@ -202,8 +202,8 @@
             attribute to distinguish them, if you like. </item>
 
         </list>
-        <p>The start of your document should now look something like this: <graphic
-            url="../images/ms40_start.png"/>
+        <p>The start of your document should now look something like this: </p><p><graphic
+            url="../images/ms40_start.png" width="60%"/>
         </p>
         <p>The remainder of the description consists of a series of <gi>div</gi> elements, each
           containing a <gi>head</gi> to specify its function. Some (but not all) of these
@@ -303,8 +303,8 @@
             </list>
           </item>
         </list>
-        <p>The start of your msItem should now look like this: <graphic
-            url="../images/msItemStart.png"/>. We now need to tag the titles etc used to describe
+        <p>The start of your msItem should now look like this:</p><p> <graphic
+            url="../images/msItemStart.png"/>.</p><p> We now need to tag the titles etc used to describe
           the work. <list>
             <item>Select the two words <q>Russkij Chronograf</q> and use CTRL-E to tag them as a
                 <gi>title</gi></item>
@@ -324,7 +324,7 @@
           </list>
        </p><p>To check your work, open the Outline view (Window ->
        Show View -> Outline) to display the structure of your msDesc.  It should look
-       something like this:
+       something like this:</p><p>
        <graphic url="../images/msItem.png"></graphic></p>
       </div>
       <div>
@@ -361,7 +361,7 @@
         </p>
         <p>Phew. If you have done all that correctly, your document is now valid and you have a
           jolly green square. Check the structure of your <gi>physDesc</gi> element in the
-            <ident>Outline</ident> view: it should look like this: <graphic
+            <ident>Outline</ident> view: it should look like this: </p><p><graphic
             url="../images/physDesc.png"/></p>
         <p>If you're still feeling strong, you might like to improve the markup of the
             <gi>support</gi> element as follows:<list>
@@ -378,33 +378,7 @@
             <ident>Work/msDesc-corrected.xml</ident>. </p>
       </div>
 
-      <!-- Self-Assessment -->
-      <div>
-        <head>Self-Assessment</head>
-        <p>Check if you understand some of the core principles of this exercise by answering the
-          following questions: <list>
-            <item>What is the only required aspect of a TEI manuscript description?</item>
-            <item>How does one record the separate works of intellectual content present in the
-              manuscript? </item>
-            <item>Where does one describe the support which forms the object, or its layout?</item>
-            <item>How does one record the origin, provenance, and acquisition of the object?</item>
-
-          </list>
-        </p>
-      </div>
-
-      <!-- Next  -->
-      <div>
-        <head>Next and More Reading</head>
-        <p> Next we'll be looking at more encoding one can add to manuscripts, particularly for
-          transcriptions. However, before that if you have time you may wish to:<list>
-            <item>Look up the reference pages for each of the new elements you've used.</item>
-            <item>Read some of the chapter on Manuscript Description: <ref
-                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
-                >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html</ref>.</item>
-          </list>
-        </p>
-      </div>
+     
     </body>
   </text>
 </TEI>
