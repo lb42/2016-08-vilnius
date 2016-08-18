@@ -1,5 +1,8 @@
 ECHO=
 
+PROFILES=/home/lou/Public/Stylesheets/profiles
+PROFILE=teiOCS
+
 TALKS= \
 	talk-tei \
 	talk-tools \
@@ -13,7 +16,7 @@ default: pdfslides exercises
 
 exercises:
 	for i in $(EXERCISES) ; do \
-		teitopdf $$i.xml; \
+		teitopdf --profile=$(PROFILE) --profiledir=$(PROFILES) $$i.xml; \
 	mv $$i.xml.pdf ../Work/$$i.pdf; \
 	done
 
