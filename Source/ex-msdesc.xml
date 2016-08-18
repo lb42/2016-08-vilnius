@@ -149,15 +149,7 @@
             it</item>
           <item>As you can see, this is actually an XML file, although it uses a different non-TEI
             set of tags. We will use oXygen to convert it automatically into a basic TEI document. <list>
-              <!--<item>In oXygen, use the usual Open dialog to select the docx file</item>
-              <item>A window labelled <code>Archive Browser</code> opens to the left of the main
-                screen. It shows the file structure of the docx archive.</item>
-              <item><graphic url="media/en/archive-browser.png" height="4cm"/></item>
-              <item>Click the blue key next to the folder called <ident>word </ident> to see the
-                contents of this folder</item>
-              <item><graphic url="media/en/archive-browser-2.png" height="4cm"/></item>
-              <item>Select the file called <ident> document.xml</ident> and double click to open it
-                (may take a few moments if the file is large)</item>-->
+
               <item><!--With the <ident>document.xml</ident> file open in your main editing window,-->
                 Select <ident>Transformation -> Configure Transformation Scenario(s)</ident> from
                 the <ident>Document</ident> menu. Or type <code>CTRL-SHIFT-C</code>. Or click the
@@ -178,7 +170,7 @@
           Manuscript Description in exactly the same way as before, and then gradually cut and paste
           material from one document into the other. Or you could change the tagging in the document
           you just created, deleting unnecessary additional material as you go. We don't mind which
-          you choose. </p>
+          you choose, but we will describe the second. </p>
         <list>
           <item>If you adopt the second strategy, you will need to change the outermost <gi>div</gi>
             in the body of the document into an <gi>msDesc</gi> element. <list>
@@ -274,19 +266,78 @@
             </row>
           </table></p>
         <p>Your document should now be valid at the start and the end, but not in the middle,
-          because the sub-parts of the <gi>physDesc</gi> are not yet properly organised. </p>
+          because the sub-parts of the <gi>physDesc</gi> are not yet properly organised. We'll look
+          at that in a moment, but first we'll tidy up the <gi>msContents</gi>.</p>
+      </div>
+      <div>
+        <head>Structuring the <gi>msContents</gi></head>
+        <p>You can describe the intellectual content of a manuscript in many different ways. In the
+          previous simple example we just supplied a <gi>summary</gi> element, which may be adequate
+          in many cases. In a manuscript containing several different titles or items, it's more
+          usual to supply a list of <gi>msItem</gi> elements for each one. Inside the
+            <gi>msItem</gi> a number of more specialised elements are available to describe the item
+          more exactly, such as a title, a rubric, an icipit etc. And we can also specify the part
+          of a manuscript in which the item appears by using the <gi>locus</gi> element. </p>
+        <list>
+          <item>First, turn the first <gi>p</gi> element in the <gi>msContents</gi> element into an
+              <gi>msItem</gi> element, in the same way as you transformed the outermost <gi>div</gi>
+            tag into an <gi>msDesc</gi>. Highlight everything inside the first <gi>p</gi> tag (but
+            not the pointy brackets), and type <code>msItem</code> to replace it.</item>
+          <item>The figure 1 which follows is the number of this item within the manuscript. Add an
+              <att>n</att> attribute to your <gi>msItem</gi> and give it this value. Then delete the
+            whole of the <gi>hi</gi> element which contains the figure. </item>
+          <item>Now look at the passage enclosed in parentheses ( and ). This contains a
+              <gi>ref</gi> element whose <att>target</att> indicates an online version of this
+            manuscript and which contains: <list>
+              <item>an empty <gi>anchor</gi> element whose <att>xml:id</att> supplies an identifier
+                for this item</item>
+              <item>a <gi>hi</gi> element containing an indication of the folios in the manuscript
+                concerned (<code>ff 6r-474v</code>)</item>
+            </list> Proceed as follows: <list>
+              <item>change the <gi>ref</gi> element into a <gi>locus</gi> element</item>
+              <item>change its <att>target</att> attribute into a <att>facs</att> attribute</item>
+              <item>move the <att>xml:id</att> attribute from the <gi>anchor</gi> to the
+                  <gi>msItem</gi> you created earlier</item>
+              <item>Delete the remaining parts of the <gi>hi</gi> elements and (if you like) the
+                parentheses</item>
+            </list>
+          </item>
+        </list>
+        <p>The start of your msItem should now look like this: <graphic
+            url="../images/msItemStart.png"/>. We now need to tag the titles etc used to describe
+          the work. <list>
+            <item>Select the two words <q>Russkij Chronograf</q> and use CTRL-E to tag them as a
+                <gi>title</gi></item>
+            <item>Select the first passage within quotation marks labelled <q>rubric</q>, i.e. from
+                <q>книга глаголемаꙗ</q> to <q>епископа гевалъскаго</q> and use CTRL-E to tag this as
+              a <gi>rubric</gi>. Delete the <gi>hi</gi> element and the quotation marks.</item>
+            <item>Do the same for the next quoted passage (from <q>зачало</q> to <q>землю</q>) but
+              this time tag it as an <gi>incipit</gi></item>
+            <item>Do the same for the next quoted passage (from <q>и многолѣтно</q> to <q>вѣки
+                амин</q>) but this time tag it as an <gi>explicit</gi>
+            </item>
+            <item>And finally tag the stretch of text labelled as a colophon as a <gi>colophon</gi>
+            </item>
+            <item>Don't forget to remove the redundant <gi>hi</gi> and <gi>anchor</gi> elements left
+              behind! Your <gi>msItem</gi> element should now be valid (i.e. no red underlining
+              anywhere in it) </item>
+          </list>
+       </p><p>To check your work, open the Outline view (Window ->
+       Show View -> Outline) to display the structure of your msDesc.  It should look
+       something like this:
+       <graphic url="../images/msItem.png"></graphic></p>
       </div>
       <div>
         <head>Structuring the <gi>physDesc</gi></head>
         <p>The TEI schema distinguishes (and therefore tags) many distinct components within a
           physical description that is not just a sequence of paragraphs. Specifically, it
           distinguishes between information about the text bearing object itself, which is marked up
-          using the <gi>objectDesc</gi> element, and information aspects of the writing and
-          decoration it carries. In some cases, the TEI schema also requires elements to be given in
-          a specific order. To make our document valid, proceed as follows: <list>
+          using the <gi>objectDesc</gi> element, and information concerning aspects of the writing
+          and decoration it carries. In some cases, the TEI schema also requires elements to be
+          given in a specific order. To make our document valid, proceed as follows: <list>
             <item>Select the first two paragraphs (from "Support:" to "less details") and use CTRL-E
               to enclose these paragraphs with a <gi>support</gi> element. Delete the element
-                <gi>hi</gi> with which it begins. </item>
+                <gi>hi</gi> with which it begins (both the tags and their content). </item>
             <item>Change the third <gi>p</gi> element (starting "Extent:") into an <gi>extent</gi>
               element. Delete the element <gi>hi</gi> with which it begins. </item>
             <item>Change the fourth <gi>p</gi> element (starting "Collation:") into a
@@ -309,21 +360,22 @@
           </list>
         </p>
         <p>Phew. If you have done all that correctly, your document is now valid and you have a
-          jolly green square. Check the structure of the <gi>physDesc</gi> element in the
+          jolly green square. Check the structure of your <gi>physDesc</gi> element in the
             <ident>Outline</ident> view: it should look like this: <graphic
             url="../images/physDesc.png"/></p>
         <p>If you're still feeling strong, you might like to improve the markup of the
             <gi>support</gi> element as follows:<list>
             <item>Change the <gi>p</gi> element containing the word <q>Paper</q> into a
-                <gi>material</gi></item>
+                <gi>material</gi> element</item>
             <item>Change the second <gi>p</gi> element into a <gi>watermark</gi> element</item>
             <item>Delete the text <code>Three different watermarks: 1)</code></item>
             <item>Split the <gi>watermark</gi> element into three by typing ALT-SHIFT-D before
                 <code>2)</code> and <code>3)</code></item>
-            <item/>
             <item> Delete the numbers 2) and 3)</item>
           </list>
         </p>
+        <p>Our final version of this manuscript description is in the file
+            <ident>Work/msDesc-corrected.xml</ident>. </p>
       </div>
 
       <!-- Self-Assessment -->
