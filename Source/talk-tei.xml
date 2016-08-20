@@ -3,9 +3,9 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title><hi>What is the Text Encoding Initiative?</hi><lb/>(and how did it get to be that
+        <title>What is the Text Encoding Initiative? (and how did it get to be that
           way?)</title>
-        <author>Lou Burnard</author>
+        <author>Lou Burnard Consulting</author>
 
       </titleStmt>
       <publicationStmt>
@@ -16,6 +16,10 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change>
+        <date>2016-08-20</date>
+        <name>Lou revised for Vilnius</name>
+      </change>
       <change>
         <date>2015-01-20</date>
         <name>Lou re-englished</name>
@@ -50,10 +54,11 @@
             <item rend="pause">The world wide web did not exist</item>
             <item rend="pause">The channel tunnel was under construction (at last)</item>
             <item rend="pause">A state known as the Soviet Union launched a space station called
-              "Mir" .. and suffered a terrible disaster at Chernobyl </item>
+              "Mir" ... and suffered a terrible disaster at Chernobyl </item>
             <item rend="pause">Records of the year: <hi>Raising Hell</hi> (Run DMC) and
                 <hi>Graceland</hi> (Paul Simon)</item>
-            <item rend="pause">and any serious computing was done on what we called "mainframes"
+            <item rend="pause">and any serious computing was done on what we called
+                <soCalled>mainframes</soCalled>
             </item>
           </list></p>
       </div>
@@ -61,8 +66,9 @@
       <div>
         <head>... though some of it looks quite familiar ...</head>
         <list>
-          <item>Such disciplines as "corpus linguistics" and "artificial intelligence" were already
-            demonstrating the need to work with large-scale digital textual resources</item>
+          <item>Such disciplines as <soCalled>corpus linguistics</soCalled> and <soCalled>artificial
+              intelligence</soCalled> were already demonstrating the need to work with large-scale
+            digital textual resources</item>
           <item>Text processing was a recognised field, with pioneering developments both in
             lexicography (OED), and in document processing systems (TeX, Scribe, tRoff..)</item>
           <item>The Internet existed (though only in academia) and there was much noise about
@@ -88,17 +94,6 @@
       </div>
 
 
-      <!--
-      <div>
-        <head>La question qui s'impose :</head>
-        <list>
-          <item>Donc, la TEI est <emph>très ancienne</emph>!</item>
-          <item>Elle précède le Web, le DVD, le téléphone portable, la télévision cablée, Microsoft
-            Word.. </item>
-          <item>Les technologies informatiques qui survivent plus de 5 ans sont assez rares... </item>
-          <item><hi>Pourquoi et comment la TEI a-t-elle survécu plus de 30 ans ?</hi></item>
-        </list>
-      </div>-->
 
       <div>
         <head>Today's question:</head>
@@ -141,7 +136,8 @@
           <item>prefers <hi>general solutions</hi> to discipline-specific ones</item>
           <item>supporting both <hi>specialisation</hi> and <hi>extension</hi></item>
         </list>
-        <p rend="box">The TEI was not designed to provide a complete answer "out of the box"</p>
+        <p rend="box">The TEI was not designed to provide a complete answer <soCalled>out of the
+            box</soCalled></p>
       </div>
 
 
@@ -151,8 +147,11 @@
         <figure>
           <graphic url="../images/babel.jpg" height="65%"/>
         </figure>
-        <list><item>The rise and rise of mutually incompatible data formats, hand in hand with the evolution
-          of new technologies !</item><item>And also perhaps a desire to bring traditional philology up to date </item></list>
+        <list>
+          <item>The rise and rise of mutually incompatible data formats, hand in hand with the
+            evolution of new technologies !</item>
+          <item>And also perhaps a desire to bring traditional philology up to date </item>
+        </list>
       </div>
 
 
@@ -161,8 +160,8 @@
 
         <list type="gloss">
           <label>1988 - 1994</label>
-          <item>Development undertaken by international research project, with funding from US and EU: versions
-            TEI P1 (1990), P2 (1992), P3 (1994)</item>
+          <item>Development undertaken by international research project, with funding from US and
+            EU: versions TEI P1 (1990), P2 (1992), P3 (1994)</item>
           <label>1995 - 1999</label>
           <item>Promotion and take-up of TEI (unfunded)</item>
           <label>2000 </label>
@@ -171,7 +170,8 @@
           <item>XML conversion of P3 as TEI P4; Council oversees production of complete revision as
             TEI P5</item>
           <label>2003 - </label>
-          <item>Regularly updated releases of TEI P5; 36 releases since 2005; latest version 3.0.0 April 2016 </item>
+          <item>Regularly updated releases of TEI P5; 36 releases since 2005; latest version 3.0.0
+            April 2016 </item>
         </list>
       </div>
 
@@ -190,7 +190,7 @@
         <p rend="box">A fruitful synergy between researcher and engineer...</p>
       </div>
 
-     <!-- <div>
+      <!-- <div>
         <head>Which research areas in particular ?</head>
         <list type="unordered">
           <item> those concerned with the creation and analysis of machine-tractable text, for <list>
@@ -221,9 +221,9 @@
         </figure>
         <p><ptr target="http://www.tei-c.org/Vault/ED/edp01.htm"/></p>
       </div>
-   
 
-   <!--   <div>
+
+      <!--   <div>
         <head>TEI then ...</head>
         <list>
           <item>Organized as a research project</item>
@@ -251,7 +251,7 @@
         <p rend="box">Analysis vs. representation </p>
       </div>
 
-     <!-- <div>
+      <!-- <div>
         <head>Text Documentation</head>
 
         <figure>
@@ -394,7 +394,7 @@ Contexts</title>, special triple issue of <title>Computers and the Humanities</t
         <p rend="box">(This is another reason for not using TEI All!) </p>
       </div>
 
-  <!--    <div>
+      <!--    <div>
         <head>From P1 to P3</head>
         <figure><graphic url="../images/tei-p1-cover.png" height="90%"/></figure><cb/>
         <list><item>Nearly 1000 copies of P1 ("Proposals 1") were distributed between 1991-1992</item><item>
@@ -408,22 +408,23 @@ Contexts</title>, special triple issue of <title>Computers and the Humanities</t
       <div>
         <head>1994 : P3</head>
 
-        
+
 
         <figure>
-            <graphic height="80%" url="../images/1994_0516_02.jpg"/>
-          </figure>
-    <cb/>
-       <list><item>April 1994:  TEI (P3) announced at ALLC-ACH conference Paris </item><item>
-          May: the "Green Books" appear at SGML94, Montreux. </item><item>
-        Dec 1994, first "TEI Metaworkshop" held,  in Chicago.  </item></list>
+          <graphic height="80%" url="../images/1994_0516_02.jpg"/>
+        </figure>
+        <cb/>
+        <list>
+          <item>April 1994: TEI (P3) announced at ALLC-ACH conference Paris </item>
+          <item> May: the <soCalled>Green Books</soCalled> appear at SGML94, Montreux. </item>
+          <item> Dec 1994, first <soCalled>TEI Metaworkshop</soCalled> held, in Chicago. </item>
+        </list>
       </div>
 
       <div>
         <head>1994-1999</head>
         <p>The adoption of the TEI and the influence of its ideas are difficult to trace, because it
           so rapidly became an invisible part of the research infrastructure. Some key events : </p>
-        <!--<p>TEI etait adopte par plusieurs grand projets de bibliotheque nunmerique (notamment à plusieurs universites americains</p>-->
         <list>
           <item>In 1996, Michael Sperberg McQueen, principal editor of the TEI, was appointed
             co-editor of the emerging W3C standard XML</item>
@@ -433,6 +434,8 @@ Contexts</title>, special triple issue of <title>Computers and the Humanities</t
             to discuss the possibility of updating TEI from SGML to XML</item>
           <item>In 1999 a second edition of P3 appeared with some revisions and corrections, and one
             addition (the <gi>ab</gi> element)</item>
+          <item>1999-2001 : MASTER project develops TEI-conformant manuscript description
+            module</item>
         </list>
         <p rend="box">Who owns the output of an international collaborative research project? Who
           has the right and duty to maintain it?</p>
@@ -441,8 +444,8 @@ Contexts</title>, special triple issue of <title>Computers and the Humanities</t
       <div>
         <head>2000 : Birth of the TEI Consortium</head>
         <p>After much work by some key users of the TEI (notably DH centres in London, Virginia,
-          Brown, Oxford, and Bergen) the TEI Consortium was incorporated as a not-for-profit membership
-          association in December 2000. </p>
+          Brown, Oxford, and Bergen) the TEI Consortium was incorporated as a not-for-profit
+          membership association in December 2000. </p>
         <p>Goals of the consortium (apart from establishing its own existence) <list>
             <item>ensure the maintenance of the TEI system</item>
             <item>implement the most urgent revisions: <list>
@@ -456,7 +459,7 @@ Contexts</title>, special triple issue of <title>Computers and the Humanities</t
         <p rend="box">http://www.ariadne.ac.uk/issue24/tei/</p>
       </div>
 
-    <!--  <div>
+      <!--  <div>
         <head>2001 : first annual meeting of the TEI Consortium (in Pisa)</head>
         <list>
           <item>TEI P4 announced and distributed</item>
@@ -511,7 +514,7 @@ working to keep them in synch *-\-></item>
      &ldots; and in print</p>   </div>
 
 -->
-<!--
+      <!--
       <div>
         <head>2001 : The TEI P5 Workplan</head>
 
@@ -612,7 +615,7 @@ working to keep them in synch *-\-></item>
           <item>Participation for both personal and institutional members</item>
 
         </list>
-       <!-- <table>
+        <!-- <table>
           <row>
             <cell><figure>
                 <graphic url="../images/2005-0517-kyoto-council.png" height="60%"/>
@@ -651,115 +654,13 @@ working to keep them in synch *-\-></item>
           <item>Paratextual data, documentary evidence, textual transmission</item>
           <item>Linguistic analyses of all kinds (including speech and music)</item>
           <item>Documentation and generation of encoding systems</item>
-          <item>Et cetera: voir <ptr target="http://www.tei-c.org/P5/Guidelines/"/></item>
+          <item>Et cetera: see <ptr target="http://www.tei-c.org/P5/Guidelines/"/></item>
         </list>
         <p>... in short, a new kind of Encyclopaedia!</p>
       </div>
 
 
-     <!-- <div>
-        <head>A standard exists for the sake of conformance, right?</head>
-        <figure>
-          <graphic url="../images/1991-TEI-commandments.png" height="70%"/>
-        </figure>
-      </div>
-
--->
-      <div>
-        <head>The TEI spirit</head>
-        <p>But what does it mean to be conformant to the TEI ?</p>
-        <list>
-          <item>tagging by consensus</item>
-          <item>using a defined lexicon </item>
-          <item>respect for diversity</item>
-        </list>
-        <p>Standardisation should not mean «do what I do» but rather «explain your decisions in
-          terms I can understand »</p>
-      </div>
-
-
-      <div>
-        <head>... leading to the many flavours of TEI</head>
-        <p>Suppose you want to encode a bibliographic description. The TEI makes you choose between :<list>
-            <item><gi>bibl</gi> (contains any combination of bibliographic elements and text, or
-              just text)</item>
-            <item><gi>biblStruct</gi> (contains a highly constrained set of bibliographic elements
-              and no text)</item>
-          <item>(and other things...) </item>
-          </list>
-        </p>
-
-      </div>
-
-      <div>
-        <head><gi>bibl</gi>: </head>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <bibl>Blain, Clements and Grundy: Feminist Companion to Literature in English (Yale,
-            1990)</bibl>
-        </egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <bibl><title>Dictionnaire des difficultés de la langue française</title> (<author>V.
-              Thomas</author>, <publisher>Larousse</publisher>)</bibl>
-        </egXML>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <bibl><idno type="ISO">ISO/IEC 2382 (all parts)</idno>, <title type="introductory"
-              >Information technology</title>
-            <title type="main">Vocabulary</title></bibl>
-        </egXML>
-      </div>
-
-      <div>
-        <head><gi>biblStruct</gi>:</head>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <biblStruct type="incollection">
-            <analytic>
-              <author>
-                <forename>Pliny Earle</forename>
-                <surname>Goddard</surname>
-              </author>
-              <title type="main" level="a">Athapascan (Hupa)</title>
-            </analytic>
-            <monogr>
-              <editor>Boas, Franz</editor>
-              <title> Handbook of American Indian Languages</title>
-              <imprint>
-                <pubPlace>Washington, D. C.</pubPlace>
-                <publisher>Government Printing Office</publisher>
-                <date>1911</date>
-              </imprint>
-              <biblScope type="pp">85-158</biblScope>
-            </monogr>
-          </biblStruct>
-        </egXML>
-      </div>
-
-
-
-     <!-- 
-
-      <div>
-        <head>There is no single &#x201C;TEI dtd&#x201D;</head>
-
-        <list type="unordered">
-          <item>TEI est un système <emph>modulaire</emph>. On s'en sert pour créer un système
-            d'encodage selon ses propres besoins, en sélectionnant des <term>modules</term>
-            spécifiques</item>
-          <item>Chaque module définit un ensemble d'éléments (et leurs attributs)</item>
-          <item>on peut sélectionner les éléments voulus, et même en changer des propriétés </item>
-          <item>on peut y mélanger des éléments nouveaux, ou bien originels ou bien en provenance
-            d'autres standards</item>
-        </list>
-      </div>
-
-      <div>
-        <head>Architecture TEI</head>
-        <figure rend="center">
-          <graphic url="../images/class-system-FR.png" height="80%"/>
-        </figure>
-      </div>
-
--->
-
+     
       <div>
         <head>The TEI Architecture</head>
         <list type="unordered">
@@ -773,27 +674,8 @@ working to keep them in synch *-\-></item>
           </item>
         </list>
         <p rend="box">Define your goals clearly <emph>before</emph> trying to use the TEI !</p>
-        <!-- <item> Le système TEI comprend plusieurs <term>modules</term></item>
-          <item> Chaque module comprend plusieurs <term>spécifications d'élément</term>
-          </item>
-          <item> Chaque spécification comprend: <list>
-              <item>un nom canonique (<gi>gi</gi>) en anglais pour l'élément et facultativememt des
-                noms équivalents en d'autres langues</item>
-              <item>une description canonique de sa fonction ou mode d'emploi (facultativement
-                traduite en d'autre langues) function</item>
-              <item>une déclaration pour chacune des <term>classes</term> auxquelles il appartient </item>
-              <item>une définition pour chacun de ses <term>attributs</term>s</item>
-              <item>une définition de son <term>modèle de contenu</term></item>
-              <item>des exemples d'usage, des notes, des liens</item>
-            </list>
-          </item>
-          <item>une spécification de <term>schéma</term> TEI (<gi>schemaSpec</gi>) se fait par une
-            sélection de modules ou d'éléments, avec (éventuellement) des modifications </item>
-          <item> un document TEI qui contient une spécification de schema s'appelle
-            (informellement!) un <term>ODD</term> (One Document Does it all)</item>
-        </list>
-      </div>-->
       </div>
+      
       <div>
         <head>TEI modules</head>
         <table xml:id="tab-mods">
@@ -908,6 +790,76 @@ working to keep them in synch *-\-></item>
       </div>
 
       <div>
+        <head>... leading to the many flavours of TEI</head>
+        <p>Suppose you want to encode a bibliographic description. The TEI makes you choose between :<list>
+          <item><gi>bibl</gi> (contains any combination of bibliographic elements and text, or
+            just text)</item>
+          <item><gi>biblStruct</gi> or <gi>biblFull</gi> (both containing a specific set of
+            bibliographic elements in a specific order and no text)</item>
+          <item>(and other things...) </item>
+        </list>
+        </p>
+      </div>
+
+      <div>
+        <head>But surely, a standard exists for the sake of conformance, right?</head>
+        <figure>
+          <graphic url="../images/1991-TEI-commandments.png" height="70%"/>
+        </figure>
+      </div>
+
+
+      <div>
+        <head>The TEI spirit</head>
+        <p>So what does it mean to be conformant to the TEI ?</p>
+        <list>
+          <item>tagging by consensus</item>
+          <item>using a defined lexicon </item>
+          <item>respect for diversity</item>
+        </list>
+        <p>Standardisation should not mean «do what I do» but rather «explain your decisions in
+          terms I can understand »</p>
+      </div>
+
+      <div>
+        <head>The TEI was designed to support many approaches</head>
+        <p><graphic url="../images/oddFlavours.png"/></p>
+        <cb/>
+        <p>An ODD can... <list>
+          <item>just make a selection from TEI All (TEI subset)</item>
+          <item>combine that with some additional constraints (customized subset)</item>
+          <item>add new components (extended subset)</item>
+        </list></p>
+      </div>
+     
+
+      <div>
+        <head>What does it mean to be <soCalled>TEI Conformant</soCalled>?</head>
+        <list>
+          <item><label>be honest</label>: every XML element claiming to belong to the TEI namespace
+            should respect the semantics of its TEI definition <!-- eg l vs line --></item>
+          <item><label>be explicit</label>: the formal documentation provided by a TEI ODD makes
+            make explicit how you have chosen to use the TEI</item>
+          <item>The TEI elements in a conformant TEI document must be valid with respect to the TEI
+            All schema</item>
+        </list>
+        <p rend="box">The purpose of these rules is to make <soCalled>blind interchange</soCalled>
+          easier...  though they cannot guarantee it</p>
+      </div>
+     
+      <div>
+        <head>Why is the TEI still of interest?</head>
+        <list>
+          <item>you could markup your text in HTML 5, or design your own tagging system</item>
+          <item>(but what a waste of time that would be)</item>
+          <item>you could use a database system</item>
+          <item>(but you would need some nontrivial technical support)</item>
+        </list>
+        <p rend="box">Understanding the TEI requires you to master a <soCalled>sweet
+          spot</soCalled>, midway between technology and the humanities</p>
+      </div>
+
+      <div>
         <head>Why is the TEI still of interest?</head>
 
         <p>There are two reasons why standards fail : <list>
@@ -955,21 +907,18 @@ working to keep them in synch *-\-></item>
         <list>
           <item>TEI P5 includes many I18N features ...</item>
           <item>Like other XML schemas, TEI is hospitable to other namespaces</item>
-          <item>A TEI schema can interoperate with other standards: <list>
+          <item>A TEI schema can interoperate with other XML standards: <list>
               <item>SVG for graphics</item>
               <item>MathML for maths</item>
               <item>MEI for music</item>
-
               <item>....</item>
             </list></item>
           <item>A TEI element definition may specify its equivalent in some other ontology using the
               <gi>equiv</gi>element</item>
+          <item>But fundamentally, the TEI's view of <q>what text really is</q> remains a familiar and
+            traditional one</item>
         </list>
       </div>
-
-
-
-
 
 
       <div>
@@ -991,15 +940,11 @@ working to keep them in synch *-\-></item>
         <head>Some vital links</head>
         <list>
           <item><ptr target="http://www.tei-c.org"/></item>
-          <item><ptr target="http://tei.sf.net"/></item>
+          <item><ptr target="http://github.com/TEIC/TEI"/></item>
           <item><ptr target="http://listserv.brown.edu/archives/cgi-bin/wa?SUBED1=tei-l&amp;A=1"
             /></item>
         </list>
-        
-
-
       </div>
-
 
     </body>
   </text>

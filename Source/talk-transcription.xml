@@ -165,10 +165,10 @@
             <div>
                 <head>Using <gi>g</gi></head>
                 <figure>
-                    <graphic url="../images/o.png" height="45%"/>
+                    <graphic url="../images/ooligs.png" height="45%"/>
                     <head>Bdinski, fol 7r, detail</head>
                 </figure>
-                <p>There is no Unicode character for the non-ligatured oo here: we tag it as a
+                <p>There is no Unicode character for the ligatured oo here: we tag it as a
                         <gi>g</gi></p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <lb/>на мѣст<g ref="#ooLig">oo</g>. и вьшедь вь
@@ -369,8 +369,8 @@
                 <p>As elsewhere, the <att>resp</att> and <att>cert</att> attributes can be used to
                     indicate who is responsible for an expansion, and the degree of certainty
                     attached to it.</p>
-                <p>This encoding might be displayed as  : <quote>po(u)r en fin<hi rend="it">ir</hi>
-                        [LB]</quote></p>
+                <p>This encoding might be displayed as  : <q>po(u)r en fin<hi rend="it">ir</hi>
+                        [LB]</q></p>
             </div>
             <div>
                 <head>Corrections and emendations</head>
