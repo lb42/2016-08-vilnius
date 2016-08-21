@@ -1,0 +1,487 @@
+<?xml version="1.0"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Introduction to XML</title>
+        <author>David J. Birnbaum</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Unpublished</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This is the master version of an original document, based on the PowerPoint presentation
+          first used at the El'Manuscript 2014 (Varna) workshop. The Varna materials are located at
+          http://varna.obdurodon.org.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change>
+        <date>2016-08-21</date>
+        <name>First version</name>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>Before we begin</head>
+        <p>Launch &lt;oXygen/&gt;</p>
+        <p>If you haven’t yet installed &lt;oXygen/&gt;: <list>
+            <item>Go to <ref target="http://www.oxygenxml.com">http://www.oxygenxml.com</ref></item>
+            <item>Download and install</item>
+            <item>Follow instructions to request free 30-day evaluation license</item>
+          </list>
+        </p>
+      </div>
+
+      <div>
+        <head>Session 1: Introduction to XML</head>
+        <p>El’Manuscript, Vilnius, 2016-08-23</p>
+        <p rend="center">David J. Birnbaum<lb/><ref target="djbpitt@gmail.com"
+            >djbpitt@gmail.com</ref><lb/><ref target="http://www.obdurodon.org"
+            >http://www.obdurodon.org</ref></p>
+      </div>
+
+      <div>
+        <list>
+          <item>Sample projects<list>
+              <item>Manuscript description: Repertorium</item>
+              <item>Manuscript transcription: Codex Suprasliensis</item>
+            </list>
+          </item>
+          <item>XML and text<list>
+              <item>Overview</item>
+              <item>Pseudo-markup and markup</item>
+              <item>Elements</item>
+              <item>Attributes</item>
+              <item>Well-formedness</item>
+            </list>
+          </item>
+          <item>The creation of a digital text</item>
+          <item>Editing XML in &lt;oXygen/&gt;</item>
+          <item>[Hands-on practice editing XML]</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Sample projects</head>
+        <p>Manuscript description</p>
+        <list>
+          <item>Repertorium of Old Bulgarian literature and letters</item>
+          <item>Institute of Literature, Bulgarian Academy of Sciences</item>
+          <item><ref target="http://repertorium.obdurodon.org"
+              >http://repertorium.obdurodon.org</ref></item>
+        </list>
+        <p>Codex Suprasliensis</p>
+        <list>
+          <item>Institute of Literature, BAS</item>
+          <item><ref target="http://suprasliensis.obdurodon.org"
+              >http://suprasliensis.obdurodon.org</ref> (edition)</item>
+          <item><ref target="http://csup.ilit.bas.bg/">http://csup.ilit.bas.bg/</ref>
+            (project)</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Overview</head>
+        <list>
+          <item>OHCO: ordered hierarchy of content objects</item>
+          <item>Three views of XML<list>
+              <item>Tree (hierarchy of objects)</item>
+              <item>Nested boxes (objects contain other objects)</item>
+              <item>Serialization (string of characters)</item>
+            </list>
+          </item>
+        </list>
+      </div>
+
+      <div>
+        <head>1. Tree (hierarchy of objects)</head>
+        <p><graphic url="../images/tree.png"/></p>
+      </div>
+
+      <div>
+        <head>2. Nested boxes (objects contain other objects)</head>
+        <p><graphic url="../images/boxes.png" height="60%"/></p>
+      </div>
+
+      <div>
+        <head>3. Serialization (string of characters)</head>
+        <!--
+          Question for Lou: How do I prevent wrapping of block XML example? 
+        -->
+        <p><egXML xmlns="http://www.tei-c.org/ns/Examples"><book>
+              <introduction> …</introduction>
+              <chapter>
+                <heading> …</heading>
+                <section> …</section>
+                <section> …</section>
+              </chapter>
+              <chapter>
+                <heading> …</heading>
+                <section> …</section>
+                <section> …</section>
+              </chapter>
+              <index> …</index>
+            </book>
+          </egXML></p>
+      </div>
+
+      <div>
+        <head><title>Hamlet</title>, First quarto, 1603</head>
+        <p><graphic url="../images/hamlet.png"/></p>
+      </div>
+
+      <div>
+        <head><title>Hamlet</title>, First quarto, 1603</head>
+        <p>Enter Hamlet. <lb/><hi rend="it">Cor.</hi> Madame, will it pleaſe your grace <lb/>To
+          leaue vs here? <lb/><hi rend="it">Que.</hi> With all my hart. <hi rend="it">exit.</hi>
+          <lb/><hi rend="it">Cor.</hi> And here Ofelia, reade you on this booke, <lb/>And walke
+          aloofe, the King ſhal be vnſeene. <lb/><hi rend="it">Ham.</hi> To be, or not to be, I
+          here’s the point, <lb/>To Die, to ſleepe, is that all? I all: <lb/>No, to ſleepe, to
+          dreame, I mary there it goes, <lb/>For in that dreame of death, when wee awake, <lb/>And
+          borne before an euerlaſting Iudge, <lb/>From whence no paſſenger euer retur’nd, <lb/>The
+          vndiſcouered country, at whoſe ſight <lb/>The happy ſmile, and the accurſed damn’d.
+          <lb/>But for this, the ioyfull hope of this, <lb/>Whol’d beare the ſcornes and flattery of
+          the world, <lb/>Scorned by the right rich, the rich curſſed of the poore? <lb/>The</p>
+      </div>
+
+      <div>
+        <head>Pseudo-markup</head>
+        <p><title>Hamlet</title></p>
+        <list>
+          <item>Stage directions</item>
+          <item>Speeches</item>
+          <item>Speakers</item>
+          <item>Other characters</item>
+          <item>Metrical lines</item>
+        </list>
+        <p>General</p>
+        <list>
+          <item>Paragraph spacing and indentation</item>
+          <item>Centering and bolding of titles</item>
+          <item>Hanging indentation for bibliographic lists</item>
+          <item>Italics for emphasis, foreign words, book titles, etc.</item>
+        </list>
+      </div>
+
+      <div>
+        <head>The XML view of content and markup</head>
+        <p>Content is the textual data</p>
+        <list>
+          <item>Transcribed from source (e.g., a manuscript)</item>
+          <item>Created by the editor (e.g., manuscript catalogue)</item>
+        </list>
+        <p>Markup describes the role of different data components</p>
+        <p>No <hi rend="it">pseudo markup</hi> in your content</p>
+        <list>
+          <item>No editorial parentheses, square brackets, angle brackets, slashes and backslashes,
+            italics, etc.</item>
+        </list>
+      </div>
+
+      <div>
+        <head>XML building blocks</head>
+        <list>
+          <item>Textual (character data) content</item>
+          <item>Elements<list>
+              <item>Structural components of the document</item>
+            </list></item>
+          <item>Attributes<list>
+              <item>Properties of elements</item>
+            </list></item>
+        </list>
+      </div>
+
+      <div>
+        <head>Elements</head>
+        <list>
+          <item>Elements have matching start and end tags <list>
+              <item><tag>title</tag></item>
+            </list></item>
+          <item>Some elements are empty and self-closing) <tag>bookmark/</tag></item>
+          <item>Element names must begin with a letter and may contain letters, digits, and
+            underscores (no spaces; no other punctuation)<list>
+              <item>Underscore: <tag>personal_name</tag></item>
+              <item>Camel case: <tag>personalName</tag></item>
+            </list></item>
+          <item>Attribute names have the same contraints as element names</item>
+        </list>
+      </div>
+
+      <div>
+        <head>The “X” in XML</head>
+        <p>eXtensible Markup Language</p>
+        <list>
+          <item>The user determines the tag set</item>
+          <item>Pro: you determine how to characterize your data</item>
+          <item>Con: you are responsible for determining how to characterize your data</item>
+        </list>
+        <p>You decide</p>
+        <list>
+          <item>What to tag</item>
+          <item>How to tag it (what to call it)</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Three types of markup</head>
+        <p>Descriptive: what the object is</p>
+        <list>
+          <item>E.g., emphasized</item>
+          <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><em>yes!</em></egXML></item>
+        </list>
+        <p>Presentational: what the object looks like</p>
+        <list>
+          <item>E.g., italicized</item>
+          <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><i>yes!</i></egXML></item>
+        </list>
+        <p>Procedural</p>
+        <list>
+          <item>What the machine should do</item>
+          <item>E.g., unload the Roman font film strip and load the italic one</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Why Digital Humanities projects use descriptive markup</head>
+        <p>Same formatting may represent various semantics</p>
+        <list>
+          <item>Italics: emphasis, foreign, book title, etc.</item>
+        </list>
+        <p>same semantics may be formatted variously</p>
+        <list>
+          <item>Emphasis: italic, bold, loud (audio device), etc.</item>
+        </list>
+        <p>Separation of levels: content and presentation</p>
+        <list>
+          <item>Encode descriptively</item>
+          <item>Transform to presentational final form for rendering (HTML, PDF, etc.)</item>
+        </list>
+        <p>Multipurposing</p>
+        <list>
+          <item>Format the same content objects in different ways for different purposes</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Texts and trees</head>
+        <p>Why XML looks at texts as trees</p>
+        <list>
+          <item>Computers can traverse trees quickly</item>
+          <item>Documents <hi rend="it">are</hi> hierarchical, right?</item>
+        </list>
+        <p>Hierarchical challenges</p>
+        <list>
+          <item>Multiple, overlapping hierarchies<list>
+              <item> Physical hierarchy: folios, lines</item>
+              <item>Intellectual hierarchy: texts (with subelements: chapters, sections, paragraphs,
+                etc.)</item>
+            </list>
+          </item>
+          <item>Relationships at a distance <list>
+              <item>Cross-references and other internal pointers</item>
+              <item>References and pointers to other (external) documents</item>
+            </list></item>
+        </list>
+      </div>
+
+      <div>
+        <head>Attributes</head>
+        <list>
+          <item>Qualifying information about elements</item>
+          <item>Encoded inside the start tag, after the element name<list>
+              <item> Attribute <egXML xmlns="http://www.tei-c.org/ns/Examples">name="value"</egXML>
+                pair</item>
+            </list></item>
+          <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><place xml:lang="fr"
+              >Paris</place></egXML></item>
+          <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><title type="journal">Scripta &amp;
+                e-Scripta</title></egXML></item>
+          <item>Attribute names are subject to the same rules as element names</item>
+          <item>Attribute values must be quoted (matching single or double straight quotation
+            marks)</item>
+        </list>
+      </div>
+
+      <div>
+        <head>An XML document must be <hi rend="it">well-formed</hi></head>
+        <list>
+          <item>Single root element</item>
+          <item>Proper nesting (no overlapping tags)<list>
+              <item>Good: &lt;em&gt;&lt;foreign&gt;oui!&lt;/foreign&gt;&lt;/em&gt;</item>
+              <!-- 
+                Question for Lou: can we use <egXML> to tag examples of XML that violate well-formedness
+                @valid="false" doesn't prevent well-formedness error on parsing
+              -->
+              <item>Bad: &lt;em&gt;&lt;foreign&gt;oui!&lt;/em&gt;&lt;/foreign&gt;</item>
+            </list></item>
+          <item>Name and name start characters for element and attribute names</item>
+          <item>Attribute values must be quoted (single or double)</item>
+          <item>Reserved characters must be encoded as entities<list>
+              <item>&amp; = &amp;amp;</item>
+              <item>&lt; = &amp;lt;</item>
+              <item>&gt; = &amp;gt;</item>
+            </list></item>
+          <item>Indentation is for human convenience</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Sample</head>
+        <!-- TODO: Don't wrap block XML example -->
+        <p><egXML xmlns="http://www.tei-c.org/ns/Examples"><book>
+              <author>Michael Kay</author>
+              <title edition="4">XSLT 2.0 and XPath 2.0 Programmer’s Reference</title>
+              <published date="2008">
+                <publisher>John Wiley &amp; Sons, Inc.</publisher>
+                <pubPlace>10475 Crosspoint Boulevard, Indianapolis, IN 46256</pubPlace>
+              </published>
+              <ISBN num="978-0-470-19274-0"/>
+              <dedication>
+                <i><b>To Anyone Who Uses This Book To Make the World a Better Place</b></i>
+              </dedication>
+            </book></egXML></p>
+      </div>
+
+      <div>
+        <head>What’s wrong?</head>
+        <!-- TODO: Uncomment this and fix it so that it renders properly -->
+        <!--<p><egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false"><author>Michael Kay</author>
+          <title edition = 4>XSLT 2.0 and XPath 2.0 Programmer’s 
+            Reference</title>
+          <published date = 2008>
+            <publisher>John Wiley & Sons, Inc.<publisher>
+              <pubPlace>10475 Crosspoint Boulevard, 
+                Indianapolis, IN 46256</pubPlace>
+         </published>
+          <ISBN num="978-0-470-19274-0”>
+            <dedication>
+              <i><b>To Anyone Who Uses This Book
+                To Make the World a Better Place</i></b>
+           </dedication>
+       </egXML></p>-->
+      </div>
+
+      <div>
+        <head>Creating a digital text</head>
+        <p>In theory</p>
+        <list>
+          <item>Document analysis, then …</item>
+          <item>Schema development, then …</item>
+          <item>Markup</item>
+        </list>
+        <p>In practice</p>
+        <list>
+          <item>The preceding is a cycle, and not a sequence</item>
+          <item>Markup is part of the process of document analysis</item>
+        </list>
+        <p>Nonetheless</p>
+        <list>
+          <item>Start with document analysis, not with angle brackets</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Why use an XML editor?</head>
+        <p>&lt;oXygen/&gt; (<ref target="http://www.oxygenxml.com"
+          >http://www.oxygenxml.com</ref>)</p>
+        <p>XML-aware</p>
+        <list>
+          <item>Real-time and on-demand validation</item>
+          <item>Completion hinting</item>
+          <item>Multiple views</item>
+          <item>(Schema-aware … stay tuned)</item>
+        </list>
+        <p>IDE (integrated development environment)</p>
+        <list>
+          <item>XSLT (eXtensible stylesheet language transformations)</item>
+          <item>Debugger</item>
+          <item>Other development tools</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Editing XML in &lt;oXygen/&gt;</head>
+        <p>Create a new file</p>
+        <list>
+          <item>File → New → New document → XML document</item>
+          <item>Short cuts: Ctrl+n; leftmost icon at top of screen</item>
+        </list>
+        <p>Create an element</p>
+        <list>
+          <item>Type a start tag (in angle brackets)</item>
+          <item>&lt;oXygen/&gt; automatically creates the matching end tag</item>
+        </list>
+        <p>Change an element</p>
+        <list>
+          <item>Change the start tag; the end tag changes automatically to match</item>
+        </list>
+        <p>Wrap text in an element</p>
+        <list>
+          <item>Select the text, type Ctrl+e (for ‘element’), type the element name</item>
+          <item>To use the same wrapper as last time, select and type Ctrl+/</item>
+        </list>
+        <p>Split an element</p>
+        <list>
+          <item>Put the cursor at the split point and type Shift+Alt+d</item>
+        </list>
+        <p>Pretty-print (wrap) the text</p>
+        <list>
+          <item>Shift +Ctrl+p; pretty-print (indentation) icon</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Hands on</head>
+        <list>
+          <item>Choose a document with a regular structure</item>
+          <item>Copy into a new XML document in &lt;oXygen/&gt;</item>
+          <item>Mark it up in XML</item>
+        </list>
+      </div>
+      <div>
+        <head>Choose a document with a regular structure</head>
+        <list>
+          <item>Google a recipe for your favorite food</item>
+          <item>Find a menu from your favorite restaurant</item>
+          <item>Encode a letter by Oscar Wilde <ref
+              target="http://law2.umkc.edu/faculty/projects/ftrials/wilde/lettersfromwilde.html"
+              >http://law2.umkc.edu/faculty/projects/ftrials/wilde/lettersfromwilde.html</ref>
+          </item>
+          <item>Encode a sonnet by William Shakespeare <ref
+              target="http://www.shakespeares-sonnets.com/all.php"
+              >http://www.shakespeares-sonnets.com/all.php</ref>
+          </item>
+          <item>… or choose your own text</item>
+        </list>
+      </div>
+      <div>
+        <head>Copy into a new XML document in &lt;oXygen/&gt;</head>
+        <list>
+          <item>Select all of the text (Ctrl+a, or use the mouse)</item>
+          <item>Copy (Ctrl+c)</item>
+          <item>Open a new document in &lt;oXygen/&gt; (Ctrl+n, select “XML document”)</item>
+          <item>Paste (Ctrl+v)</item>
+        </list>
+      </div>
+      <div>
+        <head>Mark it up in XML</head>
+        <list>
+          <item>Imagine a research or other context where you’re marking up your text for a
+            reason</item>
+          <item>Identify and tag <hi rend="it">major structural components</hi></item>
+          <item>Identify and tag <hi rend="it">small, in-line items</hi> that might be useful</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Credit</head>
+        <p>Three views of a document <ref
+            target="http://www.wwp.northeastern.edu/outreach/seminars/uvic_xslt_2012/presentations/xslt/xml_and_xpath_01.xhtml"
+            >http://www.wwp.northeastern.edu/outreach/seminars/uvic_xslt_2012/presentations/xslt/xml_and_xpath_01.xhtml</ref></p>
+      </div>
+    </body>
+  </text>
+</TEI>
