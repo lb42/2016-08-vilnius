@@ -37,31 +37,30 @@
 
       <div>
         <head>Session 1: Introduction to XML</head>
-        <p>El’Manuscript, Vilnius, 2016-08-23</p>
+        <p rend="center">El’Manuscript, Vilnius, 2016-08-23</p>
         <p rend="center">David J. Birnbaum<lb/><ref target="djbpitt@gmail.com"
             >djbpitt@gmail.com</ref><lb/><ref target="http://www.obdurodon.org"
             >http://www.obdurodon.org</ref></p>
       </div>
 
       <div>
+        <head>Outline</head>
+        <p>Sample projects</p>
         <list>
-          <item>Sample projects<list>
-              <item>Manuscript description: Repertorium</item>
-              <item>Manuscript transcription: Codex Suprasliensis</item>
-            </list>
-          </item>
-          <item>XML and text<list>
-              <item>Overview</item>
-              <item>Pseudo-markup and markup</item>
-              <item>Elements</item>
-              <item>Attributes</item>
-              <item>Well-formedness</item>
-            </list>
-          </item>
-          <item>The creation of a digital text</item>
-          <item>Editing XML in &lt;oXygen/&gt;</item>
-          <item>[Hands-on practice editing XML]</item>
+          <item>Manuscript description: Repertorium</item>
+          <item>Manuscript transcription: Codex Suprasliensis</item>
         </list>
+        <p>XML and text</p>
+        <list>
+          <item>Overview</item>
+          <item>Pseudo-markup and markup</item>
+          <item>Elements</item>
+          <item>Attributes</item>
+          <item>Well-formedness</item>
+        </list>
+        <p>The creation of a digital text</p>
+        <p>Editing XML in &lt;oXygen/&gt;</p>
+        <p>Hands-on practice editing XML</p>
       </div>
 
       <div>
@@ -85,14 +84,12 @@
 
       <div>
         <head>Overview</head>
+        <p>OHCO: ordered hierarchy of content objects</p>
+        <p>Three views of XML</p>
         <list>
-          <item>OHCO: ordered hierarchy of content objects</item>
-          <item>Three views of XML<list>
-              <item>Tree (hierarchy of objects)</item>
-              <item>Nested boxes (objects contain other objects)</item>
-              <item>Serialization (string of characters)</item>
-            </list>
-          </item>
+          <item>Tree (hierarchy of objects)</item>
+          <item>Nested boxes (objects contain other objects)</item>
+          <item>Serialization (string of characters)</item>
         </list>
       </div>
 
@@ -103,7 +100,7 @@
 
       <div>
         <head>2. Nested boxes (objects contain other objects)</head>
-        <p><graphic url="../images/boxes.png" height="60%"/></p>
+        <p><graphic url="../images/boxes.png" height="75%"/></p>
       </div>
 
       <div>
@@ -134,9 +131,9 @@
       </div>
 
       <div>
-        <head><title>Hamlet</title>, First quarto, 1603</head>
-        <p>Enter Hamlet. <lb/><hi rend="it">Cor.</hi> Madame, will it pleaſe your grace <lb/>To
-          leaue vs here? <lb/><hi rend="it">Que.</hi> With all my hart. <hi rend="it">exit.</hi>
+        <p><hi rend="it">Enter Hamlet.</hi>
+          <lb/><hi rend="it">Cor.</hi> Madame, will it pleaſe your grace <lb/>To leaue vs here?
+            <lb/><hi rend="it">Que.</hi> With all my hart. <hi rend="it">exit.</hi>
           <lb/><hi rend="it">Cor.</hi> And here Ofelia, reade you on this booke, <lb/>And walke
           aloofe, the King ſhal be vnſeene. <lb/><hi rend="it">Ham.</hi> To be, or not to be, I
           here’s the point, <lb/>To Die, to ſleepe, is that all? I all: <lb/>No, to ſleepe, to
@@ -183,31 +180,31 @@
 
       <div>
         <head>XML building blocks</head>
+        <p>Textual (character data) content</p>
+        <p>Elements</p>
         <list>
-          <item>Textual (character data) content</item>
-          <item>Elements<list>
-              <item>Structural components of the document</item>
-            </list></item>
-          <item>Attributes<list>
-              <item>Properties of elements</item>
-            </list></item>
+          <item>Structural components of the document</item>
+        </list>
+        <p>Attributes</p>
+        <list>
+          <item>Properties of elements</item>
         </list>
       </div>
 
       <div>
         <head>Elements</head>
+        <p>Elements have matching start and end tags</p>
         <list>
-          <item>Elements have matching start and end tags <list>
-              <item><tag>title</tag></item>
-            </list></item>
-          <item>Some elements are empty and self-closing) <tag>bookmark/</tag></item>
-          <item>Element names must begin with a letter and may contain letters, digits, and
-            underscores (no spaces; no other punctuation)<list>
-              <item>Underscore: <tag>personal_name</tag></item>
-              <item>Camel case: <tag>personalName</tag></item>
-            </list></item>
-          <item>Attribute names have the same contraints as element names</item>
+          <item><tag>title</tag></item>
         </list>
+        <p>Some elements are empty and self-closing) <tag>bookmark/</tag></p>
+        <p>Element names must begin with a letter and may contain letters, digits, and underscores
+          (no spaces; no other punctuation)</p>
+        <list>
+          <item>Underscore: <tag>personal_name</tag></item>
+          <item>Camel case: <tag>personalName</tag></item>
+        </list>
+        <p>Attribute names have the same contraints as element names</p>
       </div>
 
       <div>
@@ -230,12 +227,12 @@
         <p>Descriptive: what the object is</p>
         <list>
           <item>E.g., emphasized</item>
-          <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><em>yes!</em></egXML></item>
+          <item><code>&lt;em&gt;yes!&lt;/em&gt;</code></item>
         </list>
         <p>Presentational: what the object looks like</p>
         <list>
           <item>E.g., italicized</item>
-          <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><i>yes!</i></egXML></item>
+          <item><code>&lt;i&gt;yes!&lt;/i&gt;</code></item>
         </list>
         <p>Procedural</p>
         <list>
@@ -250,7 +247,7 @@
         <list>
           <item>Italics: emphasis, foreign, book title, etc.</item>
         </list>
-        <p>same semantics may be formatted variously</p>
+        <p>Same semantics may be formatted variously</p>
         <list>
           <item>Emphasis: italic, bold, loud (audio device), etc.</item>
         </list>
@@ -289,79 +286,68 @@
 
       <div>
         <head>Attributes</head>
+        <p>Qualifying information about elements</p>
+        <p>Encoded inside the start tag, after the element name</p>
         <list>
-          <item>Qualifying information about elements</item>
-          <item>Encoded inside the start tag, after the element name<list>
-              <item> Attribute <egXML xmlns="http://www.tei-c.org/ns/Examples">name="value"</egXML>
-                pair</item>
-            </list></item>
-          <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><place xml:lang="fr"
-              >Paris</place></egXML></item>
-          <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><title type="journal">Scripta &amp;
-                e-Scripta</title></egXML></item>
-          <item>Attribute names are subject to the same rules as element names</item>
-          <item>Attribute values must be quoted (matching single or double straight quotation
-            marks)</item>
+          <item>Attribute <code>name="value"</code> pair</item>
+          <item><code>&lt;place xml:lang="fr"&gt;Paris&lt;/place&gt;</code></item>
+          <item><code>&lt;title type="journal"&gt;Scripta &amp;
+            e-Scripta&lt;/title&gt;</code></item>
         </list>
+        <p>Attribute names are subject to the same rules as element names</p>
+        <p>Attribute values must be quoted (matching single or double straight quotation marks)</p>
       </div>
 
       <div>
         <head>An XML document must be <hi rend="it">well-formed</hi></head>
+        <p>Single root element</p>
+        <p>Proper nesting (no overlapping tags)</p>
         <list>
-          <item>Single root element</item>
-          <item>Proper nesting (no overlapping tags)<list>
-              <item>Good: &lt;em&gt;&lt;foreign&gt;oui!&lt;/foreign&gt;&lt;/em&gt;</item>
-              <!-- 
-                Question for Lou: can we use <egXML> to tag examples of XML that violate well-formedness
-                @valid="false" doesn't prevent well-formedness error on parsing
-              -->
-              <item>Bad: &lt;em&gt;&lt;foreign&gt;oui!&lt;/em&gt;&lt;/foreign&gt;</item>
-            </list></item>
-          <item>Name and name start characters for element and attribute names</item>
-          <item>Attribute values must be quoted (single or double)</item>
-          <item>Reserved characters must be encoded as entities<list>
-              <item>&amp; = &amp;amp;</item>
-              <item>&lt; = &amp;lt;</item>
-              <item>&gt; = &amp;gt;</item>
-            </list></item>
-          <item>Indentation is for human convenience</item>
+          <item>Good: <code>&lt;em&gt;&lt;foreign&gt;oui!&lt;/foreign&gt;&lt;/em&gt;</code></item>
+          <item>Bad: <code>&lt;em&gt;&lt;foreign&gt;oui!&lt;/em&gt;&lt;/foreign&gt;</code></item>
         </list>
+        <p>Name and name start characters for element and attribute names</p>
+        <p>Attribute values must be quoted (single or double)</p>
+        <p>Reserved characters must be encoded as entities</p>
+        <list>
+          <item><code>&amp;</code> = <code>&amp;amp;</code></item>
+          <item><code>&lt;</code> = <code>&amp;lt;</code></item>
+          <item><code>&gt;</code> = <code>&amp;gt;</code></item>
+        </list>
+        <p>Indentation is for human convenience</p>
       </div>
 
       <div>
         <head>Sample</head>
-        <!-- TODO: Don't wrap block XML example -->
-        <p><egXML xmlns="http://www.tei-c.org/ns/Examples"><book>
-              <author>Michael Kay</author>
-              <title edition="4">XSLT 2.0 and XPath 2.0 Programmer’s Reference</title>
-              <published date="2008">
-                <publisher>John Wiley &amp; Sons, Inc.</publisher>
-                <pubPlace>10475 Crosspoint Boulevard, Indianapolis, IN 46256</pubPlace>
-              </published>
-              <ISBN num="978-0-470-19274-0"/>
-              <dedication>
-                <i><b>To Anyone Who Uses This Book To Make the World a Better Place</b></i>
-              </dedication>
-            </book></egXML></p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><book>
+            <author>Michael Kay</author>
+            <title edition="4">XSLT 2.0 and XPath 2.0 Programmer’s Reference</title>
+            <published date="2008">
+              <publisher>John Wiley &amp; Sons, Inc.</publisher>
+              <pubPlace>10475 Crosspoint Boulevard, Indianapolis, IN 46256</pubPlace>
+            </published>
+            <ISBN num="978-0-470-19274-0"/>
+            <dedication>
+              <i><b>To Anyone Who Uses This Book To Make the World a Better Place</b></i>
+            </dedication>
+          </book></egXML>
       </div>
 
       <div>
         <head>What’s wrong?</head>
-        <!-- TODO: Uncomment this and fix it so that it renders properly -->
-        <!--<p><egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false"><author>Michael Kay</author>
-          <title edition = 4>XSLT 2.0 and XPath 2.0 Programmer’s 
-            Reference</title>
-          <published date = 2008>
-            <publisher>John Wiley & Sons, Inc.<publisher>
-              <pubPlace>10475 Crosspoint Boulevard, 
-                Indianapolis, IN 46256</pubPlace>
-         </published>
-          <ISBN num="978-0-470-19274-0”>
-            <dedication>
-              <i><b>To Anyone Who Uses This Book
-                To Make the World a Better Place</i></b>
-           </dedication>
-       </egXML></p>-->
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false"><![CDATA[<author>Michael Kay</author>
+<title edition = 4>XSLT 2.0 and XPath 2.0 
+    Programmer’s Reference</title>
+<published date = 2008>
+    <publisher>John Wiley & Sons, Inc.<publisher>
+    <pubPlace>10475 Crosspoint Boulevard, Indianapolis,
+      IN 46256</pubPlace>
+</published>
+<ISBN num="978-0-470-19274-0”>
+<dedication>
+    <i><b>To Anyone Who Uses This Book
+    To Make the World a Better Place</i></b>
+</dedication>]]></egXML>
       </div>
 
       <div>
@@ -403,21 +389,24 @@
       </div>
 
       <div>
-        <head>Editing XML in &lt;oXygen/&gt;</head>
+        <head>Editing XML in &lt;oXygen/&gt;, p. 1</head>
         <p>Create a new file</p>
         <list>
-          <item>File → New → New document → XML document</item>
+          <item>File -&gt; New -&gt; New document -&gt; XML document</item>
           <item>Short cuts: Ctrl+n; leftmost icon at top of screen</item>
         </list>
         <p>Create an element</p>
         <list>
           <item>Type a start tag (in angle brackets)</item>
-          <item>&lt;oXygen/&gt; automatically creates the matching end tag</item>
+          <item><code>&lt;oXygen/&gt;</code> automatically creates the matching end tag</item>
         </list>
         <p>Change an element</p>
         <list>
           <item>Change the start tag; the end tag changes automatically to match</item>
         </list>
+      </div>
+      <div>
+        <head>Editing XML in &lt;oXygen/&gt;, p. 2</head>
         <p>Wrap text in an element</p>
         <list>
           <item>Select the text, type Ctrl+e (for ‘element’), type the element name</item>
@@ -443,19 +432,18 @@
       </div>
       <div>
         <head>Choose a document with a regular structure</head>
-        <list>
-          <item>Google a recipe for your favorite food</item>
-          <item>Find a menu from your favorite restaurant</item>
-          <item>Encode a letter by Oscar Wilde <ref
-              target="http://law2.umkc.edu/faculty/projects/ftrials/wilde/lettersfromwilde.html"
-              >http://law2.umkc.edu/faculty/projects/ftrials/wilde/lettersfromwilde.html</ref>
-          </item>
-          <item>Encode a sonnet by William Shakespeare <ref
-              target="http://www.shakespeares-sonnets.com/all.php"
-              >http://www.shakespeares-sonnets.com/all.php</ref>
-          </item>
-          <item>… or choose your own text</item>
-        </list>
+        <p>Google a recipe for your favorite food</p>
+        <p>Find a menu from your favorite restaurant</p>
+        <!-- -->
+        <p>Encode a letter by Oscar Wilde <ref
+            target="http://law2.umkc.edu/faculty/projects/ftrials/wilde/lettersfromwilde.html"
+            >http://law2.umkc.edu/faculty/projects/ftrials/wilde/lettersfromwilde.html</ref>
+        </p>
+        <p>Encode a sonnet by William Shakespeare <ref
+            target="http://www.shakespeares-sonnets.com/all.php"
+            >http://www.shakespeares-sonnets.com/all.php</ref>
+        </p>
+        <p>… or choose your own text</p>
       </div>
       <div>
         <head>Copy into a new XML document in &lt;oXygen/&gt;</head>
@@ -476,12 +464,6 @@
         </list>
       </div>
 
-      <div>
-        <head>Credit</head>
-        <p>Three views of a document <ref
-            target="http://www.wwp.northeastern.edu/outreach/seminars/uvic_xslt_2012/presentations/xslt/xml_and_xpath_01.xhtml"
-            >http://www.wwp.northeastern.edu/outreach/seminars/uvic_xslt_2012/presentations/xslt/xml_and_xpath_01.xhtml</ref></p>
-      </div>
     </body>
   </text>
 </TEI>
