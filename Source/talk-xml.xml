@@ -405,6 +405,7 @@
           <item>Change the start tag; the end tag changes automatically to match</item>
         </list>
       </div>
+      
       <div>
         <head>Editing XML in &lt;oXygen/&gt;, p. 2</head>
         <p>Wrap text in an element</p>
@@ -430,6 +431,7 @@
           <item>Mark it up in XML</item>
         </list>
       </div>
+      
       <div>
         <head>Choose a document with a regular structure</head>
         <p>Google a recipe for your favorite food</p>
@@ -445,6 +447,7 @@
         </p>
         <p>… or choose your own text</p>
       </div>
+      
       <div>
         <head>Copy into a new XML document in &lt;oXygen/&gt;</head>
         <list>
@@ -454,6 +457,7 @@
           <item>Paste (Ctrl+v)</item>
         </list>
       </div>
+      
       <div>
         <head>Mark it up in XML</head>
         <list>
