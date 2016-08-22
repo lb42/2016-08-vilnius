@@ -168,26 +168,16 @@
                     <graphic url="../images/bdinski07r-dtl.png" height="30%"/>
                     <head>Bdinski, fol 7r, detail</head>
                 </figure>
-                <p>There is no Unicode character for the ligatured oo here: we tag it as a
+                <p>There is no Unicode character for the  oo glyph here: we tag it as a
                         <gi>g</gi></p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <lb/>на мѣст<g ref="#ooLig">oo</g>. и вьшедь вь
                     <lb/>гостинницю. гледаше
-                    <lb/>само и ѡнам<g ref="#ooLig">oo</g> хоте видѣ
+                    <lb/>само и ѡнам<g ref="#ooGlyph">oo</g> хоте видѣ
                     <lb break="no"/>ти. вьсклабив же се рече </egXML>
                 <p><code>#ooGlyph</code> points to a description of the glyph, provided in the TEI
                     header.</p>
-            </div>
-            <!--
-
-                    <p>and the referenced glyph should be defined in the <gi>charDecl</gi>
-                        element in the header </p>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <glyph xml:id="long-s-glyph">
-                            <!-\- ... -\->
-                        </glyph>
-                    </egXML>
-                </div>-->
+         
 
             <div>
                 <head>Abbreviations &amp;c.</head>
@@ -235,61 +225,7 @@
                     </list>
                 </p>
             </div>
-            <!--    <div>
-                <head>Compare ev(er)y (per)sone</head>
-                <p>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"> ev<choice><am><g
-                                    ref="#b-er"/></am><ex>er</ex></choice>y <choice><am><g
-                                    ref="#b-per"/></am><ex>per</ex></choice>sone ... </egXML>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
-                        <choice>
-                            <abbr>ev<am><g ref="#b-er"/></am> y</abbr>
-                            <expan>ev<ex>er</ex>y</expan>
-                        </choice>
-                        <choice>
-                            <abbr><am><g ref="#b-per"/></am>sone</abbr>
-                            <expan><ex>per</ex>sone</expan>
-                        </choice>
-                    </egXML>
-                </p>
-            </div>
-            <div>
-                <head><gi>ex</gi> and <gi>am</gi></head>
-                <p> Using these elements, from the 'transcr' module, a transcriber may indicate the
-                    status of the individual letters or signs within both the abbreviation and the
-                    expansion. <list type="unordered">
-                        <item>
-                            <gi>ex</gi> (editorial expansion) contains a sequence of letters added
-                            by an editor or transcriber when expanding an abbreviation.</item>
-                        <item>
-                            <gi>am</gi> (abbreviation marker) contains a sequence of letters or
-                            signs present in an abbreviation which are omitted or replaced in the
-                            expanded form of the abbreviation.</item>
-                    </list> Previously, people have re-purposed existing elements such as
-                        <gi>hi</gi> and <gi>supplied</gi> to mark individual letters/signs in
-                    abbreviations and expansions. The new P5 elements <gi>am</gi> and <gi>ex</gi>
-                    are the TEI's attempt to support this desire.</p>
-            </div>
            
-            <div rend="slide">
-                <head>Simple example (3)</head>
-                <p>And of course TEI permits both cake and the eating of it: <egXML
-                        xmlns="http://www.tei-c.org/ns/Examples">
-                        <p> po<choice>
-                                <am>&amp;#xFFFD;</am>
-                                <ex>ur</ex>
-                            </choice>
-                        </p>
-                    </egXML>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <choice>
-                            <abbr>po<am>&amp;#xFFFD;</am></abbr>
-                            <expan>po<ex>u</ex>r</expan>
-                        </choice>
-                    </egXML>
-                </p>
-            </div>
--->
             <div rend="slide">
                 <head>A French example </head>
                 <p><graphic url="../images/Ms629_p05-dtl-1.png" width="360px"/>. </p>
@@ -309,7 +245,7 @@
                     on the <q>a</q> to indicate nasalisation. </p>
                 <p><egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <p>
-                            <abbr>po&amp;#xFFFD;</abbr> .... <abbr>cinqu&amp;#x0101;te</abbr>
+                            <abbr>po&amp;#x1D63;</abbr> .... <abbr>cinqu&amp;#x0101;te</abbr>
                         </p>
                     </egXML>
                 </p>
@@ -318,11 +254,11 @@
                 <head>... or we might look a bit closer </head>
                 <p>.We can tag the abbreviation markers and the expansion directly <egXML
                         xmlns="http://www.tei-c.org/ns/Examples">
-                        <p> po<am>&amp;#xFFFD;</am> ... or po<ex>u</ex>r </p>
+                        <p> po<am>&amp;#x1D63;</am> ... or po<ex>u</ex>r </p>
                     </egXML></p>
                 <p>... or within the <gi>abbr</gi> or <gi>expan</gi> as appropriate <egXML
                         xmlns="http://www.tei-c.org/ns/Examples">
-                        <abbr>po<am>&amp;#xFFFD;</am></abbr>
+                        <abbr>po<am>&amp;#x1D63;</am></abbr>
                     </egXML>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <expan>po<ex>u</ex>r</expan>
@@ -537,13 +473,13 @@
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">…Dragging the worst among<supplied
                         reason="authorialError" cert="high">s</supplied>t us…</egXML>
                 <p>Attributes can be used to qualify the information further: <list>
-                        <item><att>reason</att>why the text has had to be supplied (any word) </item>
-                        <item><att>source</att>source (if any) from which the text was taken (a
+                        <item><att>reason</att> why the text has had to be supplied (any word) </item>
+                        <item><att>source</att> source (if any) from which the text was taken (a
                             pointer)</item>
                         <item>
                             <att>resp</att> who is responsible for supplying this markup (a
                             pointer)</item>
-                        <item><att>cert</att>the degree of certainty associated with the markup
+                        <item><att>cert</att> the degree of certainty associated with the markup
                             (high, medium, or low)</item>
                     </list></p>
             </div>
@@ -554,7 +490,7 @@
                     up using <gi>supplied</gi> rather than <gi>gap</gi>. <!--In this example, 42 lines
                     missing from the bottom of page 5v have been supplied from another source
                     (identified here simply as <ident>ed</ident>) on the authority of
-                        <ident>#djb</ident>:--> <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"/>брѣтени* быти голоубици <supplied resp="#djb" source="ed"
+                        <ident>#djb</ident>:--> <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"/>брѣтени быти голоубици <supplied resp="#djb" source="ed"
                             reason="missing">
                             <pb n="301c"/>
                             <lb/>(голоубици) онои въ чре
@@ -566,7 +502,7 @@
                         <lb break="no"/>жикоу своѥго посла тамо.</egXML>
                 </p>
                 <p>Alternatively, the transcription might simply indicate that the text is missing
-                    and not supply it <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"/>брѣтени* быти голоубици <gap quantity="42" unit="line"/>
+                    and not supply it <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"/>брѣтени быти голоубици <gap quantity="42" unit="line"/>
                         <pb n="6r"/>
                         <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
                         <lb break="no"/>ть. и оумоливь нѣкого оу
@@ -700,24 +636,7 @@
             </div>
 
 
-            <div>
-                <head>Exercise 1</head>
-                <list>
-                    <item>Decide on the structure of your encoding</item>
-                    <item>Decide what you will capture in the transcription and what you will
-                        not</item>
-                    <item>Mark it up!</item>
-                </list>
-                <p>Look at these files: <list>
-                        <item><ident>ocsPage.jpg</ident> page image</item>
-                        <item><ident>ocsPage.txt</ident> plain text only</item>
-                        <item><ref target="ex-transcr.pdf">Detailed instructions</ref></item>
-                    </list></p>
-            </div>
-
-
-
-
+         
 
 
 
