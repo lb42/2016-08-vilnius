@@ -47,7 +47,8 @@
                <item><hi>Download the &lt;oXgyen/&gt; XML editor</hi> from <ref
                      target="http://www.oxygenxml.com">http://www.oxygenxml.com</ref> and install it
                   on your laptop. You will need to request a free, fully-functional thirty-day
-                  license, which you can do at the download site.</item>
+                  license, which you can do at the download site.</item><item>You will also need to download <ref target="downloadMe.zip"> the file <ident>downloadMe.zip</ident></ref>
+                   and unpack it: it contains the sample documents we will be working with and scripts for the exercises.</item>
                <item>Read: <ref target="http://dh.obdurodon.org/what-is-xml.xhtml">An even gentler
                      introduction to XML</ref>.</item>
                <item>If you have time, also read <ref target="http://books.openedition.org/oep/426"
@@ -203,7 +204,8 @@
                            <q>Computational methods in the humanities</q></ref> course (see also
                         <ref target="http://www.obdurodon.org">links to projects</ref>)</item>
                   <item>Genetic editions <list>
-                        <item><!-- goethe edition link --></item>
+                     <item><ref target="https://faustedition.uni-wuerzburg.de/">Faust edition
+                        prototype</ref></item>
                         <item><ref target="http://research.cch.kcl.ac.uk/proust_prototype/">Proust
                               prototype</ref></item>
                         <item><ref target="http://shelleygodwinarchive.org/contents/frankenstein"
@@ -212,7 +214,7 @@
                      </list></item>
                </list>
             </div>
-            <div>
+          <!--  <div>
                <head>Manuscript description</head>
                <p>Many on-line manuscript catalogues provide convenient search interfaces. Here are
                   a few that go beyond that, and might be considered models for how digital
@@ -244,7 +246,7 @@
                      about persons mentioned in the descriptions.</item>
                </list>
             </div>
-         </div>
+      -->   </div>
       </body>
 
    </text>
