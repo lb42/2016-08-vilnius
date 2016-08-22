@@ -1,32 +1,67 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>XML and TEI for Slavic philology</title>
 		<link rel="stylesheet" type="text/css" href="http://www.obdurodon.org/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/vilnius.css" />
 		<style type="text/css">
-            img.folio {
-                max-width:912px;
-                width:40%;
-                float:right;
-                margin:0 0 1em 1em;
-                border:none;
-
-        td.day{
-        font-size:larger;
-        text-align:center;
-        background-color:lightgray;
-        }
-        ul{
-        padding-left:1.25em;
-        margin:0;
-        }
-        .boilerplate{
-        font-size:smaller;
-        }
-        .boilerplate > p{
-        margin-top:0;
-        margin-bottom:0;
-        }</style>
+			img.folio{
+			    max-width: 470px;
+			    width: 40%;
+			    float: right;
+			    margin: 0 0 1em 1em;
+			    border: none;
+			}
+			td.day{
+			    font-size: larger;
+			    text-align: center;
+			    background-color: lightgray;
+			}
+			h1{
+			    counter-reset: h2;
+			    counter-reset: contents-1;
+			}
+			h2{
+			    counter-reset: h3;
+			}
+			h2:before{
+			    counter-increment: h2;
+			    content: counter(h2) '. ';
+			}
+			h3{
+			    counter-reset: h4;
+			}
+			h3:before{
+			    counter-increment: h3;
+			    content: counter(h2) '.' counter(h3) '. ';
+			}
+			h4:before{
+			    counter-increment: h4;
+			    content: counter(h2) '.' counter(h3) '.' counter(h4) '. ';
+			}
+			ol,
+			ol > li > ol{
+			    list-style: none;
+			}
+			#contents > li{
+			    counter-increment: contents-1;
+			}
+			#contents > li:before{
+			    content: counter(contents-1) '. ';
+			}
+			#contents > li > ol > li{
+			    counter-increment: contents-2;
+			}
+			#contents > li > ol > li:before{
+			    content: counter(contents-1) '.' counter(contents-2) '. ';
+			}
+			#contents > li > ol > li > ol > li{
+			    counter-increment: contents-3;
+			}
+			#contents > li > ol > li > ol > li:before{
+			    content: counter(contents-1) '.' counter(contents-2) '.' counter(contents-3) '. ';
+			}</style>
 	</head>
 	<body>
 		<h1 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a class="logo"
@@ -35,9 +70,9 @@
 			Slavic philology</h1>
 		<hr />
 		<p><a
-				href="http://www.geraldineclarkhellery.com/wp-content/uploads/2012/08/Varna-Dragons-Bulgaria.jpg"
+				href="http://www.stampsoftheworld.co.uk/w/images/thumb/2/26/Lithuania_2013_White_Stork_sheetlet.jpg/470px-Lithuania_2013_White_Stork_sheetlet.jpg"
 				style="border: none;"><img class="folio" title="Varna dragons" alt="[Varna dragons]"
-					src="images/varna-dragons_912x684.png" /></a></p>
+					src="images/470px-Lithuania_2013_White_Stork_sheetlet.jpg" /></a></p>
 		<p class="boilerplate">
 			<span><strong>Maintained by:</strong> David J. Birnbaum (<a
 					href="mailto:djbpitt@gmail.com">djbpitt@gmail.com</a>) <a
@@ -52,8 +87,7 @@
 				<!--#echo var="LAST_MODIFIED" --></span>
 		</p>
 		<hr />
-		<h2>Contents</h2>
-		<ol>
+		<ol id="contents">
 			<li><a href="#description">Description and goals</a></li>
 			<li><a href="#before">Before the workshop</a></li>
 			<li><a href="#schedule">Workshop schedule</a></li>
@@ -69,6 +103,7 @@
 					<li><a href="#index.xml-body.1_div.3_div.3">Manuscript description</a></li>
 				</ol></li>
 		</ol>
+		<hr />
 		<section id="description">
 			<h2>Description and goals</h2>
 			<p>This four-day hands-on workshop provides eight and a half hours of instruction in
