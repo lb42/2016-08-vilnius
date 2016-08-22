@@ -168,16 +168,15 @@
                     <graphic url="../images/bdinski07r-dtl.png" height="30%"/>
                     <head>Bdinski, fol 7r, detail</head>
                 </figure>
-                <p>There is no Unicode character for the  oo glyph here: we tag it as a
-                        <gi>g</gi></p>
+                <p>There is no Unicode character for the oo glyph here: we tag it as a
+                    <gi>g</gi></p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <lb/>на мѣст<g ref="#ooLig">oo</g>. и вьшедь вь
-                    <lb/>гостинницю. гледаше
-                    <lb/>само и ѡнам<g ref="#ooGlyph">oo</g> хоте видѣ
-                    <lb break="no"/>ти. вьсклабив же се рече </egXML>
+                    <lb/>на мѣст<g ref="#ooLig">oo</g>. и вьшедь вь <lb/>гостинницю. гледаше
+                    <lb/>само и ѡнам<g ref="#ooGlyph">oo</g> хоте видѣ <lb break="no"/>ти. вьсклабив
+                    же се рече </egXML>
                 <p><code>#ooGlyph</code> points to a description of the glyph, provided in the TEI
                     header.</p>
-         
+            </div>
 
             <div>
                 <head>Abbreviations &amp;c.</head>
@@ -225,7 +224,7 @@
                     </list>
                 </p>
             </div>
-           
+
             <div rend="slide">
                 <head>A French example </head>
                 <p><graphic url="../images/Ms629_p05-dtl-1.png" width="360px"/>. </p>
@@ -422,11 +421,10 @@
             <div>
                 <head>Damage to the carrier</head>
                 <p>Use the <gi>damage</gi> element to record the existence of physical damage to the
-                    document, whether or not the damaged text is readable : 
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"> <damage
-                        reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
-                    <egXML
-                        xmlns="http://www.tei-c.org/ns/Examples"><l>The Moving Finger wri<damage
+                    document, whether or not the damaged text is readable : <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples">
+                        <damage reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><l>The Moving Finger wri<damage
                                 agent="water" group="1">es; and</damage> having writ,</l><l>Moves
                                 <damage agent="water" group="1"><supplied>on: nor all
                                     your</supplied></damage> Piety nor Wit</l></egXML>
@@ -435,7 +433,7 @@
                     transcription affected by the same area of damage.</p>
 
             </div>
-           
+
             <div>
                 <head>Lacunae</head>
                 <p>Use the <gi>gap</gi> element when something is missing, for example because it is
@@ -446,28 +444,29 @@
                 <p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">I am dr Sr yr <gap
                             reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
-                    
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">Their arrangement with respect to Jupiter and to each other was as follows:
-                        <gap reason="sampling" extent="restOfPage" >
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">Their arrangement with respect
+                        to Jupiter and to each other was as follows: <gap reason="sampling"
+                            extent="restOfPage">
                             <desc>astrological figure</desc>
-                        </gap>
-                        That is, there were two stars on the easterly side and one to the
+                        </gap> That is, there were two stars on the easterly side and one to the
                         west; …</egXML>
                 </p>
             </div>
 
-<div><head>Text made semi-legible through damage</head>
-    <p>These elements may be used in combination as necessary. In this example, two phrases can be read despite smoke damage, but three lines 
-        in between are completely illegible:
-    </p>
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">  <damage agent="smoke">
-                <unclear>and the proof of this is</unclear>
-                <gap quantity="3" unit="line" cause="smokeDamage"/>
-                <unclear>margin</unclear>
-            </damage></egXML>
-</div>
             <div>
-                <head>Supplied  text</head>
+                <head>Text made semi-legible through damage</head>
+                <p>These elements may be used in combination as necessary. In this example, two
+                    phrases can be read despite smoke damage, but three lines in between are
+                    completely illegible: </p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <damage agent="smoke">
+                        <unclear>and the proof of this is</unclear>
+                        <gap quantity="3" unit="line" cause="smokeDamage"/>
+                        <unclear>margin</unclear>
+                    </damage></egXML>
+            </div>
+            <div>
+                <head>Supplied text</head>
                 <p>Use the <gi>supplied</gi> element if the transcriber has provided a reading not
                     actually visible in the text, perhaps because of scribal error : </p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">…Dragging the worst among<supplied
@@ -486,27 +485,26 @@
 
             <div>
                 <head>Text supplied to fill a lacuna</head>
-                <p>If the transcriber wishes to supply material to fill a lacuna, it should be marked
-                    up using <gi>supplied</gi> rather than <gi>gap</gi>. <!--In this example, 42 lines
+                <p>If the transcriber wishes to supply material to fill a lacuna, it should be
+                    marked up using <gi>supplied</gi> rather than <gi>gap</gi>. <!--In this example, 42 lines
                     missing from the bottom of page 5v have been supplied from another source
                     (identified here simply as <ident>ed</ident>) on the authority of
-                        <ident>#djb</ident>:--> <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"/>брѣтени быти голоубици <supplied resp="#djb" source="ed"
-                            reason="missing">
+                        <ident>#djb</ident>:-->
+                    <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"
+                        />брѣтени быти голоубици <supplied resp="#djb" source="ed" reason="missing">
                             <pb n="301c"/>
-                            <lb/>(голоубици) онои въ чре
-                            <!-- ... -->
-                           <lb break="no"/>сть бысть (ѥмоу. къ-)</supplied>
+                            <lb/>(голоубици) онои въ чре <!-- ... -->
+                            <lb break="no"/>сть бысть (ѥмоу. къ-)</supplied>
                         <pb n="6r"/>
-                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
-                        <lb break="no"/>ть. и оумоливь нѣкого оу
-                        <lb break="no"/>жикоу своѥго посла тамо.</egXML>
+                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе <lb break="no"/>ть. и
+                        оумоливь нѣкого оу <lb break="no"/>жикоу своѥго посла тамо.</egXML>
                 </p>
                 <p>Alternatively, the transcription might simply indicate that the text is missing
-                    and not supply it <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"/>брѣтени быти голоубици <gap quantity="42" unit="line"/>
+                    and not supply it <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"
+                            ><lb break="no"/>брѣтени быти голоубици <gap quantity="42" unit="line"/>
                         <pb n="6r"/>
-                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
-                        <lb break="no"/>ть. и оумоливь нѣкого оу
-                        <lb break="no"/>жикоу своѥго посла тамо.</egXML>.</p>
+                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе <lb break="no"/>ть. и
+                        оумоливь нѣкого оу <lb break="no"/>жикоу своѥго посла тамо.</egXML>.</p>
             </div>
             <!--  
               
@@ -636,7 +634,7 @@
             </div>
 
 
-         
+
 
 
 
