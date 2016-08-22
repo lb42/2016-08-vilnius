@@ -1,0 +1,288 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>XML and TEI for Slavic philology</title>
+		<link rel="stylesheet" type="text/css" href="http://www.obdurodon.org/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/vilnius.css" />
+		<style type="text/css">
+            img.folio {
+                max-width:912px;
+                width:40%;
+                float:right;
+                margin:0 0 1em 1em;
+                border:none;
+
+        td.day{
+        font-size:larger;
+        text-align:center;
+        background-color:lightgray;
+        }
+        ul{
+        padding-left:1.25em;
+        margin:0;
+        }
+        .boilerplate{
+        font-size:smaller;
+        }
+        .boilerplate > p{
+        margin-top:0;
+        margin-bottom:0;
+        }</style>
+	</head>
+	<body>
+		<h1 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a class="logo"
+				href="http://www.obdurodon.org">&lt;oo&gt;</a>&#x2192;<a
+				href="http://vilnkus.obdurodon.org" class="logo">&lt;vil&gt;</a> XML and TEI for
+			Slavic philology</h1>
+		<hr />
+		<p><a
+				href="http://www.geraldineclarkhellery.com/wp-content/uploads/2012/08/Varna-Dragons-Bulgaria.jpg"
+				style="border: none;"><img class="folio" title="Varna dragons" alt="[Varna dragons]"
+					src="images/varna-dragons_912x684.png" /></a></p>
+		<p class="boilerplate">
+			<span><strong>Maintained by:</strong> David J. Birnbaum (<a
+					href="mailto:djbpitt@gmail.com">djbpitt@gmail.com</a>) <a
+					href="http://creativecommons.org/licenses/by-nc-sa/3.0/" style="outline: none;">
+					<img src="http://www.obdurodon.org/images/cc/88x31.png"
+						alt="[Creative Commons BY-NC-SA 3.0 Unported License]"
+						title="Creative Commons BY-NC-SA 3.0 Unported License"
+						style="height: 1em; vertical-align: text-bottom;" />
+				</a>
+			</span>
+			<span><strong>Last modified:</strong>
+				<!--#echo var="LAST_MODIFIED" --></span>
+		</p>
+		<hr />
+		<h2>Contents</h2>
+		<ol>
+			<li><a href="#description">Description and goals</a></li>
+			<li><a href="#before">Before the workshop</a></li>
+			<li><a href="#schedule">Workshop schedule</a></li>
+			<li><a href="documents">Documents</a><ol>
+					<li><a href="#projects">Projects</a><ol>
+							<li><a href="#editions">Editions of manuscripts and texts</a></li>
+							<li><a href="#visualizations">Non-reading visualizations of manuscript
+									and textual information</a></li>
+							<li><a href="#catalogs">Catalogs, editions, and portals for Slavic
+									manuscripts and texts</a></li>
+						</ol></li>
+					<li><a href="#index.xml-body.1_div.3_div.2">XML and TEI</a></li>
+					<li><a href="#index.xml-body.1_div.3_div.3">Manuscript description</a></li>
+				</ol></li>
+		</ol>
+		<section id="description">
+			<h2>Description and goals</h2>
+			<p>This four-day hands-on workshop provides eight and a half hours of instruction in
+				using <a href="http://dh.obdurodon.org/what-is-xml.xhtml">eXtensible Markup Language
+					(XML)</a> and the <a
+					href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">Text
+					Encoding Initiative (TEI) guidelines</a> for the encoding and description of
+				medieval manuscript materials. The instructors are:</p>
+			<ul>
+				<li>David J. Birnbaum, a medieval Slavic philologist who teaches digital humanities
+					at the University of Pittsburgh (<a href="mailto:djbpitt@gmail.com"
+						>djbpitt@gmail.com</a>, <a href="http://www.obdurodon.org"
+						>http://www.obdurodon.org</a>)</li>
+				<li>Lou Burnard, formerly assistant director at Oxford University Computing
+					Services, and one of the original editors of the Text Encoding Initiative. (<a
+						href="mailto:lou.burnard@gmail.com">lou,burnard@gmail.com</a>, <a
+						href="http://about.me/louburnard">http://users.ox.ac.uk/~lou</a>)</li>
+			</ul>
+			<p>The workshop is part of the <a
+					href="http://textualheritage.org/content/view/486/209/lang,english/">Textual
+					heritage and information technologies (El’Manuscript-2016) conference</a>,
+				Vilnius, Lithuania, 2016-08-22–2016-08-26</p>
+		</section>
+		<section id="before">
+			<h2>Before the workshop</h2>
+			<ul>
+				<li>Download the &lt;oXgyen/&gt; XML editor from <a href="http://www.oxygenxml.com"
+						>http://www.oxygenxml.com</a> and install it on your laptop. You will need
+					to request a free, fully-functional thirty-day license, which you can do at the
+					download site.</li>
+				<li>Read: <a href="http://dh.obdurodon.org/what-is-xml.xhtml">An even gentler
+						introduction to XML</a>.</li>
+				<li>If you have time, also read <a href="http://books.openedition.org/oep/426">What
+						is the Text Encoding Initiative?</a> (also available <a
+						href="http://books.openedition.org/oep/1237">in French</a>)</li>
+				<li>In the hands-on portion of the workshop we will work with Church Slavonic and
+					other early Slavic manuscript materials. If you would prefer, you are welcome
+					instead to bring your own materials (plain-text manuscript description or
+					transcription).</li>
+			</ul>
+		</section>
+		<section id="schedule">
+			<h2>Workshop schedule</h2>
+			<p>Tue 23 August</p>
+			<ul>
+				<li>Session 1, 17h15 - 18h15 : Introduction to XML [DJB] (<a
+						href="xml_intro.pptx.pdf">slides <img src="images/pdf.gif" alt="[PDF link]"
+						 /></a>)</li>
+			</ul>
+			<p>Wed 24 August</p>
+			<ul>
+				<li>Session 2, 14h30 - 15h30 : Introduction to TEI [LB] (<a
+						href="tei_intro.pptx.pdf">slides<img src="images/pdf.gif" alt="[PDF link]"
+						 /></a>)</li>
+				<li>Session 3, 16h - 17h : Manuscript description [DJB] (<a
+						href="manuscript-description.pptx.pdf">slides</a>
+					<img src="images/pdf.gif" alt="[PDF link]" />)<ul>
+						<li><em>Don’t click; download:</em>
+							<a href="Enina.xml">Description of the <cite>Enina Apostol</cite></a>
+							(XML file)</li>
+						<li><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
+								>Section 10 of TEI P5: Manuscript description</a></li>
+						<li><a href="http://eslavsanct.net/home.php?text=Sources"
+									><cite>Encyclopaedia Slavica Sanctorum</cite></a></li>
+						<li><a href="http://searcharchives.bl.uk">The Gospels of Tsar Ivan
+								Alexander</a> (search for <q>Ivan Alexander</q>; UK, London, British
+							Library, Add MS 39627; in English)</li>
+						<li><a href="http://hagioslavica.com/en/manuscripts/">Stanislav’s
+								menologion</a> (September, October, November; in Bulgarian)</li>
+						<li>Manuscripts at <a
+								href="http://lib.sudigital.org/collection/Manuscripts?ln=en">Kliment
+								Oxridski University, Sofia</a></li>
+						<li><a href="http://handrit.is/">Catalog of Icelandic manuscripts at the
+								Árni Magnússon Institute, Reykjavík</a> (in Icelandic; some content
+							also in English and Danish)</li>
+					</ul></li>
+			</ul>
+			<p>Thu 25 August</p>
+			<ul>
+				<li>Session 4, 09h - 10h : Manuscript description [LB] practical 1</li>
+				<li>Coffee break</li>
+				<li>Session 5, 10h30 - 11h30 : Manuscript description [LB] practical 2</li>
+				<li>Session 6, 11h45 - 12h45 : An Ingtroduction to Manuscript transcription (<a
+						href="http://nl.ijs.si/et/teach/graz06/standards/Critical/driscoll.pdf"
+						>slides</a>, by Matthew Driscoll <img src="images/pdf.gif" alt="[PDF link]"
+					 />) [LB]</li>
+				<li>Session 7, 13h45 - 14h45 : Manuscript transcription [DJB] practical 1 </li>
+				<li>Session 8, 15h - 16h : Manuscript transcription [DJB] practical 2</li>
+			</ul>
+			<p>Fri 26 August</p>
+			<ul>
+				<li>Session 9, 09h - 10h : TEI Tools [LB] overview </li>
+				<li>Session 10, 10h30 - 11h30 : TEI Tools [LB] exercise </li>
+				<li>Session 11, 1145 - 12h45 : Taking stock [DJB] <ul>
+						<li>Sample XML projects at <a href="http://www.obdurodon.org"
+								>http://www.obdurodon.org</a> and <a href="http://www.obdurodon.org"
+								>http://dh.obdurodon.org</a> (student course projects)</li>
+						<li>What next (<a href="what-next.pptx.pdf">slides <img src="images/pdf.gif"
+									alt="[PDF link]" /></a>)</li>
+					</ul></li>
+			</ul>
+		</section>
+		<section id="documents">
+			<h2>Documents</h2>
+			<div id="projects">
+				<h3><span>Projects</span></h3>
+				<div id="editions">
+					<h4>Editions of manuscripts and texts</h4>
+					<ul>
+						<li><a href="http://bdinski.obdurodon.org">Bdinski sbornik</a> (Codex
+							gandavensis slavicus 408)</li>
+						<li><a href="http://suprasliensis.obdurodon.org">Codex
+							Suprasliensis</a></li>
+						<li><a href="http://pvl.obdurodon.org">The Rus′ primary chronicle (Povest′
+								vremennyx let)</a></li>
+					</ul>
+				</div>
+				<div id="visualizations">
+					<h4>Non-reading views of manuscript and textual information</h4>
+					<ul>
+						<li><a href="http://zatochnik.obdurodon.org/">Daniel the prisoner: a virtual
+								florilegium</a></li>
+						<li><a href="http://menology.obdurodon.org/">Medieval Slavic
+							menologies</a></li>
+						<li><a href="http://repertorium.obdurodon.org/dev/test.xhtml">Plectogram
+								sample</a> (Physiologus texts in the Repertorium corpus)</li>
+					</ul>
+				</div>
+				<div id="catalogs">
+					<h4>Catalogs, editions, and portals for Slavic manuscripts and texts</h4>
+					<ul>
+						<li><a href="http://old.stsl.ru/manuscripts/index.php">Russia, Sergiev
+								posad, Holy Trinity-St. Sergius lavra</a></li>
+						<li><a href="http://ksana-k.ru/?p=2400">Библотека Фронтистеса:
+								древнеславянские памятники</a></li>
+						<li><a href="http://repertorium.obdurodon.org">The Repertorium of Old
+								Bulgarian literature and letters</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="index.xml-body.1_div.3_div.2">
+				<h3>XML and TEI</h3>
+				<ul>
+					<li><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">The
+							TEI Guidelines</a><ul>
+							<li><a
+									href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
+									>Chapter 10: Manuscript description</a></li>
+							<li><a
+									href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html"
+									>Chapter 11: Representation of primary sources</a></li>
+						</ul></li>
+					<li><a href="http://repertorium.obdurodon.org/Bojadziev_Scripta_11.pdf"
+							>Guidelines to Repertorium Initiative XML model for manuscript
+							descriptions</a>
+						<img src="images/pdf.gif" alt="[PDF link]" /> (Andrej Bojadžiev,
+							<cite>Scripta &amp; e-Scripta</cite> 10–11 (2012): 9–103)</li>
+					<li><a href="http://tei.it.ox.ac.uk/Talks/2008-08-kazan/"><cite>Введение в TEI и
+								XML</cite> (Lou Burnard, Alexej Lavrent′ev, and Tat′jana
+							Timčenko)</a>;</li>
+					<li><a
+							href="http://tei.it.ox.ac.uk/Talks/2014-07-dhoxss-tei/Slides/talk-editing-5.pdf"
+							>Textual Editing with the TEI Or, Documentary Editing with the TEI Or,
+							TEI for Text Bearing Objects </a> (slides from <a
+							href="http://digital.humanities.ox.ac.uk/dhoxss/2014/TEI.html">DHOXSS
+							2014 Workshop)</a></li>
+					<li><a href="http://varna.obdurodon.org/TEI-general2014.ppt.pdf">The
+							transcription and description of primary sources using TEI conformant
+							XML</a> (Matthew J. Driscoll, Arnamagnæan Institute)</li>
+					<li><a href="http://dh.obdurodon.org">Materials from David J. Birnbaum’s
+								<q>Computational methods in the humanities</q></a> course (see also
+							<a href="http://www.obdurodon.org/course-projects.xhtml">links to
+							projects</a>)</li>
+					<li>Genetic editions <ul>
+							<li><a href="http://research.cch.kcl.ac.uk/proust_prototype/">Proust
+									prototype</a></li>
+							<li><a href="http://shelleygodwinarchive.org/contents/frankenstein">The
+										<cite>Frankenstein</cite> notebooks</a> (sample project from
+								the Shelley-Godwin Archive)</li>
+						</ul></li>
+				</ul>
+			</div>
+			<div id="index.xml-body.1_div.3_div.3">
+				<h3>Manuscript description</h3>
+				<p>Many on-line manuscript catalogues provide convenient search interfaces. Here are
+					a few that go beyond that, and might be considered models for how digital
+					manuscript descriptions can support not just more convenient access, but also
+					new types of analysis and visualization. All provide access to the underlying
+					raw XML.</p>
+				<ul>
+					<li>The <a href="http://repertorium.obdurodon.org">Repertorium of Old Bulgarian
+							literature and letters</a> provides analytical descriptions of over one
+						hundred early Slavic manuscripts, with tools for searching by repository
+						information and by textual content. The prototype <a
+							href="http://repertorium.obdurodon.org/dev/test.xhtml">plectogram of
+							Physiologus texts</a> is an early view of functionality currently under
+						development to adding drag-and-drop support to a graphic representation of
+						textual correspondences within the corpus.</li>
+					<li>The goal of <a href="http://www.e-codices.unifr.ch/">e-codices</a> (Virtual
+						manuscript library of Switzerland) is to provide access to all medieval and
+						selected early modern manuscripts of Switzerland via a virtual library. At
+						the moment, the virtual library contains 981 manuscripts from 42 different
+						libraries, with more planned, and in addition to the general web site, a
+						free iOS app is available in the <a
+							href="http://e-codices.textandbytes.com/">Apple store</a>. Note the
+						integration of overview, facsimile, and formatted descriptions, and the
+						provision of the raw XML.</li>
+					<li><a href="http://handrit.is/en/">handrit.is</a> is an analytical catalog of
+						Icelandic manuscripts currently held in several institutions. It provides
+						sophisticated browsing and search facilities and has an integrated
+							<q>personography</q>, which provides access to biographical information
+						about persons mentioned in the descriptions.</li>
+				</ul>
+			</div>
+		</section>
+	</body>
+</html>
