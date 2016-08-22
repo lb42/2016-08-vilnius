@@ -171,7 +171,7 @@
                 <p>There is no Unicode character for the oo glyph here: we tag it as a
                     <gi>g</gi></p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <lb/>на мѣст<g ref="#ooLig">oo</g>. и вьшедь вь <lb/>гостинницю. гледаше
+                    <lb/>на мѣст<g ref="#ooGlyph">oo</g>. и вьшедь вь <lb/>гостинницю. гледаше
                     <lb/>само и ѡнам<g ref="#ooGlyph">oo</g> хоте видѣ <lb break="no"/>ти. вьсклабив
                     же се рече </egXML>
                 <p><code>#ooGlyph</code> points to a description of the glyph, provided in the TEI
