@@ -20,7 +20,6 @@
 			}
 			h1{
 			    counter-reset: h2;
-			    counter-reset: contents-1;
 			}
 			h2{
 			    counter-reset: h3;
@@ -61,12 +60,16 @@
 			}
 			#contents > li > ol > li > ol > li:before{
 			    content: counter(contents-1) '.' counter(contents-2) '.' counter(contents-3) '. ';
+			}
+			#schedule > p{
+			    font-weight: bold;
+			    font-size: larger;
 			}</style>
 	</head>
 	<body>
 		<h1 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a class="logo"
 				href="http://www.obdurodon.org">&lt;oo&gt;</a>&#x2192;<a
-				href="http://vilnkus.obdurodon.org" class="logo">&lt;vil&gt;</a> XML and TEI for
+				href="http://vilnius.obdurodon.org" class="logo">&lt;vil&gt;</a> XML and TEI for
 			Slavic philology</h1>
 		<hr />
 		<p><a
@@ -99,8 +102,8 @@
 							<li><a href="#catalogs">Catalogs, editions, and portals for Slavic
 									manuscripts and texts</a></li>
 						</ol></li>
-					<li><a href="#index.xml-body.1_div.3_div.2">XML and TEI</a></li>
-					<li><a href="#index.xml-body.1_div.3_div.3">Manuscript description</a></li>
+					<li><a href="#xml_tei">XML and TEI</a></li>
+					<li><a href="#msDesc">Manuscript description</a></li>
 				</ol></li>
 		</ol>
 		<hr />
@@ -134,6 +137,9 @@
 						>http://www.oxygenxml.com</a> and install it on your laptop. You will need
 					to request a free, fully-functional thirty-day license, which you can do at the
 					download site.</li>
+				<li>You will also need to download <a href="downloadMe.zip">downloadMe.zip</a> and
+					unpack it. It contains the sample documents we will be working with and scripts
+					for the exercises.</li>
 				<li>Read: <a href="http://dh.obdurodon.org/what-is-xml.xhtml">An even gentler
 						introduction to XML</a>.</li>
 				<li>If you have time, also read <a href="http://books.openedition.org/oep/426">What
@@ -147,19 +153,17 @@
 		</section>
 		<section id="schedule">
 			<h2>Workshop schedule</h2>
-			<p>Tue 23 August</p>
+			<p>Tuesday, 2016-08-23</p>
 			<ul>
-				<li>Session 1, 17h15 - 18h15 : Introduction to XML [DJB] (<a
-						href="xml_intro.pptx.pdf">slides <img src="images/pdf.gif" alt="[PDF link]"
-						 /></a>)</li>
+				<li>Session 1, 17:15–18:15: Introduction to XML [DJB] (<a href="talk-xml.pdf">slides
+							<img src="images/pdf.gif" alt="[PDF link]" /></a>)</li>
 			</ul>
-			<p>Wed 24 August</p>
+			<p>Wednesday, 2016-08-24</p>
 			<ul>
-				<li>Session 2, 14h30 - 15h30 : Introduction to TEI [LB] (<a
-						href="tei_intro.pptx.pdf">slides<img src="images/pdf.gif" alt="[PDF link]"
-						 /></a>)</li>
-				<li>Session 3, 16h - 17h : Manuscript description [DJB] (<a
-						href="manuscript-description.pptx.pdf">slides</a>
+				<li>Session 2, 14:30–15:30: Introduction to TEI [LB] (<a href="talk-tei.pdf"
+							>slides<img src="images/pdf.gif" alt="[PDF link]" /></a>)</li>
+				<li>Session 3, 16:00–17:00: Manuscript description [DJB] (<a
+						href="talk-description.pdf">slides</a>
 					<img src="images/pdf.gif" alt="[PDF link]" />)<ul>
 						<li><em>Don’t click; download:</em>
 							<a href="Enina.xml">Description of the <cite>Enina Apostol</cite></a>
@@ -181,36 +185,36 @@
 							also in English and Danish)</li>
 					</ul></li>
 			</ul>
-			<p>Thu 25 August</p>
+			<p>Thursday, 2016-08-25</p>
 			<ul>
-				<li>Session 4, 09h - 10h : Manuscript description [LB] practical 1</li>
+				<li>Session 4, 9:00–10:00: Manuscript description [LB] practical 1</li>
 				<li>Coffee break</li>
-				<li>Session 5, 10h30 - 11h30 : Manuscript description [LB] practical 2</li>
-				<li>Session 6, 11h45 - 12h45 : An Ingtroduction to Manuscript transcription (<a
-						href="http://nl.ijs.si/et/teach/graz06/standards/Critical/driscoll.pdf"
-						>slides</a>, by Matthew Driscoll <img src="images/pdf.gif" alt="[PDF link]"
-					 />) [LB]</li>
-				<li>Session 7, 13h45 - 14h45 : Manuscript transcription [DJB] practical 1 </li>
-				<li>Session 8, 15h - 16h : Manuscript transcription [DJB] practical 2</li>
+				<li>Session 5, 10:30–11:30: Manuscript description [LB] practical 2</li>
+				<li>Session 6, 11:45–12:45: An Introduction to Manuscript transcription (<a
+						href="talk-transcription.pdf">slides</a>
+					<img src="images/pdf.gif" alt="[PDF link]" />) [LB]</li>
+				<li>Session 7, 13:45–14:45: Manuscript transcription [DJB] practical 1 </li>
+				<li>Session 8, 15:00–16:00: Manuscript transcription [DJB] practical 2</li>
 			</ul>
-			<p>Fri 26 August</p>
+			<p>Friday, 2016-08-26</p>
 			<ul>
-				<li>Session 9, 09h - 10h : TEI Tools [LB] overview </li>
-				<li>Session 10, 10h30 - 11h30 : TEI Tools [LB] exercise </li>
-				<li>Session 11, 1145 - 12h45 : Taking stock [DJB] <ul>
+				<li>Session 9, 9:00–10:00: TEI Tools [LB] (<a href="talk-tools.pdf">overview</a>
+					<img src="images/pdf.gif" alt="[PDF link]" />)</li>
+				<li>Session 10, 10:30–11:30: TEI Tools [LB] exercise</li>
+				<li>Session 11, 11:45–12:45: Taking stock [DJB]<ul>
 						<li>Sample XML projects at <a href="http://www.obdurodon.org"
 								>http://www.obdurodon.org</a> and <a href="http://www.obdurodon.org"
 								>http://dh.obdurodon.org</a> (student course projects)</li>
-						<li>What next (<a href="what-next.pptx.pdf">slides <img src="images/pdf.gif"
+						<li>What next (<a href="talk-wrap-up.pdf">slides <img src="images/pdf.gif"
 									alt="[PDF link]" /></a>)</li>
 					</ul></li>
 			</ul>
 		</section>
 		<section id="documents">
 			<h2>Documents</h2>
-			<div id="projects">
+			<section id="projects">
 				<h3><span>Projects</span></h3>
-				<div id="editions">
+				<section id="editions">
 					<h4>Editions of manuscripts and texts</h4>
 					<ul>
 						<li><a href="http://bdinski.obdurodon.org">Bdinski sbornik</a> (Codex
@@ -220,19 +224,21 @@
 						<li><a href="http://pvl.obdurodon.org">The Rus′ primary chronicle (Povest′
 								vremennyx let)</a></li>
 					</ul>
-				</div>
-				<div id="visualizations">
+				</section>
+				<section id="visualizations">
 					<h4>Non-reading views of manuscript and textual information</h4>
 					<ul>
 						<li><a href="http://zatochnik.obdurodon.org/">Daniel the prisoner: a virtual
 								florilegium</a></li>
+						<li><a href="http://digenis.obdurodon.org/">Digenis Akritis: the lay of the
+								emir</a></li>
 						<li><a href="http://menology.obdurodon.org/">Medieval Slavic
 							menologies</a></li>
 						<li><a href="http://repertorium.obdurodon.org/dev/test.xhtml">Plectogram
 								sample</a> (Physiologus texts in the Repertorium corpus)</li>
 					</ul>
-				</div>
-				<div id="catalogs">
+				</section>
+				<section id="catalogs">
 					<h4>Catalogs, editions, and portals for Slavic manuscripts and texts</h4>
 					<ul>
 						<li><a href="http://old.stsl.ru/manuscripts/index.php">Russia, Sergiev
@@ -242,9 +248,9 @@
 						<li><a href="http://repertorium.obdurodon.org">The Repertorium of Old
 								Bulgarian literature and letters</a></li>
 					</ul>
-				</div>
-			</div>
-			<div id="index.xml-body.1_div.3_div.2">
+				</section>
+			</section>
+			<section id="xml_tei">
 				<h3>XML and TEI</h3>
 				<ul>
 					<li><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">The
@@ -263,21 +269,25 @@
 							<cite>Scripta &amp; e-Scripta</cite> 10–11 (2012): 9–103)</li>
 					<li><a href="http://tei.it.ox.ac.uk/Talks/2008-08-kazan/"><cite>Введение в TEI и
 								XML</cite> (Lou Burnard, Alexej Lavrent′ev, and Tat′jana
-							Timčenko)</a>;</li>
+							Timčenko)</a></li>
 					<li><a
 							href="http://tei.it.ox.ac.uk/Talks/2014-07-dhoxss-tei/Slides/talk-editing-5.pdf"
-							>Textual Editing with the TEI Or, Documentary Editing with the TEI Or,
-							TEI for Text Bearing Objects </a> (slides from <a
+							>Textual editing with the TEI, or Documentary editing with the TEI, or
+							TEI for text-bearing objects</a>
+						<img src="images/pdf.gif" alt="[PDF link]" /> (slides from <a
 							href="http://digital.humanities.ox.ac.uk/dhoxss/2014/TEI.html">DHOXSS
 							2014 Workshop)</a></li>
 					<li><a href="http://varna.obdurodon.org/TEI-general2014.ppt.pdf">The
 							transcription and description of primary sources using TEI conformant
-							XML</a> (Matthew J. Driscoll, Arnamagnæan Institute)</li>
-					<li><a href="http://dh.obdurodon.org">Materials from David J. Birnbaum’s
-								<q>Computational methods in the humanities</q></a> course (see also
-							<a href="http://www.obdurodon.org/course-projects.xhtml">links to
-							projects</a>)</li>
+							XML</a>
+						<img src="images/pdf.gif" alt="[PDF link]" /> (Matthew J. Driscoll,
+						Arnamagnæan Institute)</li>
+					<li><a href="http://dh.obdurodon.org">Tutorials and other materials from David
+							J. Birnbaum’s <q>Computational methods in the humanities</q></a>
+						course</li>
 					<li>Genetic editions <ul>
+							<li><a href="https://faustedition.uni-wuerzburg.de/"><cite>Faust</cite>
+									edition and prototype</a></li>
 							<li><a href="http://research.cch.kcl.ac.uk/proust_prototype/">Proust
 									prototype</a></li>
 							<li><a href="http://shelleygodwinarchive.org/contents/frankenstein">The
@@ -285,8 +295,8 @@
 								the Shelley-Godwin Archive)</li>
 						</ul></li>
 				</ul>
-			</div>
-			<div id="index.xml-body.1_div.3_div.3">
+			</section>
+			<section id="msDesc">
 				<h3>Manuscript description</h3>
 				<p>Many on-line manuscript catalogues provide convenient search interfaces. Here are
 					a few that go beyond that, and might be considered models for how digital
@@ -317,7 +327,7 @@
 							<q>personography</q>, which provides access to biographical information
 						about persons mentioned in the descriptions.</li>
 				</ul>
-			</div>
+			</section>
 		</section>
 	</body>
 </html>
