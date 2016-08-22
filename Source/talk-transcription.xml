@@ -165,7 +165,7 @@
             <div>
                 <head>Using <gi>g</gi></head>
                 <figure>
-                    <graphic url="../images/ooligs.png" height="45%"/>
+                    <graphic url="../images/bdinski07r-dtl.png" height="30%"/>
                     <head>Bdinski, fol 7r, detail</head>
                 </figure>
                 <p>There is no Unicode character for the ligatured oo here: we tag it as a
@@ -551,30 +551,22 @@
             <div>
                 <head>Text supplied to fill a lacuna</head>
                 <p>If the transcriber wishes to supply material to fill a lacuna, it should be marked
-                    up using <gi>supplied</gi> rather than <gi>gap</gi>. In this example, 42 lines
+                    up using <gi>supplied</gi> rather than <gi>gap</gi>. <!--In this example, 42 lines
                     missing from the bottom of page 5v have been supplied from another source
                     (identified here simply as <ident>ed</ident>) on the authority of
-                        <ident>#djb</ident>: <egXML xmlns="http://www.tei-c.org/ns/Examples">расѣдша
-                        се. и ѡ
-                        <lb break="no"/>брѣтени* быти голоубици <supplied resp="#djb" source="ed"
+                        <ident>#djb</ident>:--> <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"/>брѣтени* быти голоубици <supplied resp="#djb" source="ed"
                             reason="missing">
                             <pb n="301c"/>
                             <lb/>(голоубици) онои въ чре
-                            <lb break="no"/>вѣ ѥго. и простьръ роу
-                            <lb break="no"/>коу блаженыи възѧ
-                            <lb break="no"/>тъ ю живоу. не имоущу <!-- ... -->
-                            <lb/>д҃нь и нощь молѧ б҃а о нѥ
-                            <lb break="no"/>и. и по дъвою лѣтоу вѣ
-                            <lb break="no"/>сть бысть (ѥмоу. къ-)</supplied>
+                            <!-- ... -->
+                           <lb break="no"/>сть бысть (ѥмоу. къ-)</supplied>
                         <pb n="6r"/>
                         <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
                         <lb break="no"/>ть. и оумоливь нѣкого оу
                         <lb break="no"/>жикоу своѥго посла тамо.</egXML>
                 </p>
                 <p>Alternatively, the transcription might simply indicate that the text is missing
-                    and not supply it <egXML xmlns="http://www.tei-c.org/ns/Examples">расѣдша се. и
-                        ѡ
-                        <lb break="no"/>брѣтени* быти голоубици <gap quantity="42" unit="line"/>
+                    and not supply it <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"/>брѣтени* быти голоубици <gap quantity="42" unit="line"/>
                         <pb n="6r"/>
                         <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
                         <lb break="no"/>ть. и оумоливь нѣкого оу
@@ -1075,11 +1067,7 @@ Alas then is she drownd. Q3; Alas, then, she is drownd. Q2; So, she is drownde: 
       
 
 
-                <div>
-                    <head>Next</head>
-                    <p>Any Questions? Next we're going to do an exercise!</p>
-                </div>
-            </div>-->
+                -->
         </body>
     </text>
 </TEI>

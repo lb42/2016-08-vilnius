@@ -5,9 +5,11 @@ TEISLIDES=/home/lou/Public/TEIslides/teislides.rnc
 PROFILE=teiOCS
 
 TALKS= \
+	talk-xml \
 	talk-tei \
 	talk-tools \
-	talk-transcription
+	talk-transcription \
+	talk-description
 
 EXERCISES= \
 	ex-msdesc \
