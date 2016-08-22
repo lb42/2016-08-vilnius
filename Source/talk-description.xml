@@ -52,8 +52,8 @@
         <head><gi>msIdentifier</gi></head>
         <list>
           <item><gi>country</gi>, <gi>settlement</gi>, <gi>repository</gi></item>
-          <item><tag>idno type="shelfmark"</tag></item>
-          <item><gi>altIdentifier</gi></item>
+          <item><gi>idno</gi></item>
+          <item><gi>altName</gi>, <gi>altIdentifier</gi></item>
         </list>
       </div>
 
@@ -73,11 +73,11 @@
           <item>May contain <gi>locus</gi></item>
         </list>
         <p><gi>decoNote</gi>, <gi>filiation</gi>, <gi>textLang</gi></p>
-        <list>
-          <item><code>&lt;textLang mainLang="chu" otherLangs="rus hel"&gt;Mostly Old Church
-              Slavonic, with some Russian and Greek material&lt;/textLang&gt;</code></item>
-          <item>Two-letter and three-letter ISO standard language names</item>
-        </list>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><textLang mainLang="chu"
+            otherLangs="rus
+          hel">Mostly Old Church Slavonic, with some Russian and Greek
+            material</textLang></egXML>
+        <p>Two-letter and three-letter ISO standard language names</p>
       </div>
 
       <div>
@@ -121,17 +121,16 @@
         <egXML xmlns="http://www.tei-c.org/ns/Examples"><additions><p>
           (marginalia)</p></additions></egXML>
         <egXML xmlns="http://www.tei-c.org/ns/Examples"><accMat><p> … </p></accMat></egXML>
+        <p><gi>history</gi></p>
         <list>
-          <item><gi>history</gi><list>
-              <item><gi>origin</gi></item>
-              <item><gi>provenance</gi></item>
-              <item><gi>acquisition</gi></item>
-            </list></item>
-          <item><gi>additional</gi>, <gi>availability</gi>, <gi>custodialHist</gi>,
-              <gi>surrogates</gi>, different types of bibliography (<gi>bibl</gi>,
-            <gi>biblFull</gi>, <gi>biblStruct</gi>) </item>
-          <item><gi>msPart</gi> (for convolutes)</item>
+          <item><gi>origin</gi></item>
+          <item><gi>provenance</gi></item>
+          <item><gi>acquisition</gi></item>
         </list>
+        <p><gi>additional</gi>, <gi>availability</gi>, <gi>custodialHist</gi>, <gi>surrogates</gi>,
+          different types of bibliography (<gi>bibl</gi>, <gi>biblFull</gi>,
+          <gi>biblStruct</gi>)</p>
+        <p><gi>msPart</gi> (for convolutes)</p>
       </div>
 
     </body>
