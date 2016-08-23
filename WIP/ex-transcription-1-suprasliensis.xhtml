@@ -270,7 +270,7 @@
                 the title of a section (in this case, of the <code>&lt;body&gt;</code>). Select the
                 first line with the mouse, cut it (Ctrl-x), click between the start and end
                     <code>&lt;head&gt;</code> tags, and paste the text (Ctrl-v). If the cut and
-                paste operation left a blank line behind, delete it manually.</p>
+                paste operation left a blank line behind, delete it manually. RESUME</p>
             <p>Note that it might seem natural to use <code>&lt;title&gt;</code> for this purpose,
                 but the TEI has decided that the <code>&lt;title&gt;</code> tag has a different
                 meaning: it is used for the title of a work, and not for the title of a section of a
@@ -445,26 +445,28 @@
                     involving deleting something before writing its replacement, but that’s just a
                     human mnemonic, and the order of the child elements of
                         <code>&lt;subst&gt;</code> is not informational.</p>
-                <p>In this edition we found two corrections; the other is at 86r18. Mark those up as
-                    described above. The easiest way to tag existing text in &lt;oXygen;&gt; is to
-                    select the text you want to tag with the mouse, type Ctrl-e (for
-                    <q>element</q>), and then select the element you want from the drop-down list
-                    that will open in the dialogue. If the plain text contains the replacement text,
-                    we’d suggest tagging it first as <code>&lt;subst&gt;</code>. Notice that when
-                    you do that the text inside the new <code>&lt;subst&gt;</code> tags remains
-                    selected, so you can then tag it as <code>&lt;add&gt;</code> by leaving it
-                    selected and typing Ctrl-e again and selecting the <code>&lt;add&gt;</code>
-                    element. (Should you tag it first as <code>&lt;add&gt;</code>, you then have to
-                    select the text <em>and the new <code>&lt;add&gt;</code> tags</em> and wrap them
-                    in <code>&lt;subst&gt;</code>, which requires more work because you have to make
-                    two explicit selections.) Once you’ve introduced the <code>&lt;subst&gt;</code>
-                    and <code>&lt;add&gt;</code> tags, put the cursor between the start
-                        <code>&lt;subst&gt;</code> and <code>&lt;add&gt;</code> tags and create an
-                    empty <code>&lt;del&gt;</code> element, into which you can enter the deleted
-                    text. To create an empty pair of tags you can either use Ctrl-e without
-                    selecting any text, in which case the tags will be inserted at the cursor
-                    position, or you can type the start tag directly, in which case &lt;oXygen;&gt;
-                    will insert the end tag for you.</p>
+                <p>In this edition we found two corrections; the other is at 86r18. You’ll need to
+                    look at the photographs to see what the original text was, and once you’ve done
+                    that, mark them up as described above. The easiest way to tag existing text in
+                    &lt;oXygen;&gt; is to select the text you want to tag with the mouse, type
+                    Ctrl-e (for <q>element</q>), and then select the element you want from the
+                    drop-down list that will open in the dialogue. If the plain text contains the
+                    replacement text, we’d suggest tagging it first as <code>&lt;subst&gt;</code>.
+                    Notice that when you do that the text inside the new <code>&lt;subst&gt;</code>
+                    tags remains selected, so you can then tag it as <code>&lt;add&gt;</code> by
+                    leaving it selected and typing Ctrl-e again and selecting the
+                        <code>&lt;add&gt;</code> element. (Should you tag it first as
+                        <code>&lt;add&gt;</code>, you then have to select the text <em>and the new
+                            <code>&lt;add&gt;</code> tags</em> and wrap them in
+                        <code>&lt;subst&gt;</code>, which requires more work because you have to
+                    make two explicit selections.) Once you’ve introduced the
+                        <code>&lt;subst&gt;</code> and <code>&lt;add&gt;</code> tags, put the cursor
+                    between the start <code>&lt;subst&gt;</code> and <code>&lt;add&gt;</code> tags
+                    and create an empty <code>&lt;del&gt;</code> element, into which you can enter
+                    the deleted text. To create an empty pair of tags you can either use Ctrl-e
+                    without selecting any text, in which case the tags will be inserted at the
+                    cursor position, or you can type the start tag directly, in which case
+                    &lt;oXygen;&gt; will insert the end tag for you.</p>
             </section>
             <section>
                 <h4>Superscription</h4>
