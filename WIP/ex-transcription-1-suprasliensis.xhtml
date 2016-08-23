@@ -5,6 +5,31 @@
         <title></title>
         <link rel="stylesheet" type="text/css" href="http://www.obdurodon.org/css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/vilnius.css" />
+        <style type="text/css">
+            .os{
+                font-family: 
+                }
+            h2{
+                counter-reset: h3;
+            }
+            h3{
+                counter-reset: h4;
+            }
+            h3:before{
+                counter-increment: h3;
+                content: counter(h3) '. ';
+            }
+            h4{
+                counter-reset: h5;
+            }
+            h4:before{
+                counter-increment: h4;
+                content: counter(h3) '.' counter(h4) '. ';
+            }
+            h5:before{
+                counter-increment: h5;
+                content: counter(h3) '.' counter(h4) '.' counter(h5) '. ';
+            }</style>
     </head>
     <body>
         <h1 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a class="logo"
@@ -209,8 +234,8 @@
                 <li><p>There are a few corrections in the text (marked in red or green in the online
                         edition (e.g., on line 3 of <a
                             href="http://suprasliensis.obdurodon.org/pages/supr086r.html">folio
-                            86r</a> an <q>и</q> has been corrected and replaced by
-                    <q>о</q>).</p></li>
+                            86r</a> an <q class="os">и</q> has been corrected and replaced by <q
+                            class="os">о</q>).</p></li>
             </ul>
         </section>
         <section>
@@ -301,7 +326,7 @@
                             inside an <code>&lt;ab&gt;</code> element. This ensures that we don’t
                             insert <code>&lt;lb&gt;</code> elements inside our header or anywhere
                             else where we don’t want them.</p></li>
-                    <li><p>By default, find and replce operations in &lt;oXygen;&gt; search for
+                    <li><p>By default, find and replace operations in &lt;oXygen;&gt; search for
                             literal strings of text, and there aren’t any literal carets or
                             backslashes or Latin <q>s</q> characters or asterisks in our text. By
                             checking <q>Regular expression</q> in the <q>Options</q> section, we’ve
@@ -391,26 +416,46 @@
                     human mnemonic, and the order of the child elements of
                         <code>&lt;subst&gt;</code> is not informational.</p>
                 <p>In this edition we found two corrections; the other is at 86r18. Mark those up as
-                    described above. Can you find any others by scrutinizing the photographs?</p>
+                    described above. The easiest way to tag existing text in &lt;oXygen;&gt; is to
+                    select the text you want to tag with the mouse, type Ctrl-e (for
+                    <q>element</q>), and then select the element you want from the drop-down list
+                    that will open in the dialogue. If the plain text contains the replacement text,
+                    we’d suggest tagging it first as <code>&lt;subst&gt;</code>. Notice that when
+                    you do that the text inside the new <code>&lt;subst&gt;</code> tags remains
+                    selected, so you can then tag it as <code>&lt;add&gt;</code> by leaving it
+                    selected and typing Ctrl-e again and selecting the <code>&lt;add&gt;</code>
+                    element. (Should you tag it first as <code>&lt;add&gt;</code>, you then have to
+                    select the text <em>and the new <code>&lt;add&gt;</code> tags</em> and wrap them
+                    in <code>&lt;subst&gt;</code>, which requires more work because you have to make
+                    two explicit selections.) Once you’ve introduced the <code>&lt;subst&gt;</code>
+                    and <code>&lt;add&gt;</code> tags, put the cursor between the start
+                        <code>&lt;subst&gt;</code> and <code>&lt;add&gt;</code> tags and create an
+                    empty <code>&lt;del&gt;</code> element, into which you can enter the deleted text.
+                    To create an empty pair of tags you can either use Ctrl-e without selecting any
+                    text, in which case the tags will be inserted at the cursor position, or you can
+                    type the start tag directly, in which case &lt;oXygen;&gt; will insert the end
+                    tag for you.</p>
             </section>
             <section>
                 <h4>Superscription</h4>
                 <p>In our plain text transcription we wrapped superscript letters in parentheses,
                     but in an XML text we should use markup for that purpose. The TEI markup for
-                    superscription uses the <code>&lt;h&gt;</code> element, which represents any
+                    superscription uses the <code>&lt;hi&gt;</code> element, which represents any
                     text that is highlighted in any way. It’s conventional to treat superscription
                     as highlighting (since it modifies the representation of the character), and to
                     show that the highlighting in this case is specifically superscription, we use
                     the <code>@rend</code> attribute with the value <q>sup</q>. For example, a
-                    superscript <q>ж</q> would be encoded as <code>&lt;hi
-                        rend="sup"&lt;ж&lt;/hi&gt;</code>. If there is a titlo or pokrytie or other
-                    diacritic over the superscript letter, that diacritic should also be included
-                    inside the <code>&lt;hi&gt;</code> tags.</p>
+                    superscript <q><span class="os">ж</span></q> would be encoded as <code>&lt;hi
+                            rend="sup"&gt;<span class="os">ж</span>&lt;/hi&gt;</code>. If there is a
+                    titlo or pokrytie or other diacritic over the superscript letter, that diacritic
+                    should also be included inside the <code>&lt;hi&gt;</code> tags.</p>
                 <p>Now try finding the superscript letters in the transcription and replacing the
                     parentheses with markup. You can use the find and replace dialogue to find them;
                     uncheck the <q>Regular expression</q> box (since now we’re searching for a
                     literal character), enter <q>(</q> (without the quotation marks) in the
-                        <q>Find</q> box, and hit <q>Find All</q>. The successful hits </p>
+                        <q>Find</q> box, and hit <q>Find All</q>. We found superscript characters at
+                    86r22, 86v10, and 88v7.</p>
+                <p>Unicode does provide some separate superscript Cyrillic characters, but not all of them.</p>
             </section>
         </section>
         <section>
