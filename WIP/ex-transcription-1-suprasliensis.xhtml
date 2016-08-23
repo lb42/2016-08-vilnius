@@ -516,7 +516,100 @@
             </section>
         </section>
         <section>
-            <h3>tagging persons, places</h3>
+            <h3>Tagging persons</h3>
+            <p>The TEI provides a mechanism for tagging persons that can simplify document
+                processing (such as structured searching or the creation of descriptive statistical
+                reports) in situations where the same person may be referred to in different ways.
+                If Paul were always called <q>Paul</q>, we could just search for the string, but
+                because he can have different declensional endings, and can also be identified by an
+                epithet or a personal pronoun, there is no convenient string search that will find
+                all references to Paul in the text. If the ability to find those types of references
+                is part of the research goals of the project, one way to deal with this limitation
+                is to front-load the work by identifying the different occurrences during markup,
+                adding a consistent identifier that will enable the retrieval of all related forms
+                later. The TEI provides mechanisms for supplying supplementary information about
+                persons, so in addition to being able to retrieve all references to Paul, this type
+                of markup would make it easy to find all male persons, or all monks, or all persons
+                with any properties that have been introduced into the markup.</p>
+            <p>If you don’t care about being able to find persons, whether individually or according
+                to shared properties, there is no need to add this type of markup. But if that sort
+                of access is a requirement for your project, the TEI way to facilitate it is through
+                a <dfn>personography</dfn> (list of persons and their properties), coupled with
+                attributes within the body of the text that point to those lists. Here’s how to
+                create and implement a personography.</p>
+            <section>
+                <h4>The TEI personography architecture</h4>
+                <p>A TEI personography is implemented as a <code>&lt;listPerson&gt;</code>
+                    element—which is, perhaps not surprisingly, a list of persons. The personography
+                    is placed in a particular location in the header, and it contains biographical
+                    information about all persons in the document. Wherever those persons appear,
+                    they are then tagged with markup that points to the personography entry. In this
+                    way, a personal pronoun could be tagged along the lines of <code>&lt;name
+                        ref="#paul"&gt;he&lt;/person&gt;</code> to indicate that information about
+                    the referent of the pronoun in that location can be found by
+                        <dfn>dereferencing</dfn> (following and looking up) the pointer. That all
+                    happens during processing; what happens during markup is that we need to 1)
+                    create a personography and 2) tag the references to persons in the text.</p>
+            </section>
+            <section>
+                <h4>The personography file</h4>
+                <p>The personography is located inside the header and has the following
+                    structure:</p>
+                <pre>&lt;profileDesc&gt;
+ &lt;particDesc&gt;
+  &lt;listPerson type="historical"&gt;
+   &lt;person xml:id="paul"&gt;
+    &lt;persName&gt;Paul the Simple&lt;/persName&gt;
+   &lt;/person&gt;
+   &lt;person xml:id="anthony"&gt;
+    &lt;persName&gt;Anthony&lt;/persName&gt;
+   &lt;/person&gt;
+    &lt;!-- ... --&gt;
+  &lt;/listPerson&gt;
+ &lt;/particDesc&gt;
+&lt;/profileDesc&gt;</pre>
+                <p>The <code>@xml:id</code> attribute is the value to which all references to the
+                    person will point inside the main text. These values must be unique within the
+                    document; an document that has two identical <code>@xml:id</code> values is not
+                    a valid XML document. There are some restrictions on the values allowed for this
+                    attribute (e.g., no spaces are allowed; digits are permitted but not as the
+                    first character, and a few others), and the simplest strategy is to use only
+                    alphabetic characters. Because XML markup is case sensitive, <q>Paul</q> and
+                        <q>paul</q> are different values. It is common (but not required) to use
+                    lower-case letters for single words and camel case (e.g., <q>paulTheSimple</q>)
+                    or underscores (e.g., <q>paul_the_simple</q>) for values that consist logically
+                    of more than one word.</p>
+                <p>The personography can contain much more information than just the personal name
+                    and the <code>@xml:id</code>. If you’d like to enrich your personography, you
+                    can look up other possible content at <a
+                        href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html">Section
+                        13 of the TEI guidelines</a>.</p>
+                <p>The <code>&lt;profileDesc&gt;</code> goes inside the header after the
+                        <code>&lt;fileDesc&gt;</code>. The persons in this text are our hero Paul
+                    the Simple, his confessor Anthony, the man possessed by demons, and others.
+                    Create a personography in your TEI file similar to the one above.</p>
+            </section>
+            <section>
+                <h4>Pointing into the personography</h4>
+                <p>The simplest way to associate persons in the main text with persons recording in
+                    the personography is by tagging names in the main text as
+                        <code>&lt;name&gt;</code> and adding a <code>@ref</code> (for
+                        <q>reference</q>) attribute that points to the <code>@xml:id</code> value of
+                    the referent. The syntax for pointing is to precede the <code>@xml:id</code>
+                    value with a hash mark (<q>#</q>), so, for example, in 85v28–30 we might tag the
+                    reference to Paul as:</p>
+                <pre>&lt;lb/&gt;Мѣсꙙца марта въ девꙙтꙑ на десꙙте· житиѥ прѣ- 
+&lt;lb/&gt;подобь҆нааго о҅тьца нашего· &lt;name ref="#paul"&gt;павъла прѣ- 
+&lt;lb/&gt;простааго&lt;/name&gt; ⁘</pre>
+                <p>This presumes that we have an entry in our personography with an
+                        <code>@xml:id</code> value of <q>paul</q>. The <code>&lt;name&gt;</code>
+                    element should be used only with actual names; if you want to tag pronouns that
+                    point to particular persons, the TEI way to do this is with the
+                        <code>&lt;rs&gt;</code> (<q>referring string</q>) element, which takes the
+                    same <code>@ref</code> attribute as <code>&lt;name&gt;</code>.</p>
+                <p>Spend a few minutes creating personography entries and then tagging persons
+                    (whether as names or pronouns) in the text.</p>
+            </section>
         </section>
     </body>
 </html>
