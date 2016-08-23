@@ -63,12 +63,12 @@
         </section>
         <section>
             <h3>Document analysis</h3>
-            <p>As discussed in the <a href="talk-xml.pdf">first (XML)
-                    session of our workshop</a>, the first step in creating an XML document, before
-                you type any angle brackets, is document analysis. Look over the images and
-                transcription and plan the project from at least two perspectives: the large,
-                overall structure (e.g., folios and lines) and the small, in-line idiosyncrasies
-                (e.g., corrections, insertions, personal names, etc.).</p>
+            <p>As discussed in the <a href="talk-xml.pdf">first (XML) session of our workshop</a>,
+                the first step in creating an XML document, before you type any angle brackets, is
+                document analysis. Look over the images and transcription and plan the project from
+                at least two perspectives: the large, overall structure (e.g., folios and lines) and
+                the small, in-line idiosyncrasies (e.g., corrections, insertions, personal names,
+                etc.).</p>
             <p>The TEI is designed to provide resources from which you, the developer, can select
                 those that are appropriate to your materials and your research goals, so you are not
                 expected to tag everything that is taggable. With that said, projects are likely to
@@ -116,17 +116,32 @@
                         Enter a few blank lines between the <code>&lt;ab&gt;</code> start and end
                         tags, so that you’ll have a place to paste the text you’re going to
                         edit.</p></li>
-                <li><p>Click on <a href="suprasliensis.txt"
-                            >http://vilnius.obdurodon.org/suprasliensis.txt</a> to open it in your
-                        browser. Don’t worry if you see funny characters or boxes; the characters
-                        are correct in the file, but your browser may not be using a font that
-                        renders them properly. Click inside your browser window and then type Ctrl+a
-                        to select all text, followed by Ctrl+c to copy the selection. This copies
-                        the text to your clipboard, an invisible buffer that lets you then paste it
-                        elsewhere. Now click on a blank line between the <code>&lt;ab&gt;</code>
-                        tags to position the cursor and type Ctrl+v to paste whatever is in the
-                        clipboard (the plain text transcription) into &lt;oXygen&gt;, so that it
-                        will be ready for markup.</p></li>
+                <li><p>There are at least two ways to insert the text you want to tag inside your
+                        new TEI document at the proper place. Choose one and use it to insert the
+                        text of the Vita between the <code>&lt;ab&gt;</code> tags:</p><ul>
+                        <li><p>Click on <a href="suprasliensis.txt"
+                                    >http://vilnius.obdurodon.org/suprasliensis.txt</a> to open it
+                                in your browser. Don’t worry if you see funny characters or boxes;
+                                the characters are correct in the file, but your browser may not be
+                                using a font that renders them properly. Click inside your browser
+                                window and then type Ctrl+a to select all text, followed by Ctrl+c
+                                to copy the selection. This copies the text to your clipboard, an
+                                invisible buffer that lets you then paste it elsewhere. Now click on
+                                a blank line between the <code>&lt;ab&gt;</code> tags to position
+                                the cursor and type Ctrl+v to paste whatever is in the clipboard
+                                (the plain text transcription) into &lt;oXygen&gt;, so that it will
+                                be ready for markup.</p></li>
+                        <li><p>Instead of clicking on <a href="suprasliensis.txt"
+                                    >http://vilnius.obdurodon.org/suprasliensis.txt</a> to open it
+                                in the browser, right-click on it and download it to somewhere in
+                                your local filesystem, such as your desktop or a downloads
+                                directory. Then put the cursor between the <code>&lt;ab&gt;</code>
+                                tags in the TEI document and from the &lt;oXygen;&gt; menu select
+                                    <q>Document</q>, then <q>File</q>, and then <q>Insert File
+                                …</q>. Navigate to the file you downloaded, select it, and click
+                                    <q>Open</q> and the file will be inserted at the cursor
+                                position.</p></li>
+                    </ul></li>
             </ol>
         </section>
         <section>
@@ -463,10 +478,10 @@
                         B</a>) but not all of them. We avoid using these in our own work for two
                     reasons:</p>
                 <ul>
-                    <li>Since the inventory of independent Unicode superscript Cyrillic characters is
-                    incomplete, in at least some cases we would have to use an alternative (markup-based) strategy. In order
-                    to avoid inconsistency in our documents, with a mixture of primary superscript characters in some cases
-                    and </li>
+                    <li>Since the inventory of independent Unicode superscript Cyrillic characters
+                        is incomplete, in at least some cases we would have to use an alternative
+                        (markup-based) strategy. In order to avoid inconsistency in our documents,
+                        with a mixture of primary superscript characters in some cases and </li>
                 </ul>
             </section>
         </section>
