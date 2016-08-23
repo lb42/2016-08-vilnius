@@ -63,7 +63,7 @@
         </section>
         <section>
             <h3>Document analysis</h3>
-            <p>As discussed in the <a href="http://vilnius.obdurodon.org/talk-xml.pdf">first (XML)
+            <p>As discussed in the <a href="talk-xml.pdf">first (XML)
                     session of our workshop</a>, the first step in creating an XML document, before
                 you type any angle brackets, is document analysis. Look over the images and
                 transcription and plan the project from at least two perspectives: the large,
@@ -430,11 +430,11 @@
                     two explicit selections.) Once you’ve introduced the <code>&lt;subst&gt;</code>
                     and <code>&lt;add&gt;</code> tags, put the cursor between the start
                         <code>&lt;subst&gt;</code> and <code>&lt;add&gt;</code> tags and create an
-                    empty <code>&lt;del&gt;</code> element, into which you can enter the deleted text.
-                    To create an empty pair of tags you can either use Ctrl-e without selecting any
-                    text, in which case the tags will be inserted at the cursor position, or you can
-                    type the start tag directly, in which case &lt;oXygen;&gt; will insert the end
-                    tag for you.</p>
+                    empty <code>&lt;del&gt;</code> element, into which you can enter the deleted
+                    text. To create an empty pair of tags you can either use Ctrl-e without
+                    selecting any text, in which case the tags will be inserted at the cursor
+                    position, or you can type the start tag directly, in which case &lt;oXygen;&gt;
+                    will insert the end tag for you.</p>
             </section>
             <section>
                 <h4>Superscription</h4>
@@ -455,7 +455,19 @@
                     literal character), enter <q>(</q> (without the quotation marks) in the
                         <q>Find</q> box, and hit <q>Find All</q>. We found superscript characters at
                     86r22, 86v10, and 88v7.</p>
-                <p>Unicode does provide some separate superscript Cyrillic characters, but not all of them.</p>
+                <p class="note">Unicode does provide some separate superscript Cyrillic characters
+                    (see <a href="http://www.unicode.org/charts/"
+                    >http://www.unicode.org/charts/</a>, where the superscript characters are in <a
+                        href="http://www.unicode.org/charts/PDF/U2DE0.pdf">Cyrillic Extended A</a>
+                    and <a href="http://www.unicode.org/charts/PDF/UA640.pdf">Cyrillic Extended
+                        B</a>) but not all of them. We avoid using these in our own work for two
+                    reasons:</p>
+                <ul>
+                    <li>Since the inventory of independent Unicode superscript Cyrillic characters is
+                    incomplete, in at least some cases we would have to use an alternative (markup-based) strategy. In order
+                    to avoid inconsistency in our documents, with a mixture of primary superscript characters in some cases
+                    and </li>
+                </ul>
             </section>
         </section>
         <section>
