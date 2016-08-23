@@ -270,7 +270,7 @@
                 the title of a section (in this case, of the <code>&lt;body&gt;</code>). Select the
                 first line with the mouse, cut it (Ctrl-x), click between the start and end
                     <code>&lt;head&gt;</code> tags, and paste the text (Ctrl-v). If the cut and
-                paste operation left a blank line behind, delete it manually. RESUME</p>
+                paste operation left a blank line behind, delete it manually.</p>
             <p>Note that it might seem natural to use <code>&lt;title&gt;</code> for this purpose,
                 but the TEI has decided that the <code>&lt;title&gt;</code> tag has a different
                 meaning: it is used for the title of a work, and not for the title of a section of a
@@ -494,11 +494,24 @@
                     and <a href="http://www.unicode.org/charts/PDF/UA640.pdf">Cyrillic Extended
                         B</a>) but not all of them. We avoid using these in our own work for two
                     reasons:</p>
-                <ul>
-                    <li>Since the inventory of independent Unicode superscript Cyrillic characters
-                        is incomplete, in at least some cases we would have to use an alternative
-                        (markup-based) strategy. In order to avoid inconsistency in our documents,
-                        with a mixture of primary superscript characters in some cases and </li>
+                <ul class="note">
+                    <li><p>Since the inventory of independent Unicode superscript Cyrillic
+                            characters is incomplete, in at least some cases we would have to use an
+                            alternative (markup-based) strategy. In order to avoid inconsistency in
+                            our documents, with a mixture of primary superscript characters in some
+                            cases and markup where primary characters aren’t available, we recommend
+                            using only markup, since that can be done consistently.</p></li>
+                    <li><p>Unicode aims to distinguish as independent characters only those units of
+                            writing that have different semantics (and not only different shapes).
+                            It is not practical to maintain the distinction consistently because the
+                            semantics depend on the function (e.g., upper ~ lower case has different
+                            semantics for rendering but not normally for sorting or searching).
+                            Whether superscript characters should be regarded as fundamentally
+                            semantically different from their regular counterparts is unclear, but
+                            if they are understood as presentational variants of the regular
+                            characters, their appearance <em>should</em> be represented through
+                            markup, like a difference in font, and not through separate Unicode
+                            characters.</p></li>
                 </ul>
             </section>
         </section>
