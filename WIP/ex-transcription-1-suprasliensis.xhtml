@@ -29,6 +29,32 @@
             h5:before{
                 counter-increment: h5;
                 content: counter(h3) '.' counter(h4) '.' counter(h5) '. ';
+            }
+            #contents,
+            #contents ol{
+                list-style: none;
+            }
+            #contents > li{
+                counter-increment: contents-1;
+            }
+            #contents > li:before{
+                content: counter(contents-1) '. ';
+            }
+            #contents > li > ol > li{
+                counter-increment: contents-2;
+            }
+            #contents > li > ol > li:before{
+                content: counter(contents-1) '.' counter(contents-2) '. ';
+            }
+            #contents > li > ol > li > ol > li{
+                counter-increment: contents-3;
+            }
+            #contents > li > ol > li > ol > li:before{
+                content: counter(contents-1) '.' counter(contents-2) '.' counter(contents-3) '. ';
+            }
+            #schedule > p{
+                font-weight: bold;
+                font-size: larger;
             }</style>
     </head>
     <body>
@@ -53,6 +79,35 @@
         <hr />
         <h2>Manuscript transcription exercise</h2>
         <section>
+            <ol id="contents">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#analysis">Document analysis, 1</a></li>
+                <li><a href="#started">Getting started</a></li>
+                <li><a href="#TEIheader">The TEI header</a></li>
+                <li><a href="#fonts">Fonts</a></li>
+                <li><a href="#analysis_a">Document analysis, 2</a></li>
+                <li><a href="#code">The <code>&lt;head&gt;</code> element</a></li>
+                <li><a href="#structure">Tagging for structure</a>
+                    <ol>
+                        <li><a href="#lb">Line breaks</a></li>
+                        <li><a href="#pb">Folio breaks</a></li>
+                    </ol></li>
+                <li><a href="#refining">Refining our structural markup</a><ol>
+                        <li><a href="#breaks">Word breaks</a></li>
+                        <li><a href="#numbers">Line numbering</a></li>
+                    </ol></li>
+                <li><a href="#inline">Inline markup</a><ol>
+                        <li><a href="#corrections">Corrections</a></li>
+                        <li><a href="#superscript">Superscription</a></li>
+                    </ol></li>
+                <li><a href="#persons">Tagging persons</a><ol>
+                        <li><a href="#architecture">The TEI personography architecture</a></li>
+                        <li><a href="#personography">The personography file</a></li>
+                        <li><a href="#ref">Pointing into the personography</a></li>
+                    </ol></li>
+            </ol>
+        </section>
+        <section id="introduction">
             <h3>Introduction</h3>
             <p><q>Vita Pauli simplicis</q>, 19 March from the <cite>Codex Suprasliensis</cite></p>
             <p>The <cite>Codex Suprasliensis</cite> is available on line (photographic facsimile,
@@ -61,8 +116,8 @@
                 >http://suprasliensis.obdurodon.org</a>. Select the link to the beginning of the
                     <q>Vita of Paul the Simple</q> and take a look at the text.</p>
         </section>
-        <section>
-            <h3>Document analysis</h3>
+        <section id="analysis">
+            <h3>Document analysis, 1</h3>
             <p>As discussed in the <a href="talk-xml.pdf">first (XML) session of our workshop</a>,
                 the first step in creating an XML document, before you type any angle brackets, is
                 document analysis. Look over the images and transcription and plan the project from
@@ -80,7 +135,7 @@
                 what to ignore, but in Real Life you would make those decisions yourselves according
                 to your research goals.</p>
         </section>
-        <section>
+        <section id="started">
             <h3>Getting started</h3>
             <p>Here’s how to begin tagging a file in &lt;oXygen/&gt;:</p>
             <ol>
@@ -144,7 +199,7 @@
                     </ul></li>
             </ol>
         </section>
-        <section>
+        <section id="TEIheader">
             <h3>The TEI header</h3>
             <p>Before we edit the text of the vita, let’s prepare the TEI header. Every TEI document
                 must have a header that contains metadata about the document, and the skeletal TEI
@@ -188,7 +243,7 @@
                             >Section 2.2.7 of the TEI guidelines</a>.</p></li>
             </ol>
         </section>
-        <section>
+        <section id="fonts">
             <h3>Fonts</h3>
             <p><em>Optional:</em> You may see boxes or other funny characters in &lt;oXygen/&gt; if
                 you haven’t installed a font that contains all of the characters used in the
@@ -212,8 +267,8 @@
                 the characters properly, so if there are problems with your display, we’d recommend
                 installing and using the Quivira font.</p>
         </section>
-        <section>
-            <h3>Document analysis</h3>
+        <section id="analysis_a">
+            <h3>Document analysis, 2</h3>
             <p>Before you tag your text, you need to conduct <dfn>document analysis</dfn>, that is,
                 you need to identify the structure of the document and the features you’d like to
                 tag. Here are a few thoughts:</p>
@@ -263,7 +318,7 @@
                         corrections are when it comes time to tag them for this exercise.</p></li>
             </ul>
         </section>
-        <section>
+        <section id="code">
             <h3>The <code>&lt;head&gt;</code> element</h3>
             <p>Since the first line is not part of the manuscript text, let’s move it out of the
                     <code>&lt;ab&gt;</code>. Above the <code>&lt;ab&gt;</code> start tag, create a
@@ -290,9 +345,9 @@
                     href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
                     guidelines</a>.</p>
         </section>
-        <section>
+        <section id="structure">
             <h3>Tagging for structure</h3>
-            <section>
+            <section id="lb">
                 <h4>Line breaks</h4>
                 <p>The process of converting plain text to XML is called <dfn>up-conversion</dfn>.
                     Whether we perform an up-conversion from the outside in or the inside out
@@ -374,7 +429,7 @@
                 <p>Once you’ve finished your find and replace operations, you can close the dialogue
                     window.</p>
             </section>
-            <section>
+            <section id="pb">
                 <h4>Folio breaks</h4>
                 <p>The find and replace operation could not distinguish folio identifiers from real
                     lines of text, and it therefore erroneously inserted <code>&lt;lb/&gt;</code>
@@ -396,11 +451,11 @@
                     patterns might you search for in order to make that distinction?</p>
             </section>
         </section>
-        <section>
+        <section id="refining">
             <h3>Refining our structural markup</h3>
             <p>We tagged lines as part of our high-level structural markup, and we can refine that
                 by dealing with word breaks at the ends of lines and with line numbering.</p>
-            <section>
+            <section id="breaks">
                 <h4>Word breaks</h4>
                 <p>At the moment, line breaks that fall in the middle of words are not distinguished
                     formally from those that fall between words. The TEI way of representing this
@@ -412,7 +467,7 @@
                     where needed. For the purpose of this exercise you needn’t do them all, but do a
                     reasonable number to get a feel for the process.</p>
             </section>
-            <section>
+            <section id="numbers">
                 <h4>Line numbering</h4>
                 <p>You don’t have to number lines in your markup because XML processors can count.
                     For example, the fifth <code>&lt;lb&gt;</code> element after the folio break for
@@ -426,11 +481,11 @@
                     them.</p>
             </section>
         </section>
-        <section>
+        <section id="inline">
             <h3>Inline markup</h3>
             <p>The inline markup we’ll work with for this exercise involves corrections and
                 superscription.</p>
-            <section>
+            <section id="corrections">
                 <h4>Corrections</h4>
                 <p>In this edition there are a few instances of corrections, such as the one at 86r3
                     mentioned above. The TEI way to represent this is with a
@@ -467,7 +522,7 @@
                     position, or you can type the start tag directly, in which case &lt;oXygen/&gt;
                     will insert the end tag for you.</p>
             </section>
-            <section>
+            <section id="superscript">
                 <h4>Superscription</h4>
                 <p>In our plain text transcription we wrapped superscript letters in parentheses,
                     but in an XML text we should use markup for that purpose. The TEI markup for
@@ -514,7 +569,7 @@
                 </ul>
             </section>
         </section>
-        <section>
+        <section id="persons">
             <h3>Tagging persons</h3>
             <p>The TEI provides a mechanism for tagging persons that can simplify document
                 processing (such as structured searching or the creation of descriptive statistical
@@ -536,7 +591,7 @@
                 a <dfn>personography</dfn> (list of persons and their properties), coupled with
                 attributes within the body of the text that point to those lists. Here’s how to
                 create and implement a personography.</p>
-            <section>
+            <section id="architecture">
                 <h4>The TEI personography architecture</h4>
                 <p>A TEI personography is implemented as a <code>&lt;listPerson&gt;</code>
                     element—which is, perhaps not surprisingly, a list of persons. The personography
@@ -551,7 +606,7 @@
                     happens during processing; what happens during markup is that we need to 1)
                     create a personography and 2) tag the references to persons in the text.</p>
             </section>
-            <section>
+            <section id="personography">
                 <h4>The personography file</h4>
                 <p>The personography is located inside the header and has the following
                     structure:</p>
@@ -589,7 +644,7 @@
                     the Simple, his confessor Anthony, the man possessed by demons, and there may be
                     others. Create a personography in your TEI file similar to the one above.</p>
             </section>
-            <section>
+            <section id="ref">
                 <h4>Pointing into the personography</h4>
                 <p>The simplest way to associate persons in the main text with persons recording in
                     the personography is by tagging names in the main text as
