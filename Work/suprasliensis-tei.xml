@@ -11,6 +11,18 @@
                         <p>http://suprasliensis.obdurodon.org</p>
                     </sourceDesc>
                 </fileDesc>
+    <profileDesc>
+        <particDesc>
+            <listPerson>
+                <person xml:id="paul">
+                    <persName>Paul</persName>
+                </person>
+                <person xml:id="anthony">
+                    <persName>Anthony</persName>
+                </person>
+            </listPerson>
+        </particDesc>
+    </profileDesc>
             </teiHeader>
 <text>
 <body>
