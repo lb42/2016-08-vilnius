@@ -38,19 +38,20 @@
                   summary of its structure on the left (if you don't see the Summary view, you can
                   add it by selecting Document -> View -> Summary)</item>
             </list>
-            <p><graphic height="5cm" url="../images/nouveau-bare-2.png"/></p>
+            <p><graphic height="5cm" url="../images/nouveau-bare-1.png"/></p>
          </div>
          <div>
             <head>Metadata matters</head>
             <p> TEI documents always have a <term>header</term>, which <emph>must</emph> provide
                information about the title, distribution, and source of a digital resource. oXygen
-               suggests some text for each of these which you can now modify <list>
-                  <item>replace the word <q>Title</q> by a title for your document: up to you to
+               suggests some text for each of these which you can now modify. <list>
+                  <item>Replace the word <q>Title</q> by a title for your document: up to you to
                      decide, but something like <q>Getting started with oXygen</q> will do</item>
-                  <item>Replace the other two text fragments in the same way: for example, for the
+                  <item>Replace the other two text fragments in the same way. For the
                      publication you might put <q>unpublished draft</q> or <q>Distributed on
-                        vilnius.obdurodon.org</q> or something similar;</item><item> for the source description
-                     we suggest <q>An original work, created at a TEI Workshop</q></item>
+                        vilnius.obdurodon.org</q> or something similar;</item>
+                  <item>For the source description we suggest <q>An original work, created at a TEI
+                        Workshop</q></item>
                </list>
             </p>
          </div>
@@ -58,7 +59,7 @@
             <head>oXygen covers your back -1</head>
             <p>oXygen works actively to keep your document well formed and valid. What happens if
                you make an error? <list>
-                  <item>delete a few letters from any tag., for example change
+                  <item>Delete a few letters from any tag; for example, change
                         <gi>publicationStmt</gi> into <gi>publicat</gi>.</item>
                   <item>oXygen does what it can: it changes the end-tag so that it matches the
                      start-tag and the document remains well-formed. </item>
@@ -78,9 +79,9 @@
             <p>oXygen can also help you by proposing tags available in specific locations <list>
                   <item>Put the cursor at the end of the 7th or start of the 8th line</item>
                   <item>Type a <code>&lt;</code> and pause a moment;</item>
-                  <item>The green square becomes red because you have not yet supplied an element
+                  <item>The green square at top right becomes red because you have not yet supplied an element
                      name</item>
-                  <item>oXygen also shows you a ist of the tags you can enter at this point in a
+                  <item>oXygen also shows you a list of the tags you can enter at this point in a
                      valid document: you can for example insert an <gi>author</gi> element, or a
                      second <gi>title</gi>, terminate the <gi>titleStmt</gi>, or add an XML
                      comment</item>
@@ -106,10 +107,10 @@
          <div>
             <head>Adding tags to existing content</head>
             <p>You've already seen how oXygen allows you to insert a new element. Suppose however
-               you want to add tagging to text that is already there in the document. Can you do it
+               you want to add tagging to text that is already  in the document. Can you do it
                without typing the tags? Of course!</p>
             <p><list>
-                  <item>Select the content of the <gi>body</gi> element, that is, the sequemce
+                  <item>Select the content of the <gi>body</gi> element, that is, the sequence
                         <code>&lt;p>Some text here&lt;/p></code></item>
                   <item>Type CTRL-E (or select Document-> Markup -> Surround with tags)</item>
                   <item>oXygen gives you a list of tags which can be used at this point: select
@@ -139,7 +140,7 @@
                weather, the political situation, your lunch, your opinion of oXygen so far, whatever
                you like.</p>
             <p>Sooner or later you'll need to close this paragraph and start a new one. You could do
-               this by just typing the tags <tag>/p>&lt;p</tag> but there's an easier way </p>
+               this by just typing the tags <tag>/p>&lt;p</tag> but there's an easier way... </p>
          </div>
          <div>
             <head>Element splitting</head>
@@ -147,10 +148,42 @@
                into several <gi>p</gi> elements.<list>
                   <item>Put the cursor at the position where you want to end a paragraph</item>
                   <item>Type ALT-SHIFT-D or select Document -> Markup -> Split element </item>
-                  <item>You could do the same thing to split your chapter into two. Take care to
-                     put the cursor in the right place though: it must be between two <gi>p</gi>
+                  <item>You could do the same thing to split your chapter into two. Take care to put
+                     the cursor in the right place though: it must be <emph>between</emph> two <gi>p</gi>
                      elements, rather than inside one!</item>
                   <item>In your next chapter, why not add a <gi>list</gi> element?</item>
+               </list></p>
+         </div>
+         <div>
+            <head>Hiding the tags</head>
+            <p>Is the number of pointy brackets in your document beginning to annoy you? </p>
+            <p>You can make it easier to read your marked up text by clicking the Format and Indent
+               button, or typing CTRL-SHIFT-P or or selecting Document -> Source -> Format and
+               Indent. But maybe you'd rather hide the tags completely?</p>
+            <list>
+               <item> Click the the <ident>Author</ident> button at the bottom of the screen. The
+                  display changes into what is called <ident>Author Mode</ident> and a new TEI P5
+                  menu appears.</item>
+               <item>Inspect the options on the TEI P5 -> Tag Display command to suppress all the
+                  tags, or turn them into icons</item>
+               <item>Your document is now formatted: different fonts are used, the text is arranged
+                  as in a word processor etc.</item>
+               <item>In this mode, you can divide an element simply by typing  RETURN twice: you
+                  could try that on one of your long paragraphs</item>
+           </list>
+         </div>
+         <div>
+            <head>Transforming the document</head>
+            <p>oXygen also comes with some built in transformation options. When you are happy with
+               your document, you can turn it into XHTML or into Word for example. <list>
+                  <item>Make sure your document is valid, and then click the Configure
+                     Transformations button (it looks like a little spanner), or type CTRL-SHIFT-C
+                     or choose Document -> Transformation -> Configure Transformation
+                     Scenario</item>
+                  <item>A list of available transformations appears. Check the box next to (for
+                     example) TEI P5 XHTML or TEI P5 DOCX </item>
+                  <item>Click the Apply Scenario(s) button at the foot of the dialogue box and see
+                     what happens!</item>
                </list></p>
          </div>
 
