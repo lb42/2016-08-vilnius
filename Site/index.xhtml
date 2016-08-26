@@ -250,11 +250,24 @@
 								>overview</a>
 							<img src="images/pdf.gif" alt="[PDF link]" />)</li>
 					</ul></li>
-				<li>Session 10, 10:30–11:30: Transforming TEI XML with XSLT [LB] (<a
-						href="ex-xslt.pdf">handout</a>
-					<img src="images/pdf.gif" alt="[PDF link]" /> and <a href="duBellay.xml">XML
-						file</a>)</li>
-
+				<li>
+					<p>Session 10, 10:30–11:30: Transforming TEI XML with XSLT [LB] (<a
+							href="ex-xslt.pdf">handout</a>
+						<img src="images/pdf.gif" alt="[PDF link]" /> and <a href="duBellay.xml">XML
+							file</a>)</p>
+					<p class="note">To find the <code>&lt;change&gt;</code> element with the most
+						recent date, regardless of the order of the <code>&lt;change&gt;</code>
+						elements within <code>&lt;revisionDesc&gt;</code>, use:
+							<code>//change[xs:date(@when) eq max(//change/@when/xs:date(.))]
+						</code>. The meaning is: find all <code>&lt;change&gt;</code> elements and
+						filter them to keep the one with a <code>@when</code> date that is equal to
+						the largest of all of the <code>@when</code> dates on all
+							<code>&lt;change&gt;</code> elements. In Real Life we would make this
+						more robust by restricting the context to sibling
+							<code>&lt;change&gt;</code> elements that are children of the
+							<code>&lt;respStmt&gt;</code>; this version happens to work because
+						there are no <code>&lt;change&gt;</code> elements in this particular
+						document that are not in this context anyway.</p></li>
 				<li>Session 11, 11:45–12:45: XSLT, continued; wrap-up<ul>
 						<li>XSLT with participant data: John Quincy Adams personography [DJB] (<a
 								href="jqa.xsl">original Excel spreadsheet</a>, <a
