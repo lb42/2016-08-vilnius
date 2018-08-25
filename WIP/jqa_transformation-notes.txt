@@ -1,0 +1,12 @@
+Converting JQA from OxGarage to personography
+
+Import into <oXygen/>.
+Validate; delete final two truncated "sheets" to correct invalidities.
+
+Every row has content in some cell
+No cell is obligatory
+No cell has an xml:id; use the @n values instead, prepending "n"
+All other cells are present for at least one row
+It is not the case that every entry has a surname (!)
+
+During transformation, normalize space for both input testing and output creation.

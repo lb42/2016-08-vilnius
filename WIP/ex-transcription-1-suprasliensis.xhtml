@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Manuscript transcription exercise</title>
+        <link rel="stylesheet" type="text/css" href="http://www.obdurodon.org/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/vilnius.css" />
+        <style type="text/css">
+            .os{
+                font-family: 
+                }
+            h2{
+                counter-reset: h3;
+            }
+            h3{
+                counter-reset: h4;
+            }
+            h3:before{
+                counter-increment: h3;
+                content: counter(h3) '. ';
+            }
+            h4{
+                counter-reset: h5;
+            }
+            h4:before{
+                counter-increment: h4;
+                content: counter(h3) '.' counter(h4) '. ';
+            }
+            h5:before{
+                counter-increment: h5;
+                content: counter(h3) '.' counter(h4) '.' counter(h5) '. ';
+            }
+            #contents,
+            #contents ol{
+                list-style: none;
+            }
+            #contents > li{
+                counter-increment: contents-1;
+            }
+            #contents > li:before{
+                content: counter(contents-1) '. ';
+            }
+            #contents > li > ol > li{
+                counter-increment: contents-2;
+            }
+            #contents > li > ol > li:before{
+                content: counter(contents-1) '.' counter(contents-2) '. ';
+            }
+            #contents > li > ol > li > ol > li{
+                counter-increment: contents-3;
+            }
+            #contents > li > ol > li > ol > li:before{
+                content: counter(contents-1) '.' counter(contents-2) '.' counter(contents-3) '. ';
+            }
+            #schedule > p{
+                font-weight: bold;
+                font-size: larger;
+            }</style>
+    </head>
+    <body>
+        <h1 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a class="logo"
+                href="http://www.obdurodon.org">&lt;oo&gt;</a>&#x2192;<a
+                href="http://vilnius.obdurodon.org" class="logo">&lt;vil&gt;</a> XML and TEI for
+            Slavic philology</h1>
+        <hr />
+        <p class="boilerplate">
+            <span><strong>Maintained by:</strong> David J. Birnbaum (<a
+                    href="mailto:djbpitt@gmail.com">djbpitt@gmail.com</a>) <a
+                    href="http://creativecommons.org/licenses/by-nc-sa/3.0/" style="outline: none;">
+                    <img src="http://www.obdurodon.org/images/cc/88x31.png"
+                        alt="[Creative Commons BY-NC-SA 3.0 Unported License]"
+                        title="Creative Commons BY-NC-SA 3.0 Unported License"
+                        style="height: 1em; vertical-align: text-bottom;" />
+                </a>
+            </span>
+            <span><strong>Last modified:</strong>
+                <!--#echo var="LAST_MODIFIED" --></span>
+        </p>
+        <hr />
+        <h2>Manuscript transcription exercise</h2>
+        <section>
+            <ol id="contents">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#analysis">Document analysis, 1</a></li>
+                <li><a href="#started">Getting started</a></li>
+                <li><a href="#TEIheader">The TEI header</a></li>
+                <li><a href="#fonts">Fonts</a></li>
+                <li><a href="#analysis_a">Document analysis, 2</a></li>
+                <li><a href="#code">The <code>&lt;head&gt;</code> element</a></li>
+                <li><a href="#structure">Tagging for structure</a>
+                    <ol>
+                        <li><a href="#lb">Line breaks</a></li>
+                        <li><a href="#pb">Folio breaks</a></li>
+                    </ol></li>
+                <li><a href="#refining">Refining our structural markup</a><ol>
+                        <li><a href="#breaks">Word breaks</a></li>
+                        <li><a href="#numbers">Line numbering</a></li>
+                    </ol></li>
+                <li><a href="#inline">Inline markup</a><ol>
+                        <li><a href="#corrections">Corrections</a></li>
+                        <li><a href="#superscript">Superscription</a></li>
+                    </ol></li>
+                <li><a href="#persons">Tagging persons</a><ol>
+                        <li><a href="#architecture">The TEI personography architecture</a></li>
+                        <li><a href="#personography">The personography file</a></li>
+                        <li><a href="#ref">Pointing into the personography</a></li>
+                    </ol></li>
+            </ol>
+        </section>
+        <section id="introduction">
+            <h3>Introduction</h3>
+            <p><q>Vita Pauli simplicis</q>, 19 March from the <cite>Codex Suprasliensis</cite></p>
+            <p>The <cite>Codex Suprasliensis</cite> is available on line (photographic facsimile,
+                diplomatic transcription, and interlinear parallel Greek text) at <a
+                    href="http://suprasliensis.obdurodon.org"
+                >http://suprasliensis.obdurodon.org</a>. Select the link to the beginning of the
+                    <q>Vita of Paul the Simple</q> and take a look at the text.</p>
+        </section>
+        <section id="analysis">
+            <h3>Document analysis, 1</h3>
+            <p>As discussed in the <a href="talk-xml.pdf">first (XML) session of our workshop</a>,
+                the first step in creating an XML document, before you type any angle brackets, is
+                document analysis. Look over the images and transcription and plan the project from
+                at least two perspectives: the large, overall structure (e.g., folios and lines) and
+                the small, in-line idiosyncrasies (e.g., corrections, insertions, personal names,
+                etc.).</p>
+            <p>The TEI is designed to provide resources from which you, the developer, can select
+                those that are appropriate to your materials and your research goals, so you are not
+                expected to tag everything that is taggable. With that said, projects are likely to
+                agree on the larger structural markup, which tends to be useful for everyone, and
+                they are more often individuated at a lower level. For example, if you care about
+                person or place names, but not about part of speech or morphological properties, you
+                can tag for the former and leave the latter untagged (or vice versa, of course). For
+                the purpose of this group exercise we’ll provide suggestions about what to tag and
+                what to ignore, but in Real Life you would make those decisions yourselves according
+                to your research goals.</p>
+        </section>
+        <section id="started">
+            <h3>Getting started</h3>
+            <p>Here’s how to begin tagging a file in &lt;oXygen/&gt;:</p>
+            <ol>
+                <li><p>Open &lt;oXygen/&gt; and create a new XML document. There are two ways to do
+                        that:</p>
+                    <ul>
+                        <li><p>Click on the icon shaped like a piece of paper with a dog-eared
+                                corner on the far left edge of the menu bar. Type <q>TEI</q> where
+                                it says <q>Type filter text</q> to reduce your options, and then
+                                click on <q>All</q> under <q>TEI P5</q>and push the <q>Create</q>
+                                button.</p>
+                            <p class="note">Note: In Real Life you wouldn’t use TEI All, which
+                                allows all 600+ TEI elements, because that would let you
+                                accidentally insert elements that shouldn’t appear in your specific
+                                document. What you would do instead is create a schema that allows
+                                only a customized subset of the available elements. For this
+                                exercise, though, we’ll allow all possible elements.</p></li>
+                        <li><p>Type Ctrl+n (for <q>new</q>) instead of clicking on the icon and then
+                                follow the same steps as above.</p></li>
+                    </ul>
+                    <p>This creates a skeletal TEI document.</p></li>
+                <li><p>Inside the skeletal TEI document you’ve created in &lt;oXygen/&gt;, find the
+                            <code>&lt;p&gt;</code> element inside the <code>&lt;body&gt;</code>.
+                        Select and delete the contents of that element (<q>Some text here.</q>),
+                        leaving only the start and end tags. The phrase <q>Some text here.</q> is a
+                        placeholder in the skeleton, and you’re going to replace it with the text
+                        you want to edit.</p></li>
+                <li><p>Inside the <code>&lt;p&gt;</code> start tag, erase the letter <q>p</q> and
+                        replace it with <q>ab</q>. <code>&lt;p&gt;</code> is for paragraphs and
+                            <code>&lt;ab&gt;</code> is for <q>anonymous blocks</q>, that is, chunks
+                        of text that are not semantically paragraphs or anything else that is easily
+                        defined. We’ll use this catch-all element to contain the text of the vita.
+                        Enter a few blank lines between the <code>&lt;ab&gt;</code> start and end
+                        tags, so that you’ll have a place to paste the text you’re going to
+                        edit.</p></li>
+                <li><p>There are at least two ways to insert the text you want to tag inside your
+                        new TEI document at the proper place. Choose one and use it to insert the
+                        text of the Vita between the <code>&lt;ab&gt;</code> tags:</p><ul>
+                        <li><p>Click on <a href="suprasliensis.txt"
+                                    >http://vilnius.obdurodon.org/suprasliensis.txt</a> to open it
+                                in your browser. Don’t worry if you see funny characters or boxes;
+                                the characters are correct in the file, but your browser may not be
+                                using a font that renders them properly. Click inside your browser
+                                window and then type Ctrl+a to select all text, followed by Ctrl+c
+                                to copy the selection. This copies the text to your clipboard, an
+                                invisible buffer that lets you then paste it elsewhere. Now click on
+                                a blank line between the <code>&lt;ab&gt;</code> tags to position
+                                the cursor and type Ctrl+v to paste whatever is in the clipboard
+                                (the plain text transcription) into &lt;oXygen&gt;, so that it will
+                                be ready for markup.</p></li>
+                        <li><p>Instead of clicking on <a href="suprasliensis.txt"
+                                    >http://vilnius.obdurodon.org/suprasliensis.txt</a> to open it
+                                in the browser, right-click on it and download it to somewhere in
+                                your local file system, such as your desktop or a downloads
+                                directory. Then put the cursor between the <code>&lt;ab&gt;</code>
+                                tags in the TEI document and from the &lt;oXygen/&gt; menu select
+                                    <q>Document</q>, then <q>File</q>, and then <q>Insert File
+                                …</q>. Navigate to the file you downloaded, select it, and click
+                                    <q>Open</q> and the file will be inserted at the cursor
+                                position.</p></li>
+                    </ul></li>
+            </ol>
+        </section>
+        <section id="TEIheader">
+            <h3>The TEI header</h3>
+            <p>Before we edit the text of the vita, let’s prepare the TEI header. Every TEI document
+                must have a header that contains metadata about the document, and the skeletal TEI
+                document created by &lt;oXygen/&gt; inserts placeholders for a simple header. For
+                more information about the TEI header, see <a
+                    href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html">Chapter 2 of
+                    the TEI Guidelines</a>. The <code>&lt;fileDesc&gt;</code> element inside the TEI
+                header may contain additional elements, but the three elements that &lt;oXygen/&gt;
+                creates for you are the only ones that are always required. Here are the steps to
+                populate those placeholders with real data:</p>
+            <ol>
+                <li><p>The <code>&lt;titleStmt&gt;</code> element contains information about the
+                        title of your document, and inside the <code>&lt;title&gt;</code> tags you
+                        should now type a meaningful descriptive title. This is the title of the
+                        digital document you’re creating (not of the source from which you copied
+                        the data), so although it could be something like <q>Vita of Paul the
+                            Simple</q>, it could also be <q>Digital edition of the Vita of Paul the
+                            Simple</q>, or whatever else you want. For more information about the
+                            <code>&lt;titleStmt&gt;</code> see <a
+                            href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD21"
+                            >Section 2.2.1 of the TEI Guidelines</a>.</p></li>
+                <li><p>The <code>&lt;publicationStmt&gt;</code> may contain either a simple
+                        paragraph (as it does here) or richer, more complex structured data, with
+                        more elements. Replace the placeholder <q>Publication Information</q> text
+                        with information about the publication properties of your document. As with
+                        the title, this is publication information about the digital document you
+                        are creating, and not about the source. In this case you might write
+                        something like <q>Unpublished</q>. For more information about the
+                            <code>&lt;publicationStmt&gt;</code> element see <a
+                            href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD24"
+                            >Section 2.2.4 of the TEI Guidelines</a>.</p></li>
+                <li><p>The <code>&lt;sourceDesc&gt;</code> contains information about the source you
+                        used to create your electronic document. In this case you might write
+                        something like <q>http://suprasliensis.obdurodon.org</q> or, more
+                        elaborately, <code>&lt;ref
+                            target="http://suprasliensis.obdurodon.org"/&gt;Bulgarian Academy of
+                            Sciences digital edition of the Old Church Slavonic &lt;cite&gt;Codex
+                            Suprasliensis&lt;/cite&gt;&lt;/ref&gt;</code>. For more information
+                        about the <code>&lt;sourceDesc&gt;</code> element see <a
+                            href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3"
+                            >Section 2.2.7 of the TEI guidelines</a>.</p></li>
+            </ol>
+        </section>
+        <section id="fonts">
+            <h3>Fonts</h3>
+            <p><em>Optional:</em> You may see boxes or other funny characters in &lt;oXygen/&gt; if
+                you haven’t installed a font that contains all of the characters used in the
+                transcription. The correct characters are there whether you can see them or not, so
+                you can just ignore the oddities and trust that everything will look correct when
+                you eventually publish your text. If you find it difficult to work with your text
+                without being able to read all of the characters, though, you can install a font
+                with a character set that’s richer than the defaults, and we use the free <a
+                    href="http://www.quivira-font.com/downloads.php">Quivira font</a> for those
+                purposes. If you’d like to use it, download it from the link above and install it
+                into your computer in whatever way you usually use to install fonts. To tell
+                &lt;oXygen/&gt; to use Quivira instead of the default system font, go to your
+                &lt;oXygen/&gt; preferences and then choose <q>Appearance</q>, then <q>Fonts</q>,
+                and then <q>Editor</q>. Change the font to Quivira, and because Quivira is smaller
+                than many other fonts, we recommend changing the size to 16 and checking the
+                    <q>Bold</q> box. Then click the OK button.</p>
+            <p>Remember that this step is optional. Your display may already look normal, and render
+                all characters properly, with the default system fonts. And even if it doesn’t, your
+                data will contain the correct characters even if they aren’t rendered properly. It
+                is nonetheless difficult to do some of the editing we need if you can’t read all of
+                the characters properly, so if there are problems with your display, we’d recommend
+                installing and using the Quivira font.</p>
+        </section>
+        <section id="analysis_a">
+            <h3>Document analysis, 2</h3>
+            <p>Before you tag your text, you need to conduct <dfn>document analysis</dfn>, that is,
+                you need to identify the structure of the document and the features you’d like to
+                tag. Here are a few thoughts:</p>
+            <ul>
+                <li><p>The first line of our plain text file is a supplied title, and not part of
+                        the text of the actual manuscript, so we’ll want to move it out of the
+                            <code>&lt;ab&gt;</code> (which is for the transcribed text) and into an
+                        appropriate alternative element.</p></li>
+                <li><p>Otherwise the plain text contains one line of text for each manuscript line,
+                        with separate, stand-alone lines that identify the locations of folio
+                        breaks. We’ll want to encode information about the lineation, and we’ll want
+                        to distinguish lines of text from the lines that only supply information
+                        about folio breaks.</p></li>
+                <li><p>Within the lines, superscript letters have been wrapped in parentheses. These
+                        are <dfn>pseudo-markup</dfn>, and in our TEI edition we’ll want to replace
+                        them with real markup, since there aren’t any parenthesis characters in the
+                        manuscript. <em>No editorial punctuation (parentheses, brackets, vertical
+                            lines for line breaks, etc.) should ever be encoded as plain text.</em>
+                        Such information should always be encoded as markup. If you want to render
+                        superscript letters by surrounding them in parentheses, you can control that
+                        at the rendering stage of the editorial process, but at the editorial stage
+                        the character data should contain only characters that are present in the
+                        source. The only exception is that it is conventional to insert space
+                        characters to separate words even when the text is written continuously in
+                        the original. You may retain the continuous script if you want, but for most
+                        editorial and publishing purposes you’ll find it more convenient to divide
+                        the words.</p></li>
+                <li><p>Words that are continued across a line break are not marked, and although the
+                        manuscript doesn’t distinguish when a line break corresponds to a word break
+                        and when it doesn’t, we’ll want to add that information so that we can later
+                        reconstruct the words of the text. Following the requirement never to insert
+                        editorial characters into the text, we’ll use markup (rather than a hyphen)
+                        for this purpose.</p></li>
+                <li><p>There are a few corrections in the text, which are marked in red or green in
+                        the online edition. For example, on line 3 of <a
+                            href="http://suprasliensis.obdurodon.org/pages/supr086r.html">folio
+                            86r</a> an <q class="os">и</q> has been corrected and replaced by <q
+                            class="os">о</q>.</p>
+                    <p class="note">In the plain text file that you’re going to tag, we’ve included
+                        only the replacement text from each correction, with no mention of the text
+                        it replaces. In Real Life we’d be doing our own transcription and noticing
+                        the corrections in the process, but to save time for this exercise we’ve
+                        done the transcription for you, and we’ve transcribed only the replacement
+                        text, which means that you won’t see the replaced (deleted) text in the
+                        plain text file. You can see that text in the photographic facsimile (well,
+                        if you have very good vision!), and we’ll also tell you where the
+                        corrections are when it comes time to tag them for this exercise.</p></li>
+            </ul>
+        </section>
+        <section id="code">
+            <h3>The <code>&lt;head&gt;</code> element</h3>
+            <p>Since the first line is not part of the manuscript text, let’s move it out of the
+                    <code>&lt;ab&gt;</code>. Above the <code>&lt;ab&gt;</code> start tag, create a
+                    <code>&lt;head&gt;</code> element, which is the TEI element used to represent
+                the title of a section (in this case, of the <code>&lt;body&gt;</code>). Select the
+                first line of the plain text with the mouse, cut it (Ctrl-x), click between the
+                start and end <code>&lt;head&gt;</code> tags, and paste the text (Ctrl-v). If the
+                cut and paste operation left a blank line behind, delete it manually.</p>
+            <p>Note that it might seem natural to use <code>&lt;title&gt;</code> for this purpose,
+                but the TEI has decided that the <code>&lt;title&gt;</code> tag has a different
+                meaning: it is used for the title of a work, and not for the title of a section of a
+                TEI document. You can read about the <code>&lt;head&gt;</code> element at <a
+                    href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/DS.html#DSHD">Section
+                    4.2.1 of the TEI guidelines</a> and about the <code>&lt;title&gt;</code> element
+                at <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COBICOR"
+                    >Section 3.11.2.2</a>. Having to look up which element to use for which purpose
+                is tedious at first, but you’ll quickly memorize the elements you use most often. If
+                you try to insert an element where it isn’t allowed (e.g.,
+                    <code>&lt;title&gt;</code> is not allowed as the first child element of
+                    <code>&lt;body&gt;</code>), &lt;oXygen/&gt; will display an error message (try
+                it!). But sometimes an element is valid in a particular position but has a meaning
+                different from what you intend, and if in those cases you haven’t yet memorized the
+                correct markup, you’ll have to look up the usage in the <a
+                    href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
+                    guidelines</a>.</p>
+        </section>
+        <section id="structure">
+            <h3>Tagging for structure</h3>
+            <section id="lb">
+                <h4>Line breaks</h4>
+                <p>The process of converting plain text to XML is called <dfn>up-conversion</dfn>.
+                    Whether we perform an up-conversion from the outside in or the inside out
+                    depends on our documents and our desired markup, but for this exercise we’ve
+                    decided to work from the outside in. For that reason we created the TEI
+                    superstructure first and pasted the text inside it. The biggest structural units
+                    are the lines, so we’ll start by tagging those, and we’ll then dig more deeply
+                    into the lines to tag superscription and substitutions or corrections.</p>
+                <p>The TEI markup for line breaks is to insert an empty <code>&lt;lb&gt;</code>
+                    element at the beginning of each line. To avoid having to type those
+                    individually, you can use a global find and replace operation. But because you
+                    want to insert this markup only inside the <code>&lt;ab&gt;</code>, you’ll want
+                    to restrict the search to only that context.</p>
+                <p>To perform a find and replace operation in &lt;oXygen&gt;, type Ctrl+f to open
+                    the find dialogue. Examine the interface for a moment. At the top you can enter
+                    the text you want to find (in this case, the beginning of a line) and the text
+                    you want to use to replace it (in this case, your empty <code>&lt;lb/&gt;</code>
+                    element tag). You can also restrict the search to just a particular location in
+                    the box labeled <q>XPath</q>, about which see below. You can ignore the
+                        <q>Direction</q> and <q>Scope</q> interfaces for now. Under <q>Options</q>,
+                    you should leave <q>Wrap around</q> checked; this ensures that the entire
+                    document will be searched no matter where the cursor is located (otherwise the
+                    search proceed only forward or backward from the cursor position and stops when
+                    it reaches the end or beginning of the text). You’ll want to check the box
+                    labeled <q>Regular expression</q>, about which see below.</p>
+                <p>In the <q>Find</q> box, type <q>^\s*</q> (without the quotation marks).
+                        <dfn>Regular expressions</dfn> are a system for representing textual
+                    patterns more complex than just strings of literal characters, and this regular
+                    expression has the following meaning:</p>
+                <ul>
+                    <li><p>The inital caret (<q>^</q>) means <q>match the rest of this expression
+                                only at the beginning of a line</q>. Since we want to insert our
+                                <code>&lt;lb&gt;</code> elements at the beginning of each line, this
+                            ensures that we’ll be working at the beginning of the line when we make
+                            our changes.</p></li>
+                    <li><p>The <q>\s</q> (pronounced <q>backslash-s</q>) matches any whitespace
+                            character, and the asterisk after it means zero or more instances of any
+                            whitespace characters. The beginning of your line of text may have space
+                            characters before it if &lt;oXygen/&gt; inserted them when you pasted it
+                            (&lt;oXygen/&gt; sometimes tries to align the text neatly for you), so
+                            in this case your pattern will match whenever there are zero or more
+                            whitespace characters immediately after the beginning of the line, that
+                            is, whether there is whitespace before the first real character of the
+                            line or not. This pattern, then, says <q>find the beginning of every
+                                line, along with any optional whitespace immediately after it, and
+                                replace it with whatever I type in the <q>Replace with</q> input
+                                box</q>.</p></li>
+                </ul>
+                <p>In the <q>Replace with</q> input box type <q>&lt;lb/&gt;</q> (without the
+                    quotation marks). Don’t forget the trailing slash character, which is how you
+                    spell an <dfn>empty element</dfn> in XML, one that has just a single tag,
+                    instead of separate start and end tags. This says that whatever you match will
+                    be replaced by whatever you’ve typed here, which has the effect of inserting
+                    this text at the beginning of each line (while also removing any whitespace
+                    characters that might have been at the beginning of the line).</p>
+                <p>In the box labeled <q>XPath</q>, type <q>//ab</q> (without the quotation marks).
+                    We’ll learn about XPath expressions later in the workshop, but as a preview,
+                    this item restricts the find and replace operation to text inside an
+                        <code>&lt;ab&gt;</code> element. This ensures that we don’t insert
+                        <code>&lt;lb&gt;</code> elements inside our header or anywhere else where we
+                    don’t want them.</p>
+                <p>By default, find and replace operations in &lt;oXygen/&gt; search for literal
+                    strings of text, and there aren’t any literal carets or backslashes or Latin
+                        <q>s</q> characters or asterisks in our text. If you haven’t done so
+                    already, now is the time to check the <q>Regular expression</q> box in the
+                        <q>Options</q> section. This tells &lt;oXygen;&gt; that what we’re searching
+                    for is a regular expression (that is, a coded pattern), rather than a literal
+                    string.</p>
+                <p>Moment of truth: Before you do any replacement, push the <code>Find All</code>
+                    button on the right. The number of matches it finds will appear in the dialogue
+                    window, and the results should appear in a bottom window that &lt;oXygen/&gt;
+                    will open. If it doesn’t look as if you’ve found anything, interrupt us and
+                    we’ll troubleshoot the problem with you. Otherwise, if you’re finding what you
+                    want to find, push the <q>Replace All</q> buttom to make the changes. If you
+                    mess up the replacement, you can undo whatever you did with Ctrl-z.</p>
+                <p>If you had whitespace before your closing <code>&lt;ab/&gt;</code> tag, the find
+                    and replace operation may have inserted an erroneous extra
+                        <code>&lt;lb/&gt;</code> just before it. If so, delete that manually.</p>
+                <p>Once you’ve finished your find and replace operations, you can close the dialogue
+                    window.</p>
+            </section>
+            <section id="pb">
+                <h4>Folio breaks</h4>
+                <p>The find and replace operation could not distinguish folio identifiers from real
+                    lines of text, and it therefore erroneously inserted <code>&lt;lb/&gt;</code>
+                    tags before the folio breaks. Fix those manually by removing the
+                        <code>&lt;lb&gt;</code> elements. Now change the text of those lines to TEI
+                    markup for page breaks, which is an empty <code>&lt;pb&gt;</code> element. It’s
+                    conventional to represent the folio number by using the <code>@n</code>
+                    attribute, so that, for example, the line that marks the start of folio 87r
+                    would read <code>&lt;pb n="87r"/&gt;</code>. Whether you keep the leading zero
+                    is up to you; you won’t want to render it when you later publish your edition,
+                    but you can either remove it now (during markup) or later (during conversion for
+                    rendering).</p>
+                <p>Fixing the folio breaks manually is not difficult in a small text like this, but
+                    you wouldn’t want to have to do it manually in the full manuscript (270 folios).
+                    It is possible to write less crude regular expressions to distinguish lines that
+                    represent folio breaks from lines of real text, and that’t what we did when we
+                    prepared the actual edition. Even if you aren’t familiar with regular expression
+                    syntax, since you know that regular expressions match patterns, what sort of
+                    patterns might you search for in order to make that distinction?</p>
+            </section>
+        </section>
+        <section id="refining">
+            <h3>Refining our structural markup</h3>
+            <p>We tagged lines as part of our high-level structural markup, and we can refine that
+                by dealing with word breaks at the ends of lines and with line numbering.</p>
+            <section id="breaks">
+                <h4>Word breaks</h4>
+                <p>At the moment, line breaks that fall in the middle of words are not distinguished
+                    formally from those that fall between words. The TEI way of representing this
+                    difference is that line breaks between words are simply
+                    <code>&lt;lb/&gt;</code>, while those within words are <code>&lt;lb
+                        break="no"/&gt;</code>. Much as a human reader has to use linguistic
+                    knowledge to recognize when a line break divides a word and when it doesn’t,
+                    you’ll have to use your human knowledge to add the attribute name:value pair
+                    where needed. For the purpose of this exercise you needn’t do them all, but do a
+                    reasonable number to get a feel for the process.</p>
+            </section>
+            <section id="numbers">
+                <h4>Line numbering</h4>
+                <p>You don’t have to number lines in your markup because XML processors can count.
+                    For example, the fifth <code>&lt;lb&gt;</code> element after the folio break for
+                    folio 86r represents the beginning of the fifth line of that folio. But because
+                    our text begins toward the bottom of folio 85v, automatic counting would not be
+                    able to determine the appropriate line numbers for those first three lines. We
+                    won’t do anything with this now, but in Real Life we would add just enough
+                    line-numbering markup to provide the information that can’t be deduced
+                    automatically, and if we wanted line numbers in our edition, we would let an XML
+                    processor (of the sort that we’ll introduce later in the workshop) supply
+                    them.</p>
+            </section>
+        </section>
+        <section id="inline">
+            <h3>Inline markup</h3>
+            <p>The inline markup we’ll work with for this exercise involves corrections and
+                superscription.</p>
+            <section id="corrections">
+                <h4>Corrections</h4>
+                <p>In this edition there are a few instances of corrections, such as the one at 86r3
+                    mentioned above. The TEI way to represent this is with a
+                        <code>&lt;subst&gt;</code> (= <q>substitution</q>) element, which contains a
+                        <code>&lt;del&gt;</code> for the text that was deleted and an
+                        <code>&lt;add&gt;</code> for the text that was added in its place. The
+                        <code>&lt;del&gt;</code> and <code>&lt;add&gt;</code> tags may appear in any
+                    order inside <code>&lt;subst&gt;</code>, but you’ll make fewer errors if you
+                    train yourself always to use the same order. We put <code>&lt;del&gt;</code>
+                    before <code>&lt;add&gt;</code> because we think of correction as typically
+                    involving deleting something before writing its replacement, but that’s just a
+                    human mnemonic, and the order of the child elements of
+                        <code>&lt;subst&gt;</code> is not informational.</p>
+                <p>In this edition we found two corrections; the other is at 86r18. You’ll need to
+                    look at the photographs to see what the original text was, and once you’ve done
+                    that, mark them up as described above. The easiest way to tag existing text in
+                    &lt;oXygen/&gt; is to select the text you want to tag with the mouse, type
+                    Ctrl-e (for <q>element</q>), and then select the element you want from the
+                    drop-down list that will open in the dialogue. If the plain text file you are
+                    tagging already contains the replacement text, as is the case in this exercise,
+                    we’d suggest tagging it first as <code>&lt;subst&gt;</code>. Notice that when
+                    you do that the text inside the new <code>&lt;subst&gt;</code> tags remains
+                    selected, so you can then tag it as <code>&lt;add&gt;</code> by leaving it
+                    selected and typing Ctrl-e again and selecting the <code>&lt;add&gt;</code>
+                    element. (Should you tag it first as <code>&lt;add&gt;</code>, you then have to
+                    select the text <em>and the new <code>&lt;add&gt;</code> tags</em> and wrap them
+                    in <code>&lt;subst&gt;</code>, which requires more work because you have to make
+                    two explicit selections.) Once you’ve introduced the <code>&lt;subst&gt;</code>
+                    and <code>&lt;add&gt;</code> tags, put the cursor between the
+                        <code>&lt;subst&gt;</code> and <code>&lt;add&gt;</code> start tags and
+                    create an empty <code>&lt;del&gt;</code> element, into which you can enter the
+                    deleted text. To create an empty pair of tags you can either use Ctrl-e without
+                    selecting any text, in which case the tags will be inserted at the cursor
+                    position, or you can type the start tag directly, in which case &lt;oXygen/&gt;
+                    will insert the end tag for you.</p>
+            </section>
+            <section id="superscript">
+                <h4>Superscription</h4>
+                <p>In our plain text transcription we wrapped superscript letters in parentheses,
+                    but in an XML text we should use markup for that purpose. The TEI markup for
+                    superscription uses the <code>&lt;hi&gt;</code> element, which represents text
+                    that is highlighted in any way. It’s conventional to treat superscription as
+                    highlighting (since it modifies the representation of the character), and to
+                    show that the highlighting in this case is specifically superscription we use
+                    the <code>@rend</code> attribute with the value <q>sup</q>. For example, a
+                    superscript <q><span class="os">ж</span></q> would be encoded as <code>&lt;hi
+                            rend="sup"&gt;<span class="os">ж</span>&lt;/hi&gt;</code>. If there is a
+                    titlo or pokrytie or other diacritic over the superscript letter, that diacritic
+                    should also be included inside the <code>&lt;hi&gt;</code> tags.</p>
+                <p>Now try finding the superscript letters in the transcription and replacing the
+                    parentheses with markup. You can use the find and replace dialogue to find them;
+                    uncheck the <q>Regular expression</q> box (since now we’re searching for a
+                    literal character), enter <q>(</q> (without the quotation marks) in the
+                        <q>Find</q> box, and hit <q>Find All</q>. We found superscript characters at
+                    86r22, 86v10, and 88v7.</p>
+                <p class="note">Unicode does provide some separate superscript Cyrillic characters
+                    (see <a href="http://www.unicode.org/charts/"
+                    >http://www.unicode.org/charts/</a>, where the superscript characters are in <a
+                        href="http://www.unicode.org/charts/PDF/U2DE0.pdf">Cyrillic Extended A</a>
+                    and <a href="http://www.unicode.org/charts/PDF/UA640.pdf">Cyrillic Extended
+                        B</a>) but not all of them. We avoid using these in our own work for two
+                    reasons:</p>
+                <ul class="note">
+                    <li><p>Since the inventory of independent Unicode superscript Cyrillic
+                            characters is incomplete, in at least some cases we would have to use an
+                            alternative (markup-based) strategy. In order to avoid inconsistency in
+                            our documents, with a mixture of primary superscript characters in some
+                            cases and markup where primary characters aren’t available, we recommend
+                            using only markup, since that can be done consistently.</p></li>
+                    <li><p>Unicode aims to distinguish as independent characters only those units of
+                            writing that have different semantics (and not only different shapes).
+                            It is not practical to maintain the distinction consistently because the
+                            semantics depend on the function (e.g., upper ~ lower case has different
+                            semantics for rendering but not normally for sorting or searching).
+                            Whether superscript characters should be regarded as fundamentally
+                            semantically different from their regular counterparts is unclear, but
+                            if they are understood as presentational variants of the regular
+                            characters, their appearance <em>should</em> be represented through
+                            markup, like a difference in font, and not through separate Unicode
+                            characters.</p></li>
+                </ul>
+            </section>
+        </section>
+        <section id="persons">
+            <h3>Tagging persons</h3>
+            <p>The TEI provides a mechanism for tagging persons that can simplify document
+                processing (such as structured searching or the creation of descriptive statistical
+                reports) in situations where the same person may be referred to in different ways.
+                If Paul were always called <q>Paul</q>, we could just search for the string, but
+                because he can have different declensional endings, and can also be identified by an
+                epithet or a personal pronoun, there is no convenient string search that will find
+                all references to Paul in the text. If the ability to find those types of references
+                is part of the research goals of the project, one way to deal with this limitation
+                is to front-load the work by identifying the different occurrences during markup,
+                adding a consistent identifier that will enable the retrieval of all related forms
+                later. The TEI provides mechanisms for supplying supplementary information about
+                persons, so in addition to being able to retrieve all references to Paul, this type
+                of markup would make it easy to find all male persons, or all monks, or all persons
+                with any properties that have been introduced into the markup.</p>
+            <p>If you don’t care about being able to find persons, whether individually or according
+                to shared properties, there is no need to add this type of markup. But if that sort
+                of access is a requirement for your project, the TEI way to facilitate it is through
+                a <dfn>personography</dfn> (list of persons and their properties), coupled with
+                attributes within the body of the text that point to those lists. Here’s how to
+                create and implement a personography.</p>
+            <section id="architecture">
+                <h4>The TEI personography architecture</h4>
+                <p>A TEI personography is implemented as a <code>&lt;listPerson&gt;</code>
+                    element—which is, perhaps not surprisingly, a list of persons. The personography
+                    is placed in a particular location in the header, and it contains biographical
+                    information about all persons in the document. Wherever those persons appear,
+                    they are then tagged with markup that points to the personography entry. In this
+                    way, an accusative or genitive singular form of Paul’s name could be tagged
+                    along the lines of <code>&lt;name ref="#paul"&gt;<span class="os"
+                        >павъла</span>&lt;/person&gt;</code> to indicate that information about the
+                    referent of the pronoun in that location can be found by
+                        <dfn>dereferencing</dfn> (following and looking up) the pointer. That all
+                    happens during processing; what happens during markup is that we need to 1)
+                    create a personography and 2) tag the references to persons in the text.</p>
+            </section>
+            <section id="personography">
+                <h4>The personography file</h4>
+                <p>The personography is located inside the header and has the following
+                    structure:</p>
+                <pre>&lt;profileDesc&gt;
+ &lt;particDesc&gt;
+  &lt;listPerson type="historical"&gt;
+   &lt;person xml:id="paul"&gt;
+    &lt;persName&gt;Paul the Simple&lt;/persName&gt;
+   &lt;/person&gt;
+   &lt;person xml:id="anthony"&gt;
+    &lt;persName&gt;Anthony&lt;/persName&gt;
+   &lt;/person&gt;
+    &lt;!-- ... --&gt;
+  &lt;/listPerson&gt;
+ &lt;/particDesc&gt;
+&lt;/profileDesc&gt;</pre>
+                <p>The <code>@xml:id</code> attribute is the value to which all references to the
+                    person will point inside the main text. These values must be unique within the
+                    document; a document that has two identical <code>@xml:id</code> values is not a
+                    valid XML document. There are some restrictions on the values allowed for this
+                    attribute (e.g., no spaces are allowed; digits are permitted but not as the
+                    first character, and a few others), and the simplest strategy is to use only
+                    alphabetic characters. Because XML markup is case sensitive, <q>Paul</q> and
+                        <q>paul</q> are different values. It is common (but not required) to use
+                    lower-case letters for single words and camel case (e.g., <q>paulTheSimple</q>)
+                    or underscores (e.g., <q>paul_the_simple</q>) for values that consist logically
+                    of more than one word.</p>
+                <p>The personography can contain much more information than just the personal name
+                    and the <code>@xml:id</code>. If you’d like to enrich your personography, you
+                    can look up other possible content at <a
+                        href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html">Section
+                        13 of the TEI guidelines</a>.</p>
+                <p>The <code>&lt;profileDesc&gt;</code> goes inside the header after the
+                        <code>&lt;fileDesc&gt;</code>. The persons in this text are our hero Paul
+                    the Simple, his confessor Anthony, the man possessed by demons, and there may be
+                    others. Create a personography in your TEI file similar to the one above.</p>
+            </section>
+            <section id="ref">
+                <h4>Pointing into the personography</h4>
+                <p>The simplest way to associate persons in the main text with persons recording in
+                    the personography is by tagging names in the main text as
+                        <code>&lt;name&gt;</code> and adding a <code>@ref</code> (for
+                        <q>reference</q>) attribute that points to the <code>@xml:id</code> value of
+                    the referent. The syntax for pointing is to precede the <code>@xml:id</code>
+                    value with a hash mark (<q>#</q>), so, for example, in 85v28–30 we might tag the
+                    reference to Paul as:</p>
+                <pre>&lt;lb/&gt;<span class="os">Мѣсꙙца марта въ девꙙтꙑ на десꙙте· житиѥ прѣ- </span>
+&lt;lb/&gt;<span class="os">подобь҆нааго о҅тьца нашего· </span>&lt;name ref="#paul"&gt;<span class="os">павъла прѣ-</span> 
+&lt;lb/&gt;<span class="os">простааго</span>&lt;/name&gt; ⁘</pre>
+                <p>This presumes that we have an entry in our personography with an
+                        <code>@xml:id</code> value of <q>paul</q>. Note that the
+                        <code>@xml:id</code> value <em>does not</em> have the hash mark, but the
+                        <code>@ref</code> that points to it does.</p>
+                <p>The <code>&lt;name&gt;</code> element should be used only with actual names. If
+                    you want to tag pronouns or epithets that point to particular persons, the TEI
+                    way to do this is with the <code>&lt;rs&gt;</code> (<q>referring string</q>)
+                    element, which takes the same <code>@ref</code> attribute as
+                        <code>&lt;name&gt;</code>.</p>
+                <p>Spend a few minutes creating personography entries and then tagging persons
+                    (whether as names or pronouns) in the text.</p>
+            </section>
+        </section>
+    </body>
+</html>

@@ -65,7 +65,7 @@
           <list type="gloss">
             <label>What is the root element ?</label>
             <item>
-              <p>XPath expression: <code>/*</code> [the slash alone selects the root node itself, the star shows the elements it contains]</p>
+              <p>XPath expression: <code>/*</code> [the slash alone selects the document node, the star shows the nodes it contains]</p>
               <p>Answer : TEI </p>
             </item>
             <label>What is the main document title?</label>
@@ -145,7 +145,7 @@
           </p>
           <p>The simplest way of using XSLT in oXygen is to set up what is called a <term>transformation scenario</term>,
             which is an association between an XML document, an XSLT stylesheet, and various parameters. Proceed as follows:
-            i</p>
+            </p>
 
           <list type="ordered">
             <item> Open the file <ident>duBellay.xml</ident> in oXygen.</item>
@@ -177,7 +177,7 @@
             <item>At the bottom of the screen, the message <code>Transformation successful</code> should appear … </item>
             <item>.. and after a brief delay, your web browser will open the file <ident>output.html</ident> which you just created
              </item>
-            <item>Smart, isn't it ? Well, maybe there's still a but of work to be done…</item>
+            <item>Smart, isn't it ? Well, maybe there's still a bit of work to be done…</item>
           </list>
 
         </div>

@@ -1,0 +1,138 @@
+<?xml version="1.0"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Manuscript description and the TEI</title>
+        <author>David J. Birnbaum</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Unpublished</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This is the master version of an original document, based on the PowerPoint presentation
+          first used at the El'Manuscript 2014 (Varna) workshop. The Varna materials are located at
+          http://varna.obdurodon.org.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change>
+        <date>2016-08-21</date>
+        <name>First version</name>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+
+      <div>
+        <head>Outline</head>
+        <p>Components of the TEI manuscript description</p>
+        <p>Using the TEI manuscript description</p>
+        <list>
+          <item>Searching</item>
+          <item>Rendering</item>
+          <item>Analysis</item>
+        </list>
+      </div>
+
+      <div>
+        <head><gi>msDesc</gi></head>
+        <list>
+          <item><gi>msIdentifier</gi> (required)</item>
+          <item><gi>msContents</gi></item>
+          <item><gi>physDesc</gi></item>
+          <item><gi>history</gi></item>
+          <item><gi>additional</gi></item>
+          <item><gi>msPart</gi></item>
+        </list>
+      </div>
+
+      <div>
+        <head><gi>msIdentifier</gi></head>
+        <list>
+          <item><gi>country</gi>, <gi>settlement</gi>, <gi>repository</gi></item>
+          <item><gi>idno</gi></item>
+          <item><gi>altName</gi>, <gi>altIdentifier</gi></item>
+        </list>
+      </div>
+
+      <div>
+        <head>msContents</head>
+        <p><gi>msItem</gi>, <gi>msItemStruct</gi></p>
+        <list>
+          <item><tag>msItemStruct class="#sermon"</tag></item>
+          <item>@class value points to a <gi>classDecl</gi> in the header</item>
+        </list>
+        <p><gi>author</gi>, <gi>title</gi>, <gi>locus</gi></p>
+        <list>
+          <item>Author and title are uniform/normalized</item>
+        </list>
+        <p><gi>rubric</gi>, <gi>incipit</gi>, <gi>explicit</gi></p>
+        <list>
+          <item>May contain <gi>locus</gi></item>
+        </list>
+        <p><gi>decoNote</gi>, <gi>filiation</gi>, <gi>textLang</gi></p>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><textLang mainLang="chu"
+            otherLangs="rus
+          hel">Mostly Old Church Slavonic, with some Russian and Greek
+            material</textLang></egXML>
+        <p>Two-letter and three-letter ISO standard language names</p>
+      </div>
+
+      <div>
+        <head><gi>physDesc</gi>, <gi>objectDesc</gi>, <gi>supportDesc</gi></head>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><supportDesc material="paper">
+            <support>Thin <material>rice paper</material></support>
+            <extent>ii + 321 leaves <dimensions unit="cm">
+                <height>35</height>
+                <width>27</width>
+              </dimensions>
+            </extent>
+            <collation>
+              <p><formula>1-3:8, 4:6, 5-13:8</formula></p>
+            </collation>
+            <foliation><p> … </p></foliation>
+            <condition><p> … </p></condition> … </supportDesc></egXML>
+      </div>
+
+      <div>
+        <head><gi>layoutDesc</gi></head>
+        <!-- TODO: Fix to prevent wrapping -->
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><layoutDesc>
+            <layout columns="2" ruledLines="30" writtenLines="30"><p> … </p></layout>
+          </layoutDesc></egXML>
+      </div>
+
+      <div>
+        <head>Other components of <gi>physDesc</gi></head>
+        <list>
+          <item><gi>handDesc</gi></item>
+          <item><gi>scriptDesc</gi></item>
+          <item><gi>typeDesc</gi></item>
+          <item><gi>decoDesc</gi></item>
+          <item><gi>musicNotation</gi></item>
+          <item>(<gi>handNote</gi>, <gi>scriptNote</gi>, etc. child elements)</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Other components</head>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><additions><p>
+          (marginalia)</p></additions></egXML>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><accMat><p> … </p></accMat></egXML>
+        <p><gi>history</gi></p>
+        <list>
+          <item><gi>origin</gi></item>
+          <item><gi>provenance</gi></item>
+          <item><gi>acquisition</gi></item>
+        </list>
+        <p><gi>additional</gi>, <gi>availability</gi>, <gi>custodialHist</gi>, <gi>surrogates</gi>,
+          different types of bibliography (<gi>bibl</gi>, <gi>biblFull</gi>,
+          <gi>biblStruct</gi>)</p>
+        <p><gi>msPart</gi> (for convolutes)</p>
+      </div>
+
+    </body>
+  </text>
+</TEI>

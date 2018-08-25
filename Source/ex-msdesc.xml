@@ -69,9 +69,10 @@
               <item>Scroll down to Framework Templates in the New dialog</item>
               <item>Open TEI P5, and select Manuscript description </item>
             </list></item>
-          <item>oXygen creates a template for you to fill which looks more or less like this
+          <item>oXygen creates a template for you to fill
+            <!--which looks more or less like this
             <lb/>
-            <graphic url="../images/msDescSkel.png" width="60%"/></item>
+            <graphic url="../images/msDescSkel.png" width="60%"/>--></item>
           <item>First, fill in the TEI header as follows <list>
               <item>The <gi>title</gi> is something like <q>TEI Conformant description of a
                   manuscript</q></item>
@@ -202,8 +203,8 @@
             attribute to distinguish them, if you like. </item>
 
         </list>
-        <p>The start of your document should now look something like this: </p><p><graphic
-            url="../images/ms40_start.png" width="60%"/>
+        <p>The start of your document should now look something like this: </p>
+        <p><graphic url="../images/ms40_start.png" width="60%"/>
         </p>
         <p>The remainder of the description consists of a series of <gi>div</gi> elements, each
           containing a <gi>head</gi> to specify its function. Some (but not all) of these
@@ -303,9 +304,10 @@
             </list>
           </item>
         </list>
-        <p>The start of your msItem should now look like this:</p><p> <graphic
-            url="../images/msItemStart.png"/>.</p><p> We now need to tag the titles etc used to describe
-          the work. <list>
+        <p>The start of your msItem should now look like this:</p>
+        <p>
+          <graphic url="../images/msItemStart.png"/>.</p>
+        <p> We now need to tag the titles etc used to describe the work. <list>
             <item>Select the two words <q>Russkij Chronograf</q> and use CTRL-E to tag them as a
                 <gi>title</gi></item>
             <item>Select the first passage within quotation marks labelled <q>rubric</q>, i.e. from
@@ -322,10 +324,11 @@
               behind! Your <gi>msItem</gi> element should now be valid (i.e. no red underlining
               anywhere in it) </item>
           </list>
-       </p><p>To check your work, open the Outline view (Window ->
-       Show View -> Outline) to display the structure of your msDesc.  It should look
-       something like this:</p><p>
-       <graphic url="../images/msItem.png"></graphic></p>
+        </p>
+        <p>To check your work, open the Outline view (Window -> Show View -> Outline) to display the
+          structure of your msDesc. It should look something like this:</p>
+        <p>
+          <graphic url="../images/msItem.png"/></p>
       </div>
       <div>
         <head>Structuring the <gi>physDesc</gi></head>
@@ -346,12 +349,14 @@
               the <gi>extent</gi> element</item>
             <item>Select the <gi>condition</gi> element you created earlier and move it to follow
               the <gi>foliation</gi> element</item>
-            <item>Select all five elements, <gi>support</gi>, <gi>extent</gi>,
-                <gi>collation</gi><gi>foliation</gi> and <gi>condition</gi>; use CTRL-E to wrap them
-              in a <gi>supportDesc</gi> element</item>
+            <item>Select all five elements, <gi>support</gi>, <gi>extent</gi>, <gi>foliation</gi>,
+                <gi>collation</gi>, and <gi>condition</gi>; use CTRL-E to wrap them in a
+                <gi>supportDesc</gi> element</item>
             <item>Select the paragraph labelled <soCalled>Layout</soCalled>; use CTRL-E to enclose
               it first by a <gi>layoutDesc</gi> element, and then by a <gi>layout</gi> element.
               Delete the element <gi>hi</gi> with which it begins. </item>
+            <item>Select the <gi>supportDesc</gi> and <gi>layoutDesc</gi> elements and wrap them in
+              an <gi>objectDesc</gi> element using CTRL-E </item>
             <item>Select the paragraph labelled <soCalled>Script</soCalled>; use CTRL-E to enclose
               it by a <gi>scriptDesc</gi> element. Delete the element <gi>hi</gi> with which it
               begins. </item>
@@ -361,8 +366,8 @@
         </p>
         <p>Phew. If you have done all that correctly, your document is now valid and you have a
           jolly green square. Check the structure of your <gi>physDesc</gi> element in the
-            <ident>Outline</ident> view: it should look like this: </p><p><graphic
-            url="../images/physDesc.png"/></p>
+            <ident>Outline</ident> view: it should look like this: </p>
+        <p><graphic url="../images/physDesc.png"/></p>
         <p>If you're still feeling strong, you might like to improve the markup of the
             <gi>support</gi> element as follows:<list>
             <item>Change the <gi>p</gi> element containing the word <q>Paper</q> into a
@@ -378,7 +383,7 @@
             <ident>Work/msDesc-corrected.xml</ident>. </p>
       </div>
 
-     
+
     </body>
   </text>
 </TEI>

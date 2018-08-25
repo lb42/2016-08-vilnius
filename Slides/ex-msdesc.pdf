@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Creating a Manuscript Description</title>
+        <author>TEI @ Oxford</author>
+      </titleStmt>
+      <editionStmt>
+        <edition>
+          <date>August 2016</date>
+        </edition>
+      </editionStmt>
+      <publicationStmt>
+        <publisher>Lou Burnard Consulting</publisher>
+        <availability>
+          <p>Freely available for use and derivative works under a Creative Commons Attribution
+            license.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Various previous talks, TEI Guidelines, etc.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change when="2016-08-09"> First draft </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+
+      <!-- Learning Outcomes -->
+      <div>
+        <head>Learning Outcomes</head>
+        <p>During this exercise you will learn : <list type="bulleted">
+            <item>how to create a basic manuscript description </item>
+            <item>how the various components of a TEI manuscript description are organized</item>
+            <item>how to create a detailed manuscript description</item>
+          </list>
+        </p>
+      </div>
+
+
+
+      <div>
+        <head>A minimal <gi>msDesc</gi></head>
+        <p>A manuscript description, as the name suggests, describes a manuscript. The description
+          can be rich and complex, or very simple. The same applies to its markup. Let's begin with
+          the absolute minimum.</p>
+        <p>A manuscript description should always tell you <list>
+            <item>where the manuscript is to be found : <gi>msIdentifier</gi>
+            </item>
+            <item>what the manuscript contains : <gi>msContents</gi> or <gi>p</gi></item>
+            <item>and probably something about its physical composition, size etc.
+                (<gi>physDesc</gi> or <gi>p</gi>)</item>
+          </list></p>
+        <p>Of course it may contain much, much more, as we will see...</p>
+      </div>
+
+      <div>
+        <head>Getting started</head>
+
+        <p>In this exercise we will create a TEI document which contains a manuscript description,
+          marked up with the TEI <gi>msDesc</gi> element. </p>
+        <list>
+          <item>Open oXygen, and create a new XML document using the template provided for a P5
+            Manuscript Description <list>
+              <item>Select New from the File menu (CTRL-N)</item>
+              <item>Scroll down to Framework Templates in the New dialog</item>
+              <item>Open TEI P5, and select Manuscript description </item>
+            </list></item>
+          <item>oXygen creates a template for you to fill which looks more or less like this
+            <lb/>
+            <graphic url="../images/msDescSkel.png" width="60%"/></item>
+          <item>First, fill in the TEI header as follows <list>
+              <item>The <gi>title</gi> is something like <q>TEI Conformant description of a
+                  manuscript</q></item>
+              <item>The <gi>publicationStmt</gi> says something like <q>Unpublished
+                exercise</q></item>
+              <item>The <gi>sourceDesc</gi> for the moment says simply <q>No pre-existing
+                source</q></item>
+              <item>If you like, you could add a <gi>respStmt</gi> containing a <gi>resp</gi> such
+                as <code>TEI Encoding</code> and a <gi>name</gi> containing your own name. Do you
+                know where this element can go? How would you find out? </item>
+            </list></item>
+          <item>Next, fill in the <gi>msIdentifier</gi> as follows <list>
+              <item>In the <gi>settlement</gi> element, give the name of the city (town, village,
+                etc.) where your manuscript is currently stored (<q>Sofia</q>)</item>
+              <item>In the <gi>repository</gi> element, give the name of the repository
+                (institution, library, etc.) which holds it (<q>Национална Библиотека "Св. Св. Кирил
+                  и Методий"</q>)</item>
+              <item>In the <gi>idno</gi> element give the shelf mark, call number or similar for
+                your manuscript (<q>1144</q>) </item>
+            </list></item>
+          <item>This is all that is needed for a valid manuscript description. But to make it
+            useful, you may wish to add a little more information. You could supply this as a
+              <gi>head</gi> element, for example containing the text <q>Short Apostle Lectionary in
+              Russian, written in Cyrillic script by a single hand</q>. Or you could add a series of
+              <gi>p</gi> or <gi>ab</gi> elements providing whatever information you choose. Or you
+            could use some of the more specialised elements provided by the TEI, as follows.</item>
+          <item>After the <gi>msIdentifier</gi>, add a <gi>msContents</gi> element to provide
+            information about the <soCalled>intellectual content</soCalled> of the manuscript. In
+            the simplest case, you might just want to summarise this, using a <gi>summary</gi>
+            element. </item>
+          <item>After the <gi>msContents</gi> element, add a <gi>physDesc</gi> element to describe
+            the physical aspects of the manuscript. In the simplest case, you could provide this as
+            one or more paragraphs (<gi>p</gi>) elements. </item>
+
+        </list>
+
+        <p>Your minimal <gi>msDesc</gi> should look something like this: <egXML
+            xmlns="http://www.tei-c.org/ns/Examples">
+            <msDesc>
+              <msIdentifier>
+                <settlement>Sofia</settlement>
+                <repository>National Library</repository>
+                <idno>1144</idno>
+              </msIdentifier>
+              <head>Apostle Lectionary, in Russian, written in Cyrillic script by a single
+                hand</head>
+              <msContents>
+                <summary>Apostle Lectionary in Russian</summary>
+              </msContents>
+              <physDesc>
+                <p>Parchment, 39 folios, written in Cyrillic script by a single hand. Some damage to
+                  outer leaves. </p>
+              </physDesc>
+            </msDesc>
+          </egXML></p>
+        <p>Since the <gi>head</gi> element now adds nothing to the rest of the description, you
+          might like to remove it. </p>
+      </div>
+
+      <div>
+        <head>A more ambitious description</head>
+        <p>In this part of the exercise, we will first convert a pre-existing manuscript description
+          from word processor format (Word or Libre Office) into TEI XML. We will then consider how
+          each part of the description could be marked up in a TEI msDesc. </p>
+        <list>
+          <item>Browse to your <ident>Work</ident> folder and click on either the file
+              <ident>LUL_Ms40.odt</ident> (if you have Libre Office) or <ident>LUL_Ms40.docx</ident>
+            (if you have Microsoft Word) to open it. Take a quick look at its contents and close the
+            word processor application again. </item>
+          <item>Now, in oXygen, choose File - Open, navigate to this file, and open it again</item>
+          <item>A new window labelled <ident>Archive Browser</ident> opens, showing the structure of
+            the word processor file, which is actually a collection of several files. Find the file
+            called <ident>content.xml</ident> (for an .odt file), or
+              <ident>Word/document.xml</ident> (for a .docx file) and open it by double clicking on
+            it</item>
+          <item>As you can see, this is actually an XML file, although it uses a different non-TEI
+            set of tags. We will use oXygen to convert it automatically into a basic TEI document. <list>
+
+              <item><!--With the <ident>document.xml</ident> file open in your main editing window,-->
+                Select <ident>Transformation -> Configure Transformation Scenario(s)</ident> from
+                the <ident>Document</ident> menu. Or type <code>CTRL-SHIFT-C</code>. Or click the
+                little spanner icon</item>
+              <item>Check the little box next to DOCX TEI P5 (or ODT TEI P5) and press the
+                  <ident>Apply Associated</ident> button.</item>
+              <item>After a brief pause, a new window opens in which a basic TEI P5 version of the
+                document appears. Click the Format and Indent button (CTRL-SHIFT-I) to see its
+                structure, which should look familiar to you!</item>
+
+            </list></item>
+          <!--<item>You can if you wish revise the TEI Header to contain a title and other
+              information, as you did before. The main part of this exercise is however to turn
+              the body of this document into a properly structured TEI MS Description.</item>-->
+        </list>
+        <p>You could transform this document into a properly structured TEI MS Description in (at
+          least) two ways. You could make a new document, using the template provided for a P5
+          Manuscript Description in exactly the same way as before, and then gradually cut and paste
+          material from one document into the other. Or you could change the tagging in the document
+          you just created, deleting unnecessary additional material as you go. We don't mind which
+          you choose, but we will describe the second. </p>
+        <list>
+          <item>If you adopt the second strategy, you will need to change the outermost <gi>div</gi>
+            in the body of the document into an <gi>msDesc</gi> element. <list>
+              <item>Highlight all the text inside the opening tag (<code>div type="div1"</code>)
+                taking care <emph>not</emph> to include the pointy brackets. </item>
+              <item>Type the new name you want (<code>msDesc</code>).</item>
+              <item>Move the cursor outside the tag.</item>
+              <item>If you scroll down to the end of the file, you will see that oXygen has
+                helpfully inserted the closing tag. </item>
+              <item>You will also see that the document is now invalid. Don't panic! You will fix
+                this during the rest of the exercise. </item>
+            </list></item>
+          <item>Begin by creating a valid <gi>msIdentifier</gi> which shows that the manuscript with
+            identifier <code>Medeltidshandskrift 40</code> is in the holdings of a repository called
+              <code>Lund University Library</code>. If you like, you can additionally provide the
+            country (Sweden), the town (Lund) and the institution (Lunds Universitet), each tagged
+            with the appropriate TEI element. Don't forget that just typing a &lt; character
+            anywhere in the document you are editing will pop up a list of the TEI tags available at
+            this point: this will help you add the right tags within your <gi>msIdentifier</gi>
+            element.</item>
+          <item>This description includes two former identifiers (following the Latin word
+              <q>olim</q>), which you should mark up using the <gi>altIdentifier</gi> element. We
+            suggest that you regard <q>Bibliotheca recentior</q> as the name of a collection. And
+            remember that you need to repeat the name of the host repository (<code>Lund University
+              Library</code>) for each of these additional identifiers.</item>
+          <item>This description also includes two summaries or abstracts, one very short, and one
+            slightly longer. You can decide whether or not to keep them: if you do keep them, they
+            can both by tagged using the <gi>head</gi> element. You could use the <att>type</att>
+            attribute to distinguish them, if you like. </item>
+
+        </list>
+        <p>The start of your document should now look something like this: </p><p><graphic
+            url="../images/ms40_start.png" width="60%"/>
+        </p>
+        <p>The remainder of the description consists of a series of <gi>div</gi> elements, each
+          containing a <gi>head</gi> to specify its function. Some (but not all) of these
+            <gi>div</gi> elements can be translated immediately into a more specialised element, as
+          follows: <list>
+            <item>replace the <gi>div</gi> tag with its corresponding MsDesc element (see table
+              below)</item>
+            <item>delete the <gi>head</gi> element </item>
+          </list>
+          <table>
+            <row role="label">
+              <cell>heading</cell>
+              <cell>element</cell>
+
+            </row>
+            <row>
+              <cell>Contents</cell>
+              <cell><gi>msContents</gi></cell>
+            </row>
+            <row>
+              <cell>Physical description</cell>
+              <cell><gi>physDesc</gi></cell>
+
+            </row>
+            <row>
+              <cell>Decoration</cell>
+              <cell><gi>decoDesc</gi></cell>
+            </row>
+            <row>
+              <cell>Binding</cell>
+              <cell><gi>bindingDesc</gi></cell>
+            </row>
+            <row>
+              <cell>Foliation</cell>
+              <cell><gi>foliation</gi></cell>
+            </row>
+            <row>
+              <cell>Additions</cell>
+              <cell><gi>additions</gi></cell>
+            </row>
+            <row>
+              <cell>Condition</cell>
+              <cell><gi>condition</gi></cell>
+            </row>
+            <row>
+              <cell>History</cell>
+              <cell><gi>history</gi></cell>
+            </row>
+            <row>
+              <cell>Origin</cell>
+              <cell><gi>origin</gi></cell>
+            </row>
+            <row>
+              <cell>Provenance</cell>
+              <cell><gi>provenance</gi></cell>
+            </row>
+            <row>
+              <cell>Acquisition</cell>
+              <cell><gi>acquisition</gi></cell>
+            </row>
+          </table></p>
+        <p>Your document should now be valid at the start and the end, but not in the middle,
+          because the sub-parts of the <gi>physDesc</gi> are not yet properly organised. We'll look
+          at that in a moment, but first we'll tidy up the <gi>msContents</gi>.</p>
+      </div>
+      <div>
+        <head>Structuring the <gi>msContents</gi></head>
+        <p>You can describe the intellectual content of a manuscript in many different ways. In the
+          previous simple example we just supplied a <gi>summary</gi> element, which may be adequate
+          in many cases. In a manuscript containing several different titles or items, it's more
+          usual to supply a list of <gi>msItem</gi> elements for each one. Inside the
+            <gi>msItem</gi> a number of more specialised elements are available to describe the item
+          more exactly, such as a title, a rubric, an icipit etc. And we can also specify the part
+          of a manuscript in which the item appears by using the <gi>locus</gi> element. </p>
+        <list>
+          <item>First, turn the first <gi>p</gi> element in the <gi>msContents</gi> element into an
+              <gi>msItem</gi> element, in the same way as you transformed the outermost <gi>div</gi>
+            tag into an <gi>msDesc</gi>. Highlight everything inside the first <gi>p</gi> tag (but
+            not the pointy brackets), and type <code>msItem</code> to replace it.</item>
+          <item>The figure 1 which follows is the number of this item within the manuscript. Add an
+              <att>n</att> attribute to your <gi>msItem</gi> and give it this value. Then delete the
+            whole of the <gi>hi</gi> element which contains the figure. </item>
+          <item>Now look at the passage enclosed in parentheses ( and ). This contains a
+              <gi>ref</gi> element whose <att>target</att> indicates an online version of this
+            manuscript and which contains: <list>
+              <item>an empty <gi>anchor</gi> element whose <att>xml:id</att> supplies an identifier
+                for this item</item>
+              <item>a <gi>hi</gi> element containing an indication of the folios in the manuscript
+                concerned (<code>ff 6r-474v</code>)</item>
+            </list> Proceed as follows: <list>
+              <item>change the <gi>ref</gi> element into a <gi>locus</gi> element</item>
+              <item>change its <att>target</att> attribute into a <att>facs</att> attribute</item>
+              <item>move the <att>xml:id</att> attribute from the <gi>anchor</gi> to the
+                  <gi>msItem</gi> you created earlier</item>
+              <item>Delete the remaining parts of the <gi>hi</gi> elements and (if you like) the
+                parentheses</item>
+            </list>
+          </item>
+        </list>
+        <p>The start of your msItem should now look like this:</p><p> <graphic
+            url="../images/msItemStart.png"/>.</p><p> We now need to tag the titles etc used to describe
+          the work. <list>
+            <item>Select the two words <q>Russkij Chronograf</q> and use CTRL-E to tag them as a
+                <gi>title</gi></item>
+            <item>Select the first passage within quotation marks labelled <q>rubric</q>, i.e. from
+                <q>книга глаголемаꙗ</q> to <q>епископа гевалъскаго</q> and use CTRL-E to tag this as
+              a <gi>rubric</gi>. Delete the <gi>hi</gi> element and the quotation marks.</item>
+            <item>Do the same for the next quoted passage (from <q>зачало</q> to <q>землю</q>) but
+              this time tag it as an <gi>incipit</gi></item>
+            <item>Do the same for the next quoted passage (from <q>и многолѣтно</q> to <q>вѣки
+                амин</q>) but this time tag it as an <gi>explicit</gi>
+            </item>
+            <item>And finally tag the stretch of text labelled as a colophon as a <gi>colophon</gi>
+            </item>
+            <item>Don't forget to remove the redundant <gi>hi</gi> and <gi>anchor</gi> elements left
+              behind! Your <gi>msItem</gi> element should now be valid (i.e. no red underlining
+              anywhere in it) </item>
+          </list>
+       </p><p>To check your work, open the Outline view (Window ->
+       Show View -> Outline) to display the structure of your msDesc.  It should look
+       something like this:</p><p>
+       <graphic url="../images/msItem.png"></graphic></p>
+      </div>
+      <div>
+        <head>Structuring the <gi>physDesc</gi></head>
+        <p>The TEI schema distinguishes (and therefore tags) many distinct components within a
+          physical description that is not just a sequence of paragraphs. Specifically, it
+          distinguishes between information about the text bearing object itself, which is marked up
+          using the <gi>objectDesc</gi> element, and information concerning aspects of the writing
+          and decoration it carries. In some cases, the TEI schema also requires elements to be
+          given in a specific order. To make our document valid, proceed as follows: <list>
+            <item>Select the first two paragraphs (from "Support:" to "less details") and use CTRL-E
+              to enclose these paragraphs with a <gi>support</gi> element. Delete the element
+                <gi>hi</gi> with which it begins (both the tags and their content). </item>
+            <item>Change the third <gi>p</gi> element (starting "Extent:") into an <gi>extent</gi>
+              element. Delete the element <gi>hi</gi> with which it begins. </item>
+            <item>Change the fourth <gi>p</gi> element (starting "Collation:") into a
+                <gi>collation</gi> element. Delete the element <gi>hi</gi> with which it begins. </item>
+            <item>Select the <gi>foliation</gi> element you created earlier and move it to follow
+              the <gi>extent</gi> element</item>
+            <item>Select the <gi>condition</gi> element you created earlier and move it to follow
+              the <gi>foliation</gi> element</item>
+            <item>Select all five elements, <gi>support</gi>, <gi>extent</gi>,
+                <gi>collation</gi><gi>foliation</gi> and <gi>condition</gi>; use CTRL-E to wrap them
+              in a <gi>supportDesc</gi> element</item>
+            <item>Select the paragraph labelled <soCalled>Layout</soCalled>; use CTRL-E to enclose
+              it first by a <gi>layoutDesc</gi> element, and then by a <gi>layout</gi> element.
+              Delete the element <gi>hi</gi> with which it begins. </item>
+            <item>Select the paragraph labelled <soCalled>Script</soCalled>; use CTRL-E to enclose
+              it by a <gi>scriptDesc</gi> element. Delete the element <gi>hi</gi> with which it
+              begins. </item>
+            <item>Select the <gi>additions</gi> element you created earlier and move it to follow
+              the <gi>decoDesc</gi> element</item>
+          </list>
+        </p>
+        <p>Phew. If you have done all that correctly, your document is now valid and you have a
+          jolly green square. Check the structure of your <gi>physDesc</gi> element in the
+            <ident>Outline</ident> view: it should look like this: </p><p><graphic
+            url="../images/physDesc.png"/></p>
+        <p>If you're still feeling strong, you might like to improve the markup of the
+            <gi>support</gi> element as follows:<list>
+            <item>Change the <gi>p</gi> element containing the word <q>Paper</q> into a
+                <gi>material</gi> element</item>
+            <item>Change the second <gi>p</gi> element into a <gi>watermark</gi> element</item>
+            <item>Delete the text <code>Three different watermarks: 1)</code></item>
+            <item>Split the <gi>watermark</gi> element into three by typing ALT-SHIFT-D before
+                <code>2)</code> and <code>3)</code></item>
+            <item> Delete the numbers 2) and 3)</item>
+          </list>
+        </p>
+        <p>Our final version of this manuscript description is in the file
+            <ident>Work/msDesc-corrected.xml</ident>. </p>
+      </div>
+
+     
+    </body>
+  </text>
+</TEI>
