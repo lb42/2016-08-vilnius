@@ -165,29 +165,18 @@
             <div>
                 <head>Using <gi>g</gi></head>
                 <figure>
-                    <graphic url="../images/o.png" height="45%"/>
+                    <graphic url="../images/bdinski07r-dtl.png" height="30%"/>
                     <head>Bdinski, fol 7r, detail</head>
                 </figure>
-                <p>There is no Unicode character for the non-ligatured oo here: we tag it as a
-                        <gi>g</gi></p>
+                <p>There is no Unicode character for the oo glyph here: we tag it as a
+                    <gi>g</gi></p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <lb/>на мѣст<g ref="#ooLig">oo</g>. и вьшедь вь
-                    <lb/>гостинницю. гледаше
-                    <lb/>само и ѡнам<g ref="#ooLig">oo</g> хоте видѣ
-                    <lb break="no"/>ти. вьсклабив же се рече </egXML>
+                    <lb/>на мѣст<g ref="#ooGlyph">oo</g>. и вьшедь вь <lb/>гостинницю. гледаше
+                    <lb/>само и ѡнам<g ref="#ooGlyph">oo</g> хоте видѣ <lb break="no"/>ти. вьсклабив
+                    же се рече </egXML>
                 <p><code>#ooGlyph</code> points to a description of the glyph, provided in the TEI
                     header.</p>
             </div>
-            <!--
-
-                    <p>and the referenced glyph should be defined in the <gi>charDecl</gi>
-                        element in the header </p>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <glyph xml:id="long-s-glyph">
-                            <!-\- ... -\->
-                        </glyph>
-                    </egXML>
-                </div>-->
 
             <div>
                 <head>Abbreviations &amp;c.</head>
@@ -235,61 +224,7 @@
                     </list>
                 </p>
             </div>
-            <!--    <div>
-                <head>Compare ev(er)y (per)sone</head>
-                <p>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny"> ev<choice><am><g
-                                    ref="#b-er"/></am><ex>er</ex></choice>y <choice><am><g
-                                    ref="#b-per"/></am><ex>per</ex></choice>sone ... </egXML>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" rend="tiny">
-                        <choice>
-                            <abbr>ev<am><g ref="#b-er"/></am> y</abbr>
-                            <expan>ev<ex>er</ex>y</expan>
-                        </choice>
-                        <choice>
-                            <abbr><am><g ref="#b-per"/></am>sone</abbr>
-                            <expan><ex>per</ex>sone</expan>
-                        </choice>
-                    </egXML>
-                </p>
-            </div>
-            <div>
-                <head><gi>ex</gi> and <gi>am</gi></head>
-                <p> Using these elements, from the 'transcr' module, a transcriber may indicate the
-                    status of the individual letters or signs within both the abbreviation and the
-                    expansion. <list type="unordered">
-                        <item>
-                            <gi>ex</gi> (editorial expansion) contains a sequence of letters added
-                            by an editor or transcriber when expanding an abbreviation.</item>
-                        <item>
-                            <gi>am</gi> (abbreviation marker) contains a sequence of letters or
-                            signs present in an abbreviation which are omitted or replaced in the
-                            expanded form of the abbreviation.</item>
-                    </list> Previously, people have re-purposed existing elements such as
-                        <gi>hi</gi> and <gi>supplied</gi> to mark individual letters/signs in
-                    abbreviations and expansions. The new P5 elements <gi>am</gi> and <gi>ex</gi>
-                    are the TEI's attempt to support this desire.</p>
-            </div>
-           
-            <div rend="slide">
-                <head>Simple example (3)</head>
-                <p>And of course TEI permits both cake and the eating of it: <egXML
-                        xmlns="http://www.tei-c.org/ns/Examples">
-                        <p> po<choice>
-                                <am>&amp;#xFFFD;</am>
-                                <ex>ur</ex>
-                            </choice>
-                        </p>
-                    </egXML>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <choice>
-                            <abbr>po<am>&amp;#xFFFD;</am></abbr>
-                            <expan>po<ex>u</ex>r</expan>
-                        </choice>
-                    </egXML>
-                </p>
-            </div>
--->
+
             <div rend="slide">
                 <head>A French example </head>
                 <p><graphic url="../images/Ms629_p05-dtl-1.png" width="360px"/>. </p>
@@ -309,7 +244,7 @@
                     on the <q>a</q> to indicate nasalisation. </p>
                 <p><egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <p>
-                            <abbr>po&amp;#xFFFD;</abbr> .... <abbr>cinqu&amp;#x0101;te</abbr>
+                            <abbr>po&amp;#x1D63;</abbr> .... <abbr>cinqu&amp;#x0101;te</abbr>
                         </p>
                     </egXML>
                 </p>
@@ -318,11 +253,11 @@
                 <head>... or we might look a bit closer </head>
                 <p>.We can tag the abbreviation markers and the expansion directly <egXML
                         xmlns="http://www.tei-c.org/ns/Examples">
-                        <p> po<am>&amp;#xFFFD;</am> ... or po<ex>u</ex>r </p>
+                        <p> po<am>&amp;#x1D63;</am> ... or po<ex>u</ex>r </p>
                     </egXML></p>
                 <p>... or within the <gi>abbr</gi> or <gi>expan</gi> as appropriate <egXML
                         xmlns="http://www.tei-c.org/ns/Examples">
-                        <abbr>po<am>&amp;#xFFFD;</am></abbr>
+                        <abbr>po<am>&amp;#x1D63;</am></abbr>
                     </egXML>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <expan>po<ex>u</ex>r</expan>
@@ -369,8 +304,8 @@
                 <p>As elsewhere, the <att>resp</att> and <att>cert</att> attributes can be used to
                     indicate who is responsible for an expansion, and the degree of certainty
                     attached to it.</p>
-                <p>This encoding might be displayed as  : <quote>po(u)r en fin<hi rend="it">ir</hi>
-                        [LB]</quote></p>
+                <p>This encoding might be displayed as  : <q>po(u)r en fin<hi rend="it">ir</hi>
+                        [LB]</q></p>
             </div>
             <div>
                 <head>Corrections and emendations</head>
@@ -486,11 +421,10 @@
             <div>
                 <head>Damage to the carrier</head>
                 <p>Use the <gi>damage</gi> element to record the existence of physical damage to the
-                    document, whether or not the damaged text is readable : 
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"> <damage
-                        reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
-                    <egXML
-                        xmlns="http://www.tei-c.org/ns/Examples"><l>The Moving Finger wri<damage
+                    document, whether or not the damaged text is readable : <egXML
+                        xmlns="http://www.tei-c.org/ns/Examples">
+                        <damage reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><l>The Moving Finger wri<damage
                                 agent="water" group="1">es; and</damage> having writ,</l><l>Moves
                                 <damage agent="water" group="1"><supplied>on: nor all
                                     your</supplied></damage> Piety nor Wit</l></egXML>
@@ -499,7 +433,7 @@
                     transcription affected by the same area of damage.</p>
 
             </div>
-           
+
             <div>
                 <head>Lacunae</head>
                 <p>Use the <gi>gap</gi> element when something is missing, for example because it is
@@ -510,75 +444,67 @@
                 <p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">I am dr Sr yr <gap
                             reason="illegible" quantity="3" unit="word"/>Sydney Smith</egXML>
-                    
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">Their arrangement with respect to Jupiter and to each other was as follows:
-                        <gap reason="sampling" extent="restOfPage" >
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">Their arrangement with respect
+                        to Jupiter and to each other was as follows: <gap reason="sampling"
+                            extent="restOfPage">
                             <desc>astrological figure</desc>
-                        </gap>
-                        That is, there were two stars on the easterly side and one to the
+                        </gap> That is, there were two stars on the easterly side and one to the
                         west; …</egXML>
                 </p>
             </div>
 
-<div><head>Text made semi-legible through damage</head>
-    <p>These elements may be used in combination as necessary. In this example, two phrases can be read despite smoke damage, but three lines 
-        in between are completely illegible:
-    </p>
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">  <damage agent="smoke">
-                <unclear>and the proof of this is</unclear>
-                <gap quantity="3" unit="line" cause="smokeDamage"/>
-                <unclear>margin</unclear>
-            </damage></egXML>
-</div>
             <div>
-                <head>Supplied  text</head>
+                <head>Text made semi-legible through damage</head>
+                <p>These elements may be used in combination as necessary. In this example, two
+                    phrases can be read despite smoke damage, but three lines in between are
+                    completely illegible: </p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <damage agent="smoke">
+                        <unclear>and the proof of this is</unclear>
+                        <gap quantity="3" unit="line" cause="smokeDamage"/>
+                        <unclear>margin</unclear>
+                    </damage></egXML>
+            </div>
+            <div>
+                <head>Supplied text</head>
                 <p>Use the <gi>supplied</gi> element if the transcriber has provided a reading not
                     actually visible in the text, perhaps because of scribal error : </p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">…Dragging the worst among<supplied
                         reason="authorialError" cert="high">s</supplied>t us…</egXML>
                 <p>Attributes can be used to qualify the information further: <list>
-                        <item><att>reason</att>why the text has had to be supplied (any word) </item>
-                        <item><att>source</att>source (if any) from which the text was taken (a
+                        <item><att>reason</att> why the text has had to be supplied (any word) </item>
+                        <item><att>source</att> source (if any) from which the text was taken (a
                             pointer)</item>
                         <item>
                             <att>resp</att> who is responsible for supplying this markup (a
                             pointer)</item>
-                        <item><att>cert</att>the degree of certainty associated with the markup
+                        <item><att>cert</att> the degree of certainty associated with the markup
                             (high, medium, or low)</item>
                     </list></p>
             </div>
 
             <div>
                 <head>Text supplied to fill a lacuna</head>
-                <p>If the transcriber wishes to supply material to fill a lacuna, it should be marked
-                    up using <gi>supplied</gi> rather than <gi>gap</gi>. In this example, 42 lines
+                <p>If the transcriber wishes to supply material to fill a lacuna, it should be
+                    marked up using <gi>supplied</gi> rather than <gi>gap</gi>. <!--In this example, 42 lines
                     missing from the bottom of page 5v have been supplied from another source
                     (identified here simply as <ident>ed</ident>) on the authority of
-                        <ident>#djb</ident>: <egXML xmlns="http://www.tei-c.org/ns/Examples">расѣдша
-                        се. и ѡ
-                        <lb break="no"/>брѣтени* быти голоубици <supplied resp="#djb" source="ed"
-                            reason="missing">
+                        <ident>#djb</ident>:-->
+                    <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"><lb break="no"
+                        />брѣтени быти голоубици <supplied resp="#djb" source="ed" reason="missing">
                             <pb n="301c"/>
-                            <lb/>(голоубици) онои въ чре
-                            <lb break="no"/>вѣ ѥго. и простьръ роу
-                            <lb break="no"/>коу блаженыи възѧ
-                            <lb break="no"/>тъ ю живоу. не имоущу <!-- ... -->
-                            <lb/>д҃нь и нощь молѧ б҃а о нѥ
-                            <lb break="no"/>и. и по дъвою лѣтоу вѣ
+                            <lb/>(голоубици) онои въ чре <!-- ... -->
                             <lb break="no"/>сть бысть (ѥмоу. къ-)</supplied>
                         <pb n="6r"/>
-                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
-                        <lb break="no"/>ть. и оумоливь нѣкого оу
-                        <lb break="no"/>жикоу своѥго посла тамо.</egXML>
+                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе <lb break="no"/>ть. и
+                        оумоливь нѣкого оу <lb break="no"/>жикоу своѥго посла тамо.</egXML>
                 </p>
                 <p>Alternatively, the transcription might simply indicate that the text is missing
-                    and not supply it <egXML xmlns="http://www.tei-c.org/ns/Examples">расѣдша се. и
-                        ѡ
-                        <lb break="no"/>брѣтени* быти голоубици <gap quantity="42" unit="line"/>
+                    and not supply it <egXML rend="teeny" xmlns="http://www.tei-c.org/ns/Examples"
+                            ><lb break="no"/>брѣтени быти голоубици <gap quantity="42" unit="line"/>
                         <pb n="6r"/>
-                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе
-                        <lb break="no"/>ть. и оумоливь нѣкого оу
-                        <lb break="no"/>жикоу своѥго посла тамо.</egXML>.</p>
+                        <lb/>ємоу. гдѣ ѥ<hi rend="sup">с҇</hi> и како живе <lb break="no"/>ть. и
+                        оумоливь нѣкого оу <lb break="no"/>жикоу своѥго посла тамо.</egXML>.</p>
             </div>
             <!--  
               
@@ -706,23 +632,6 @@
                         private or idiosyncratic signs, with no clear communicative function</item>
                 </list>
             </div>
-
-
-            <div>
-                <head>Exercise 1</head>
-                <list>
-                    <item>Decide on the structure of your encoding</item>
-                    <item>Decide what you will capture in the transcription and what you will
-                        not</item>
-                    <item>Mark it up!</item>
-                </list>
-                <p>Look at these files: <list>
-                        <item><ident>ocsPage.jpg</ident> page image</item>
-                        <item><ident>ocsPage.txt</ident> plain text only</item>
-                        <item><ref target="ex-transcr.pdf">Detailed instructions</ref></item>
-                    </list></p>
-            </div>
-
 
 
 
@@ -1075,11 +984,7 @@ Alas then is she drownd. Q3; Alas, then, she is drownd. Q2; So, she is drownde: 
       
 
 
-                <div>
-                    <head>Next</head>
-                    <p>Any Questions? Next we're going to do an exercise!</p>
-                </div>
-            </div>-->
+                -->
         </body>
     </text>
 </TEI>

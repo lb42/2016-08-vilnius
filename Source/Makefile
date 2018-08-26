@@ -1,12 +1,15 @@
 ECHO=
 
 PROFILES=/home/lou/Public/Stylesheets/profiles
+TEISLIDES=/home/lou/Public/TEIslides/teislides.rnc
 PROFILE=teiOCS
 
 TALKS= \
+	talk-xml \
 	talk-tei \
 	talk-tools \
-	talk-transcription
+	talk-transcription \
+	talk-description
 
 EXERCISES= \
 	ex-msdesc \
@@ -24,7 +27,7 @@ slides: pdfslides
 
 pdfslides:  
 	for i in $(TALKS) ; do \
-		teitoslides --profile=teiOCS $$i.xml ;\
+		teitoslides  --profile=$(PROFILE) --profiledir=$(PROFILES) $$i.xml ;\
 	mv $$i.xml.slides  ../Slides/$$i.pdf; \
 	done
 
@@ -71,19 +74,5 @@ handout:
 	mv booklet.pdf exercices.pdf
 
 validate:
-	-for i in $(TALKS) ; do onvdl ../teitalks.nvdl `basename $$i .xml`.xml \
-	 | grep -v ': error: unfinished element$$' \
-	 | grep -v ': error: unfinished element .* required to finish the element$$'; done
-
-demo:
-	xmllint --xinclude demo.odd > x.odd; roma2 --docpdf --nodtd --dochtml --isoschematron x.odd .
-	roma --nodtd --noxsd --schema=demosimple x.odd .
-	saxon demo.isosch http://www.tei-c.org/release/xml/tei/odd/Utilities/iso_schematron_message_xslt2.xsl > demo.isosch.xsl
-
-test:
-	jing demo.rng demo.xml
-	rnv demo.rnc demo.xml
-	saxon demo.xml demo.isosch.xsl 
-	jing demo.xsd demo.xml
-
-
+	-for i in $(TALKS) ; do jing -c $(TEISLIDES) `basename $$i .xml`.xml ;\
+	done

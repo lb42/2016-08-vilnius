@@ -1,0 +1,205 @@
+<?xml version="1.0"?> 
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>What’s next?</title>
+        <author>David J. Birnbaum</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Unpublished</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This is the master version of an original document, based on the PowerPoint presentation
+          first used at the El'Manuscript 2014 (Varna) workshop. The Varna materials are located at
+          http://varna.obdurodon.org.</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change>
+        <date>2016-08-21</date>
+        <name>First version</name>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+
+      <div>
+        <head>Outline</head>
+        <list>
+          <item>Manuscript catalogues </item>
+          <item>Digital technologies </item>
+          <item>Digital projects </item>
+          <item>Further training <list>
+              <item>Summer institutes </item>
+              <item>Teach yourself </item>
+            </list></item>
+          <item>Associations and communities </item>
+          <item>Conferences </item>
+          <item>Journals </item>
+        </list>
+      </div>
+
+      <div>
+        <head>Manuscript catalogues</head>
+        <list>
+          <item>e-codices (Switzerland): <ref target="http://www.e-codices.unifr.ch/"
+              >http://www.e-codices.unifr.ch/</ref></item>
+          <item>Handrit (Icelandic materials): <ref target="http://handrit.is/en/"
+              >http://handrit.is/en/</ref></item>
+          <item>Repertorium (Slavic materials) <ref target="http://repertorium.obdurodon.org"
+            >http://repertorium.obdurodon.org</ref></item><item>Manuscriptorium <ref target="http://www.manuscriptorium.com/">http://www.manuscriptorium.com/</ref></item>
+        </list>
+      </div>
+
+      <div>
+        <head>Digital technologies</head>
+        <p>XML-related programming languages</p>
+        <list>
+          <item>XPath, XSLT, XQuery</item>
+        </list>
+        <p>XML-related schema languages</p>
+        <list>
+          <item>Relax NG, XML Schema, DTD, Schematron</item>
+        </list>
+        <p>Web technologies</p>
+        <list>
+          <item>HTML, CSS, JavaScript, PHP</item>
+        </list>
+        <p>Other</p>
+        <list>
+          <item>NoSQL databases: graph, relational</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Sample projects</head>
+        <list>
+          <!-- TODO: Link to TEI-related projects -->
+          <item><ref target="http://www.tei-c.org/Activities/Projects/">http://www.tei-c.org/Activities/Projects/</ref></item>
+          <item><ref target="http://www.obdurodon.org">http://www.obdurodon.org</ref></item>
+          <item><ref target="http://dh.obdurodon.org">http://dh.obdurodon.org</ref> (student
+            projects)</item>
+        </list>
+      </div>
+
+      <div>
+        <head>Summer institutes</head>
+        <p>Northeastern (formerly Brown) University Women Writers Project</p>
+        <list>
+          <item><ref target="http://www.wwp.northeastern.edu/outreach/seminars/"
+              >http://www.wwp.northeastern.edu/outreach/seminars/</ref></item>
+        </list>
+        <p>University of Victoria Digital Humanities Summer Institute</p>
+        <list>
+          <item><ref target="http://www.dhsi.org/">http://www.dhsi.org/</ref></item>
+        </list>
+        <p>Digital.Humanities@Oxford Summer School</p>
+        <list>
+          <item><ref target="http://digital.humanities.ox.ac.uk/dhoxss/"
+              >http://digital.humanities.ox.ac.uk/dhoxss/</ref></item>
+        </list>
+        <p>European Summer School in Digital Humanities (Leipzig)</p>
+        <list>
+          <item><ref target="http://www.culingtec.uni-leipzig.de/ESU_C_T/node/97/"
+              >http://www.culingtec.uni-leipzig.de/ESU_C_T/node/97/</ref></item>
+        </list>
+      </div>
+
+      <div>
+        <head>Teach yourself</head>
+        <list>
+          <item>XML technologies and digital humanities: David J. Birnbaum’s University of
+            Pittsburgh “Computational methods in the humanities” <ref
+              target="http://dh.obdurodon.org">http://dh.obdurodon.org</ref></item>
+          <item>Text Encoding Initiative: <ref target="http://www.tei-c.org"
+              >http://www.tei-c.org</ref></item>
+          <item>XML and web technologies, etc.: <ref target="http://w3schools.com"
+              >http://w3schools.com</ref></item>
+        </list>
+      </div>
+
+      <div>
+        <head>Associations and communities</head>
+        <list>
+          <item>Alliance of digital humanities organizations (ADHO): <ref
+              target="http://digitalhumanities.org">http://digitalhumanities.org</ref>
+          </item>
+          <item>Association for computers and the humanities (ACH): <ref target="http://www.ach.org"
+              >http://www.ach.org</ref>
+          </item>
+          <!-- TODO: Update name -->
+          <item>Association for literary and linguistic computing (ALLC): <ref
+              target="http://www.allc.org">http://www.allc.org</ref>
+          </item>
+          <item>The Text Encoding Initiative (TEI): <ref target="http://www.tei-c.org"
+              >http://www.tei-c.org</ref>
+          </item>
+          <item>Digital medievalist: <ref target="http://www.digitalmedievalist.org"
+              >http://www.digitalmedievalist.org</ref>
+          </item>
+          <item>Humanist (discussion list): <ref target="http://www.digitalhumanities.org/humanist/"
+              >http://www.digitalhumanities.org/humanist/</ref></item>
+        </list>
+      </div>
+
+      <div>
+        <head>Conferences</head>
+        <list>
+          <item>Digital humanities conference (ADHO): <ref
+              target="http://digitalhumanities.org/conference"
+              >http://digitalhumanities.org/conference</ref></item>
+          <item>Balisage: the markup conference: <ref target="http://www.balisage.net"
+              >http://www.balisage.net</ref></item>
+          <item>TEI conference and members’ meeting: <ref
+              target="http://www.tei-c.org/Membership/Meetings/"
+              >http://www.tei-c.org/Membership/Meetings/"</ref></item>
+        </list>
+      </div>
+
+      <div>
+        <head>Journals</head>
+        <list>
+          <item>
+            <!-- TODO: Add JTEI link and title -->
+            <title>Journal of the Text encoding initiative</title>: <ref target="http://journal.tei-c.org">http://journal.tei-c.org
+        </ref>
+          </item>
+          <item><title>Digital humanities quarterly</title>: <ref
+              target="http://digitalhumanities.org/dhq/">http://digitalhumanities.org/dhq/</ref>
+          </item>
+          <item><title>Digital medievalist journal</title>: <ref
+              target="http://www.digitalmedievalist.org/journal/"
+              >http://www.digitalmedievalist.org/journal/</ref>
+          </item>
+          <item><title>Digital studies</title>: <ref target="http://www.digitalstudies.org"
+              >http://www.digitalstudies.org</ref>
+          </item>
+          <item><!-- TODO: rename journal -->
+            <title>Literary and linguistic computing</title>: <ref
+              target="http://llc.oxfordjournals.org">http://llc.oxfordjournals.org</ref>
+          </item>
+          <item><title>Language resources and evaluation</title> (formerly <title>Computers and the
+              humanities</title>, 1966-2004): <ref
+              target="http://www.springerlink.com/content/1574-020x/"
+              >http://www.springerlink.com/content/1574-020x/</ref>
+          </item>
+          <item><title>Text technology</title>: <ref target="http://texttechnology.mcmaster.ca"
+              >http://texttechnology.mcmaster.ca</ref>
+          </item>
+        </list>
+      </div>
+
+      <div>
+        <head>Thank you!</head>
+        <p>David J. Birnbaum
+          <lb/><ref target="mailto:djbpitt@gmail.com">djbpitt@gmail.com</ref>
+          <lb/><ref target="http://www.obdurodon.org">http://www.obdurodon.org</ref></p>
+        <p>Lou Burnard
+          <lb/><ref target="mailto:lou.burnard@gmail.com">lou.burnard@gmail.com</ref>
+          <lb/><ref target="http://about.me/louburnard">http://users.ox.ac.uk/~lou</ref></p>
+      </div>
+    </body>
+  </text>
+</TEI>

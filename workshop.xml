@@ -47,7 +47,8 @@
                <item><hi>Download the &lt;oXgyen/&gt; XML editor</hi> from <ref
                      target="http://www.oxygenxml.com">http://www.oxygenxml.com</ref> and install it
                   on your laptop. You will need to request a free, fully-functional thirty-day
-                  license, which you can do at the download site.</item>
+                  license, which you can do at the download site.</item><item>You will also need to download <ref target="downloadMe.zip"> the file <ident>downloadMe.zip</ident></ref>
+                   and unpack it: it contains the sample documents we will be working with and scripts for the exercises.</item>
                <item>Read: <ref target="http://dh.obdurodon.org/what-is-xml.xhtml">An even gentler
                      introduction to XML</ref>.</item>
                <item>If you have time, also read <ref target="http://books.openedition.org/oep/426"
@@ -63,7 +64,7 @@
             <p><label>Tues 23 August</label></p>
             <list>
                <item>Session 1, 17h15 - 18h15 : Introduction to XML [DB] (<ref
-                     target="Slides/xml_intro.pptx.pdf">slides <graphic url="images/pdf.gif"
+                     target="Slides/talks-xml.pdf">slides <graphic url="images/pdf.gif"
                   /></ref>)</item>
             </list>
             <p><label> Weds 24 August </label></p>
@@ -72,7 +73,7 @@
                      target="Slides/talk-tei.pdf">slides<graphic url="images/pdf.gif"/></ref>)</item>
 
                <item>Session 3, 16h - 17h : Manuscript description [DB] (<ref
-                     target="Slides/manuscript-description.pptx.pdf">slides</ref>
+                     target="Slides/talks-description.pdf">slides</ref>
                   <graphic url="images/pdf.gif"/>)<list>
                     <item><hi>Don’t click; download:</hi>
                         <ref target="Work/Enina.xml">Description of the <title>Enina
@@ -96,7 +97,7 @@
             </list>
             <p><label>Thursday 25 August</label></p>
             <list>
-               <item>Session 4, 09h - 10h : Manuscript description [LB] <ref target="Work/ex-msdesc.pdf">practical</ref></item>
+               <item>Session 4, 09h - 10h : Manuscript description [LB] <ref target="Work/ex-msdesc.pdf">practical exercise</ref></item>
                <item>Coffee break</item>
                <item>Session 5, 10h30 - 11h30 : Manuscript description [LB] practical continues</item>
                <item>Session 6, 11h45 - 12h45 : An Introduction to Manuscript transcription [LB] (<ref
@@ -112,17 +113,11 @@
                <item>Session 9, 09h - 10h : TEI Tools [LB] (<ref target="Slides/talk-tools.pdf">Slides</ref>) </item>
                <item>Session 10, 10h30 - 11h30 : TEI Tools [LB] <ref target="Work/ex-xslt.pdf">exercise</ref> 
             </item>
-               <item>Session 11, 1145 - 12h45 : Taking stock [DB] <list>
-                     <item>Sample XML projects at <ref target="http://www.obdurodon.org"
-                           >http://www.obdurodon.org</ref> and <ref
-                           target="http://www.obdurodon.org">http://dh.obdurodon.org</ref> (student
-                        course projects)</item>
-                     <item>What next (<ref target="Slides/what-next.pptx.pdf">slides <graphic
+               <item>Session 11, 1145 - 12h45 : Taking stock [DB] 
+                 What next (<ref target="Slides/talk-wrap-up.pdf">slides <graphic
                               url="images/pdf.gif"/></ref>)</item>
                   <!-- add TEI community slides? -->
-                  </list>
-               </item>
-
+                 
             </list>
 
 
@@ -209,7 +204,8 @@
                            <q>Computational methods in the humanities</q></ref> course (see also
                         <ref target="http://www.obdurodon.org">links to projects</ref>)</item>
                   <item>Genetic editions <list>
-                        <item><!-- goethe edition link --></item>
+                     <item><ref target="https://faustedition.uni-wuerzburg.de/">Faust edition
+                        prototype</ref></item>
                         <item><ref target="http://research.cch.kcl.ac.uk/proust_prototype/">Proust
                               prototype</ref></item>
                         <item><ref target="http://shelleygodwinarchive.org/contents/frankenstein"
@@ -218,7 +214,7 @@
                      </list></item>
                </list>
             </div>
-            <div>
+          <!--  <div>
                <head>Manuscript description</head>
                <p>Many on-line manuscript catalogues provide convenient search interfaces. Here are
                   a few that go beyond that, and might be considered models for how digital
@@ -250,7 +246,7 @@
                      about persons mentioned in the descriptions.</item>
                </list>
             </div>
-         </div>
+      -->   </div>
       </body>
 
    </text>
