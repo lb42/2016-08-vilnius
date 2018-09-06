@@ -2,24 +2,28 @@ ECHO=
 
 PROFILES=/home/lou/Public/Stylesheets/profiles
 TEISLIDES=/home/lou/Public/TEIslides/teislides.rnc
-PROFILE=teiOCS
+PROFILE=tei
 
 TALKS= \
 	talk-xml \
 	talk-tei \
 	talk-tools \
 	talk-transcription \
-	talk-description
+	talk-description \
+	talk-wrap-up
 
 EXERCISES= \
 	ex-msdesc \
 	ex-xslt
 
-default: pdfslides exercises
+default: pdfslides exercises zip
+
+zip:
+	zip ../downloadMe.zip ../Work/*
 
 exercises:
 	for i in $(EXERCISES) ; do \
-		teitopdf --profile=$(PROFILE) --profiledir=$(PROFILES) $$i.xml; \
+		teitopdf   $$i.xml; \
 	mv $$i.xml.pdf ../Work/$$i.pdf; \
 	done
 

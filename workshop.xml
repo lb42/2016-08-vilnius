@@ -3,15 +3,16 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Using the Text Encoding Initiative for Description and Transcription of Manuscript Sources
-            </title>
+            <title>Using the Text Encoding Initiative for Description and Transcription of
+               Manuscript Sources </title>
             <author>David Birnbaum and Lou Burnard</author>
          </titleStmt>
          <publicationStmt>
-            <p  >Unpublished workshop notes for ElManuscript 2016</p>
+            <p>Unpublished workshop notes for ElManuscript 2016</p>
          </publicationStmt>
          <sourceDesc>
-            <p>TEI-ified and modified from DJB's <ref target="http://varna.obdurodon.org/">HTML source for Varna Workshop</ref></p>
+            <p>TEI-ified and modified from DJB's <ref target="http://varna.obdurodon.org/">HTML
+                  source for Varna Workshop</ref></p>
          </sourceDesc>
       </fileDesc>
       <revisionDesc>
@@ -20,25 +21,25 @@
    </teiHeader>
    <text>
       <body>
-         <head >Description and goals</head>
-         <p >This four-day hands-on workshop provides eight and a half hours of instruction in using
+         <head>Description and goals</head>
+         <p>This four-day hands-on workshop provides eight and a half hours of instruction in using
                <ref target="http://dh.obdurodon.org/what-is-xml.xhtml">eXtensible Markup Language
                (XML)</ref> and the <ref
                target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">Text Encoding
-               Initiative (TEI) guidelines</ref> for the encoding and description of medieval manuscript
-            materials. The instructors are:</p>
+               Initiative (TEI) guidelines</ref> for the encoding and description of medieval
+            manuscript materials. The instructors are:</p>
          <list>
             <item>David J. Birnbaum, a medieval Slavic philologist who teaches digital humanities at
                the University of Pittsburgh (<ref target="mailto:djbpitt@gmail.com"
                   >djbpitt@gmail.com</ref>, <ref target="http://www.obdurodon.org"
                   >http://www.obdurodon.org</ref>)</item>
-                  <item>Lou Burnard, formerly assistant director at Oxford University Computing Services,
+            <item>Lou Burnard, formerly assistant director at Oxford University Computing Services,
                and one of the original editors of the Text Encoding Initiative. (<ref
                   target="mailto:lou.burnard@gmail.com">lou,burnard@gmail.com</ref>, <ref
                   target="http://about.me/louburnard">http://users.ox.ac.uk/~lou</ref>)</item>
          </list>
          <p>The workshop is part of the <ref
-            target="http://textualheritage.org/content/view/634/270/lang,english/">Textual
+               target="http://textualheritage.org/content/view/634/270/lang,english/">Textual
                heritage and information technologies (El’Manuscript-2016) conference</ref>, Vilnius,
             Lithuania, 2016-08-22–2016-08-26</p>
          <div>
@@ -47,16 +48,18 @@
                <item><hi>Download the &lt;oXgyen/&gt; XML editor</hi> from <ref
                      target="http://www.oxygenxml.com">http://www.oxygenxml.com</ref> and install it
                   on your laptop. You will need to request a free, fully-functional thirty-day
-                  license, which you can do at the download site.</item><item>You will also need to download <ref target="downloadMe.zip"> the file <ident>downloadMe.zip</ident></ref>
-                   and unpack it: it contains the sample documents we will be working with and scripts for the exercises.</item>
+                  license, which you can do at the download site.</item>
+               <item>You will also need to download <ref target="downloadMe.zip"> the file
+                        <ident>downloadMe.zip</ident></ref> and unpack it: it contains the sample
+                  documents we will be working with and scripts for the exercises.</item>
                <item>Read: <ref target="http://dh.obdurodon.org/what-is-xml.xhtml">An even gentler
                      introduction to XML</ref>.</item>
                <item>If you have time, also read <ref target="http://books.openedition.org/oep/426"
                      >What is the Text Encoding Initiative?</ref> (also available <ref
                      target="http://books.openedition.org/oep/1237">in French</ref>) </item>
-               <item>In the hands-on portion of the workshop we will mostly work with Church Slavonic
-                  manuscript materials. If you prefer, you are welcome instead to bring your
-                  own materials (plain-text manuscript description or transcription).</item>
+               <item>In the hands-on portion of the workshop we will mostly work with Church
+                  Slavonic manuscript materials. If you prefer, you are welcome instead to bring
+                  your own materials (plain-text manuscript description or transcription).</item>
             </list>
          </div>
          <div>
@@ -70,12 +73,13 @@
             <p><label> Weds 24 August </label></p>
             <list>
                <item>Session 2, 14h30 - 15h30 : Introduction to TEI [LB] (<ref
-                     target="Slides/talk-tei.pdf">slides<graphic url="images/pdf.gif"/></ref>)</item>
+                     target="Slides/talk-tei.pdf">slides<graphic url="images/pdf.gif"
+                  /></ref>)</item>
 
                <item>Session 3, 16h - 17h : Manuscript description [DB] (<ref
                      target="Slides/talks-description.pdf">slides</ref>
                   <graphic url="images/pdf.gif"/>)<list>
-                    <item><hi>Don’t click; download:</hi>
+                     <item><hi>Don’t click; download:</hi>
                         <ref target="Work/Enina.xml">Description of the <title>Enina
                            Apostol</title></ref> (XML file)</item>
                      <item><ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
@@ -97,27 +101,30 @@
             </list>
             <p><label>Thursday 25 August</label></p>
             <list>
-               <item>Session 4, 09h - 10h : Manuscript description [LB] <ref target="Work/ex-msdesc.pdf">practical</ref></item>
+               <item>Session 4, 09h - 10h : Manuscript description [LB] <ref
+                     target="Work/ex-msdesc.pdf">practical</ref></item>
                <item>Coffee break</item>
-               <item>Session 5, 10h30 - 11h30 : Manuscript description [LB] practical continues</item>
-               <item>Session 6, 11h45 - 12h45 : An Introduction to Manuscript transcription [LB] (<ref
-                  target="Slides/talk-transcription.pdf">
-              slides</ref> <graphic url="images/pdf.gif"/>) 
-               </item>
+               <item>Session 5, 10h30 - 11h30 : Manuscript description [LB] practical
+                  continues</item>
+               <item>Session 6, 11h45 - 12h45 : An Introduction to Manuscript transcription [LB]
+                     (<ref target="Slides/talk-transcription.pdf"> slides</ref>
+                  <graphic url="images/pdf.gif"/>) </item>
                <!-- lunch -->
                <item>Session 7, 13h45 - 14h45 : Manuscript transcription [DB] practical 1 </item>
                <item>Session 8, 15h - 16h : Manuscript transcription [DB] practical 2</item>
             </list>
             <p><label>Friday 26 August</label></p>
             <list>
-               <item>Session 9, 09h - 10h : TEI Tools [LB] (<ref target="Slides/talk-tools.pdf">Slides</ref>) </item>
-               <item>Session 10, 10h30 - 11h30 : TEI Tools [LB] <ref target="Work/ex-xslt.pdf">exercise</ref> 
-            </item>
-               <item>Session 11, 1145 - 12h45 : Taking stock [DB] 
-                 What next (<ref target="Slides/talk-wrap-up.pdf">slides <graphic
-                              url="images/pdf.gif"/></ref>)</item>
-                  <!-- add TEI community slides? -->
-                 
+               <item>Session 9, 09h - 10h : TEI Tools [LB] (<ref target="Slides/talk-tools.pdf"
+                     >Slides</ref>) </item>
+               <item>Session 10, 10h30 - 11h30 : TEI Tools [LB] <ref target="Work/ex-xslt.pdf"
+                     >exercise</ref>
+               </item>
+               <item>Session 11, 1145 - 12h45 : Taking stock [DB] What next (<ref
+                     target="Slides/talk-wrap-up.pdf">slides <graphic url="images/pdf.gif"
+                  /></ref>)</item>
+               <!-- add TEI community slides? -->
+
             </list>
 
 
@@ -192,10 +199,12 @@
                      <ref target="http://tei.it.ox.ac.uk/Talks/2008-08-kazan/">
                         <title>ВВЕДЕНИЕ В TEI И XML</title> (Lou Burnard, Alexei Lavrentev, and
                         Tatiana Timcenko)</ref>;</item>
-                  <item><ref target="http://tei.it.ox.ac.uk/Talks/2014-07-dhoxss-tei/Slides/talk-editing-5.pdf">
-                           Textual Editing with the TEI Or, Documentary Editing with the TEI Or,
-                           TEI for Text Bearing Objects </ref> (slides from <ref 
-                        target="http://digital.humanities.ox.ac.uk/dhoxss/2014/TEI.html"> DHOXSS 2014 Workshop)</ref>
+                  <item><ref
+                        target="http://tei.it.ox.ac.uk/Talks/2014-07-dhoxss-tei/Slides/talk-editing-5.pdf"
+                        > Textual Editing with the TEI Or, Documentary Editing with the TEI Or, TEI
+                        for Text Bearing Objects </ref> (slides from <ref
+                        target="http://digital.humanities.ox.ac.uk/dhoxss/2014/TEI.html"> DHOXSS
+                        2014 Workshop)</ref>
                   </item>
                   <item><ref target="http://varna.obdurodon.org/TEI-general2014.ppt.pdf">The
                         transcription and description of primary sources using TEI conformant
@@ -204,8 +213,8 @@
                            <q>Computational methods in the humanities</q></ref> course (see also
                         <ref target="http://www.obdurodon.org">links to projects</ref>)</item>
                   <item>Genetic editions <list>
-                     <item><ref target="https://faustedition.uni-wuerzburg.de/">Faust edition
-                        prototype</ref></item>
+                        <item><ref target="https://faustedition.uni-wuerzburg.de/">Faust edition
+                              prototype</ref></item>
                         <item><ref target="http://research.cch.kcl.ac.uk/proust_prototype/">Proust
                               prototype</ref></item>
                         <item><ref target="http://shelleygodwinarchive.org/contents/frankenstein"
@@ -214,7 +223,7 @@
                      </list></item>
                </list>
             </div>
-          <!--  <div>
+            <!--  <div>
                <head>Manuscript description</head>
                <p>Many on-line manuscript catalogues provide convenient search interfaces. Here are
                   a few that go beyond that, and might be considered models for how digital
@@ -246,7 +255,8 @@
                      about persons mentioned in the descriptions.</item>
                </list>
             </div>
-      -->   </div>
+      -->
+         </div>
       </body>
 
    </text>

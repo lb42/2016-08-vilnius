@@ -184,7 +184,7 @@
 
         <div>
           <head>An  XSLT stylesheet</head>
-          <p>An  XSLT stylesheet is an XML document like any other. So it can be edited in Oxygen. <list type="bulleted">
+          <p>An  XSLT stylesheet is an XML document like any other. So it can be edited in oXygen. <list type="bulleted">
               <item>Open the file
                   <ident>duBellay.xsl</ident> in oXygen and look at the templates it defines.</item>
               <item>So far, only one template is defined. It will match the element
@@ -211,7 +211,7 @@
             <item>Click the <ident>Format and Indent</ident> button to tidy up. Your stylesheet should now look (more or less) like this
               :</item>
           </list>
-          <p><graphic height="8cm" url="../images/script-1.png"/></p>
+          <p><graphic height="8cm" url="../images/script-1.png"/></p><!-- shd have html namespace in it -->
           <list type="bulleted">
             <item>Click the diskette icon, or type CTRL-S, to save the changes you just made
               </item>

@@ -82,7 +82,7 @@
       <div>
         <head>Origins of the Text Encoding Initiative</head>
         <list>
-          <item>Spring 1987: European workshops on standardisation of historical data (J.P. Genet, M
+          <item>Spring 1987: European workshops on standardization of historical data (J.P. Genet, M
             Thaller)</item>
           <item>Autumn 1987: NEH funds an exploratory international workshop on the feasibility of
             defining "text encoding guidelines"</item>
@@ -116,13 +116,13 @@
         <p>Recognising the demotic potential of the digital the TEI (<hi>«Text Encoding for
             Interchange»</hi>) defined its mission as follows : </p>
         <list>
-          <item>to facilitate the<hi>creation</hi>, <hi>exchange</hi>, and <hi>integration</hi> of
+          <item>to facilitate the <hi>creation</hi>, <hi>exchange</hi>, and <hi>integration</hi> of
             textual data in digital form <list>
               <item>every kind of text</item>
               <item>in every language</item>
               <item>for any purpose, from any culture</item>
             </list></item>
-          <item>The TEI recommendations are intended for ...<list>
+          <item>The TEI recommendations are intended for...<list>
               <item>beginners, seeking well-established solutions to well-understood problems</item>
               <item>experts, seeking to create new solutions</item>
             </list></item>
@@ -133,8 +133,8 @@
         <list>
           <item>provide <hi>recommendations</hi> derived from the existing consensus, where this
             could be determined </item>
-          <item>prefers <hi>general solutions</hi> to discipline-specific ones</item>
-          <item>supporting both <hi>specialisation</hi> and <hi>extension</hi></item>
+          <item>prefer <hi>general solutions</hi> to discipline-specific ones</item>
+          <item>supporting both <hi>specialization</hi> and <hi>extension</hi></item>
         </list>
         <p rend="box">The TEI was not designed to provide a complete answer <soCalled>out of the
             box</soCalled></p>
@@ -817,7 +817,7 @@ working to keep them in synch *-\-></item>
           <item>using a defined lexicon </item>
           <item>respect for diversity</item>
         </list>
-        <p>Standardisation should not mean «do what I do» but rather «explain your decisions in
+        <p>Standardization should not mean «do what I do» but rather «explain your decisions in
           terms I can understand »</p>
       </div>
 
@@ -871,7 +871,7 @@ working to keep them in synch *-\-></item>
 
       <div>
         <head>How does one test a theory ?</head>
-        <p>A TEI customisation can : <list>
+        <p>A TEI customization can : <list>
             <item>control the possible values of attributes</item>
             <item>apply additional semantic or other constraints on element content (eg
               co-dependency)</item>
@@ -914,7 +914,7 @@ working to keep them in synch *-\-></item>
               <item>....</item>
             </list></item>
           <item>A TEI element definition may specify its equivalent in some other ontology using the
-              <gi>equiv</gi>element</item>
+              <gi>equiv</gi> element</item>
           <item>But fundamentally, the TEI's view of <q>what text really is</q> remains a familiar and
             traditional one</item>
         </list>
@@ -927,8 +927,8 @@ working to keep them in synch *-\-></item>
           <item>Customize the TEI using your own namespace</item>
           <item>Document your changes with an ODD</item>
           <item>Discuss your revisions on the TEI-L list; or form a SIG !</item>
-          <item>Propose useful corrections and modifications to the Council, using for example a
-            "feature request" on http://tei.sf.net</item>
+          <item>Propose useful corrections and modifications to the Council, by raising an issue on
+            at github.com/teic  </item>
           <item>There's a new version of TEI P5 roughly twice a year ...</item>
         </list>
         <p rend="box">Oh, and don't forget to join the Consortium!</p>
